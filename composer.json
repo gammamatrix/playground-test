@@ -1,0 +1,40 @@
+{
+    "name": "gammamatrix/playground-test",
+    "description": "Playground: Test",
+    "keywords": [
+        "gammamatrix",
+        "laravel",
+        "playground",
+        "test"
+    ],
+    "homepage": "https://github.com/gammamatrix/playground-test",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Postlethwaite",
+            "email": "jeremy.postlethwaite@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "timacdonald/log-fake": "^2.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "GammaMatrix\\Playground\\Test\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GammaMatrix\\Playground\\Test\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

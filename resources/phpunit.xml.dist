@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
+          backupGlobals="false"
+          bootstrap="vendor/autoload.php"
+          colors="true"
+          processIsolation="false"
+          stopOnFailure="false"
+          cacheDirectory=".phpunit.cache"
+          backupStaticProperties="false">
+  <testsuites>
+    <testsuite name="Unit">
+      <directory suffix="Test.php">./tests/Unit</directory>
+    </testsuite>
+    <!-- <testsuite name="Feature">
+      <directory suffix="Test.php">./tests/Feature</directory>
+    </testsuite> -->
+    <!-- <testsuite name="Acceptance">
+      <directory suffix="Test.php">./tests/Acceptance</directory>
+    </testsuite> -->
+  </testsuites>
+  <coverage includeUncoveredFiles="true" pathCoverage="false" ignoreDeprecatedCodeUnits="true" disableCodeCoverageIgnore="true">
+    <include>
+      <directory suffix=".php">./app</directory>
+      <directory suffix=".php">./vendor/gammamatrix/playground/src</directory>
+      <directory suffix=".php">./vendor/gammamatrix/playground-api/src</directory>
+      <directory suffix=".php">./vendor/gammamatrix/playground-auth/src</directory>
+      <directory suffix=".php">./vendor/gammamatrix/playground-cms/src</directory>
+      <directory suffix=".php">./vendor/gammamatrix/playground-cms-api/src</directory>
+      <directory suffix=".php">./vendor/gammamatrix/playground-projects/src</directory>
+      <directory suffix=".php">./vendor/gammamatrix/playground-projects-api/src</directory>
+    </include>
+    <report>
+      <clover outputFile="tests/logs/clover.xml"/>
+      <cobertura outputFile="tests/logs/cobertura.xml"/>
+      <crap4j outputFile="tests/logs/crap4j.xml" threshold="50"/>
+      <html outputDirectory="tests/logs/html" lowUpperBound="50" highLowerBound="90"/>
+      <php outputFile="tests/logs/coverage.php"/>
+      <text outputFile="tests/logs/coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+      <xml outputDirectory="tests/logs/xml"/>
+    </report>
+  </coverage>
+  <logging>
+    <junit outputFile="tests/logs/junit.xml"/>
+    <teamcity outputFile="tests/logs/teamcity.txt"/>
+    <testdoxHtml outputFile="tests/logs/testdox.html"/>
+    <testdoxText outputFile="tests/logs/testdox.txt"/>
+  </logging>
+  <php>
+    <env name="APP_DEBUG" value="false"/>
+    <env name="APP_ENV" value="testing"/>
+    <env name="APP_URL" value="http://localhost"/>
+    <env name="BCRYPT_ROUNDS" value="4"/>
+    <env name="CACHE_DRIVER" value="array"/>
+    <env name="LOG_CHANNEL" value="single"/>
+    <env name="MAIL_DRIVER" value="log"/>
+    <env name="SESSION_DRIVER" value="array"/>
+    <!-- <env name="DB_CONNECTION" value="sqlite"/> -->
+    <!-- <env name="DB_DATABASE" value=":memory:"/> -->
+    <env name="MAIL_MAILER" value="array"/>
+    <env name="QUEUE_CONNECTION" value="sync"/>
+    <env name="SESSION_DRIVER" value="array"/>
+    <env name="TELESCOPE_ENABLED" value="false"/>
+    <env name="TEST_EMAIL_ADMIN" value="admin@example.com"/>
+    <env name="TEST_EMAIL_CLIENT" value="client@example.com"/>
+    <env name="TEST_EMAIL_CLIENT_ADMIN" value="client-admin@example.com"/>
+    <env name="TEST_EMAIL_PARTNER" value="partner@example.com"/>
+    <env name="TEST_EMAIL_PARTNER_ADMIN" value="partner-admin@example.com"/>
+    <env name="TEST_EMAIL_SALES" value="sales@example.com"/>
+    <env name="TEST_EMAIL_SALES_ADMIN" value="sales-admin@example.com"/>
+    <env name="TEST_EMAIL_SUPPORT" value="support@example.com"/>
+    <env name="TEST_EMAIL_SUPPORT_ADMIN" value="support-admin@example.com"/>
+    <env name="TEST_EMAIL_VENDOR" value="vendor@example.com"/>
+    <env name="TEST_EMAIL_VENDOR_ADMIN" value="vendor-admin@example.com"/>
+    <env name="TEST_EMAIL_MANAGER" value="manager@example.com"/>
+    <env name="TEST_EMAIL_MANAGER_ADMIN" value="manager-admin@example.com"/>
+    <env name="TEST_EMAIL_ROOT" value="root@example.com"/>
+    <env name="TEST_EMAIL_USER" value="user@example.com"/>
+    <env name="TEST_EMAIL_USER_ADMIN" value="user-admin@example.com"/>
+  </php>
+</phpunit>
