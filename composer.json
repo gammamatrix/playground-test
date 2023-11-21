@@ -22,6 +22,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Database\\Factories\\GammaMatrix\\Playground\\Test\\Models\\": "database/factories/",
             "GammaMatrix\\Playground\\Test\\": "src/"
         }
     },
