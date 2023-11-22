@@ -1,6 +1,6 @@
 <?php
 return [
-    'password' => (string) env('PLAYGROUND_TEST_PASSWORD', ''),
+    'password' => (string) env('PLAYGROUND_TEST_PASSWORD', 'password'),
     'password_encrypted' => (boolean) env('PLAYGROUND_TEST_PASSWORD_ENCRYPTED', false),
     'publish' => [
         'config' => (boolean) env('PLAYGROUND_TEST_PUBLISH_CONFIG', false),

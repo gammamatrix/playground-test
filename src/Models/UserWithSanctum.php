@@ -1,15 +1,17 @@
 <?php
 /**
  * GammaMatrix
- *
  */
 
 namespace GammaMatrix\Playground\Test\Models;
+
+use Laravel\Sanctum\HasApiTokens;
 
 /**
  * \GammaMatrix\Playground\Test\Models\User
  *
  */
-class User extends AbstractUser
+class UserWithSanctum extends AbstractUser
 {
+    use HasApiTokens;
 }
