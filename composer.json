@@ -18,10 +18,14 @@
     ],
     "require": {
         "php": "^8.1",
+        "fakerphp/faker": "^1.9.1",
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.1",
         "timacdonald/log-fake": "^2.0.1"
     },
     "autoload": {
         "psr-4": {
+            "Database\\Factories\\GammaMatrix\\Playground\\Test\\Models\\": "database/factories/",
             "GammaMatrix\\Playground\\Test\\": "src/"
         }
     },
