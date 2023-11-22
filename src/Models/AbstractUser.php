@@ -15,6 +15,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * \GammaMatrix\Playground\Test\Models\AbstractUser
@@ -31,8 +32,15 @@ abstract class AbstractUser extends Model implements
     use CanResetPassword;
     use MustVerifyEmail;
     use HasFactory;
+    use Notifiable;
 
-    protected $fillable = ['email'];
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'email_verified_at',
+        'remember_token',
+    ];
 
     public $timestamps = false;
 

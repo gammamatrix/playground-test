@@ -37,8 +37,8 @@ abstract class AbstractUserFactory extends Factory
         return [
             'name' => $this->faker()->name(),
             'email' => $this->faker()->unique()->safeEmail(),
-            'email_verified_at' => Carbon::now(),
-            'password' => Hash::make(config('playground-test.password')),
+            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'password' => Hash::make(config('playground-test.password', 'password')),
             'remember_token' => Str::random(10),
         ];
     }
