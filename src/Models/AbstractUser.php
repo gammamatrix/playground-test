@@ -47,6 +47,8 @@ abstract class AbstractUser extends Model implements
     protected $table = 'users';
 
     protected $attributes = [
+        'name' => '',
+        'email' => '',
         // 'role' => '',
     ];
 }
