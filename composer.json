@@ -9,6 +9,7 @@
     ],
     "homepage": "https://github.com/gammamatrix/playground-test",
     "license": "MIT",
+    "version": "73.0.0",
     "authors": [
         {
             "name": "Jeremy Postlethwaite",
@@ -21,12 +22,21 @@
         "fakerphp/faker": "^1.9.1",
         "orchestra/testbench": "^8.0",
         "phpunit/phpunit": "^10.1",
-        "timacdonald/log-fake": "^2.0.1"
+        "timacdonald/log-fake": "^2.0.1",
+        "laravel/sanctum": "^3.3"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Database\\Factories\\GammaMatrix\\Playground\\Test\\Models\\": "database/factories/",
             "GammaMatrix\\Playground\\Test\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Unit\\GammaMatrix\\Playground\\Test\\": "tests/Unit/",
+            "Tests\\Feature\\GammaMatrix\\Playground\\Test\\": "tests/Feature/"
         }
     },
     "config": {
@@ -39,6 +49,9 @@
             ]
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "scripts": {
+        "test": "phpunit",
+        "format": "php-cs-fixer fix --allow-risky=yes",
+        "analyse": "phpstan analyse"
+    }
 }

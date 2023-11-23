@@ -5,17 +5,17 @@
 
 namespace GammaMatrix\Playground\Test\Models;
 
-use GammaMatrix\Playground\Models\Traits\UserPrivileges;
-
 /**
  * \GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles
  *
  */
 class UserWithRoleAndRoles extends AbstractUser
 {
-    use UserPrivileges;
+    use Traits\UserPrivileges;
 
     protected $attributes = [
+        'name' => '',
+        'email' => '',
         'role' => '',
         'roles' => [],
     ];

@@ -28,7 +28,6 @@ class ServiceProvider extends BaseServiceProvider
         $config = config('playground-test');
 
         if (!empty($config) && $this->app->runningInConsole()) {
-
             // Publish configuration
             $this->publishes([
                 dirname(__DIR__).'/config/playground-test.php'

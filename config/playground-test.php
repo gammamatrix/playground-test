@@ -1,10 +1,8 @@
 <?php
+
 return [
     'password' => (string) env('PLAYGROUND_TEST_PASSWORD', 'password'),
-    'password_encrypted' => (boolean) env('PLAYGROUND_TEST_PASSWORD_ENCRYPTED', false),
-    'publish' => [
-        'config' => (boolean) env('PLAYGROUND_TEST_PUBLISH_CONFIG', false),
-    ],
+    'password_encrypted' => (bool) env('PLAYGROUND_TEST_PASSWORD_ENCRYPTED', false),
     'users' => [
         'admin' => [
             'env' => 'TEST_EMAIL_ADMIN',

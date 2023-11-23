@@ -44,7 +44,6 @@ class CustomUsersTableSeeder extends Seeder
         }
 
         foreach ($config['users'] as $slug => $meta) {
-
             $email = sprintf('%1$s@example.com', Str::slug($slug));
 
             $model = User::where('email', $email)->first();
