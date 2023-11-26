@@ -1,6 +1,6 @@
 {
     "name": "gammamatrix/playground-test",
-    "description": "Playground: A test helper Playground Laravel packages.",
+    "description": "Playground: A test helper for Playground Laravel packages.",
     "keywords": [
         "gammamatrix",
         "laravel",
