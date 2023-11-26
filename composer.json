@@ -1,15 +1,14 @@
 {
     "name": "gammamatrix/playground-test",
-    "description": "Playground: Test",
+    "description": "Playground: A test helper Playground Laravel packages.",
     "keywords": [
         "gammamatrix",
         "laravel",
         "playground",
         "test"
     ],
-    "homepage": "https://github.com/gammamatrix/playground-test",
+    "homepage": "https://github.com/gammamatrix/playground-test/wiki",
     "license": "MIT",
-    "version": "73.0.0",
     "authors": [
         {
             "name": "Jeremy Postlethwaite",

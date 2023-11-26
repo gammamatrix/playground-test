@@ -80,7 +80,7 @@ abstract class ModelCase extends OrchestraTestCase
     {
         $modelClass = $this->getModelClass();
 
-        return new $modelClass;
+        return new $modelClass();
     }
 
     /**
@@ -278,12 +278,8 @@ abstract class ModelCase extends OrchestraTestCase
     /**
      * Verify a HasOne model relationship.
      *
-     * @param Model $model
-     * @param string $accessor
-     *
-     * @return array Returns an array of boolean results for the relationship types.
      */
-    public function verifyRelationshipHasOne(Model $model, $accessor)
+    public function verifyRelationshipHasOne(Model $model, string $accessor): void
     {
         $hasAccessor = isset($this->hasOne[$accessor])
             && is_array($this->hasOne[$accessor])
@@ -351,7 +347,7 @@ abstract class ModelCase extends OrchestraTestCase
             strval($model->getAttributeValue($this->hasOne[$accessor]['key'])),
             strval($m->id),
             sprintf(
-                'Expecting the created HasOne model for the accessor [%1$s] to have m->id === model->%2$s - modelClass: %3$s - %4$s',
+                'Expecting the created HasOne model for the accessor [%1$s] to have m->id === model->%2$s - modelClass: %3$s - %4$s - %5$s',
                 $accessor,
                 $this->hasOne[$accessor]['key'],
                 $this->hasOne[$accessor]['modelClass'],
@@ -373,7 +369,7 @@ abstract class ModelCase extends OrchestraTestCase
             $o->id,
             $m->id,
             sprintf(
-                'Expecting the created HasOne model for the accessor [%1$s] to have m->id === o->id - modelClass: %3$s - %4$s',
+                'Expecting the created HasOne model for the accessor [%1$s] to have m->id === o->id - modelClass: %3$s - %4$s - %5$s',
                 $accessor,
                 $this->hasOne[$accessor]['key'],
                 $this->hasOne[$accessor]['modelClass'],
@@ -386,12 +382,8 @@ abstract class ModelCase extends OrchestraTestCase
     /**
      * Verify a HasMany model relationship.
      *
-     * @param Model $model
-     * @param string $accessor
-     *
-     * @return array Returns an array of boolean results for the relationship types.
      */
-    public function verifyRelationshipHasMany(Model $model, $accessor)
+    public function verifyRelationshipHasMany(Model $model, string $accessor)
     {
         $hasAccessor = isset($this->hasMany[$accessor])
             && is_array($this->hasMany[$accessor])
@@ -447,7 +439,7 @@ abstract class ModelCase extends OrchestraTestCase
                 $m->getAttributeValue($this->hasMany[$accessor]['key']),
                 $model->id,
                 sprintf(
-                    'Expecting the created HasMany model for the accessor [%1$s] to have model->id === m->%2$s - modelClass: %3$s - %4$s',
+                    'Expecting the created HasMany model for the accessor [%1$s] to have model->id === m->%2$s - modelClass: %3$s - %4$s - %5$s',
                     $accessor,
                     $this->hasMany[$accessor]['key'],
                     $this->hasMany[$accessor]['modelClass'],
@@ -487,9 +479,8 @@ abstract class ModelCase extends OrchestraTestCase
     /**
      * Test the model relationships.
      *
-     * @return void
      */
-    public function testVerifyRelationships()
+    public function testVerifyRelationships(): void
     {
         $modelClass = $this->getModelClass();
 
