@@ -24,6 +24,9 @@
         "timacdonald/log-fake": "^2.0.1",
         "laravel/sanctum": "^3.3"
     },
+    "suggest": {
+        "gammamatrix/playground": "This package is used for testing Playground Laravel packages."
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
