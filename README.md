@@ -1,5 +1,8 @@
 # Playground
 
+![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-test/image-data/coverage.svg)
+![Playground CI Workflow](https://github.com/gammamatrix/playground-test/actions/workflows/ci.yml/badge.svg?)
+
 The Playground Test package.
 
 This package utilizes PHPUnit and Laravel-based test cases.
