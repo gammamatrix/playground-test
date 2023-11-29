@@ -28,9 +28,9 @@ class CustomUsersTableSeeder extends Seeder
         $config = config('playground-test');
         $password = empty($config['password']) ? '' : $config['password'];
         // $password = 'testing';
-        $password_encrypted = ! empty($config['password_encrypted']);
+        $password_encrypted = !empty($config['password_encrypted']);
 
-        if (empty($config['users']) || ! is_array($config['users'])) {
+        if (empty($config['users']) || !is_array($config['users'])) {
             error_log('No users defined in playground-test.');
             return;
         }

@@ -6,7 +6,7 @@
 namespace GammaMatrix\Playground\Test\Models;
 
 /**
- * \GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles
+ * \GammaMatrix\Playground\Test\Models\UserWithRole
  *
  */
 class UserWithRole extends AbstractUser
