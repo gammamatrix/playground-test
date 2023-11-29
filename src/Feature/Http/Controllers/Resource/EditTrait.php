@@ -28,7 +28,7 @@ trait EditTrait
         ]);
 
         $response = $this->get($url);
-        $response->assertRedirect();
+        $response->assertRedirect(route('login'));
     }
 
     public function test_user_can_render_edit_view_with_return_url()

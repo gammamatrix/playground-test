@@ -22,7 +22,7 @@ trait CreateTrait
         ));
 
         $response = $this->get($url);
-        $response->assertRedirect();
+        $response->assertRedirect(route('login'));
     }
 
     public function test_user_can_render_create_view_with_return_url()
