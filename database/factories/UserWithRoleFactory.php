@@ -30,7 +30,7 @@ class UserWithRoleFactory extends AbstractUserFactory
     }
 
     /**
-     * Indicate that the user has the wheel role.
+     * Indicate that the user has the manager role.
      */
     public function manager(): static
     {
