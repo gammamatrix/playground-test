@@ -9,12 +9,12 @@ use GammaMatrix\Playground\Test\Models\User;
 use GammaMatrix\Playground\Test\Models\UserWithRole;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait
+ * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait
  *
  */
-trait DestroyTrait
+trait LockTrait
 {
-    public function test_guest_cannot_destroy()
+    public function test_guest_cannot_lock()
     {
         config([
             // 'playground.auth.token.name' => 'app',
@@ -33,17 +33,17 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => null,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
 
         $url = route(sprintf(
-            '%1$s.destroy',
+            '%1$s.lock',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->delete($url);
+        $response = $this->put($url);
 
         // $response->dump();
 
@@ -52,11 +52,11 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => null,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
     }
 
-    public function test_destroy_as_standard_user_and_succeed()
+    public function test_lock_as_standard_user_and_succeed()
     {
         $fqdn = $this->fqdn;
 
@@ -69,17 +69,17 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
 
         $url = route(sprintf(
-            '%1$s.destroy',
+            '%1$s.lock',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->actingAs($user)->delete($url);
+        $response = $this->actingAs($user)->put($url);
 
         // $response->dd();
         // $response->dump();
@@ -89,17 +89,15 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-        ]);
-        $this->assertDatabaseMissing($this->packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => true,
         ]);
 
-        $response->assertRedirect(route($this->packageInfo['model_route']));
+        $response->assertRedirect(route(sprintf('%1$s.show', $this->packageInfo['model_route']), [
+            $this->packageInfo['model_slug'] => $model->id,
+        ]));
     }
 
-    public function test_destroy_as_standard_user_and_succeed_with_force_delete()
+    public function test_lock_as_standard_user_using_json_and_succeed()
     {
         $fqdn = $this->fqdn;
 
@@ -112,55 +110,17 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
 
         $url = route(sprintf(
-            '%1$s.destroy',
-            $this->packageInfo['model_route']
-        ), [
-            $this->packageInfo['model_slug'] => $model->id,
-            'force' => true,
-        ]);
-
-        $response = $this->actingAs($user)->delete($url);
-
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
-
-        $this->assertDatabaseMissing($this->packageInfo['table'], [
-            'id' => $model->id,
-        ]);
-
-        $response->assertRedirect(route($this->packageInfo['model_route']));
-    }
-
-    public function test_destroy_as_standard_user_using_json_and_succeed_with_no_content()
-    {
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
-
-        $this->assertDatabaseHas($this->packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.destroy',
+            '%1$s.lock',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->actingAs($user)->deleteJson($url);
+        $response = $this->actingAs($user)->putJson($url);
 
         // $response->dd();
         // $response->dump();
@@ -170,17 +130,13 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-        ]);
-        $this->assertDatabaseMissing($this->packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => true,
         ]);
 
-        $response->assertNoContent();
+        $response->assertStatus(200);
     }
 
-    public function test_destroy_as_standard_user_and_succeed_with_redirect_to_index_with_trash()
+    public function test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc()
     {
         $fqdn = $this->fqdn;
 
@@ -193,17 +149,15 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
 
         $_return_url = route($this->packageInfo['model_route'], [
-            'filter' => [
-                'trash' => 'with',
-            ]
+            'sort' => '-locked',
         ]);
 
         $url = route(sprintf(
-            '%1$s.destroy',
+            '%1$s.lock',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -216,7 +170,7 @@ trait DestroyTrait
         //     '$_return_url' => $_return_url,
         // ]);
 
-        $response = $this->actingAs($user)->delete($url);
+        $response = $this->actingAs($user)->put($url);
 
         // $response->dd();
         // $response->dump();
@@ -226,17 +180,13 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-        ]);
-        $this->assertDatabaseMissing($this->packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => true,
         ]);
 
         $response->assertRedirect($_return_url);
     }
 
-    public function test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()
+    public function test_lock_with_user_role_and_get_denied()
     {
         config([
             'playground.auth.verify' => 'roles',
@@ -256,18 +206,17 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
 
         $url = route(sprintf(
-            '%1$s.destroy',
+            '%1$s.lock',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
-            'force' => true,
         ]);
 
-        $response = $this->actingAs($user)->delete($url);
+        $response = $this->actingAs($user)->put($url);
 
         $response->assertStatus(401);
 
@@ -279,11 +228,11 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
     }
 
-    public function test_destroy_with_admin_role_and_succeed()
+    public function test_lock_with_admin_role_and_succeed()
     {
         config([
             'playground.auth.verify' => 'roles',
@@ -306,17 +255,17 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
 
         $url = route(sprintf(
-            '%1$s.destroy',
+            '%1$s.lock',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->actingAs($user)->delete($url);
+        $response = $this->actingAs($user)->put($url);
 
         // $response->dd();
         // $response->dump();
@@ -326,17 +275,15 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-        ]);
-        $this->assertDatabaseMissing($this->packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => true,
         ]);
 
-        $response->assertRedirect(route($this->packageInfo['model_route']));
+        $response->assertRedirect(route(sprintf('%1$s.show', $this->packageInfo['model_route']), [
+            $this->packageInfo['model_slug'] => $model->id,
+        ]));
     }
 
-    public function test_destroy_with_admin_role_and_succeed_with_force_delete()
+    public function test_lock_with_admin_role_and_succeed_with_json()
     {
         config([
             'playground.auth.verify' => 'roles',
@@ -359,28 +306,34 @@ trait DestroyTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'deleted_at' => null,
+            'locked' => false,
         ]);
 
         $url = route(sprintf(
-            '%1$s.destroy',
+            '%1$s.lock',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
-            'force' => true,
         ]);
 
-        $response = $this->actingAs($user)->delete($url);
+        $response = $this->actingAs($user)->putJson($url);
 
         // $response->dd();
         // $response->dump();
         // $response->dumpHeaders();
         // $response->dumpSession();
 
-        $this->assertDatabaseMissing($this->packageInfo['table'], [
+        $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
+            'owned_by_id' => $user->id,
+            'locked' => true,
         ]);
 
-        $response->assertRedirect(route($this->packageInfo['model_route']));
+        $response->assertStatus(200);
+
+        $response->assertJsonStructure($this->structure_data);
+        // $response->assertJsonPath('meta.pagination.total', 4);
+        // $response->assertJsonPath('meta.pagination.count', 2);
+
     }
 }

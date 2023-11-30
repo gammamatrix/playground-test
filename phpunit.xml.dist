@@ -1,56 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         colors="true"
-         stopOnSkipped="false"
-         backupGlobals="false"
-         beStrictAboutTestsThatDoNotTestAnything="true"
-         beStrictAboutOutputDuringTests="true"
-         cacheResult="false"
-         failOnRisky="true"
-         failOnWarning="true"
-         processIsolation="false"
-         stopOnError="false"
-         stopOnFailure="false"
-         cacheDirectory=".phpunit.cache"
-         backupStaticProperties="false"
-         displayDetailsOnIncompleteTests="true"
-         displayDetailsOnSkippedTests="true"
-         displayDetailsOnTestsThatTriggerDeprecations="true"
-         displayDetailsOnTestsThatTriggerErrors="true"
-         displayDetailsOnTestsThatTriggerNotices="true"
-         displayDetailsOnTestsThatTriggerWarnings="true"
-         testdox="true"
->
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    stopOnSkipped="false"
+    backupGlobals="false"
+    beStrictAboutTestsThatDoNotTestAnything="true"
+    beStrictAboutOutputDuringTests="true"
+    cacheResult="false"
+    failOnRisky="true"
+    failOnWarning="true"
+    processIsolation="false"
+    stopOnError="false"
+    stopOnFailure="false"
+    cacheDirectory=".phpunit.cache"
+    backupStaticProperties="false"
+    displayDetailsOnIncompleteTests="true"
+    displayDetailsOnSkippedTests="true"
+    displayDetailsOnTestsThatTriggerDeprecations="true"
+    displayDetailsOnTestsThatTriggerErrors="true"
+    displayDetailsOnTestsThatTriggerNotices="true"
+    displayDetailsOnTestsThatTriggerWarnings="true"
+    testdox="true">
     <testsuites>
         <testsuite name="Unit">
             <directory>tests/Unit</directory>
         </testsuite>
-        <!-- <testsuite name="Feature"> -->
-            <!-- <directory>tests/Feature</directory> -->
-        <!-- </testsuite> -->
     </testsuites>
-  <coverage
-    includeUncoveredFiles="true"
-    pathCoverage="false"
-    ignoreDeprecatedCodeUnits="true"
-    disableCodeCoverageIgnore="true">
-    <report>
-      <clover outputFile="tests/logs/clover.xml"/>
-      <cobertura outputFile="tests/logs/cobertura.xml"/>
-      <crap4j outputFile="tests/logs/crap4j.xml" threshold="50"/>
-      <html outputDirectory="tests/logs/html" lowUpperBound="50" highLowerBound="90"/>
-      <php outputFile="tests/logs/coverage.php"/>
-      <text outputFile="tests/logs/coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
-      <xml outputDirectory="tests/logs/xml"/>
-    </report>
+    <coverage
+        includeUncoveredFiles="true"
+        pathCoverage="false"
+        ignoreDeprecatedCodeUnits="true"
+        disableCodeCoverageIgnore="true">
+        <report>
+            <clover outputFile="output/clover.xml"/>
+            <cobertura outputFile="output/cobertura.xml"/>
+            <crap4j outputFile="output/crap4j.xml" threshold="50"/>
+            <!-- <html outputDirectory="output/html" lowUpperBound="50" highLowerBound="90"/> -->
+            <php outputFile="output/coverage.php"/>
+            <text outputFile="output/coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+            <!-- <xml outputDirectory="output/xml"/> -->
+        </report>
   </coverage>
   <logging>
-    <junit outputFile="tests/logs/junit.xml"/>
-    <teamcity outputFile="tests/logs/teamcity.txt"/>
-    <testdoxHtml outputFile="tests/logs/testdox.html"/>
-    <testdoxText outputFile="tests/logs/testdox.txt"/>
+      <junit outputFile="output/junit.xml"/>
+      <teamcity outputFile="output/teamcity.txt"/>
+      <testdoxHtml outputFile="output/testdox.html"/>
+      <testdoxText outputFile="output/testdox.txt"/>
   </logging>
     <source>
         <include>
