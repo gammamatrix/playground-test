@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crap_result>
+  <project/>
+  <timestamp>2023-11-30 04:51:24</timestamp>
+  <stats>
+    <name>Method Crap Stats</name>
+    <methodCount>56</methodCount>
+    <crapMethodCount>3</crapMethodCount>
+    <crapLoad>44</crapLoad>
+    <totalCrap>875.84</totalCrap>
+    <crapMethodPercent>5.36</crapMethodPercent>
+  </stats>
+  <methods>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <methodName>test_guest_cannot_render_create_view</methodName>
+      <methodSignature>test_guest_cannot_render_create_view()</methodSignature>
+      <fullMethod>test_guest_cannot_render_create_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <methodName>test_create_view_rendered_by_user_with_return_url</methodName>
+      <methodSignature>test_create_view_rendered_by_user_with_return_url()</methodSignature>
+      <fullMethod>test_create_view_rendered_by_user_with_return_url()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <methodName>test_create_info_with_user_using_json</methodName>
+      <methodSignature>test_create_info_with_user_using_json()</methodSignature>
+      <fullMethod>test_create_info_with_user_using_json()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <methodName>test_create_view_rendered_by_user_with_invalid_parameter</methodName>
+      <methodSignature>test_create_view_rendered_by_user_with_invalid_parameter()</methodSignature>
+      <fullMethod>test_create_view_rendered_by_user_with_invalid_parameter()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_guest_cannot_destroy</methodName>
+      <methodSignature>test_guest_cannot_destroy()</methodSignature>
+      <fullMethod>test_guest_cannot_destroy()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_destroy_as_standard_user_and_succeed</methodName>
+      <methodSignature>test_destroy_as_standard_user_and_succeed()</methodSignature>
+      <fullMethod>test_destroy_as_standard_user_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_destroy_as_standard_user_and_succeed_with_force_delete</methodName>
+      <methodSignature>test_destroy_as_standard_user_and_succeed_with_force_delete()</methodSignature>
+      <fullMethod>test_destroy_as_standard_user_and_succeed_with_force_delete()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_destroy_as_standard_user_using_json_and_succeed_with_no_content</methodName>
+      <methodSignature>test_destroy_as_standard_user_using_json_and_succeed_with_no_content()</methodSignature>
+      <fullMethod>test_destroy_as_standard_user_using_json_and_succeed_with_no_content()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_destroy_as_standard_user_and_succeed_with_redirect_to_index_with_trash</methodName>
+      <methodSignature>test_destroy_as_standard_user_and_succeed_with_redirect_to_index_with_trash()</methodSignature>
+      <fullMethod>test_destroy_as_standard_user_and_succeed_with_redirect_to_index_with_trash()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed</methodName>
+      <methodSignature>test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()</methodSignature>
+      <fullMethod>test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_destroy_with_admin_role_and_succeed</methodName>
+      <methodSignature>test_destroy_with_admin_role_and_succeed()</methodSignature>
+      <fullMethod>test_destroy_with_admin_role_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <methodName>test_destroy_with_admin_role_and_succeed_with_force_delete</methodName>
+      <methodSignature>test_destroy_with_admin_role_and_succeed_with_force_delete()</methodSignature>
+      <fullMethod>test_destroy_with_admin_role_and_succeed_with_force_delete()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <methodName>test_guest_cannot_render_edit_view</methodName>
+      <methodSignature>test_guest_cannot_render_edit_view()</methodSignature>
+      <fullMethod>test_guest_cannot_render_edit_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <methodName>test_edit_view_rendered_by_user_with_return_url</methodName>
+      <methodSignature>test_edit_view_rendered_by_user_with_return_url()</methodSignature>
+      <fullMethod>test_edit_view_rendered_by_user_with_return_url()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <methodName>test_edit_info_with_user_using_json</methodName>
+      <methodSignature>test_edit_info_with_user_using_json()</methodSignature>
+      <fullMethod>test_edit_info_with_user_using_json()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <methodName>test_edit_view_rendered_by_user_with_invalid_parameter</methodName>
+      <methodSignature>test_edit_view_rendered_by_user_with_invalid_parameter()</methodSignature>
+      <fullMethod>test_edit_view_rendered_by_user_with_invalid_parameter()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <methodName>test_guest_cannot_lock</methodName>
+      <methodSignature>test_guest_cannot_lock()</methodSignature>
+      <fullMethod>test_guest_cannot_lock()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <methodName>test_lock_as_standard_user_and_succeed</methodName>
+      <methodSignature>test_lock_as_standard_user_and_succeed()</methodSignature>
+      <fullMethod>test_lock_as_standard_user_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <methodName>test_lock_as_standard_user_using_json_and_succeed</methodName>
+      <methodSignature>test_lock_as_standard_user_using_json_and_succeed()</methodSignature>
+      <fullMethod>test_lock_as_standard_user_using_json_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <methodName>test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc</methodName>
+      <methodSignature>test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc()</methodSignature>
+      <fullMethod>test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <methodName>test_lock_with_user_role_and_get_denied</methodName>
+      <methodSignature>test_lock_with_user_role_and_get_denied()</methodSignature>
+      <fullMethod>test_lock_with_user_role_and_get_denied()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <methodName>test_lock_with_admin_role_and_succeed</methodName>
+      <methodSignature>test_lock_with_admin_role_and_succeed()</methodSignature>
+      <fullMethod>test_lock_with_admin_role_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <methodName>test_lock_with_admin_role_and_succeed_with_json</methodName>
+      <methodSignature>test_lock_with_admin_role_and_succeed_with_json()</methodSignature>
+      <fullMethod>test_lock_with_admin_role_and_succeed_with_json()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>getModel</methodName>
+      <methodSignature>getModel(): Illuminate\Database\Eloquent\Model</methodSignature>
+      <fullMethod>getModel(): Illuminate\Database\Eloquent\Model</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>getModelClass</methodName>
+      <methodSignature>getModelClass(): string</methodSignature>
+      <fullMethod>getModelClass(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>test_model_instance</methodName>
+      <methodSignature>test_model_instance(): void</methodSignature>
+      <fullMethod>test_model_instance(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>verifyRelationship</methodName>
+      <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
+      <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
+      <crap>210</crap>
+      <complexity>14</complexity>
+      <coverage>0</coverage>
+      <crapLoad>14</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>verifyRelationships</methodName>
+      <methodSignature>verifyRelationships()</methodSignature>
+      <fullMethod>verifyRelationships()</fullMethod>
+      <crap>42</crap>
+      <complexity>6</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>verifyRelationshipHasOne</methodName>
+      <methodSignature>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
+      <fullMethod>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
+      <crap>306</crap>
+      <complexity>17</complexity>
+      <coverage>0</coverage>
+      <crapLoad>17</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>verifyRelationshipHasMany</methodName>
+      <methodSignature>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor)</methodSignature>
+      <fullMethod>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor)</fullMethod>
+      <crap>156</crap>
+      <complexity>12</complexity>
+      <coverage>0</coverage>
+      <crapLoad>12</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Feature\Models</package>
+      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>testVerifyRelationships</methodName>
+      <methodSignature>testVerifyRelationships(): void</methodSignature>
+      <fullMethod>testVerifyRelationships(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\MockingTrait</className>
+      <methodName>mockRequest</methodName>
+      <methodSignature>mockRequest(string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</methodSignature>
+      <fullMethod>mockRequest(string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\MockingTrait</className>
+      <methodName>invokeProtected</methodName>
+      <methodSignature>invokeProtected($out, $method, array $params): mixed</methodSignature>
+      <fullMethod>invokeProtected($out, $method, array $params): mixed</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\MockingTrait</className>
+      <methodName>setProtected</methodName>
+      <methodSignature>setProtected($out, string $property, mixed $value): void</methodSignature>
+      <fullMethod>setProtected($out, string $property, mixed $value): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models\Traits</package>
+      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <methodName>getAttribute</methodName>
+      <methodSignature>getAttribute($key)</methodSignature>
+      <fullMethod>getAttribute($key)</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models\Traits</package>
+      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <methodName>hasPrivilege</methodName>
+      <methodSignature>hasPrivilege($privilege): bool</methodSignature>
+      <fullMethod>hasPrivilege($privilege): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models\Traits</package>
+      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <methodName>hasRole</methodName>
+      <methodSignature>hasRole($role): bool</methodSignature>
+      <fullMethod>hasRole($role): bool</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models\Traits</package>
+      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <methodName>isAdmin</methodName>
+      <methodSignature>isAdmin(): bool</methodSignature>
+      <fullMethod>isAdmin(): bool</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models</package>
+      <className>GammaMatrix\Playground\Test\Models\UserWithChildren</className>
+      <methodName>children</methodName>
+      <methodSignature>children(): Illuminate\Database\Eloquent\Relations\HasMany</methodSignature>
+      <fullMethod>children(): Illuminate\Database\Eloquent\Relations\HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models</package>
+      <className>GammaMatrix\Playground\Test\Models\UserWithChildren</className>
+      <methodName>parent</methodName>
+      <methodSignature>parent(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>parent(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models</package>
+      <className>GammaMatrix\Playground\Test\Models\UserWithRole</className>
+      <methodName>hasRole</methodName>
+      <methodSignature>hasRole($role): bool</methodSignature>
+      <fullMethod>hasRole($role): bool</fullMethod>
+      <crap>20</crap>
+      <complexity>4</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Models</package>
+      <className>GammaMatrix\Playground\Test\Models\UserWithRole</className>
+      <methodName>isAdmin</methodName>
+      <methodSignature>isAdmin(): bool</methodSignature>
+      <fullMethod>isAdmin(): bool</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\ServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot()</methodSignature>
+      <fullMethod>boot()</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\ServiceProvider</className>
+      <methodName>register</methodName>
+      <methodSignature>register()</methodSignature>
+      <fullMethod>register()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\SqlTrait</className>
+      <methodName>setUp</methodName>
+      <methodSignature>setUp(): void</methodSignature>
+      <fullMethod>setUp(): void</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\SqlTrait</className>
+      <methodName>replace_quotes</methodName>
+      <methodSignature>replace_quotes(string $sql): string</methodSignature>
+      <fullMethod>replace_quotes(string $sql): string</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Http\Requests</package>
+      <className>GammaMatrix\Playground\Test\Unit\Http\Requests\RequestCase</className>
+      <methodName>getRequest</methodName>
+      <methodSignature>getRequest(): Illuminate\Foundation\Http\FormRequest</methodSignature>
+      <fullMethod>getRequest(): Illuminate\Foundation\Http\FormRequest</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Http\Requests</package>
+      <className>GammaMatrix\Playground\Test\Unit\Http\Requests\RequestCase</className>
+      <methodName>getRequestClass</methodName>
+      <methodSignature>getRequestClass(): string</methodSignature>
+      <fullMethod>getRequestClass(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Http\Requests</package>
+      <className>GammaMatrix\Playground\Test\Unit\Http\Requests\RequestCase</className>
+      <methodName>test_request_instance</methodName>
+      <methodSignature>test_request_instance(): void</methodSignature>
+      <fullMethod>test_request_instance(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Models</package>
+      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>getModel</methodName>
+      <methodSignature>getModel(): Illuminate\Database\Eloquent\Model</methodSignature>
+      <fullMethod>getModel(): Illuminate\Database\Eloquent\Model</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Models</package>
+      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>getModelClass</methodName>
+      <methodSignature>getModelClass(): string</methodSignature>
+      <fullMethod>getModelClass(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Models</package>
+      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>test_model_instance</methodName>
+      <methodSignature>test_model_instance(): void</methodSignature>
+      <fullMethod>test_model_instance(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Models</package>
+      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>verifyRelationship</methodName>
+      <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
+      <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
+      <crap>16.76</crap>
+      <complexity>10</complexity>
+      <coverage>59.26</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Models</package>
+      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>verifyRelationships</methodName>
+      <methodSignature>verifyRelationships(): array</methodSignature>
+      <fullMethod>verifyRelationships(): array</fullMethod>
+      <crap>7.08</crap>
+      <complexity>7</complexity>
+      <coverage>88</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test\Unit\Models</package>
+      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>test_verify_model_relationships</methodName>
+      <methodSignature>test_verify_model_relationships(): void</methodSignature>
+      <fullMethod>test_verify_model_relationships(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Test</package>
+      <className>GammaMatrix\Playground\Test\WithFaker</className>
+      <methodName>faker</methodName>
+      <methodSignature>faker(string $locale)</methodSignature>
+      <fullMethod>faker(string $locale)</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+  </methods>
+</crap_result>

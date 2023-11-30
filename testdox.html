@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-family: Source SansSerif Pro, Arial, sans-serif;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2rem;
+                background-color: #fff;
+                color: #000;
+            }
+
+            body > ul > li {
+                font-size: larger;
+            }
+
+            h2 {
+                font-size: larger;
+                text-decoration-line: underline;
+                text-decoration-thickness: 2px;
+                margin: 0;
+                padding: 0.5rem 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 0 2rem;
+                padding: 0 0 0 1rem;
+                text-indent: -1rem;
+            }
+
+            .success:before {
+                color: #4e9a06;
+                content: '✓';
+                padding-right: 0.5rem;
+            }
+
+            .defect {
+                color: #a40000;
+            }
+
+            .defect:before {
+                color: #a40000;
+                content: '✗';
+                padding-right: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\AbstractUser\Model)</h2>
+        <ul>
+            <li class="success">Get attributes</li>
+        </ul>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\ModelCase\Model)</h2>
+        <ul>
+            <li class="success">Model instance</li>
+            <li class="success">Verify model relationships</li>
+        </ul>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithChildren\Model)</h2>
+        <ul>
+            <li class="success">Model instance</li>
+            <li class="success">Verify model relationships</li>
+        </ul>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\Model)</h2>
+        <ul>
+            <li class="success">Get attributes</li>
+            <li class="success">HasPrivilege is false without privilege</li>
+            <li class="success">HasPrivilege is false with wrong privilege</li>
+            <li class="success">HasPrivilege is true with correct privilege</li>
+        </ul>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\Model)</h2>
+        <ul>
+            <li class="success">Get attributes</li>
+        </ul>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\Model)</h2>
+        <ul>
+            <li class="success">Get attributes</li>
+            <li class="success">HasRole is false without role</li>
+            <li class="success">HasRole is true with matching role</li>
+            <li class="success">HasRole is true with matching secondary role</li>
+            <li class="success">IsAdmin is true with admin role</li>
+            <li class="success">IsAdmin is true with admin secondary role</li>
+            <li class="success">IsAdmin is true with wheel role</li>
+            <li class="success">IsAdmin is true with wheel secondary role</li>
+            <li class="success">IsAdmin is true with root role</li>
+            <li class="success">IsAdmin is false with root secondary role</li>
+        </ul>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithSanctum\Model)</h2>
+        <ul>
+            <li class="success">Get attributes</li>
+        </ul>
+        <h2>Model (Tests\Unit\GammaMatrix\Playground\Test\Models\User\Model)</h2>
+        <ul>
+            <li class="success">Get attributes</li>
+        </ul>
+    </body>
+</html>
