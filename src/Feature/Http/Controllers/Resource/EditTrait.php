@@ -31,7 +31,7 @@ trait EditTrait
         $response->assertRedirect(route('login'));
     }
 
-    public function test_user_can_render_edit_view_with_return_url()
+    public function test_edit_view_rendered_by_user_with_return_url()
     {
         $fqdn = $this->fqdn;
 
@@ -61,7 +61,7 @@ trait EditTrait
         ), false);
     }
 
-    public function test_edit_with_user_using_json()
+    public function test_edit_info_with_user_using_json()
     {
         $fqdn = $this->fqdn;
 
@@ -88,7 +88,7 @@ trait EditTrait
         $this->assertAuthenticated();
     }
 
-    public function test_user_can_render_edit_view_with_invalid_parameter()
+    public function test_edit_view_rendered_by_user_with_invalid_parameter()
     {
         $fqdn = $this->fqdn;
 
