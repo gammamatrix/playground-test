@@ -7,14 +7,15 @@ namespace GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource;
 
 use GammaMatrix\Playground\Test\Models\User;
 use GammaMatrix\Playground\Test\Models\UserWithRole;
+use Illuminate\Support\Carbon;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait
+ * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait
  *
  */
-trait LockTrait
+trait RestoreTrait
 {
-    public function test_guest_cannot_lock()
+    public function test_guest_cannot_restore()
     {
         config([
             // 'playground.auth.token.name' => 'app',
@@ -28,16 +29,18 @@ trait LockTrait
 
         $fqdn = $this->fqdn;
 
-        $model = $fqdn::factory()->create();
+        $model = $fqdn::factory()->create([
+            'deleted_at' => Carbon::now(),
+        ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => null,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.restore',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -52,11 +55,11 @@ trait LockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => null,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
     }
 
-    public function test_lock_as_standard_user_and_succeed()
+    public function test_restore_as_standard_user_and_succeed()
     {
         $fqdn = $this->fqdn;
 
@@ -64,16 +67,17 @@ trait LockTrait
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.restore',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -89,7 +93,7 @@ trait LockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $this->packageInfo['model_route']), [
@@ -97,7 +101,7 @@ trait LockTrait
         ]));
     }
 
-    public function test_lock_as_standard_user_using_json_and_succeed()
+    public function test_restore_as_standard_user_using_json_and_succeed()
     {
         $fqdn = $this->fqdn;
 
@@ -105,16 +109,17 @@ trait LockTrait
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.restore',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -130,13 +135,13 @@ trait LockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $response->assertStatus(200);
     }
 
-    public function test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc()
+    public function test_restore_as_standard_user_and_succeed_with_redirect_to_index_with_only_trash()
     {
         $fqdn = $this->fqdn;
 
@@ -144,20 +149,23 @@ trait LockTrait
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $_return_url = route($this->packageInfo['model_route'], [
-            'sort' => '-locked',
+            'filter' => [
+                'trash' => 'only',
+            ]
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.restore',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -180,13 +188,13 @@ trait LockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $response->assertRedirect($_return_url);
     }
 
-    public function test_lock_with_user_role_and_get_denied()
+    public function test_restore_with_user_role_and_get_denied()
     {
         config([
             'playground.auth.verify' => 'roles',
@@ -201,16 +209,17 @@ trait LockTrait
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.restore',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -228,11 +237,11 @@ trait LockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
     }
 
-    public function test_lock_with_admin_role_and_succeed()
+    public function test_restore_with_admin_role_and_succeed()
     {
         config([
             'playground.auth.verify' => 'roles',
@@ -250,16 +259,17 @@ trait LockTrait
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+            'deleted_at' => Carbon::now(),
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.restore',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -275,62 +285,11 @@ trait LockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $this->packageInfo['model_route']), [
             $this->packageInfo['model_slug'] => $model->id,
         ]));
-    }
-
-    public function test_lock_with_admin_role_and_succeed_with_json()
-    {
-        config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
-        ]);
-
-        $fqdn = $this->fqdn;
-
-        $user = UserWithRole::find(User::factory()->create()->id);
-
-        // The role is not saved since the column may not exist.
-        $user->role = 'admin';
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
-
-        $this->assertDatabaseHas($this->packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.lock',
-            $this->packageInfo['model_route']
-        ), [
-            $this->packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->putJson($url);
-
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
-
-        $this->assertDatabaseHas($this->packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure($this->structure_data);
     }
 }
