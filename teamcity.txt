@@ -9,7 +9,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/AbstractUser/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\AbstractUser\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='167' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='160' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Test\Models\AbstractUser\ModelTest' flowId='1']
 
@@ -17,11 +17,11 @@
 
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\ModelCase\ModelTest::test_model_instance' flowId='1']
 
-##teamcity[testFinished name='test_model_instance' duration='6' flowId='1']
+##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\ModelCase\ModelTest::test_verify_model_relationships' flowId='1']
 
-##teamcity[testFinished name='test_verify_model_relationships' duration='5' flowId='1']
+##teamcity[testFinished name='test_verify_model_relationships' duration='4' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Test\Models\ModelCase\ModelTest' flowId='1']
 
@@ -29,7 +29,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/User/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\User\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='5' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='4' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Test\Models\User\ModelTest' flowId='1']
 
@@ -37,11 +37,11 @@
 
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithChildren\ModelTest::test_model_instance' flowId='1']
 
-##teamcity[testFinished name='test_model_instance' duration='9' flowId='1']
+##teamcity[testFinished name='test_model_instance' duration='8' flowId='1']
 
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithChildren\ModelTest::test_verify_model_relationships' flowId='1']
 
-##teamcity[testFinished name='test_verify_model_relationships' duration='12' flowId='1']
+##teamcity[testFinished name='test_verify_model_relationships' duration='11' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithChildren\ModelTest' flowId='1']
 
@@ -49,19 +49,19 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndPrivileges/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='14' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='13' flowId='1']
 
 ##teamcity[testStarted name='test_hasPrivilege_is_false_without_privilege' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndPrivileges/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest::test_hasPrivilege_is_false_without_privilege' flowId='1']
 
-##teamcity[testFinished name='test_hasPrivilege_is_false_without_privilege' duration='5' flowId='1']
+##teamcity[testFinished name='test_hasPrivilege_is_false_without_privilege' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_hasPrivilege_is_false_with_wrong_privilege' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndPrivileges/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest::test_hasPrivilege_is_false_with_wrong_privilege' flowId='1']
 
-##teamcity[testFinished name='test_hasPrivilege_is_false_with_wrong_privilege' duration='5' flowId='1']
+##teamcity[testFinished name='test_hasPrivilege_is_false_with_wrong_privilege' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_hasPrivilege_is_true_with_correct_privilege' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndPrivileges/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest::test_hasPrivilege_is_true_with_correct_privilege' flowId='1']
 
-##teamcity[testFinished name='test_hasPrivilege_is_true_with_correct_privilege' duration='5' flowId='1']
+##teamcity[testFinished name='test_hasPrivilege_is_true_with_correct_privilege' duration='4' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest' flowId='1']
 
@@ -69,7 +69,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='7' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='6' flowId='1']
 
 ##teamcity[testStarted name='test_hasRole_is_false_without_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_hasRole_is_false_without_role' flowId='1']
 
@@ -77,35 +77,35 @@
 
 ##teamcity[testStarted name='test_hasRole_is_true_with_matching_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_hasRole_is_true_with_matching_role' flowId='1']
 
-##teamcity[testFinished name='test_hasRole_is_true_with_matching_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_hasRole_is_true_with_matching_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_hasRole_is_true_with_matching_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_hasRole_is_true_with_matching_secondary_role' flowId='1']
 
-##teamcity[testFinished name='test_hasRole_is_true_with_matching_secondary_role' duration='6' flowId='1']
+##teamcity[testFinished name='test_hasRole_is_true_with_matching_secondary_role' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_admin_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_admin_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_admin_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_admin_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_admin_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_admin_secondary_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_admin_secondary_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_admin_secondary_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_wheel_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_wheel_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_wheel_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_wheel_secondary_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_secondary_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_secondary_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_root_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_root_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_root_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_root_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_false_with_root_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_false_with_root_secondary_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_false_with_root_secondary_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_false_with_root_secondary_role' duration='4' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest' flowId='1']
 
@@ -121,7 +121,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/UserWithSanctum/ModelTest.php::\Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithSanctum\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='7' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='6' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithSanctum\ModelTest' flowId='1']
 
