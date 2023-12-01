@@ -21,10 +21,7 @@ trait IndexTrait
 
         $model = $fqdn::factory()->create();
 
-        $url = route(sprintf(
-            '%1$s.index',
-            $this->packageInfo['model_route']
-        ), [
+        $url = route($this->packageInfo['model_route'], [
             $this->packageInfo['model_slug'] => $model->id,
         ]);
 
@@ -40,12 +37,7 @@ trait IndexTrait
 
         $user = UserWithSanctum::factory()->create();
 
-        $index = route($this->packageInfo['model_route']);
-
-        $url = route(sprintf(
-            '%1$s.index',
-            $this->packageInfo['model_route']
-        ), [
+        $url = route($this->packageInfo['model_route'], [
             $this->packageInfo['model_slug'] => $model->id,
         ]);
 
@@ -64,10 +56,7 @@ trait IndexTrait
 
         $user = UserWithSanctum::factory()->create();
 
-        $url = route(sprintf(
-            '%1$s.index',
-            $this->packageInfo['model_route']
-        ), [
+        $url = route($this->packageInfo['model_route'], [
             $this->packageInfo['model_slug'] => $model->id,
         ]);
 
