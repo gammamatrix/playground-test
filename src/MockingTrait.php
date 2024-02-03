@@ -1,16 +1,14 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Test;
 
-namespace GammaMatrix\Playground\Test;
-
-use Illuminate\Support\Facades\Config;
 use ReflectionClass;
 use ReflectionProperty;
 
 /**
- * \GammaMatrix\Playground\Test\MockingTrait
+ * \Playground\Test\MockingTrait
  */
 trait MockingTrait
 {
@@ -69,6 +67,7 @@ trait MockingTrait
     ): mixed {
         $rc = new ReflectionClass(get_class($out));
         $gm = $rc->getMethod($method);
+
         return $gm->invokeArgs($out, $params);
     }
 

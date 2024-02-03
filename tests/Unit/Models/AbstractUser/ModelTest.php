@@ -1,56 +1,30 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Test\Models\AbstractUser;
 
-namespace Tests\Unit\GammaMatrix\Playground\Test\Models\AbstractUser;
-
-use Tests\Unit\GammaMatrix\Playground\Test\TestCase;
+use PHPUnit\Framework\MockObject\MockObject;
+use Tests\Unit\Playground\Test\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Models\Model\ModelTest
- *
+ * \Tests\Unit\Playground\Models\Model\ModelTest
  */
 class ModelTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    public const ABSTRACT_CLASS = \GammaMatrix\Playground\Test\Models\AbstractUser::class;
-
-    /**
-     * @var object
-     */
-    public $mock;
-
-    /**
-     * Setup the test environment.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        if (!class_exists(static::ABSTRACT_CLASS)) {
-            $this->markTestSkipped(sprintf(
-                'Expecting the abstract model class to exist: %1$s',
-                static::ABSTRACT_CLASS
-            ));
-        }
-
-        $this->mock = $this->getMockForAbstractClass(static::ABSTRACT_CLASS);
-    }
-
-    public function test_getAttributes()
+    public function test_getAttributes(): void
     {
         $expected = [
             'name' => '',
             'email' => '',
         ];
 
-        $attributes = $this->mock->getAttributes();
+        /**
+         * @var \Playground\Test\Models\AbstractUser&MockObject
+         */
+        $mock = $this->getMockForAbstractClass(\Playground\Test\Models\AbstractUser::class);
+
+        $attributes = $mock->getAttributes();
 
         $this->assertIsArray($attributes);
 

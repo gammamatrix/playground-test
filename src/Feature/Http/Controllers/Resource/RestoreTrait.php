@@ -1,17 +1,15 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Test\Feature\Http\Controllers\Resource;
 
-namespace GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource;
-
-use GammaMatrix\Playground\Test\Models\User;
-use GammaMatrix\Playground\Test\Models\UserWithRole;
 use Illuminate\Support\Carbon;
+use Playground\Test\Models\User;
+use Playground\Test\Models\UserWithRole;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait
- *
+ * \Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait
  */
 trait RestoreTrait
 {
@@ -161,7 +159,7 @@ trait RestoreTrait
         $_return_url = route($this->packageInfo['model_route'], [
             'filter' => [
                 'trash' => 'only',
-            ]
+            ],
         ]);
 
         $url = route(sprintf(

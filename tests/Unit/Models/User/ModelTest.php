@@ -1,28 +1,28 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Test\Models\User;
 
-namespace Tests\Unit\GammaMatrix\Playground\Test\Models\User;
-
-use Tests\Unit\GammaMatrix\Playground\Test\TestCase;
+use Tests\Unit\Playground\Test\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Test\Models\User\ModelTest
- *
+ * \Tests\Unit\Playground\Test\Models\User\ModelTest
  */
 class ModelTest extends TestCase
 {
     /**
      * @var string
      */
-    public const MODEL_CLASS = \GammaMatrix\Playground\Test\Models\User::class;
+    public const MODEL_CLASS = \Playground\Test\Models\User::class;
 
-    public function test_getAttributes()
+    public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\User $instance
+         */
         $instance = new $mc();
 
         $expected = [

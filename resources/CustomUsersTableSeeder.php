@@ -1,15 +1,15 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  *
  */
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use Playground\Test\Models\UserWithRoleAndPrivileges as User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Str;
+use Illuminate\Support\Str;
 
 /**
  * \CustomUsersTableSeeder
@@ -26,18 +26,20 @@ class CustomUsersTableSeeder extends Seeder
     public function run()
     {
         $config = config('playground-test');
-        $password = empty($config['password']) ? '' : $config['password'];
-        // $password = 'testing';
-        $password_encrypted = !empty($config['password_encrypted']);
 
-        if (empty($config['users']) || !is_array($config['users'])) {
+        if (!is_array($config) || empty($config['users']) || !is_array($config['users'])) {
             error_log('No users defined in playground-test.');
             return;
         }
 
+        $password = empty($config['password']) || ! is_string($config['password']) ? '' : $config['password'];
+        // $password = 'testing';
+        $password_encrypted = !empty($config['password_encrypted']);
+
+
         if (empty($password) || !is_string($password)) {
             // Set a random password.
-            $password = md5(time());
+            $password = md5(date('c'));
             $password = Hash::make($password);
         } elseif (!$password_encrypted) {
             $password = Hash::make($password);
@@ -87,7 +89,5 @@ class CustomUsersTableSeeder extends Seeder
             $model->password = $password;
             $model->save();
         }
-
-        return $this;
     }
 }

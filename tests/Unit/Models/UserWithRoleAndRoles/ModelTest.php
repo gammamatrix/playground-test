@@ -1,28 +1,28 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles;
 
-namespace Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles;
-
-use Tests\Unit\GammaMatrix\Playground\Test\TestCase;
+use Tests\Unit\Playground\Test\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\ModelTest
- *
+ * \Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest
  */
 class ModelTest extends TestCase
 {
     /**
      * @var string
      */
-    public const MODEL_CLASS = \GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles::class;
+    public const MODEL_CLASS = \Playground\Test\Models\UserWithRoleAndRoles::class;
 
-    public function test_getAttributes()
+    public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $expected = [
@@ -39,10 +39,13 @@ class ModelTest extends TestCase
         $this->assertSame($expected, $attributes);
     }
 
-    public function test_hasRole_is_false_without_role()
+    public function test_hasRole_is_false_without_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = null;
@@ -50,10 +53,13 @@ class ModelTest extends TestCase
         $this->assertFalse($instance->hasRole($role));
     }
 
-    public function test_hasRole_is_true_with_matching_role()
+    public function test_hasRole_is_true_with_matching_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'user';
@@ -63,10 +69,13 @@ class ModelTest extends TestCase
         $this->assertTrue($instance->hasRole($role));
     }
 
-    public function test_hasRole_is_true_with_matching_secondary_role()
+    public function test_hasRole_is_true_with_matching_secondary_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'user';
@@ -83,10 +92,13 @@ class ModelTest extends TestCase
         $this->assertFalse($instance->isAdmin());
     }
 
-    public function test_isAdmin_is_true_with_admin_role()
+    public function test_isAdmin_is_true_with_admin_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'admin';
@@ -100,10 +112,13 @@ class ModelTest extends TestCase
         $this->assertTrue($instance->isAdmin());
     }
 
-    public function test_isAdmin_is_true_with_admin_secondary_role()
+    public function test_isAdmin_is_true_with_admin_secondary_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'publisher';
@@ -117,10 +132,13 @@ class ModelTest extends TestCase
         $this->assertTrue($instance->isAdmin());
     }
 
-    public function test_isAdmin_is_true_with_wheel_role()
+    public function test_isAdmin_is_true_with_wheel_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'wheel';
@@ -134,10 +152,13 @@ class ModelTest extends TestCase
         $this->assertTrue($instance->isAdmin());
     }
 
-    public function test_isAdmin_is_true_with_wheel_secondary_role()
+    public function test_isAdmin_is_true_with_wheel_secondary_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'publisher';
@@ -151,10 +172,13 @@ class ModelTest extends TestCase
         $this->assertTrue($instance->isAdmin());
     }
 
-    public function test_isAdmin_is_true_with_root_role()
+    public function test_isAdmin_is_true_with_root_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'root';
@@ -168,10 +192,13 @@ class ModelTest extends TestCase
         $this->assertTrue($instance->isAdmin());
     }
 
-    public function test_isAdmin_is_false_with_root_secondary_role()
+    public function test_isAdmin_is_false_with_root_secondary_role(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         */
         $instance = new $mc();
 
         $role = 'publisher';

@@ -36,9 +36,12 @@ class DatabaseSeeder extends Seeder
         $seeds = [];
         $matches = [];
 
-        foreach (scandir('./database/seeders') as $filename) {
-            if (preg_match('/^(Custom.*TableSeeder)\.php$/', $filename, $matches)) {
-                $seeds[] = $matches[1];
+        $seeders = scandir('./database/seeders');
+        if (is_array($seeders)) {
+            foreach ($seeders as $filename) {
+                if (preg_match('/^(Custom.*TableSeeder)\.php$/', $filename, $matches)) {
+                    $seeds[] = $matches[1];
+                }
             }
         }
 

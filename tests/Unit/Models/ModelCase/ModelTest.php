@@ -1,20 +1,17 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Test\Models\ModelCase;
 
-namespace Tests\Unit\GammaMatrix\Playground\Test\Models\ModelCase;
-
-use GammaMatrix\Playground\Test\Unit\Models\ModelCase;
+use Playground\Test\Unit\Models\ModelCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Test\Models\ModelCase\ModelTest
- *
+ * \Tests\Unit\Playground\Test\Models\ModelCase\ModelTest
  */
 class ModelTest extends ModelCase
 {
-    protected string $modelClass = \GammaMatrix\Playground\Test\Models\User::class;
+    protected string $modelClass = \Playground\Test\Models\User::class;
 
     protected bool $hasRelationships = false;
 }

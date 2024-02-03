@@ -1,21 +1,22 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Playground\Test\Unit\Http\Requests;
 
-namespace GammaMatrix\Playground\Test\Unit\Http\Requests;
-
-use GammaMatrix\Playground\Test\OrchestraTestCase;
 use Illuminate\Foundation\Http\FormRequest;
+use Playground\Test\OrchestraTestCase;
 
 /**
- * \GammaMatrix\Playground\Test\Unit\Http\Requests\RequestCase
+ * \Playground\Test\Unit\Http\Requests\RequestCase
  *
  * NOTE Set the request: protected string $requestClass = FormRequest::class;
  */
 abstract class RequestCase extends OrchestraTestCase
 {
+    /**
+     * @var class-string<FormRequest>
+     */
     protected string $requestClass = FormRequest::class;
 
     protected function getRequest(): FormRequest
@@ -27,17 +28,19 @@ abstract class RequestCase extends OrchestraTestCase
 
     /**
      * Get the FQDN of the request class.
+     *
+     * @return class-string<FormRequest>
      */
     protected function getRequestClass(): string
     {
         return $this->requestClass;
     }
 
-    ############################################################################
-    #
-    # Verify: instance
-    #
-    ############################################################################
+    //###########################################################################
+    //
+    // Verify: instance
+    //
+    //###########################################################################
 
     public function test_request_instance(): void
     {

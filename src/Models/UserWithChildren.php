@@ -1,20 +1,20 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Test\Models;
+namespace Playground\Test\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
- * \GammaMatrix\Playground\Test\Models\UserWithChildren
- *
+ * \Playground\Test\Models\UserWithChildren
  */
 class UserWithChildren extends AbstractUser
 {
+    /**
+     * @var array<int, string>
+     */
     protected $fillable = [
         'name',
         'email',
@@ -28,6 +28,9 @@ class UserWithChildren extends AbstractUser
 
     protected $table = 'users';
 
+    /**
+     * @var array<string, mixed>
+     */
     protected $attributes = [
         'name' => '',
         'email' => '',

@@ -1,17 +1,13 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Playground\Test;
 
-namespace GammaMatrix\Playground\Test;
-
-// use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * \GammaMatrix\Playground\Test\ServiceProvider
- *
+ * \Playground\Test\ServiceProvider
  */
 class ServiceProvider extends BaseServiceProvider
 {
@@ -29,11 +25,10 @@ class ServiceProvider extends BaseServiceProvider
     {
         $config = config('playground-test');
 
-        if (!empty($config) && $this->app->runningInConsole()) {
+        if (! empty($config) && $this->app->runningInConsole()) {
             // Publish configuration
             $this->publishes([
-                dirname(__DIR__).'/config/playground-test.php'
-                    => config_path('playground-test.php')
+                dirname(__DIR__).'/config/playground-test.php' => config_path('playground-test.php'),
             ], 'playground-config');
         }
     }
@@ -46,7 +41,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/config/playground-test.php',
+            dirname(__DIR__).'/config/playground-test.php',
             'playground-test'
         );
     }

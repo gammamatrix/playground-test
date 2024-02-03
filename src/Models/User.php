@@ -1,14 +1,11 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Test\Models;
+namespace Playground\Test\Models;
 
 /**
- * \GammaMatrix\Playground\Test\Models\User
- *
+ * \Playground\Test\Models\User
  */
 class User extends AbstractUser
 {

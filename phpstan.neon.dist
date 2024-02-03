@@ -1,0 +1,25 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+
+parameters:
+    level: 9
+
+    paths:
+        - config
+        - database
+        - src
+        - tests
+        - resources
+
+    excludePaths:
+        - 'tests/logs/*'
+        - 'output/*'
+
+    treatPhpDocTypesAsCertain: false
+
+    checkGenericClassInNonGenericObjectType: false
+
+    ignoreErrors:
+        - '#^Call to an undefined static method Illuminate\\Database\\Eloquent\\Model::factory\(\)\.$#'

@@ -1,17 +1,13 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Test\Feature\Http\Controllers\Resource;
 
-namespace GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource;
-
-use GammaMatrix\Playground\Test\Models\User;
-use GammaMatrix\Playground\Test\Models\UserWithSanctum;
-use Tests\Feature\GammaMatrix\Playground\Matrix\Resource\TestCase;
+use Playground\Test\Models\UserWithSanctum;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\IndexTrait
- *
+ * \Playground\Test\Feature\Http\Controllers\Resource\IndexTrait
  */
 trait IndexTrait
 {

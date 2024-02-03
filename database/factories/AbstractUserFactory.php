@@ -1,31 +1,26 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Database\Factories\Playground\Test\Models;
 
-namespace Database\Factories\GammaMatrix\Playground\Test\Models;
-
-use GammaMatrix\Playground\Test\WithFaker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Playground\Test\Models\AbstractUser;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Test\Models\AbstractUserFactory
- *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Test\Models\AbstractUser>
+ * \Database\Factories\Playground\Test\Models\AbstractUserFactory
  */
 abstract class AbstractUserFactory extends Factory
 {
-    use WithFaker;
-
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<AbstractUser>
      */
-    protected $model = \GammaMatrix\Playground\Test\Models\AbstractUser::class;
+    protected $model = AbstractUser::class;
 
     /**
      * Define the model's default state.
@@ -34,11 +29,15 @@ abstract class AbstractUserFactory extends Factory
      */
     public function definition(): array
     {
+        $password = config('playground-test.password', 'password');
+
         return [
-            'name' => $this->faker()->name(),
-            'email' => $this->faker()->unique()->safeEmail(),
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'password' => Hash::make(config('playground-test.password', 'password')),
+            'password' => Hash::make(
+                $password && is_string($password) ? $password : md5(date('c'))
+            ),
             'remember_token' => Str::random(10),
         ];
     }
