@@ -95,11 +95,7 @@ abstract class ModelCase extends OrchestraTestCase
         return $this->modelClass;
     }
 
-    //###########################################################################
-    //
     // Verify: instance
-    //
-    //###########################################################################
 
     public function test_model_instance(): void
     {
@@ -110,11 +106,7 @@ abstract class ModelCase extends OrchestraTestCase
         $this->assertInstanceOf($modelClass, $instance);
     }
 
-    //###########################################################################
-    //
     // Verify: relationships
-    //
-    //###########################################################################
 
     /**
      * Verify a model relationship.
@@ -261,11 +253,7 @@ abstract class ModelCase extends OrchestraTestCase
         return $results;
     }
 
-    //###########################################################################
-    //
     // Test: relationships
-    //
-    //###########################################################################
 
     /**
      * Test the model relationships.

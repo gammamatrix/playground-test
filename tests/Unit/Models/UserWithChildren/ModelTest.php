@@ -4,6 +4,7 @@
  */
 namespace Tests\Unit\Playground\Test\Models\UserWithChildren;
 
+use Playground\Test\Models\UserWithChildren;
 use Playground\Test\Unit\Models\ModelCase;
 
 /**
@@ -11,7 +12,10 @@ use Playground\Test\Unit\Models\ModelCase;
  */
 class ModelTest extends ModelCase
 {
-    protected string $modelClass = \Playground\Test\Models\UserWithChildren::class;
+    /**
+     * @var class-string<UserWithChildren>
+     */
+    protected string $modelClass = UserWithChildren::class;
 
     protected bool $hasRelationships = true;
 

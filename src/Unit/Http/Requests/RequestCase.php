@@ -36,12 +36,6 @@ abstract class RequestCase extends OrchestraTestCase
         return $this->requestClass;
     }
 
-    //###########################################################################
-    //
-    // Verify: instance
-    //
-    //###########################################################################
-
     public function test_request_instance(): void
     {
         $instance = $this->getRequest();

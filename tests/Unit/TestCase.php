@@ -22,17 +22,6 @@ class TestCase extends OrchestraTestCase
         ];
     }
 
-    // /**
-    //  * Define database migrations.
-    //  *
-    //  * @return void
-    //  */
-    // protected function defineDatabaseMigrations()
-    // {
-    //     $this->loadLaravelMigrations(['--database' => 'testbench']);
-    //     $this->loadMigrationsFrom(workbench_path('database/migrations'));
-    // }
-
     /**
      * Set up the environment.
      *

@@ -21,9 +21,9 @@
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^3.41",
         "larastan/larastan": "^2.0",
-        "orchestra/testbench": "^8.0",
+        "orchestra/testbench": "8.*",
         "phpstan/phpstan-phpunit": "^1.3",
-        "phpunit/phpunit": "^10.1",
+        "phpunit/phpunit": "10.5.*",
         "timacdonald/log-fake": "^2.0.1",
         "laravel/sanctum": "^3.3"
     },
