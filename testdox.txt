@@ -1,3 +1,6 @@
+Command (Tests\Feature\Playground\Test\Console\Commands\About\Command)
+ [x] Command about displays package information and succeed with code 0
+
 Model (Tests\Unit\Playground\Test\Models\AbstractUser\Model)
  [x] Get attributes
 

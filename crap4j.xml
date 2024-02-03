@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-03 17:34:03</timestamp>
+  <timestamp>2024-02-03 18:37:03</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>75</methodCount>
+    <methodCount>77</methodCount>
     <crapMethodCount>3</crapMethodCount>
     <crapLoad>48</crapLoad>
-    <totalCrap>1046.86</totalCrap>
-    <crapMethodPercent>4</crapMethodPercent>
+    <totalCrap>1044.86</totalCrap>
+    <crapMethodPercent>3.9</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -688,20 +688,42 @@
       <methodName>boot</methodName>
       <methodSignature>boot()</methodSignature>
       <fullMethod>boot()</fullMethod>
-      <crap>12</crap>
+      <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test</package>
+      <className>Playground\Test\ServiceProvider</className>
+      <methodName>about</methodName>
+      <methodSignature>about(): void</methodSignature>
+      <fullMethod>about(): void</fullMethod>
+      <crap>7</crap>
+      <complexity>7</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>Playground\Test</package>
       <className>Playground\Test\ServiceProvider</className>
       <methodName>register</methodName>
-      <methodSignature>register()</methodSignature>
-      <fullMethod>register()</fullMethod>
-      <crap>2</crap>
+      <methodSignature>register(): void</methodSignature>
+      <fullMethod>register(): void</fullMethod>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test</package>
+      <className>Playground\Test\ServiceProvider</className>
+      <methodName>version</methodName>
+      <methodSignature>version(): string</methodSignature>
+      <fullMethod>version(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
