@@ -1,16 +1,13 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Test\Feature\Http\Controllers\Resource;
 
-namespace GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource;
-
-use GammaMatrix\Playground\Test\Models\User;
-use Tests\Feature\GammaMatrix\Playground\Matrix\Resource\TestCase;
+use Playground\Test\Models\User;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait
- *
+ * \Playground\Test\Feature\Http\Controllers\Resource\CreateTrait
  */
 trait CreateTrait
 {
@@ -82,8 +79,7 @@ trait CreateTrait
 
         $response = $this->actingAs($user)
             ->from($url)
-            ->get($url.'?owned_by_id=[duck]')
-        ;
+            ->get($url.'?owned_by_id=[duck]');
 
         // $response->dump();
         // $response->dumpHeaders();

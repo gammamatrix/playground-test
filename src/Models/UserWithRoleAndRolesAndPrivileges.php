@@ -1,18 +1,19 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Test\Models;
+namespace Playground\Test\Models;
 
 /**
- * \GammaMatrix\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges
- *
+ * \Playground\Test\Models\UserWithRoleAndRolesAndPrivileges
  */
 class UserWithRoleAndRolesAndPrivileges extends AbstractUser
 {
     use Traits\UserPrivileges;
 
+    /**
+     * @var array<string, mixed>
+     */
     protected $attributes = [
         'name' => '',
         'email' => '',

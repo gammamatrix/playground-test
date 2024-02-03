@@ -1,28 +1,31 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges;
 
-namespace Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges;
-
-use Tests\Unit\GammaMatrix\Playground\Test\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use Playground\Test\Models\UserWithRoleAndPrivileges;
+use Tests\Unit\Playground\Test\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest
- *
+ * \Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest
  */
+#[CoversClass(UserWithRoleAndPrivileges::class)]
 class ModelTest extends TestCase
 {
     /**
-     * @var string
+     * @var class-string<UserWithRoleAndPrivileges>
      */
-    public const MODEL_CLASS = \GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges::class;
+    public const MODEL_CLASS = UserWithRoleAndPrivileges::class;
 
-    public function test_getAttributes()
+    public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var UserWithRoleAndPrivileges $instance
+         */
         $instance = new $mc();
 
         $expected = [
@@ -40,10 +43,13 @@ class ModelTest extends TestCase
         $this->assertSame($expected, $attributes);
     }
 
-    public function test_hasPrivilege_is_false_without_privilege()
+    public function test_hasPrivilege_is_false_without_privilege(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var UserWithRoleAndPrivileges $instance
+         */
         $instance = new $mc();
 
         $privilege = null;
@@ -51,10 +57,13 @@ class ModelTest extends TestCase
         $this->assertFalse($instance->hasPrivilege($privilege));
     }
 
-    public function test_hasPrivilege_is_false_with_wrong_privilege()
+    public function test_hasPrivilege_is_false_with_wrong_privilege(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var UserWithRoleAndPrivileges $instance
+         */
         $instance = new $mc();
 
         $privilege = 'duck';
@@ -66,10 +75,13 @@ class ModelTest extends TestCase
         $this->assertFalse($instance->hasPrivilege($privilege));
     }
 
-    public function test_hasPrivilege_is_true_with_correct_privilege()
+    public function test_hasPrivilege_is_true_with_correct_privilege(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var UserWithRoleAndPrivileges $instance
+         */
         $instance = new $mc();
 
         $privilege = 'duck';

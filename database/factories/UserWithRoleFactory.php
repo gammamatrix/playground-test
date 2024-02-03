@@ -1,23 +1,22 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Database\Factories\Playground\Test\Models;
 
-namespace Database\Factories\GammaMatrix\Playground\Test\Models;
+use Playground\Test\Models\UserWithRole;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Test\Models\UserWithRoleFactory
- *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Test\Models\UserWithRole>
+ * \Database\Factories\Playground\Test\Models\UserWithRoleFactory
  */
 class UserWithRoleFactory extends AbstractUserFactory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<UserWithRole>
      */
-    protected $model = \GammaMatrix\Playground\Test\Models\UserWithRole::class;
+    protected $model = UserWithRole::class;
 
     /**
      * Indicate that the user has the admin role.

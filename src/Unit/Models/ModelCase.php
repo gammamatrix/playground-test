@@ -1,12 +1,9 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Playground\Test\Unit\Models;
 
-namespace GammaMatrix\Playground\Test\Unit\Models;
-
-use GammaMatrix\Playground\Test\OrchestraTestCase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -14,59 +11,64 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Log;
+use Playground\Test\OrchestraTestCase;
 
 /**
- * \GammaMatrix\Playground\Test\Unit\Models\ModelCase
+ * \Playground\Test\Unit\Models\ModelCase
  *
  * NOTE Set the model: protected string $modelClass = Model::class;
  */
 abstract class ModelCase extends OrchestraTestCase
 {
     /**
-     * @var boolean $hasRelationships A model must be marked as not having relationships.
+     * @var bool A model must be marked as not having relationships.
+     *
      * @see testVerifyRelationships()
      */
     protected bool $hasRelationships = true;
 
     /**
-     * @var array $belongsTo Test belongsTo relationships.
+     * @var array<int, string> Test belongsTo relationships.
      */
     protected array $belongsTo = [
         // 'item',
     ];
 
     /**
-     * @var array $belongsToMany Test belongsToMany relationships.
+     * @var array<int, string> Test belongsToMany relationships.
      */
     protected array $belongsToMany = [
         // 'items',
     ];
 
     /**
-     * @var array $hasMany Test hasMany relationships.
+     * @var array<int, string> Test hasMany relationships.
      */
     protected array $hasMany = [
         // 'items',
     ];
 
     /**
-     * @var array $hasOne Test hasOne relationships.
+     * @var array<int, string> Test hasOne relationships.
      */
     protected array $hasOne = [
         // 'item',
     ];
 
     /**
-     * @var array $morphToMany Test morphToMany relationships.
+     * @var array<int, string> Test morphToMany relationships.
      */
     protected array $morphToMany = [
         // 'items',
     ];
 
+    /**
+     * @var class-string<Model>
+     */
     protected string $modelClass = Model::class;
 
     /**
-     * @var array $relationshipTypes The relationship types for testing.
+     * @var array<string, mixed> The relationship types for testing.
      */
     protected array $relationshipTypes = [
         'belongsTo' => [],
@@ -85,17 +87,15 @@ abstract class ModelCase extends OrchestraTestCase
 
     /**
      * Get the FQDN of the model class.
+     *
+     * @return class-string<Model> Returns the FQDN to the model class.
      */
     protected function getModelClass(): string
     {
         return $this->modelClass;
     }
 
-    ############################################################################
-    #
-    # Verify: instance
-    #
-    ############################################################################
+    // Verify: instance
 
     public function test_model_instance(): void
     {
@@ -106,24 +106,17 @@ abstract class ModelCase extends OrchestraTestCase
         $this->assertInstanceOf($modelClass, $instance);
     }
 
-    ############################################################################
-    #
-    # Verify: relationships
-    #
-    ############################################################################
+    // Verify: relationships
 
     /**
      * Verify a model relationship.
-     *
-     * @return boolean
      */
     protected function verifyRelationship(string $relationshipType, string $accessor): bool
     {
         $hasRelationshipType = is_string($relationshipType)
             && isset($this->relationshipTypes[$relationshipType])
-            && !empty($this->{$relationshipType})
-            && in_array($accessor, $this->{$relationshipType})
-        ;
+            && ! empty($this->{$relationshipType})
+            && in_array($accessor, $this->{$relationshipType});
         // dump([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,
@@ -149,7 +142,7 @@ abstract class ModelCase extends OrchestraTestCase
         //     'hasOne' => $this->hasOne,
         // ]);
 
-        if (!$hasRelationshipType) {
+        if (! $hasRelationshipType) {
             $error = sprintf('Invalid relationship: %1$s', json_encode([
                 '$modelClass' => $this->getModelClass(),
                 '$relationshipType' => $relationshipType,
@@ -161,16 +154,19 @@ abstract class ModelCase extends OrchestraTestCase
             return false;
         }
 
+        /**
+         * @var class-string<BelongsTo|BelongsToMany|HasMany|HasOne|MorphToMany>
+         */
         $relationshipTypeClass = null;
-        if ('belongsTo' === $relationshipType) {
+        if ($relationshipType === 'belongsTo') {
             $relationshipTypeClass = BelongsTo::class;
-        } elseif ('belongsToMany' === $relationshipType) {
+        } elseif ($relationshipType === 'belongsToMany') {
             $relationshipTypeClass = BelongsToMany::class;
-        } elseif ('hasMany' === $relationshipType) {
+        } elseif ($relationshipType === 'hasMany') {
             $relationshipTypeClass = HasMany::class;
-        } elseif ('hasOne' === $relationshipType) {
+        } elseif ($relationshipType === 'hasOne') {
             $relationshipTypeClass = HasOne::class;
-        } elseif ('morphToMany' === $relationshipType) {
+        } elseif ($relationshipType === 'morphToMany') {
             $relationshipTypeClass = MorphToMany::class;
         }
 
@@ -202,7 +198,7 @@ abstract class ModelCase extends OrchestraTestCase
     /**
      * Verify a model relationship.
      *
-     * @return array Returns an array of boolean results for the relationship types.
+     * @return array<string, mixed> Returns an array of boolean results for the relationship types.
      */
     protected function verifyRelationships(): array
     {
@@ -223,13 +219,14 @@ abstract class ModelCase extends OrchestraTestCase
         //     // '$this' => $this,
         // ]);
 
-        if (!$this->hasRelationships) {
+        if (! $this->hasRelationships) {
             // At least one test must be completed.
             $this->assertEmpty($this->belongsTo, 'Expecting belongsTo to be empty.');
             $this->assertEmpty($this->belongsToMany, 'Expecting belongsToMany to be empty.');
             $this->assertEmpty($this->hasMany, 'Expecting hasMany to be empty.');
             $this->assertEmpty($this->hasOne, 'Expecting hasOne to be empty.');
             $this->assertEmpty($this->morphToMany, 'Expecting morphToMany to be empty.');
+
             return $results;
         }
 
@@ -256,11 +253,7 @@ abstract class ModelCase extends OrchestraTestCase
         return $results;
     }
 
-    ############################################################################
-    #
-    # Test: relationships
-    #
-    ############################################################################
+    // Test: relationships
 
     /**
      * Test the model relationships.

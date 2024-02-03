@@ -1,16 +1,14 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Test\Feature\Http\Controllers\Resource;
 
-namespace GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource;
-
-use GammaMatrix\Playground\Test\Models\User;
-use GammaMatrix\Playground\Test\Models\UserWithRole;
+use Playground\Test\Models\User;
+use Playground\Test\Models\UserWithRole;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait
- *
+ * \Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait
  */
 trait DestroyTrait
 {
@@ -199,7 +197,7 @@ trait DestroyTrait
         $_return_url = route($this->packageInfo['model_route'], [
             'filter' => [
                 'trash' => 'with',
-            ]
+            ],
         ]);
 
         $url = route(sprintf(

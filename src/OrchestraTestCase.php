@@ -1,16 +1,13 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Test;
+namespace Playground\Test;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
 /**
- * \GammaMatrix\Playground\Test\OrchestraTestCase
- *
+ * \Playground\Test\OrchestraTestCase
  */
 abstract class OrchestraTestCase extends Orchestra
 {

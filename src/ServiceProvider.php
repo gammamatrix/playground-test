@@ -1,17 +1,14 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Playground\Test;
 
-namespace GammaMatrix\Playground\Test;
-
-// use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
+use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * \GammaMatrix\Playground\Test\ServiceProvider
- *
+ * \Playground\Test\ServiceProvider
  */
 class ServiceProvider extends BaseServiceProvider
 {
@@ -29,25 +26,46 @@ class ServiceProvider extends BaseServiceProvider
     {
         $config = config('playground-test');
 
-        if (!empty($config) && $this->app->runningInConsole()) {
+        if (! empty($config) && $this->app->runningInConsole()) {
             // Publish configuration
             $this->publishes([
-                dirname(__DIR__).'/config/playground-test.php'
-                    => config_path('playground-test.php')
+                dirname(__DIR__).'/config/playground-test.php' => config_path('playground-test.php'),
             ], 'playground-config');
         }
+
+        $this->about();
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function about(): void
+    {
+        $config = config($this->package);
+        $config = is_array($config) ? $config : [];
+
+        $users = ! empty($config['users']) && is_array($config['users']) ? $config['users'] : [];
+        $testPassword = ! empty($config['password']) && is_string($config['password']) ? str_repeat('*', strlen($config['password'])) : '';
+        $testPasswordEncrypted = ! empty($config['password_encrypted']);
+
+        $version = $this->version();
+
+        AboutCommand::add('Playground: Test', fn () => [
+            '<fg=yellow;options=bold>PLAYGROUND_TEST_PASSWORD_ENCRYPTED</>' => $testPasswordEncrypted ? '<fg=green;options=bold>ENCRYPTED</>' : '<fg=yellow;options=bold>PLAIN TEXT</>',
+            '<fg=green;options=bold>User</> Lists' => sprintf('[%s]', implode(', ', array_keys($users))),
+            '<fg=green;options=bold>PLAYGROUND_TEST_PASSWORD</> Save' => sprintf('[%s]', $testPassword),
+            'Package' => $this->package,
+            'Version' => $version,
+        ]);
+    }
+
+    public function register(): void
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/config/playground-test.php',
-            'playground-test'
+            sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package),
+            $this->package
         );
+    }
+
+    public function version(): string
+    {
+        return static::VERSION;
     }
 }

@@ -1,16 +1,14 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Test\Feature\Http\Controllers\Resource;
 
-namespace GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource;
-
-use GammaMatrix\Playground\Test\Models\User;
-use GammaMatrix\Playground\Test\Models\UserWithRole;
+use Playground\Test\Models\User;
+use Playground\Test\Models\UserWithRole;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait
- *
+ * \Playground\Test\Feature\Http\Controllers\Resource\LockTrait
  */
 trait LockTrait
 {

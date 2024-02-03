@@ -1,14 +1,11 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Test;
+namespace Playground\Test;
 
 /**
- * \GammaMatrix\Playground\Test\SqlTrait
- *
+ * \Playground\Test\SqlTrait
  */
 trait SqlTrait
 {

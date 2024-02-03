@@ -17,7 +17,7 @@ composer require --dev gammamatrix/playground-test
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="GammaMatrix\Playground\Test\ServiceProvider" --tag="playground-config"
+php artisan vendor:publish --provider="Playground\Test\ServiceProvider" --tag="playground-config"
 ```
 
 See the contents of the published config file: [config/playground-test.php](config/playground-test.php)

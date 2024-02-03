@@ -1,28 +1,33 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges;
 
-namespace Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges;
-
-use Tests\Unit\GammaMatrix\Playground\Test\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use Playground\Test\Models\Traits\UserPrivileges;
+use Playground\Test\Models\UserWithRoleAndRolesAndPrivileges;
+use Tests\Unit\Playground\Test\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\ModelTest
- *
+ * \Tests\Unit\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\ModelTest
  */
+#[CoversClass(UserWithRoleAndRolesAndPrivileges::class)]
+#[CoversClass(UserPrivileges::class)]
 class ModelTest extends TestCase
 {
     /**
-     * @var string
+     * @var class-string<UserWithRoleAndRolesAndPrivileges>
      */
-    public const MODEL_CLASS = \GammaMatrix\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges::class;
+    public const MODEL_CLASS = UserWithRoleAndRolesAndPrivileges::class;
 
-    public function test_getAttributes()
+    public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var UserWithRoleAndRolesAndPrivileges $instance
+         */
         $instance = new $mc();
 
         $expected = [

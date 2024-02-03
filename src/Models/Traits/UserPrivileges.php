@@ -1,14 +1,16 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Test\Models\Traits;
+namespace Playground\Test\Models\Traits;
 
 /**
- * \GammaMatrix\Playground\Test\Models\Traits\UserPrivileges
+ * \Playground\Test\Models\Traits\UserPrivileges
  *
+ * @property string $password
+ * @property string $role
+ * @property array<int, string> $roles
+ * @property array<int, string> $privileges
  */
 trait UserPrivileges
 {
@@ -17,11 +19,11 @@ trait UserPrivileges
     /**
      * Checks to see if the user has the privilege.
      *
-     * @param string $privilege The privilege to check.
+     * @param ?string $privilege The privilege to check.
      */
-    public function hasPrivilege($privilege): bool
+    public function hasPrivilege(mixed $privilege): bool
     {
-        if (empty($privilege) || !is_string($privilege)) {
+        if (empty($privilege) || ! is_string($privilege)) {
             return false;
         }
 
@@ -33,11 +35,11 @@ trait UserPrivileges
     /**
      * Checks to see if the user has the role.
      *
-     * @param string $role The role to check.
+     * @param ?string $role The role to check.
      */
-    public function hasRole($role): bool
+    public function hasRole(mixed $role): bool
     {
-        if (empty($role) || !is_string($role)) {
+        if (empty($role) || ! is_string($role)) {
             return false;
         }
 
@@ -52,13 +54,11 @@ trait UserPrivileges
 
     /**
      * Checks to see if the user is an admin.
-     *
      */
     public function isAdmin(): bool
     {
         return $this->hasRole('admin')
             || $this->hasRole('wheel')
-            || 'root' === $this->getAttribute('role')
-        ;
+            || $this->getAttribute('role') === 'root';
     }
 }

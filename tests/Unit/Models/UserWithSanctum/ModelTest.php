@@ -1,28 +1,31 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Test\Models\UserWithSanctum;
 
-namespace Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithSanctum;
-
-use Tests\Unit\GammaMatrix\Playground\Test\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use Playground\Test\Models\UserWithSanctum;
+use Tests\Unit\Playground\Test\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithSanctum\ModelTest
- *
+ * \Tests\Unit\Playground\Test\Models\UserWithSanctum\ModelTest
  */
+#[CoversClass(UserWithSanctum::class)]
 class ModelTest extends TestCase
 {
     /**
-     * @var string
+     * @var class-string<UserWithSanctum>
      */
-    public const MODEL_CLASS = \GammaMatrix\Playground\Test\Models\UserWithSanctum::class;
+    public const MODEL_CLASS = UserWithSanctum::class;
 
-    public function test_getAttributes()
+    public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
+        /**
+         * @var UserWithSanctum $instance
+         */
         $instance = new $mc();
 
         $expected = [

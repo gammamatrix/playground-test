@@ -1,21 +1,20 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Database\Factories\Playground\Test\Models;
 
-namespace Database\Factories\GammaMatrix\Playground\Test\Models;
+use Playground\Test\Models\UserWithSanctum;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Test\Models\UserWithSanctumFactory
- *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Test\Models\UserWithSanctum>
+ * \Database\Factories\Playground\Test\Models\UserWithSanctumFactory
  */
 class UserWithSanctumFactory extends AbstractUserFactory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<UserWithSanctum>
      */
-    protected $model = \GammaMatrix\Playground\Test\Models\UserWithSanctum::class;
+    protected $model = UserWithSanctum::class;
 }

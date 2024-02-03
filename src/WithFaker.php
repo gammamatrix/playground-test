@@ -2,25 +2,24 @@
 /**
  * Laravel
  */
-
-namespace GammaMatrix\Playground\Test;
+namespace Playground\Test;
 
 use Faker\Factory;
 use Faker\Generator;
 
 /**
- * \GammaMatrix\Playground\Test\WithFaker
- *
+ * \Playground\Test\WithFaker
  */
 trait WithFaker
 {
-    protected $faker;
+    protected ?Generator $faker;
 
-    protected function faker(string $locale = null)
+    protected function faker(string $locale = null): Generator
     {
-        if (!$this->faker) {
+        if (! $this->faker) {
             $this->faker = Factory::create($locale ?? Factory::DEFAULT_LOCALE);
         }
+
         return $this->faker;
     }
 }

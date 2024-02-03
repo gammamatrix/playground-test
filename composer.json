@@ -19,8 +19,11 @@
     "require": {
         "php": "^8.1",
         "fakerphp/faker": "^1.9.1",
-        "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^10.1",
+        "friendsofphp/php-cs-fixer": "^3.41",
+        "larastan/larastan": "^2.0",
+        "orchestra/testbench": "8.*",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "phpunit/phpunit": "10.5.*",
         "timacdonald/log-fake": "^2.0.1",
         "laravel/sanctum": "^3.3"
     },
@@ -31,14 +34,14 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Database\\Factories\\GammaMatrix\\Playground\\Test\\Models\\": "database/factories/",
-            "GammaMatrix\\Playground\\Test\\": "src/"
+            "Database\\Factories\\Playground\\Test\\Models\\": "database/factories/",
+            "Playground\\Test\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Unit\\GammaMatrix\\Playground\\Test\\": "tests/Unit/",
-            "Tests\\Feature\\GammaMatrix\\Playground\\Test\\": "tests/Feature/"
+            "Tests\\Unit\\Playground\\Test\\": "tests/Unit/",
+            "Tests\\Feature\\Playground\\Test\\": "tests/Feature/"
         }
     },
     "config": {
@@ -47,13 +50,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "GammaMatrix\\Playground\\Test\\ServiceProvider"
+                "Playground\\Test\\ServiceProvider"
             ]
         }
     },
     "scripts": {
-        "test": "phpunit",
-        "format": "php-cs-fixer fix --allow-risky=yes",
-        "analyse": "phpstan analyse"
+        "test": "vendor/bin/phpunit",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max"
     }
 }

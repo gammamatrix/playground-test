@@ -1,16 +1,13 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Test\Feature\Http\Controllers\Resource;
 
-namespace GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource;
-
-use GammaMatrix\Playground\Test\Models\User;
-use Tests\Feature\GammaMatrix\Playground\Matrix\Resource\TestCase;
+use Playground\Test\Models\User;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait
- *
+ * \Playground\Test\Feature\Http\Controllers\Resource\EditTrait
  */
 trait EditTrait
 {

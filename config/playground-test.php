@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'password' => (string) env('PLAYGROUND_TEST_PASSWORD', 'password'),
+    'password' => env('PLAYGROUND_TEST_PASSWORD', 'password'),
     'password_encrypted' => (bool) env('PLAYGROUND_TEST_PASSWORD_ENCRYPTED', false),
     'users' => [
         'admin' => [

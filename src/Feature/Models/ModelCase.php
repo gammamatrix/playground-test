@@ -1,12 +1,10 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Playground\Test\Feature\Models;
 
-namespace GammaMatrix\Playground\Test\Feature\Models;
-
-use GammaMatrix\Playground\Test\OrchestraTestCase;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -14,9 +12,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Log;
+use Playground\Test\OrchestraTestCase;
 
 /**
- * \GammaMatrix\Playground\Test\Feature\Models\ModelCase
+ * \Playground\Test\Feature\Models\ModelCase
  *
  * NOTE Set the model: protected string $modelClass = Model::class;
  */
@@ -25,43 +24,47 @@ abstract class ModelCase extends OrchestraTestCase
     use DatabaseTransactions;
 
     /**
-     * @var boolean $hasRelationships A model must be marked as not having relationships.
+     * @var bool A model must be marked as not having relationships.
+     *
      * @see testVerifyRelationships()
      */
     protected bool $hasRelationships = true;
 
     /**
-     * @var array $belongsTo Test belongsTo relationships.
+     * @var array<string, array<string, mixed>> Test belongsTo relationships.
      */
     protected array $belongsTo = [
         // 'type' => ['use' => 'type', 'rule' => '_first', 'modelClass' => \Mods\Dam\Models\DamAssetType::class],
     ];
 
     /**
-     * @var array $belongsToMany Test belongsToMany relationships.
+     * @var array<string, array<string, mixed>> Test belongsToMany relationships.
      */
     protected array $belongsToMany = [
         // 'tags' => ['use' => 'factory', 'rule' => '_first', 'modelClass' => \Mods\Dam\Models\DamAssetTag::class],
     ];
 
     /**
-     * @var array $hasMany Test hasMany relationships.
+     * @var array<string, array<string, mixed>> Test hasMany relationships.
      */
     protected array $hasMany = [
         // 'lines' => ['key' => 'cart_id', 'modelClass' => \App\Models\Cartline::class],
     ];
 
     /**
-     * @var array $hasOne Test hasOne relationships.
+     * @var array<string, array<string, mixed>> Test hasOne relationships.
      */
     protected array $hasOne = [
         // 'coupon' => ['key' => 'coupon_id', 'rule' => 'create', 'modelClass' => \App\Coupon::class],
     ];
 
+    /**
+     * @var class-string<Model>
+     */
     protected string $modelClass = Model::class;
 
     /**
-     * @var array $relationshipTypes The relationship types for testing.
+     * @var array<string, mixed> The relationship types for testing.
      */
     protected $relationshipTypes = [
         'belongsTo' => [],
@@ -71,9 +74,10 @@ abstract class ModelCase extends OrchestraTestCase
     ];
 
     /**
-    * @var boolean $verifyRelationshipModel Verify the relationship model has the expected models.
-    * @see testVerifyRelationships()
-    */
+     * @var bool Verify the relationship model has the expected models.
+     *
+     * @see testVerifyRelationships()
+     */
     protected $verifyRelationshipModel = true;
 
     protected function getModel(): Model
@@ -86,18 +90,18 @@ abstract class ModelCase extends OrchestraTestCase
     /**
      * Get the model class.
      *
-     * @return string Returns the FQDN to the model class.
+     * @return class-string<Model>
      */
     protected function getModelClass(): string
     {
         return $this->modelClass;
     }
 
-    ############################################################################
-    #
-    # Verify: instance
-    #
-    ############################################################################
+    //###########################################################################
+    //
+    // Verify: instance
+    //
+    //###########################################################################
 
     public function test_model_instance(): void
     {
@@ -116,23 +120,21 @@ abstract class ModelCase extends OrchestraTestCase
         $this->assertInstanceOf($modelClass, $instance);
     }
 
-    ############################################################################
-    #
-    # Verify: relationships
-    #
-    ############################################################################
+    //###########################################################################
+    //
+    // Verify: relationships
+    //
+    //###########################################################################
 
     /**
      * Verify a model relationship.
-     *
      */
     public function verifyRelationship(string $relationshipType, string $accessor): bool
     {
         $hasRelationshipType = is_string($relationshipType)
             && isset($this->relationshipTypes[$relationshipType])
-            && !empty($this->{$relationshipType})
-            && isset($this->{$relationshipType}[$accessor])
-        ;
+            && ! empty($this->{$relationshipType})
+            && isset($this->{$relationshipType}[$accessor]);
         // dump([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,
@@ -158,7 +160,7 @@ abstract class ModelCase extends OrchestraTestCase
         //     'hasOne' => $this->hasOne,
         // ]);
 
-        if (!$hasRelationshipType) {
+        if (! $hasRelationshipType) {
             $error = sprintf('Invalid relationship: %1$s', json_encode([
                 '$modelClass' => $this->getModelClass(),
                 '$relationshipType' => $relationshipType,
@@ -170,14 +172,17 @@ abstract class ModelCase extends OrchestraTestCase
             return false;
         }
 
+        /**
+         * @var class-string<BelongsTo|BelongsToMany|HasMany|HasOne>
+         */
         $relationshipTypeClass = null;
-        if ('belongsTo' === $relationshipType) {
+        if ($relationshipType === 'belongsTo') {
             $relationshipTypeClass = BelongsTo::class;
-        } elseif ('belongsToMany' === $relationshipType) {
+        } elseif ($relationshipType === 'belongsToMany') {
             $relationshipTypeClass = BelongsToMany::class;
-        } elseif ('hasMany' === $relationshipType) {
+        } elseif ($relationshipType === 'hasMany') {
             $relationshipTypeClass = HasMany::class;
-        } elseif ('hasOne' === $relationshipType) {
+        } elseif ($relationshipType === 'hasOne') {
             $relationshipTypeClass = HasOne::class;
         }
 
@@ -186,9 +191,17 @@ abstract class ModelCase extends OrchestraTestCase
 
         $modelClass = $this->getModelClass();
 
-        $model = $modelClass::factory()->create();
+        if (! in_array(HasFactory::class, class_uses_recursive($modelClass))) {
+            $model = $modelClass::factory()->create();
+        } else {
+            Log::error('Expecting the model to implement HasFactory', [
+                '$modelClass' => $modelClass,
+            ]);
 
-        if (!$this->verifyRelationshipModel) {
+            return false;
+        }
+
+        if (! $this->verifyRelationshipModel) {
             // All done.
             return true;
         }
@@ -213,11 +226,11 @@ abstract class ModelCase extends OrchestraTestCase
         //     'hasMany' => $this->hasMany,
         // ]);
         //
-        if ('belongsTo' === $relationshipType) {
-        } elseif ('belongsToMany' === $relationshipType) {
-        } elseif ('hasMany' === $relationshipType) {
+        if ($relationshipType === 'belongsTo') {
+        } elseif ($relationshipType === 'belongsToMany') {
+        } elseif ($relationshipType === 'hasMany') {
             $this->verifyRelationshipHasMany($model, $accessor);
-        } elseif ('hasOne' === $relationshipType) {
+        } elseif ($relationshipType === 'hasOne') {
             $this->verifyRelationshipHasOne($model, $accessor);
         }
 
@@ -227,9 +240,9 @@ abstract class ModelCase extends OrchestraTestCase
     /**
      * Verify a model relationship.
      *
-     * @return array Returns an array of boolean results for the relationship types.
+     * @return array<string, mixed> Returns an array of boolean results for the relationship types.
      */
-    public function verifyRelationships()
+    public function verifyRelationships(): array
     {
         $results = [
             'belongsTo' => [],
@@ -247,12 +260,13 @@ abstract class ModelCase extends OrchestraTestCase
         //     // '$this' => $this,
         // ]);
 
-        if (!$this->hasRelationships) {
+        if (! $this->hasRelationships) {
             // At least one test must be completed.
             $this->assertEmpty($this->belongsTo, 'Expecting belongsTo to be empty.');
             $this->assertEmpty($this->belongsToMany, 'Expecting belongsToMany to be empty.');
             $this->assertEmpty($this->hasMany, 'Expecting hasMany to be empty.');
             $this->assertEmpty($this->hasOne, 'Expecting hasOne to be empty.');
+
             return $results;
         }
 
@@ -277,25 +291,22 @@ abstract class ModelCase extends OrchestraTestCase
 
     /**
      * Verify a HasOne model relationship.
-     *
      */
     public function verifyRelationshipHasOne(Model $model, string $accessor): void
     {
         $hasAccessor = isset($this->hasOne[$accessor])
             && is_array($this->hasOne[$accessor])
-            && !empty($this->hasOne[$accessor])
+            && ! empty($this->hasOne[$accessor])
             && isset($this->hasOne[$accessor]['key'])
             && is_string($this->hasOne[$accessor]['key'])
-            && !empty($this->hasOne[$accessor]['key'])
-            // && isset($this->hasOne[$accessor]['use'])
-            // && is_string($this->hasOne[$accessor]['use'])
-        ;
+            && ! empty($this->hasOne[$accessor]['key']);
+        // && isset($this->hasOne[$accessor]['use'])
+        // && is_string($this->hasOne[$accessor]['use'])
         $hasModelClass = $hasAccessor
             && isset($this->hasOne[$accessor]['modelClass'])
             && is_string($this->hasOne[$accessor]['modelClass'])
-            && !empty($this->hasOne[$accessor]['modelClass'])
-            && class_exists($this->hasOne[$accessor]['modelClass'])
-        ;
+            && ! empty($this->hasOne[$accessor]['modelClass'])
+            && class_exists($this->hasOne[$accessor]['modelClass']);
 
         $this->assertTrue($hasModelClass, sprintf(
             'Expecting the HasOne accessor [%1$s] to have a {use, key, modelClass} in %2$s::$hasOne[%1$s][modelClass]',
@@ -305,9 +316,8 @@ abstract class ModelCase extends OrchestraTestCase
 
         $rule = isset($this->hasOne[$accessor]['rule'])
             && is_string($this->hasOne[$accessor]['rule'])
-            && !empty($this->hasOne[$accessor]['rule'])
-            ? $this->hasOne[$accessor]['rule'] : ''
-        ;
+            && ! empty($this->hasOne[$accessor]['rule'])
+            ? $this->hasOne[$accessor]['rule'] : '';
         // dd([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,
@@ -315,9 +325,17 @@ abstract class ModelCase extends OrchestraTestCase
         //     '$this->hasOne[$accessor]' => $this->hasOne[$accessor],
         // ]);
 
+        /**
+         * @var string $key
+         */
+        $key = $hasAccessor ? $this->hasOne[$accessor]['key'] : '';
+
+        /**
+         * @var class-string<Model> $modelClass
+         */
         $modelClass = $this->hasOne[$accessor]['modelClass'];
 
-        if ('first' === $rule) {
+        if ($rule === 'first') {
             $m = $modelClass::first();
         } else {
             $m = $modelClass::factory()->create();
@@ -329,28 +347,30 @@ abstract class ModelCase extends OrchestraTestCase
         //     '__LINE__' => __LINE__,
         //     '$m' => $m,
         // ]);
-        $this->assertInstanceOf($this->hasOne[$accessor]['modelClass'], $m, sprintf(
+        $this->assertInstanceOf($modelClass, $m, sprintf(
             'Expecting the created HasOne model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
             $accessor,
-            $this->hasOne[$accessor]['modelClass'],
-            $m ? get_class($m) : $m,
+            $modelClass,
+            is_object($m) ? get_class($m) : gettype($m),
             get_called_class()
         ));
 
-        $model->setAttribute($this->hasOne[$accessor]['key'], $m->id);
+        $model->setAttribute($key, $m->getAttribute('id'));
 
         if ($model->save()) {
             $model->refresh();
         }
 
         $this->assertSame(
-            strval($model->getAttributeValue($this->hasOne[$accessor]['key'])),
-            strval($m->id),
+            // strval($model->getAttributeValue($key)),
+            $model->getAttributeValue($key),
+            $m->getAttributeValue('id'),
+            // strval($m->id),
             sprintf(
                 'Expecting the created HasOne model for the accessor [%1$s] to have m->id === model->%2$s - modelClass: %3$s - %4$s - %5$s',
                 $accessor,
-                $this->hasOne[$accessor]['key'],
-                $this->hasOne[$accessor]['modelClass'],
+                $key,
+                $modelClass,
                 get_class($m),
                 get_called_class()
             )
@@ -358,21 +378,21 @@ abstract class ModelCase extends OrchestraTestCase
 
         $o = $model->{$accessor}()->first();
 
-        $this->assertInstanceOf($this->hasOne[$accessor]['modelClass'], $o, sprintf(
+        $this->assertInstanceOf($modelClass, $o, sprintf(
             'Expecting the created HasOne model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
             $accessor,
-            $this->hasOne[$accessor]['modelClass'],
+            $modelClass,
             $o ? get_class($o) : gettype($o),
             get_called_class()
         ));
         $this->assertSame(
-            $o->id,
-            $m->id,
+            $o->getAttributeValue('id'),
+            $m->getAttributeValue('id'),
             sprintf(
                 'Expecting the created HasOne model for the accessor [%1$s] to have m->id === o->id - modelClass: %3$s - %4$s - %5$s',
                 $accessor,
-                $this->hasOne[$accessor]['key'],
-                $this->hasOne[$accessor]['modelClass'],
+                $key,
+                $modelClass,
                 get_class($o),
                 get_called_class()
             )
@@ -381,28 +401,29 @@ abstract class ModelCase extends OrchestraTestCase
 
     /**
      * Verify a HasMany model relationship.
-     *
      */
-    public function verifyRelationshipHasMany(Model $model, string $accessor)
+    public function verifyRelationshipHasMany(Model $model, string $accessor): void
     {
         $hasAccessor = isset($this->hasMany[$accessor])
             && is_array($this->hasMany[$accessor])
-            && !empty($this->hasMany[$accessor])
+            && ! empty($this->hasMany[$accessor])
             && isset($this->hasMany[$accessor]['key'])
             && is_string($this->hasMany[$accessor]['key'])
-            && !empty($this->hasMany[$accessor]['key'])
-            // && isset($this->hasMany[$accessor]['use'])
-            // && is_string($this->hasMany[$accessor]['use'])
-        ;
+            && ! empty($this->hasMany[$accessor]['key']);
+        // && isset($this->hasMany[$accessor]['use'])
+        // && is_string($this->hasMany[$accessor]['use'])
         $hasModelClass = $hasAccessor
             && isset($this->hasMany[$accessor]['modelClass'])
             && is_string($this->hasMany[$accessor]['modelClass'])
-            && !empty($this->hasMany[$accessor]['modelClass'])
-        ;
+            && ! empty($this->hasMany[$accessor]['modelClass']);
+
+        /**
+         * @var class-string<Model> $modelClass
+         */
+        $modelClass = $hasModelClass ? $this->hasMany[$accessor]['modelClass'] : '';
 
         $hasModelClassExists = $hasModelClass
-            && class_exists($this->hasMany[$accessor]['modelClass'])
-        ;
+            && class_exists($modelClass);
 
         $this->assertTrue($hasModelClassExists, sprintf(
             'Expecting the HasMany accessor [%1$s] to have {key, modelClass} in %2$s::$hasMany[%1$s] - %3$s',
@@ -413,36 +434,40 @@ abstract class ModelCase extends OrchestraTestCase
 
         $models = [];
 
+        /**
+         * @var string $key
+         */
+        $key = $hasAccessor ? $this->hasMany[$accessor]['key'] : '';
+
         // Create 3 models.
-        $modelClass = $this->hasMany[$accessor]['modelClass'];
         $models[] = $modelClass::factory()->create([
-            $this->hasMany[$accessor]['key'] => $model->id,
+            $key => $model->getAttributeValue('id'),
         ]);
 
         $models[] = $modelClass::factory()->create([
-            $this->hasMany[$accessor]['key'] => $model->id,
+            $key => $model->getAttributeValue('id'),
         ]);
 
         $models[] = $modelClass::factory()->create([
-            $this->hasMany[$accessor]['key'] => $model->id,
+            $key => $model->getAttributeValue('id'),
         ]);
 
         foreach ($model->{$accessor}()->get() as $m) {
-            $this->assertInstanceOf($this->hasMany[$accessor]['modelClass'], $m, sprintf(
+            $this->assertInstanceOf($modelClass, $m, sprintf(
                 'Expecting the created HasMany model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
                 $accessor,
-                $this->hasMany[$accessor]['modelClass'],
+                $modelClass,
                 get_class($m),
                 get_called_class()
             ));
             $this->assertSame(
-                $m->getAttributeValue($this->hasMany[$accessor]['key']),
-                $model->id,
+                $m->getAttributeValue($key),
+                $model->getAttributeValue('id'),
                 sprintf(
                     'Expecting the created HasMany model for the accessor [%1$s] to have model->id === m->%2$s - modelClass: %3$s - %4$s - %5$s',
                     $accessor,
-                    $this->hasMany[$accessor]['key'],
-                    $this->hasMany[$accessor]['modelClass'],
+                    $key,
+                    $modelClass,
                     get_class($m),
                     get_called_class()
                 )
@@ -470,15 +495,14 @@ abstract class ModelCase extends OrchestraTestCase
         // ]);
     }
 
-    ############################################################################
-    #
-    # Test: relationships
-    #
-    ############################################################################
+    //###########################################################################
+    //
+    // Test: relationships
+    //
+    //###########################################################################
 
     /**
      * Test the model relationships.
-     *
      */
     public function testVerifyRelationships(): void
     {
