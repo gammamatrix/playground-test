@@ -1,24 +1,24 @@
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\AbstractUser\Model)
+Model (Tests\Unit\Playground\Test\Models\AbstractUser\Model)
  [x] Get attributes
 
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\ModelCase\Model)
+Model (Tests\Unit\Playground\Test\Models\ModelCase\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithChildren\Model)
+Model (Tests\Unit\Playground\Test\Models\UserWithChildren\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndPrivileges\Model)
+Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\Model)
  [x] Get attributes
  [x] HasPrivilege is false without privilege
  [x] HasPrivilege is false with wrong privilege
  [x] HasPrivilege is true with correct privilege
 
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\Model)
+Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\Model)
  [x] Get attributes
 
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\Model)
+Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\Model)
  [x] Get attributes
  [x] HasRole is false without role
  [x] HasRole is true with matching role
@@ -30,9 +30,9 @@ Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithRoleAndRoles\Model)
  [x] IsAdmin is true with root role
  [x] IsAdmin is false with root secondary role
 
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\UserWithSanctum\Model)
+Model (Tests\Unit\Playground\Test\Models\UserWithSanctum\Model)
  [x] Get attributes
 
-Model (Tests\Unit\GammaMatrix\Playground\Test\Models\User\Model)
+Model (Tests\Unit\Playground\Test\Models\User\Model)
  [x] Get attributes
 

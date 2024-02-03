@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2023-12-01 05:07:49</timestamp>
+  <timestamp>2024-02-03 08:52:55</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>75</methodCount>
     <crapMethodCount>3</crapMethodCount>
-    <crapLoad>44</crapLoad>
-    <totalCrap>913.84</totalCrap>
+    <crapLoad>48</crapLoad>
+    <totalCrap>1034.65</totalCrap>
     <crapMethodPercent>4</crapMethodPercent>
   </stats>
   <methods>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
       <methodName>test_guest_cannot_render_create_view</methodName>
       <methodSignature>test_guest_cannot_render_create_view()</methodSignature>
       <fullMethod>test_guest_cannot_render_create_view()</fullMethod>
@@ -23,8 +23,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
       <methodName>test_create_view_rendered_by_user_with_return_url</methodName>
       <methodSignature>test_create_view_rendered_by_user_with_return_url()</methodSignature>
       <fullMethod>test_create_view_rendered_by_user_with_return_url()</fullMethod>
@@ -34,8 +34,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
       <methodName>test_create_info_with_user_using_json</methodName>
       <methodSignature>test_create_info_with_user_using_json()</methodSignature>
       <fullMethod>test_create_info_with_user_using_json()</fullMethod>
@@ -45,8 +45,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\CreateTrait</className>
       <methodName>test_create_view_rendered_by_user_with_invalid_parameter</methodName>
       <methodSignature>test_create_view_rendered_by_user_with_invalid_parameter()</methodSignature>
       <fullMethod>test_create_view_rendered_by_user_with_invalid_parameter()</fullMethod>
@@ -56,8 +56,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_guest_cannot_destroy</methodName>
       <methodSignature>test_guest_cannot_destroy()</methodSignature>
       <fullMethod>test_guest_cannot_destroy()</fullMethod>
@@ -67,8 +67,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_destroy_as_standard_user_and_succeed</methodName>
       <methodSignature>test_destroy_as_standard_user_and_succeed()</methodSignature>
       <fullMethod>test_destroy_as_standard_user_and_succeed()</fullMethod>
@@ -78,8 +78,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_destroy_as_standard_user_and_succeed_with_force_delete</methodName>
       <methodSignature>test_destroy_as_standard_user_and_succeed_with_force_delete()</methodSignature>
       <fullMethod>test_destroy_as_standard_user_and_succeed_with_force_delete()</fullMethod>
@@ -89,8 +89,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_destroy_as_standard_user_using_json_and_succeed_with_no_content</methodName>
       <methodSignature>test_destroy_as_standard_user_using_json_and_succeed_with_no_content()</methodSignature>
       <fullMethod>test_destroy_as_standard_user_using_json_and_succeed_with_no_content()</fullMethod>
@@ -100,8 +100,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_destroy_as_standard_user_and_succeed_with_redirect_to_index_with_trash</methodName>
       <methodSignature>test_destroy_as_standard_user_and_succeed_with_redirect_to_index_with_trash()</methodSignature>
       <fullMethod>test_destroy_as_standard_user_and_succeed_with_redirect_to_index_with_trash()</fullMethod>
@@ -111,8 +111,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed</methodName>
       <methodSignature>test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()</methodSignature>
       <fullMethod>test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()</fullMethod>
@@ -122,8 +122,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_destroy_with_admin_role_and_succeed</methodName>
       <methodSignature>test_destroy_with_admin_role_and_succeed()</methodSignature>
       <fullMethod>test_destroy_with_admin_role_and_succeed()</fullMethod>
@@ -133,8 +133,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\DestroyTrait</className>
       <methodName>test_destroy_with_admin_role_and_succeed_with_force_delete</methodName>
       <methodSignature>test_destroy_with_admin_role_and_succeed_with_force_delete()</methodSignature>
       <fullMethod>test_destroy_with_admin_role_and_succeed_with_force_delete()</fullMethod>
@@ -144,8 +144,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
       <methodName>test_guest_cannot_render_edit_view</methodName>
       <methodSignature>test_guest_cannot_render_edit_view()</methodSignature>
       <fullMethod>test_guest_cannot_render_edit_view()</fullMethod>
@@ -155,8 +155,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
       <methodName>test_edit_view_rendered_by_user_with_return_url</methodName>
       <methodSignature>test_edit_view_rendered_by_user_with_return_url()</methodSignature>
       <fullMethod>test_edit_view_rendered_by_user_with_return_url()</fullMethod>
@@ -166,8 +166,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
       <methodName>test_edit_info_with_user_using_json</methodName>
       <methodSignature>test_edit_info_with_user_using_json()</methodSignature>
       <fullMethod>test_edit_info_with_user_using_json()</fullMethod>
@@ -177,8 +177,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\EditTrait</className>
       <methodName>test_edit_view_rendered_by_user_with_invalid_parameter</methodName>
       <methodSignature>test_edit_view_rendered_by_user_with_invalid_parameter()</methodSignature>
       <fullMethod>test_edit_view_rendered_by_user_with_invalid_parameter()</fullMethod>
@@ -188,8 +188,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\IndexTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\IndexTrait</className>
       <methodName>test_guest_cannot_render_index_view</methodName>
       <methodSignature>test_guest_cannot_render_index_view()</methodSignature>
       <fullMethod>test_guest_cannot_render_index_view()</fullMethod>
@@ -199,8 +199,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\IndexTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\IndexTrait</className>
       <methodName>test_index_view_rendered_by_user</methodName>
       <methodSignature>test_index_view_rendered_by_user()</methodSignature>
       <fullMethod>test_index_view_rendered_by_user()</fullMethod>
@@ -210,8 +210,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\IndexTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\IndexTrait</className>
       <methodName>test_index_info_with_user_using_json</methodName>
       <methodSignature>test_index_info_with_user_using_json()</methodSignature>
       <fullMethod>test_index_info_with_user_using_json()</fullMethod>
@@ -221,8 +221,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
       <methodName>test_guest_cannot_lock</methodName>
       <methodSignature>test_guest_cannot_lock()</methodSignature>
       <fullMethod>test_guest_cannot_lock()</fullMethod>
@@ -232,8 +232,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
       <methodName>test_lock_as_standard_user_and_succeed</methodName>
       <methodSignature>test_lock_as_standard_user_and_succeed()</methodSignature>
       <fullMethod>test_lock_as_standard_user_and_succeed()</fullMethod>
@@ -243,8 +243,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
       <methodName>test_lock_as_standard_user_using_json_and_succeed</methodName>
       <methodSignature>test_lock_as_standard_user_using_json_and_succeed()</methodSignature>
       <fullMethod>test_lock_as_standard_user_using_json_and_succeed()</fullMethod>
@@ -254,8 +254,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
       <methodName>test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc</methodName>
       <methodSignature>test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc()</methodSignature>
       <fullMethod>test_lock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc()</fullMethod>
@@ -265,8 +265,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
       <methodName>test_lock_with_user_role_and_get_denied</methodName>
       <methodSignature>test_lock_with_user_role_and_get_denied()</methodSignature>
       <fullMethod>test_lock_with_user_role_and_get_denied()</fullMethod>
@@ -276,8 +276,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
       <methodName>test_lock_with_admin_role_and_succeed</methodName>
       <methodSignature>test_lock_with_admin_role_and_succeed()</methodSignature>
       <fullMethod>test_lock_with_admin_role_and_succeed()</fullMethod>
@@ -287,8 +287,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\LockTrait</className>
       <methodName>test_lock_with_admin_role_and_succeed_with_json</methodName>
       <methodSignature>test_lock_with_admin_role_and_succeed_with_json()</methodSignature>
       <fullMethod>test_lock_with_admin_role_and_succeed_with_json()</fullMethod>
@@ -298,8 +298,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
       <methodName>test_guest_cannot_restore</methodName>
       <methodSignature>test_guest_cannot_restore()</methodSignature>
       <fullMethod>test_guest_cannot_restore()</fullMethod>
@@ -309,8 +309,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
       <methodName>test_restore_as_standard_user_and_succeed</methodName>
       <methodSignature>test_restore_as_standard_user_and_succeed()</methodSignature>
       <fullMethod>test_restore_as_standard_user_and_succeed()</fullMethod>
@@ -320,8 +320,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
       <methodName>test_restore_as_standard_user_using_json_and_succeed</methodName>
       <methodSignature>test_restore_as_standard_user_using_json_and_succeed()</methodSignature>
       <fullMethod>test_restore_as_standard_user_using_json_and_succeed()</fullMethod>
@@ -331,8 +331,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
       <methodName>test_restore_as_standard_user_and_succeed_with_redirect_to_index_with_only_trash</methodName>
       <methodSignature>test_restore_as_standard_user_and_succeed_with_redirect_to_index_with_only_trash()</methodSignature>
       <fullMethod>test_restore_as_standard_user_and_succeed_with_redirect_to_index_with_only_trash()</fullMethod>
@@ -342,8 +342,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
       <methodName>test_restore_with_user_role_and_get_denied</methodName>
       <methodSignature>test_restore_with_user_role_and_get_denied()</methodSignature>
       <fullMethod>test_restore_with_user_role_and_get_denied()</fullMethod>
@@ -353,8 +353,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait</className>
       <methodName>test_restore_with_admin_role_and_succeed</methodName>
       <methodSignature>test_restore_with_admin_role_and_succeed()</methodSignature>
       <fullMethod>test_restore_with_admin_role_and_succeed()</fullMethod>
@@ -364,8 +364,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\ShowTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\ShowTrait</className>
       <methodName>test_guest_cannot_render_show_view</methodName>
       <methodSignature>test_guest_cannot_render_show_view()</methodSignature>
       <fullMethod>test_guest_cannot_render_show_view()</fullMethod>
@@ -375,8 +375,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\ShowTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\ShowTrait</className>
       <methodName>test_show_view_rendered_by_user</methodName>
       <methodSignature>test_show_view_rendered_by_user()</methodSignature>
       <fullMethod>test_show_view_rendered_by_user()</fullMethod>
@@ -386,8 +386,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\ShowTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\ShowTrait</className>
       <methodName>test_show_info_with_user_using_json</methodName>
       <methodSignature>test_show_info_with_user_using_json()</methodSignature>
       <fullMethod>test_show_info_with_user_using_json()</fullMethod>
@@ -397,8 +397,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
       <methodName>test_guest_cannot_unlock</methodName>
       <methodSignature>test_guest_cannot_unlock()</methodSignature>
       <fullMethod>test_guest_cannot_unlock()</fullMethod>
@@ -408,8 +408,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
       <methodName>test_unlock_as_standard_user_and_succeed</methodName>
       <methodSignature>test_unlock_as_standard_user_and_succeed()</methodSignature>
       <fullMethod>test_unlock_as_standard_user_and_succeed()</fullMethod>
@@ -419,8 +419,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
       <methodName>test_unlock_as_standard_user_using_json_and_succeed</methodName>
       <methodSignature>test_unlock_as_standard_user_using_json_and_succeed()</methodSignature>
       <fullMethod>test_unlock_as_standard_user_using_json_and_succeed()</fullMethod>
@@ -430,8 +430,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
       <methodName>test_unlock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc</methodName>
       <methodSignature>test_unlock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()</methodSignature>
       <fullMethod>test_unlock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()</fullMethod>
@@ -441,8 +441,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
       <methodName>test_unlock_with_user_role_and_get_denied</methodName>
       <methodSignature>test_unlock_with_user_role_and_get_denied()</methodSignature>
       <fullMethod>test_unlock_with_user_role_and_get_denied()</fullMethod>
@@ -452,8 +452,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
       <methodName>test_unlock_with_admin_role_and_succeed</methodName>
       <methodSignature>test_unlock_with_admin_role_and_succeed()</methodSignature>
       <fullMethod>test_unlock_with_admin_role_and_succeed()</fullMethod>
@@ -463,8 +463,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource</package>
-      <className>GammaMatrix\Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
+      <package>Playground\Test\Feature\Http\Controllers\Resource</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait</className>
       <methodName>test_unlock_with_admin_role_and_succeed_with_json</methodName>
       <methodSignature>test_unlock_with_admin_role_and_succeed_with_json()</methodSignature>
       <fullMethod>test_unlock_with_admin_role_and_succeed_with_json()</fullMethod>
@@ -474,8 +474,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>getModel</methodName>
       <methodSignature>getModel(): Illuminate\Database\Eloquent\Model</methodSignature>
       <fullMethod>getModel(): Illuminate\Database\Eloquent\Model</fullMethod>
@@ -485,8 +485,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>getModelClass</methodName>
       <methodSignature>getModelClass(): string</methodSignature>
       <fullMethod>getModelClass(): string</fullMethod>
@@ -496,8 +496,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>test_model_instance</methodName>
       <methodSignature>test_model_instance(): void</methodSignature>
       <fullMethod>test_model_instance(): void</fullMethod>
@@ -507,52 +507,52 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>verifyRelationship</methodName>
       <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
       <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
-      <crap>210</crap>
-      <complexity>14</complexity>
+      <crap>240</crap>
+      <complexity>15</complexity>
       <coverage>0</coverage>
-      <crapLoad>14</crapLoad>
+      <crapLoad>15</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>verifyRelationships</methodName>
-      <methodSignature>verifyRelationships()</methodSignature>
-      <fullMethod>verifyRelationships()</fullMethod>
+      <methodSignature>verifyRelationships(): array</methodSignature>
+      <fullMethod>verifyRelationships(): array</fullMethod>
       <crap>42</crap>
       <complexity>6</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>verifyRelationshipHasOne</methodName>
       <methodSignature>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
       <fullMethod>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
-      <crap>306</crap>
-      <complexity>17</complexity>
+      <crap>342</crap>
+      <complexity>18</complexity>
       <coverage>0</coverage>
-      <crapLoad>17</crapLoad>
+      <crapLoad>18</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>verifyRelationshipHasMany</methodName>
-      <methodSignature>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor)</methodSignature>
-      <fullMethod>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor)</fullMethod>
-      <crap>156</crap>
-      <complexity>12</complexity>
+      <methodSignature>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
+      <fullMethod>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
+      <crap>210</crap>
+      <complexity>14</complexity>
       <coverage>0</coverage>
-      <crapLoad>12</crapLoad>
+      <crapLoad>14</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Feature\Models</package>
-      <className>GammaMatrix\Playground\Test\Feature\Models\ModelCase</className>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>testVerifyRelationships</methodName>
       <methodSignature>testVerifyRelationships(): void</methodSignature>
       <fullMethod>testVerifyRelationships(): void</fullMethod>
@@ -562,8 +562,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\MockingTrait</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\MockingTrait</className>
       <methodName>mockRequest</methodName>
       <methodSignature>mockRequest(string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</methodSignature>
       <fullMethod>mockRequest(string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</fullMethod>
@@ -573,8 +573,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\MockingTrait</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\MockingTrait</className>
       <methodName>invokeProtected</methodName>
       <methodSignature>invokeProtected($out, $method, array $params): mixed</methodSignature>
       <fullMethod>invokeProtected($out, $method, array $params): mixed</fullMethod>
@@ -584,8 +584,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\MockingTrait</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\MockingTrait</className>
       <methodName>setProtected</methodName>
       <methodSignature>setProtected($out, string $property, mixed $value): void</methodSignature>
       <fullMethod>setProtected($out, string $property, mixed $value): void</fullMethod>
@@ -595,8 +595,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models\Traits</package>
-      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models\Traits</package>
+      <className>Playground\Test\Models\Traits\UserPrivileges</className>
       <methodName>getAttribute</methodName>
       <methodSignature>getAttribute($key)</methodSignature>
       <fullMethod>getAttribute($key)</fullMethod>
@@ -606,30 +606,30 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models\Traits</package>
-      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models\Traits</package>
+      <className>Playground\Test\Models\Traits\UserPrivileges</className>
       <methodName>hasPrivilege</methodName>
-      <methodSignature>hasPrivilege($privilege): bool</methodSignature>
-      <fullMethod>hasPrivilege($privilege): bool</fullMethod>
+      <methodSignature>hasPrivilege(mixed $privilege): bool</methodSignature>
+      <fullMethod>hasPrivilege(mixed $privilege): bool</fullMethod>
       <crap>4</crap>
       <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models\Traits</package>
-      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models\Traits</package>
+      <className>Playground\Test\Models\Traits\UserPrivileges</className>
       <methodName>hasRole</methodName>
-      <methodSignature>hasRole($role): bool</methodSignature>
-      <fullMethod>hasRole($role): bool</fullMethod>
+      <methodSignature>hasRole(mixed $role): bool</methodSignature>
+      <fullMethod>hasRole(mixed $role): bool</fullMethod>
       <crap>5</crap>
       <complexity>5</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models\Traits</package>
-      <className>GammaMatrix\Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models\Traits</package>
+      <className>Playground\Test\Models\Traits\UserPrivileges</className>
       <methodName>isAdmin</methodName>
       <methodSignature>isAdmin(): bool</methodSignature>
       <fullMethod>isAdmin(): bool</fullMethod>
@@ -639,8 +639,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models</package>
-      <className>GammaMatrix\Playground\Test\Models\UserWithChildren</className>
+      <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\UserWithChildren</className>
       <methodName>children</methodName>
       <methodSignature>children(): Illuminate\Database\Eloquent\Relations\HasMany</methodSignature>
       <fullMethod>children(): Illuminate\Database\Eloquent\Relations\HasMany</fullMethod>
@@ -650,8 +650,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models</package>
-      <className>GammaMatrix\Playground\Test\Models\UserWithChildren</className>
+      <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\UserWithChildren</className>
       <methodName>parent</methodName>
       <methodSignature>parent(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>parent(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
@@ -661,19 +661,19 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models</package>
-      <className>GammaMatrix\Playground\Test\Models\UserWithRole</className>
+      <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\UserWithRole</className>
       <methodName>hasRole</methodName>
-      <methodSignature>hasRole($role): bool</methodSignature>
-      <fullMethod>hasRole($role): bool</fullMethod>
+      <methodSignature>hasRole(mixed $role): bool</methodSignature>
+      <fullMethod>hasRole(mixed $role): bool</fullMethod>
       <crap>20</crap>
       <complexity>4</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Models</package>
-      <className>GammaMatrix\Playground\Test\Models\UserWithRole</className>
+      <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\UserWithRole</className>
       <methodName>isAdmin</methodName>
       <methodSignature>isAdmin(): bool</methodSignature>
       <fullMethod>isAdmin(): bool</fullMethod>
@@ -683,8 +683,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\ServiceProvider</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\ServiceProvider</className>
       <methodName>boot</methodName>
       <methodSignature>boot()</methodSignature>
       <fullMethod>boot()</fullMethod>
@@ -694,8 +694,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\ServiceProvider</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\ServiceProvider</className>
       <methodName>register</methodName>
       <methodSignature>register()</methodSignature>
       <fullMethod>register()</fullMethod>
@@ -705,8 +705,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\SqlTrait</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\SqlTrait</className>
       <methodName>setUp</methodName>
       <methodSignature>setUp(): void</methodSignature>
       <fullMethod>setUp(): void</fullMethod>
@@ -716,8 +716,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\SqlTrait</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\SqlTrait</className>
       <methodName>replace_quotes</methodName>
       <methodSignature>replace_quotes(string $sql): string</methodSignature>
       <fullMethod>replace_quotes(string $sql): string</fullMethod>
@@ -727,8 +727,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Http\Requests</package>
-      <className>GammaMatrix\Playground\Test\Unit\Http\Requests\RequestCase</className>
+      <package>Playground\Test\Unit\Http\Requests</package>
+      <className>Playground\Test\Unit\Http\Requests\RequestCase</className>
       <methodName>getRequest</methodName>
       <methodSignature>getRequest(): Illuminate\Foundation\Http\FormRequest</methodSignature>
       <fullMethod>getRequest(): Illuminate\Foundation\Http\FormRequest</fullMethod>
@@ -738,8 +738,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Http\Requests</package>
-      <className>GammaMatrix\Playground\Test\Unit\Http\Requests\RequestCase</className>
+      <package>Playground\Test\Unit\Http\Requests</package>
+      <className>Playground\Test\Unit\Http\Requests\RequestCase</className>
       <methodName>getRequestClass</methodName>
       <methodSignature>getRequestClass(): string</methodSignature>
       <fullMethod>getRequestClass(): string</fullMethod>
@@ -749,8 +749,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Http\Requests</package>
-      <className>GammaMatrix\Playground\Test\Unit\Http\Requests\RequestCase</className>
+      <package>Playground\Test\Unit\Http\Requests</package>
+      <className>Playground\Test\Unit\Http\Requests\RequestCase</className>
       <methodName>test_request_instance</methodName>
       <methodSignature>test_request_instance(): void</methodSignature>
       <fullMethod>test_request_instance(): void</fullMethod>
@@ -760,8 +760,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Models</package>
-      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
       <methodName>getModel</methodName>
       <methodSignature>getModel(): Illuminate\Database\Eloquent\Model</methodSignature>
       <fullMethod>getModel(): Illuminate\Database\Eloquent\Model</fullMethod>
@@ -771,8 +771,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Models</package>
-      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
       <methodName>getModelClass</methodName>
       <methodSignature>getModelClass(): string</methodSignature>
       <fullMethod>getModelClass(): string</fullMethod>
@@ -782,8 +782,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Models</package>
-      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
       <methodName>test_model_instance</methodName>
       <methodSignature>test_model_instance(): void</methodSignature>
       <fullMethod>test_model_instance(): void</fullMethod>
@@ -793,19 +793,19 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Models</package>
-      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
       <methodName>verifyRelationship</methodName>
       <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
       <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
-      <crap>16.76</crap>
+      <crap>17.57</crap>
       <complexity>10</complexity>
-      <coverage>59.26</coverage>
+      <coverage>57.69</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Models</package>
-      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
       <methodName>verifyRelationships</methodName>
       <methodSignature>verifyRelationships(): array</methodSignature>
       <fullMethod>verifyRelationships(): array</fullMethod>
@@ -815,8 +815,8 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test\Unit\Models</package>
-      <className>GammaMatrix\Playground\Test\Unit\Models\ModelCase</className>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
       <methodName>test_verify_model_relationships</methodName>
       <methodSignature>test_verify_model_relationships(): void</methodSignature>
       <fullMethod>test_verify_model_relationships(): void</fullMethod>
@@ -826,11 +826,11 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>GammaMatrix\Playground\Test</package>
-      <className>GammaMatrix\Playground\Test\WithFaker</className>
+      <package>Playground\Test</package>
+      <className>Playground\Test\WithFaker</className>
       <methodName>faker</methodName>
-      <methodSignature>faker(string $locale)</methodSignature>
-      <fullMethod>faker(string $locale)</fullMethod>
+      <methodSignature>faker(string $locale): Faker\Generator</methodSignature>
+      <fullMethod>faker(string $locale): Faker\Generator</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
