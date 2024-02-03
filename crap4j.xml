@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-03 08:52:55</timestamp>
+  <timestamp>2024-02-03 17:34:03</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>75</methodCount>
     <crapMethodCount>3</crapMethodCount>
     <crapLoad>48</crapLoad>
-    <totalCrap>1034.65</totalCrap>
+    <totalCrap>1046.86</totalCrap>
     <crapMethodPercent>4</crapMethodPercent>
   </stats>
   <methods>
@@ -688,9 +688,9 @@
       <methodName>boot</methodName>
       <methodSignature>boot()</methodSignature>
       <fullMethod>boot()</fullMethod>
-      <crap>3</crap>
+      <crap>12</crap>
       <complexity>3</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -699,9 +699,9 @@
       <methodName>register</methodName>
       <methodSignature>register()</methodSignature>
       <fullMethod>register()</fullMethod>
-      <crap>1</crap>
+      <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -809,9 +809,9 @@
       <methodName>verifyRelationships</methodName>
       <methodSignature>verifyRelationships(): array</methodSignature>
       <fullMethod>verifyRelationships(): array</fullMethod>
-      <crap>7.08</crap>
+      <crap>9.29</crap>
       <complexity>7</complexity>
-      <coverage>88</coverage>
+      <coverage>64</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

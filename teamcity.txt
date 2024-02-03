@@ -1,15 +1,13 @@
 
 ##teamcity[testCount count='22' flowId='1']
 
-##teamcity[testSuiteStarted name='/app/phpunit.xml.dist' flowId='1']
-
 ##teamcity[testSuiteStarted name='Unit' flowId='1']
 
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/AbstractUser/ModelTest.php::\Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest' flowId='1']
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/AbstractUser/ModelTest.php::\Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='161' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='162' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest' flowId='1']
 
@@ -81,7 +79,7 @@
 
 ##teamcity[testStarted name='test_hasRole_is_true_with_matching_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_hasRole_is_true_with_matching_secondary_role' flowId='1']
 
-##teamcity[testFinished name='test_hasRole_is_true_with_matching_secondary_role' duration='4' flowId='1']
+##teamcity[testFinished name='test_hasRole_is_true_with_matching_secondary_role' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_admin_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_admin_role' flowId='1']
 
@@ -126,5 +124,3 @@
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\UserWithSanctum\ModelTest' flowId='1']
 
 ##teamcity[testSuiteFinished name='Unit' flowId='1']
-
-##teamcity[testSuiteFinished name='/app/phpunit.xml.dist' flowId='1']
