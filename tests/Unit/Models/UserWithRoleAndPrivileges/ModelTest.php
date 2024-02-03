@@ -4,24 +4,27 @@
  */
 namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use Playground\Test\Models\UserWithRoleAndPrivileges;
 use Tests\Unit\Playground\Test\TestCase;
 
 /**
  * \Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest
  */
+#[CoversClass(UserWithRoleAndPrivileges::class)]
 class ModelTest extends TestCase
 {
     /**
-     * @var string
+     * @var class-string<UserWithRoleAndPrivileges>
      */
-    public const MODEL_CLASS = \Playground\Test\Models\UserWithRoleAndPrivileges::class;
+    public const MODEL_CLASS = UserWithRoleAndPrivileges::class;
 
     public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndPrivileges $instance
+         * @var UserWithRoleAndPrivileges $instance
          */
         $instance = new $mc();
 
@@ -45,7 +48,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndPrivileges $instance
+         * @var UserWithRoleAndPrivileges $instance
          */
         $instance = new $mc();
 
@@ -59,7 +62,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndPrivileges $instance
+         * @var UserWithRoleAndPrivileges $instance
          */
         $instance = new $mc();
 
@@ -77,7 +80,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndPrivileges $instance
+         * @var UserWithRoleAndPrivileges $instance
          */
         $instance = new $mc();
 

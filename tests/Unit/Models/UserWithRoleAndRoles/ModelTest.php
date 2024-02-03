@@ -4,24 +4,29 @@
  */
 namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use Playground\Test\Models\Traits\UserPrivileges;
+use Playground\Test\Models\UserWithRoleAndRoles;
 use Tests\Unit\Playground\Test\TestCase;
 
 /**
  * \Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest
  */
+#[CoversClass(UserWithRoleAndRoles::class)]
+#[CoversClass(UserPrivileges::class)]
 class ModelTest extends TestCase
 {
     /**
-     * @var string
+     * @var class-string<UserWithRoleAndRoles>
      */
-    public const MODEL_CLASS = \Playground\Test\Models\UserWithRoleAndRoles::class;
+    public const MODEL_CLASS = UserWithRoleAndRoles::class;
 
     public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -44,7 +49,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -58,7 +63,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -74,7 +79,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -97,7 +102,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -117,7 +122,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -137,7 +142,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -157,7 +162,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -177,7 +182,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
@@ -197,7 +202,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var \Playground\Test\Models\UserWithRoleAndRoles $instance
+         * @var UserWithRoleAndRoles $instance
          */
         $instance = new $mc();
 
