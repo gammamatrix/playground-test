@@ -9,7 +9,7 @@ use Laravel\Sanctum\HasApiTokens;
 /**
  * \Playground\Test\Models\UserWithSanctum
  */
-class UserWithSanctum extends AbstractUser
+class UserWithSanctum extends User
 {
     use HasApiTokens;
 }
