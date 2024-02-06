@@ -12,7 +12,7 @@ use Faker\Generator;
  */
 trait WithFaker
 {
-    protected ?Generator $faker;
+    protected ?Generator $faker = null;
 
     protected function faker(string $locale = null): Generator
     {
