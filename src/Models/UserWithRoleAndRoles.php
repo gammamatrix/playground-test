@@ -7,7 +7,7 @@ namespace Playground\Test\Models;
 /**
  * \Playground\Test\Models\UserWithRoleAndRoles
  */
-class UserWithRoleAndRoles extends AbstractUser
+class UserWithRoleAndRoles extends User
 {
     use Traits\UserPrivileges;
 

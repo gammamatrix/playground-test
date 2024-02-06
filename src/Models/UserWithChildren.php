@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 /**
  * \Playground\Test\Models\UserWithChildren
  */
-class UserWithChildren extends AbstractUser
+class UserWithChildren extends User
 {
     /**
      * @var array<int, string>

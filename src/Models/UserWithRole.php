@@ -7,7 +7,7 @@ namespace Playground\Test\Models;
 /**
  * \Playground\Test\Models\UserWithRole
  */
-class UserWithRole extends AbstractUser
+class UserWithRole extends User
 {
     /**
      * @var array<string, mixed>
