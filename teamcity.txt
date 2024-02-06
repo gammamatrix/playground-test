@@ -27,7 +27,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/User/ModelTest.php::\Tests\Unit\Playground\Test\Models\User\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='5' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='4' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\User\ModelTest' flowId='1']
 
@@ -91,7 +91,7 @@
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_wheel_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_wheel_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_role' duration='6' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_role' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_wheel_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_wheel_secondary_role' flowId='1']
 
@@ -119,7 +119,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/UserWithSanctum/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithSanctum\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='6' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='7' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\UserWithSanctum\ModelTest' flowId='1']
 
@@ -131,7 +131,7 @@
 
 ##teamcity[testStarted name='test_command_about_displays_package_information_and_succeed_with_code_0' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Test\Console\Commands\About\CommandTest::test_command_about_displays_package_information_and_succeed_with_code_0' flowId='1']
 
-##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='106' flowId='1']
+##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='104' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Test\Console\Commands\About\CommandTest' flowId='1']
 
