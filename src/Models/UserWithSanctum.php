@@ -4,8 +4,8 @@
  */
 namespace Playground\Test\Models;
 
-use Laravel\Sanctum\HasApiTokens;
 use Laravel\Sanctum\Contracts\HasApiTokens as HasApiTokensContract;
+use Laravel\Sanctum\HasApiTokens;
 
 /**
  * \Playground\Test\Models\UserWithSanctum

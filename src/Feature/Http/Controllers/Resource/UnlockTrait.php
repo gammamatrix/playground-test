@@ -15,13 +15,13 @@ trait UnlockTrait
     public function test_guest_cannot_unlock()
     {
         config([
-            // 'playground.auth.token.name' => 'app',
-            'playground.auth.verify' => 'user',
-            'playground.auth.userRole' => false,
-            'playground.auth.hasRole' => false,
-            'playground.auth.userRoles' => false,
-            'playground.auth.hasPrivilege' => false,
-            'playground.auth.userPrivileges' => false,
+            // 'playground-auth.token.name' => 'app',
+            'playground-auth.verify' => 'user',
+            'playground-auth.userRole' => false,
+            'playground-auth.hasRole' => false,
+            'playground-auth.userRoles' => false,
+            'playground-auth.hasPrivilege' => false,
+            'playground-auth.userPrivileges' => false,
         ]);
 
         $fqdn = $this->fqdn;
@@ -192,10 +192,10 @@ trait UnlockTrait
     public function test_unlock_with_user_role_and_get_denied()
     {
         config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
+            'playground-auth.verify' => 'roles',
+            'playground-auth.userRole' => true,
+            'playground-auth.hasRole' => true,
+            'playground-auth.userRoles' => false,
         ]);
 
         $fqdn = $this->fqdn;
@@ -239,10 +239,10 @@ trait UnlockTrait
     public function test_unlock_with_admin_role_and_succeed()
     {
         config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
+            'playground-auth.verify' => 'roles',
+            'playground-auth.userRole' => true,
+            'playground-auth.hasRole' => true,
+            'playground-auth.userRoles' => false,
         ]);
 
         $fqdn = $this->fqdn;
@@ -291,10 +291,10 @@ trait UnlockTrait
     public function test_unlock_with_admin_role_and_succeed_with_json()
     {
         config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
+            'playground-auth.verify' => 'roles',
+            'playground-auth.userRole' => true,
+            'playground-auth.hasRole' => true,
+            'playground-auth.userRoles' => false,
         ]);
 
         $fqdn = $this->fqdn;

@@ -20,6 +20,7 @@
         "php": "^8.1",
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^3.41",
+        "gammamatrix/playground": "dev-develop|dev-master|dev-feature/*|^73.0",
         "larastan/larastan": "^2.0",
         "orchestra/testbench": "8.*",
         "phpstan/phpstan-phpunit": "^1.3",
