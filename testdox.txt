@@ -8,18 +8,29 @@ Model (Tests\Unit\Playground\Test\Models\ModelCase\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\Playground\Test\Models\UserWithChildren\Model)
- [x] Model instance
- [x] Verify model relationships
+Model (Tests\Unit\Playground\Test\Models\PlaygroundUser\Model)
+ [x] Get attributes
+ [x] HasRole is false without role
+ [x] HasRole is true with matching role
+ [x] HasRole is true with matching secondary role
+ [x] IsAdmin is true with admin role
+ [x] IsAdmin is true with admin secondary role
+ [x] IsAdmin is true with wheel role
+ [x] IsAdmin is true with wheel secondary role
+ [x] IsAdmin is true with root role
+ [x] IsAdmin is false with root secondary role
+ [x] Factory with make
 
 Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\Model)
  [x] Get attributes
  [x] HasPrivilege is false without privilege
  [x] HasPrivilege is false with wrong privilege
  [x] HasPrivilege is true with correct privilege
+ [x] Factory with make
 
 Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\Model)
  [x] Get attributes
+ [x] Factory with make
 
 Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\Model)
  [x] Get attributes
@@ -32,10 +43,13 @@ Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\Model)
  [x] IsAdmin is true with wheel secondary role
  [x] IsAdmin is true with root role
  [x] IsAdmin is false with root secondary role
+ [x] Factory with make
 
 Model (Tests\Unit\Playground\Test\Models\UserWithSanctum\Model)
  [x] Get attributes
+ [x] Factory with make
 
 Model (Tests\Unit\Playground\Test\Models\User\Model)
  [x] Get attributes
+ [x] Factory with make
 

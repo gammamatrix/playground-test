@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-06 02:40:13</timestamp>
+  <timestamp>2024-02-18 22:18:56</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>77</methodCount>
-    <crapMethodCount>3</crapMethodCount>
-    <crapLoad>48</crapLoad>
-    <totalCrap>1044.86</totalCrap>
-    <crapMethodPercent>3.9</crapMethodPercent>
+    <methodCount>75</methodCount>
+    <crapMethodCount>5</crapMethodCount>
+    <crapLoad>65</crapLoad>
+    <totalCrap>1186</totalCrap>
+    <crapMethodPercent>6.67</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -640,28 +640,6 @@
     </method>
     <method>
       <package>Playground\Test\Models</package>
-      <className>Playground\Test\Models\UserWithChildren</className>
-      <methodName>children</methodName>
-      <methodSignature>children(): Illuminate\Database\Eloquent\Relations\HasMany</methodSignature>
-      <fullMethod>children(): Illuminate\Database\Eloquent\Relations\HasMany</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Models</package>
-      <className>Playground\Test\Models\UserWithChildren</className>
-      <methodName>parent</methodName>
-      <methodSignature>parent(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>parent(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Models</package>
       <className>Playground\Test\Models\UserWithRole</className>
       <methodName>hasRole</methodName>
       <methodSignature>hasRole(mixed $role): bool</methodSignature>
@@ -787,9 +765,9 @@
       <methodName>getModel</methodName>
       <methodSignature>getModel(): Illuminate\Database\Eloquent\Model</methodSignature>
       <fullMethod>getModel(): Illuminate\Database\Eloquent\Model</fullMethod>
-      <crap>1</crap>
+      <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -798,9 +776,9 @@
       <methodName>getModelClass</methodName>
       <methodSignature>getModelClass(): string</methodSignature>
       <fullMethod>getModelClass(): string</fullMethod>
-      <crap>1</crap>
+      <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -809,9 +787,9 @@
       <methodName>test_model_instance</methodName>
       <methodSignature>test_model_instance(): void</methodSignature>
       <fullMethod>test_model_instance(): void</fullMethod>
-      <crap>1</crap>
+      <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -820,10 +798,10 @@
       <methodName>verifyRelationship</methodName>
       <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
       <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
-      <crap>17.57</crap>
+      <crap>110</crap>
       <complexity>10</complexity>
-      <coverage>57.69</coverage>
-      <crapLoad>0</crapLoad>
+      <coverage>0</coverage>
+      <crapLoad>10</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Unit\Models</package>
@@ -831,10 +809,10 @@
       <methodName>verifyRelationships</methodName>
       <methodSignature>verifyRelationships(): array</methodSignature>
       <fullMethod>verifyRelationships(): array</fullMethod>
-      <crap>9.29</crap>
+      <crap>56</crap>
       <complexity>7</complexity>
-      <coverage>64</coverage>
-      <crapLoad>0</crapLoad>
+      <coverage>0</coverage>
+      <crapLoad>7</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Unit\Models</package>
@@ -842,9 +820,9 @@
       <methodName>test_verify_model_relationships</methodName>
       <methodSignature>test_verify_model_relationships(): void</methodSignature>
       <fullMethod>test_verify_model_relationships(): void</fullMethod>
-      <crap>1</crap>
+      <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
