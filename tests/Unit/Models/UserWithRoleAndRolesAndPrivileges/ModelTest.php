@@ -44,4 +44,17 @@ class ModelTest extends TestCase
 
         $this->assertSame($expected, $attributes);
     }
+
+    public function test_factory_with_make(): void
+    {
+        // $mc = $this->modelClass;
+        $mc = static::MODEL_CLASS;
+
+        /**
+         * @var UserWithRoleAndRolesAndPrivileges $instance
+         */
+        $instance = $mc::factory()->make();
+
+        $this->assertInstanceOf($mc, $instance);
+    }
 }

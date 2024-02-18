@@ -25,7 +25,7 @@ class UserWithSanctumFactory extends AbstractUserFactory
     public function admin(): Factory
     {
         return $this->state(fn (array $attributes) => [
-            'email' => 'admin@example.com',
+            'email' => 'admin@example.dev',
         ]);
     }
 
@@ -35,7 +35,7 @@ class UserWithSanctumFactory extends AbstractUserFactory
     public function guest(): Factory
     {
         return $this->state(fn (array $attributes) => [
-            'email' => 'guest@example.com',
+            'email' => 'guest@example.dev',
         ]);
     }
 
@@ -45,7 +45,7 @@ class UserWithSanctumFactory extends AbstractUserFactory
     public function manager(): Factory
     {
         return $this->state(fn (array $attributes) => [
-            'email' => 'manager@example.com',
+            'email' => 'manager@example.dev',
         ]);
     }
 }
