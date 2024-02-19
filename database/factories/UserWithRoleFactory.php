@@ -20,6 +20,20 @@ class UserWithRoleFactory extends AbstractUserFactory
     protected $model = UserWithRole::class;
 
     /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        $definition = parent::definition();
+
+        $definition['role'] = 'user';
+
+        return $definition;
+    }
+
+    /**
      * Indicate that the user has the admin role.
      */
     public function admin(): Factory

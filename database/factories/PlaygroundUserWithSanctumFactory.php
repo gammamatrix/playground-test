@@ -23,21 +23,39 @@ class PlaygroundUserWithSanctumFactory extends Factory
     protected $model = PlaygroundUserWithSanctum::class;
 
     /**
+     * The current password being used by the factory.
+     */
+    protected static ?string $password = null;
+
+    /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
     public function definition(): array
     {
-        $password = config('playground-test.password', 'password');
+        if (empty(static::$password)) {
+            $password = config('auth.testing.password');
+            $test_password_hashed = config('auth.testing.hashed');
+
+            if (empty($password) || ! is_string($password)) {
+                $password = md5(Carbon::now()->format('c'));
+                $test_password_hashed = false;
+            }
+
+            if (! $test_password_hashed) {
+                $password = Hash::make($password);
+            }
+
+            static::$password = $password;
+        }
 
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'password' => Hash::make(
-                $password && is_string($password) ? $password : md5(date('c'))
-            ),
+            'role' => 'user',
+            'password' => static::$password,
             'remember_token' => Str::random(10),
         ];
     }
