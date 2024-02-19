@@ -14,11 +14,17 @@ class TestCase extends \Tests\Unit\Playground\Test\TestCase
     protected bool $load_migrations_testing = false;
 
     protected bool $load_User = false;
+
     protected bool $load_UserWithChildren = false;
+
     protected bool $load_UserWithRole = false;
+
     protected bool $load_UserWithRoleAndPrivileges = false;
+
     protected bool $load_UserWithRoleAndRoles = false;
+
     protected bool $load_UserWithRoleAndRolesAndPrivileges = false;
+
     protected bool $load_UserWithSanctum = false;
 
     /**
