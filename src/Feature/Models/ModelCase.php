@@ -191,7 +191,12 @@ abstract class ModelCase extends OrchestraTestCase
 
         $modelClass = $this->getModelClass();
 
-        if (! in_array(HasFactory::class, class_uses_recursive($modelClass))) {
+        if (! in_array(HasFactory::class, class_uses_recursive($modelClass))
+            && is_callable([$modelClass, 'factory'])
+        ) {
+            /**
+             * @var Model $model
+             */
             $model = $modelClass::factory()->create();
         } else {
             Log::error('Expecting the model to implement HasFactory', [
@@ -335,9 +340,17 @@ abstract class ModelCase extends OrchestraTestCase
          */
         $modelClass = $this->hasOne[$accessor]['modelClass'];
 
+        $m = null;
+
         if ($rule === 'first') {
+            /**
+             * @var Model $m
+             */
             $m = $modelClass::first();
-        } else {
+        } elseif (is_callable([$modelClass, 'factory'])) {
+            /**
+             * @var Model $m
+             */
             $m = $modelClass::factory()->create();
         }
 
@@ -439,18 +452,20 @@ abstract class ModelCase extends OrchestraTestCase
          */
         $key = $hasAccessor ? $this->hasMany[$accessor]['key'] : '';
 
-        // Create 3 models.
-        $models[] = $modelClass::factory()->create([
-            $key => $model->getAttributeValue('id'),
-        ]);
+        if (is_callable([$modelClass, 'factory'])) {
+            // Create 3 models.
+            $models[] = $modelClass::factory()->create([
+                $key => $model->getAttributeValue('id'),
+            ]);
 
-        $models[] = $modelClass::factory()->create([
-            $key => $model->getAttributeValue('id'),
-        ]);
+            $models[] = $modelClass::factory()->create([
+                $key => $model->getAttributeValue('id'),
+            ]);
 
-        $models[] = $modelClass::factory()->create([
-            $key => $model->getAttributeValue('id'),
-        ]);
+            $models[] = $modelClass::factory()->create([
+                $key => $model->getAttributeValue('id'),
+            ]);
+        }
 
         foreach ($model->{$accessor}()->get() as $m) {
             $this->assertInstanceOf($modelClass, $m, sprintf(

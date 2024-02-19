@@ -14,12 +14,8 @@ parameters:
         - resources
 
     excludePaths:
-        - 'tests/logs/*'
         - 'output/*'
 
     treatPhpDocTypesAsCertain: false
 
     checkGenericClassInNonGenericObjectType: false
-
-    ignoreErrors:
-        - '#^Call to an undefined static method Illuminate\\Database\\Eloquent\\Model::factory\(\)\.$#'
