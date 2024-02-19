@@ -1,16 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-19 01:40:06</timestamp>
+  <timestamp>2024-02-19 07:39:44</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>75</methodCount>
+    <methodCount>116</methodCount>
     <crapMethodCount>5</crapMethodCount>
-    <crapLoad>65</crapLoad>
-    <totalCrap>1186</totalCrap>
-    <crapMethodPercent>6.67</crapMethodPercent>
+    <crapLoad>68</crapLoad>
+    <totalCrap>1360</totalCrap>
+    <crapMethodPercent>4.31</crapMethodPercent>
   </stats>
   <methods>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
+      <methodName>getStructureCreate</methodName>
+      <methodSignature>getStructureCreate(): array</methodSignature>
+      <fullMethod>getStructureCreate(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
+      <methodName>test_json_guest_cannot_get_info</methodName>
+      <methodSignature>test_json_guest_cannot_get_info()</methodSignature>
+      <fullMethod>test_json_guest_cannot_get_info()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
+      <methodName>test_json_guest_cannot_render_create_view_requesting_json</methodName>
+      <methodSignature>test_json_guest_cannot_render_create_view_requesting_json()</methodSignature>
+      <fullMethod>test_json_guest_cannot_render_create_view_requesting_json()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
+      <methodName>test_json_create_info_with_admin</methodName>
+      <methodSignature>test_json_create_info_with_admin()</methodSignature>
+      <fullMethod>test_json_create_info_with_admin()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
+      <methodName>test_json_create_info_by_admin_with_invalid_parameter</methodName>
+      <methodSignature>test_json_create_info_by_admin_with_invalid_parameter()</methodSignature>
+      <fullMethod>test_json_create_info_by_admin_with_invalid_parameter()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateTrait</className>
@@ -50,6 +116,94 @@
       <methodName>test_create_view_rendered_by_admin_with_invalid_parameter</methodName>
       <methodSignature>test_create_view_rendered_by_admin_with_invalid_parameter()</methodSignature>
       <fullMethod>test_create_view_rendered_by_admin_with_invalid_parameter()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_guest_cannot_destroy</methodName>
+      <methodSignature>test_json_guest_cannot_destroy()</methodSignature>
+      <fullMethod>test_json_guest_cannot_destroy()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_destroy_as_admin_user_and_succeed</methodName>
+      <methodSignature>test_json_destroy_as_admin_user_and_succeed()</methodSignature>
+      <fullMethod>test_json_destroy_as_admin_user_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_destroy_as_admin_user_and_succeed_with_force_delete</methodName>
+      <methodSignature>test_json_destroy_as_admin_user_and_succeed_with_force_delete()</methodSignature>
+      <fullMethod>test_json_destroy_as_admin_user_and_succeed_with_force_delete()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_destroy_as_admin_user_using_json_and_succeed_with_no_content</methodName>
+      <methodSignature>test_json_destroy_as_admin_user_using_json_and_succeed_with_no_content()</methodSignature>
+      <fullMethod>test_json_destroy_as_admin_user_using_json_and_succeed_with_no_content()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_destroy_as_admin_user_and_succeed_with_redirect_to_index_with_trash</methodName>
+      <methodSignature>test_json_destroy_as_admin_user_and_succeed_with_redirect_to_index_with_trash()</methodSignature>
+      <fullMethod>test_json_destroy_as_admin_user_and_succeed_with_redirect_to_index_with_trash()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed</methodName>
+      <methodSignature>test_json_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()</methodSignature>
+      <fullMethod>test_json_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_destroy_with_admin_role_and_succeed</methodName>
+      <methodSignature>test_json_destroy_with_admin_role_and_succeed()</methodSignature>
+      <fullMethod>test_json_destroy_with_admin_role_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>test_json_destroy_with_admin_role_and_succeed_with_force_delete</methodName>
+      <methodSignature>test_json_destroy_with_admin_role_and_succeed_with_force_delete()</methodSignature>
+      <fullMethod>test_json_destroy_with_admin_role_and_succeed_with_force_delete()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -145,6 +299,50 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait</className>
+      <methodName>test_json_guest_cannot_render_edit_view</methodName>
+      <methodSignature>test_json_guest_cannot_render_edit_view()</methodSignature>
+      <fullMethod>test_json_guest_cannot_render_edit_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait</className>
+      <methodName>test_json_edit_as_admin_view_rendered_by_user_with_return_url</methodName>
+      <methodSignature>test_json_edit_as_admin_view_rendered_by_user_with_return_url()</methodSignature>
+      <fullMethod>test_json_edit_as_admin_view_rendered_by_user_with_return_url()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait</className>
+      <methodName>test_json_edit_as_admin_info_with_user</methodName>
+      <methodSignature>test_json_edit_as_admin_info_with_user()</methodSignature>
+      <fullMethod>test_json_edit_as_admin_info_with_user()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait</className>
+      <methodName>test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter</methodName>
+      <methodSignature>test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter()</methodSignature>
+      <fullMethod>test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditTrait</className>
       <methodName>test_guest_cannot_render_edit_view</methodName>
       <methodSignature>test_guest_cannot_render_edit_view()</methodSignature>
@@ -189,6 +387,61 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
+      <methodName>getStructureIndex</methodName>
+      <methodSignature>getStructureIndex(): array</methodSignature>
+      <fullMethod>getStructureIndex(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
+      <methodName>test_json_guest_cannot_render_index_view</methodName>
+      <methodSignature>test_json_guest_cannot_render_index_view()</methodSignature>
+      <fullMethod>test_json_guest_cannot_render_index_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
+      <methodName>test_json_index_view_rendered_by_admin</methodName>
+      <methodSignature>test_json_index_view_rendered_by_admin()</methodSignature>
+      <fullMethod>test_json_index_view_rendered_by_admin()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
+      <methodName>test_json_index_as_admin</methodName>
+      <methodSignature>test_json_index_as_admin()</methodSignature>
+      <fullMethod>test_json_index_as_admin()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexTrait</className>
       <methodName>test_guest_cannot_render_index_view</methodName>
       <methodSignature>test_guest_cannot_render_index_view()</methodSignature>
@@ -215,6 +468,72 @@
       <methodName>test_index_as_admin_using_json</methodName>
       <methodSignature>test_index_as_admin_using_json()</methodSignature>
       <fullMethod>test_index_as_admin_using_json()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>test_json_guest_cannot_lock</methodName>
+      <methodSignature>test_json_guest_cannot_lock()</methodSignature>
+      <fullMethod>test_json_guest_cannot_lock()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>test_json_lock_as_admin_user_and_succeed</methodName>
+      <methodSignature>test_json_lock_as_admin_user_and_succeed()</methodSignature>
+      <fullMethod>test_json_lock_as_admin_user_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>test_json_lock_as_admin_user_and_succeed_with_no_redirect</methodName>
+      <methodSignature>test_json_lock_as_admin_user_and_succeed_with_no_redirect()</methodSignature>
+      <fullMethod>test_json_lock_as_admin_user_and_succeed_with_no_redirect()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>test_json_lock_with_user_role_and_get_denied</methodName>
+      <methodSignature>test_json_lock_with_user_role_and_get_denied()</methodSignature>
+      <fullMethod>test_json_lock_with_user_role_and_get_denied()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>test_json_lock_with_admin_role_and_succeed</methodName>
+      <methodSignature>test_json_lock_with_admin_role_and_succeed()</methodSignature>
+      <fullMethod>test_json_lock_with_admin_role_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>test_json_lock_with_admin_role_and_succeed_with_json</methodName>
+      <methodSignature>test_json_lock_with_admin_role_and_succeed_with_json()</methodSignature>
+      <fullMethod>test_json_lock_with_admin_role_and_succeed_with_json()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -299,6 +618,61 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
+      <methodName>test_json_guest_cannot_restore</methodName>
+      <methodSignature>test_json_guest_cannot_restore()</methodSignature>
+      <fullMethod>test_json_guest_cannot_restore()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
+      <methodName>test_json_restore_as_admin_user_and_succeed</methodName>
+      <methodSignature>test_json_restore_as_admin_user_and_succeed()</methodSignature>
+      <fullMethod>test_json_restore_as_admin_user_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
+      <methodName>test_json_restore_as_admin_user_and_succeed_with_no_redirect</methodName>
+      <methodSignature>test_json_restore_as_admin_user_and_succeed_with_no_redirect()</methodSignature>
+      <fullMethod>test_json_restore_as_admin_user_and_succeed_with_no_redirect()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
+      <methodName>test_json_restore_with_user_role_and_get_denied</methodName>
+      <methodSignature>test_json_restore_with_user_role_and_get_denied()</methodSignature>
+      <fullMethod>test_json_restore_with_user_role_and_get_denied()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
+      <methodName>test_json_restore_with_admin_role_and_succeed</methodName>
+      <methodSignature>test_json_restore_with_admin_role_and_succeed()</methodSignature>
+      <fullMethod>test_json_restore_with_admin_role_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreTrait</className>
       <methodName>test_guest_cannot_restore</methodName>
       <methodSignature>test_guest_cannot_restore()</methodSignature>
@@ -365,6 +739,28 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowJsonTrait</className>
+      <methodName>test_json_guest_cannot_see_info</methodName>
+      <methodSignature>test_json_guest_cannot_see_info()</methodSignature>
+      <fullMethod>test_json_guest_cannot_see_info()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowJsonTrait</className>
+      <methodName>test_json_show_info_for_admin</methodName>
+      <methodSignature>test_json_show_info_for_admin()</methodSignature>
+      <fullMethod>test_json_show_info_for_admin()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowTrait</className>
       <methodName>test_guest_cannot_render_show_view</methodName>
       <methodSignature>test_guest_cannot_render_show_view()</methodSignature>
@@ -391,6 +787,61 @@
       <methodName>test_show_as_admin_using_json</methodName>
       <methodSignature>test_show_as_admin_using_json()</methodSignature>
       <fullMethod>test_show_as_admin_using_json()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
+      <methodName>test_json_guest_cannot_unlock</methodName>
+      <methodSignature>test_json_guest_cannot_unlock()</methodSignature>
+      <fullMethod>test_json_guest_cannot_unlock()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
+      <methodName>test_json_unlock_as_admin_user_and_succeed</methodName>
+      <methodSignature>test_json_unlock_as_admin_user_and_succeed()</methodSignature>
+      <fullMethod>test_json_unlock_as_admin_user_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
+      <methodName>test_json_unlock_as_admin_user_and_succeed_with_no_redirect</methodName>
+      <methodSignature>test_json_unlock_as_admin_user_and_succeed_with_no_redirect()</methodSignature>
+      <fullMethod>test_json_unlock_as_admin_user_and_succeed_with_no_redirect()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
+      <methodName>test_json_unlock_with_user_role_and_get_denied</methodName>
+      <methodSignature>test_json_unlock_with_user_role_and_get_denied()</methodSignature>
+      <fullMethod>test_json_unlock_with_user_role_and_get_denied()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
+      <methodName>test_json_unlock_with_admin_role_and_succeed</methodName>
+      <methodSignature>test_json_unlock_with_admin_role_and_succeed()</methodSignature>
+      <fullMethod>test_json_unlock_with_admin_role_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -512,10 +963,10 @@
       <methodName>verifyRelationship</methodName>
       <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
       <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
-      <crap>240</crap>
-      <complexity>15</complexity>
+      <crap>272</crap>
+      <complexity>16</complexity>
       <coverage>0</coverage>
-      <crapLoad>15</crapLoad>
+      <crapLoad>16</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Feature\Models</package>
@@ -534,10 +985,10 @@
       <methodName>verifyRelationshipHasOne</methodName>
       <methodSignature>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
       <fullMethod>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
-      <crap>342</crap>
-      <complexity>18</complexity>
+      <crap>380</crap>
+      <complexity>19</complexity>
       <coverage>0</coverage>
-      <crapLoad>18</crapLoad>
+      <crapLoad>19</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Feature\Models</package>
@@ -545,10 +996,10 @@
       <methodName>verifyRelationshipHasMany</methodName>
       <methodSignature>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
       <fullMethod>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
-      <crap>210</crap>
-      <complexity>14</complexity>
+      <crap>240</crap>
+      <complexity>15</complexity>
       <coverage>0</coverage>
-      <crapLoad>14</crapLoad>
+      <crapLoad>15</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Feature\Models</package>
