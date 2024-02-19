@@ -7,7 +7,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/AbstractUser/ModelTest.php::\Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='167' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='170' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest' flowId='1']
 
@@ -79,7 +79,7 @@
 
 ##teamcity[testStarted name='test_factory_with_make' locationHint='php_qn:///app/tests/Unit/Models/User/ModelTest.php::\Tests\Unit\Playground\Test\Models\User\ModelTest::test_factory_with_make' flowId='1']
 
-##teamcity[testFinished name='test_factory_with_make' duration='7' flowId='1']
+##teamcity[testFinished name='test_factory_with_make' duration='8' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\User\ModelTest' flowId='1']
 
@@ -95,7 +95,7 @@
 
 ##teamcity[testStarted name='test_hasPrivilege_is_false_with_wrong_privilege' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndPrivileges/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest::test_hasPrivilege_is_false_with_wrong_privilege' flowId='1']
 
-##teamcity[testFinished name='test_hasPrivilege_is_false_with_wrong_privilege' duration='4' flowId='1']
+##teamcity[testFinished name='test_hasPrivilege_is_false_with_wrong_privilege' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_hasPrivilege_is_true_with_correct_privilege' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndPrivileges/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest::test_hasPrivilege_is_true_with_correct_privilege' flowId='1']
 
@@ -103,7 +103,7 @@
 
 ##teamcity[testStarted name='test_factory_with_make' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndPrivileges/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest::test_factory_with_make' flowId='1']
 
-##teamcity[testFinished name='test_factory_with_make' duration='7' flowId='1']
+##teamcity[testFinished name='test_factory_with_make' duration='6' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\ModelTest' flowId='1']
 
@@ -115,7 +115,7 @@
 
 ##teamcity[testStarted name='test_hasRole_is_false_without_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_hasRole_is_false_without_role' flowId='1']
 
-##teamcity[testFinished name='test_hasRole_is_false_without_role' duration='4' flowId='1']
+##teamcity[testFinished name='test_hasRole_is_false_without_role' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_hasRole_is_true_with_matching_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_hasRole_is_true_with_matching_role' flowId='1']
 
@@ -151,7 +151,7 @@
 
 ##teamcity[testStarted name='test_factory_with_make' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_factory_with_make' flowId='1']
 
-##teamcity[testFinished name='test_factory_with_make' duration='8' flowId='1']
+##teamcity[testFinished name='test_factory_with_make' duration='6' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest' flowId='1']
 
@@ -163,7 +163,7 @@
 
 ##teamcity[testStarted name='test_factory_with_make' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRolesAndPrivileges/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\ModelTest::test_factory_with_make' flowId='1']
 
-##teamcity[testFinished name='test_factory_with_make' duration='7' flowId='1']
+##teamcity[testFinished name='test_factory_with_make' duration='6' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges\ModelTest' flowId='1']
 
@@ -171,11 +171,11 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/UserWithSanctum/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithSanctum\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='6' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='7' flowId='1']
 
 ##teamcity[testStarted name='test_factory_with_make' locationHint='php_qn:///app/tests/Unit/Models/UserWithSanctum/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithSanctum\ModelTest::test_factory_with_make' flowId='1']
 
-##teamcity[testFinished name='test_factory_with_make' duration='7' flowId='1']
+##teamcity[testFinished name='test_factory_with_make' duration='6' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\UserWithSanctum\ModelTest' flowId='1']
 
@@ -187,7 +187,7 @@
 
 ##teamcity[testStarted name='test_command_about_displays_package_information_and_succeed_with_code_0' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Test\Console\Commands\About\CommandTest::test_command_about_displays_package_information_and_succeed_with_code_0' flowId='1']
 
-##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='105' flowId='1']
+##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='112' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Test\Console\Commands\About\CommandTest' flowId='1']
 
