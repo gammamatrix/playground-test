@@ -121,7 +121,7 @@ jobs:
       with:
         level: 9
         php_version: "8.2"
-        path: src/ tests/Unit/
+        path: config/ database/ resources/ src/ tests/Feature/ tests/Unit/
     - name: Stopping timer
       if: ${{ !cancelled() }}
       id: timer_end

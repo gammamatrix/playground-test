@@ -2,12 +2,12 @@
 /**
  * Playground
  */
-namespace Playground\Test\Feature\Http\Controllers\Resource;
+namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
-use Playground\Test\Models\User;
+use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\EditTrait
+ * \Playground\Test\Feature\Http\Controllers\Resource\Playground\EditTrait
  */
 trait EditTrait
 {
@@ -25,16 +25,17 @@ trait EditTrait
         ]);
 
         $response = $this->get($url);
-        $response->assertRedirect(route('login'));
+        // $response->assertRedirect(route('login'));
+        $response->assertStatus(403);
     }
 
-    public function test_edit_view_rendered_by_user_with_return_url()
+    public function test_edit_as_admin_view_rendered_by_user_with_return_url()
     {
         $fqdn = $this->fqdn;
 
         $model = $fqdn::factory()->create();
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $index = route($this->packageInfo['model_route']);
 
@@ -45,12 +46,17 @@ trait EditTrait
             $this->packageInfo['model_slug'] => $model->id,
             '_return_url' => $index,
         ]);
-
+        // dump([
+        //     '__METHOD__' => __METHOD__,
+        //     '$url' => $url,
+        //     '$model' => $model->toArray(),
+        //     '$user' => $user->toArray(),
+        // ]);
         $response = $this->actingAs($user)->get($url);
 
-        $response->assertStatus(200);
-
         $this->assertAuthenticated();
+        // $response->dump();
+        $response->assertStatus(200);
 
         $response->assertSee(sprintf(
             '<input type="hidden" name="_return_url" value="%1$s">',
@@ -58,13 +64,13 @@ trait EditTrait
         ), false);
     }
 
-    public function test_edit_info_with_user_using_json()
+    public function test_edit_as_admin_info_with_user_using_json()
     {
         $fqdn = $this->fqdn;
 
         $model = $fqdn::factory()->create();
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $url = route(sprintf(
             '%1$s.edit',
@@ -85,13 +91,13 @@ trait EditTrait
         $this->assertAuthenticated();
     }
 
-    public function test_edit_view_rendered_by_user_with_invalid_parameter()
+    public function test_edit_as_admin_view_rendered_by_user_with_invalid_parameter()
     {
         $fqdn = $this->fqdn;
 
         $model = $fqdn::factory()->create();
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $url = route(sprintf(
             '%1$s.edit',

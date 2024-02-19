@@ -217,8 +217,9 @@ $finder = PhpCsFixer\Finder::create()
         __DIR__.'/database',
         // __DIR__.'/lang',
         // __DIR__.'/routes',
+        __DIR__.'/resources',
         __DIR__.'/src',
-        // __DIR__.'/tests/Feature',
+        __DIR__.'/tests/Feature',
         __DIR__.'/tests/Unit',
     ])
     ->name('*.php')

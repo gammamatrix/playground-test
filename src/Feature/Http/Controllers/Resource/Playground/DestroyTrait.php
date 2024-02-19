@@ -2,42 +2,39 @@
 /**
  * Playground
  */
-namespace Playground\Test\Feature\Http\Controllers\Resource;
+namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
-use Playground\Test\Models\User;
-use Playground\Test\Models\UserWithRole;
+use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\UnlockTrait
+ * \Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyTrait
  */
-trait UnlockTrait
+trait DestroyTrait
 {
-    public function test_guest_cannot_unlock()
+    public function test_guest_cannot_destroy()
     {
-        config([
-            // 'playground.auth.token.name' => 'app',
-            'playground.auth.verify' => 'user',
-            'playground.auth.userRole' => false,
-            'playground.auth.hasRole' => false,
-            'playground.auth.userRoles' => false,
-            'playground.auth.hasPrivilege' => false,
-            'playground.auth.userPrivileges' => false,
-        ]);
+        // config([
+        //     // 'playground-auth.token.name' => 'app',
+        //     'playground-auth.verify' => 'user',
+        //     'playground-auth.userRole' => false,
+        //     'playground-auth.hasRole' => false,
+        //     'playground-auth.userRoles' => false,
+        //     'playground-auth.hasPrivilege' => false,
+        //     'playground-auth.userPrivileges' => false,
+        // ]);
 
         $fqdn = $this->fqdn;
 
-        $model = $fqdn::factory()->create([
-            'locked' => true,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => null,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $url = route(sprintf(
-            '%1$s.unlock',
+            '%1$s.destroy',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -47,34 +44,34 @@ trait UnlockTrait
 
         // $response->dump();
 
-        $response->assertRedirect(route('login'));
+        $response->assertStatus(403);
+        // $response->assertRedirect(route('login'));
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => null,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
     }
 
-    public function test_unlock_as_standard_user_and_succeed()
+    public function test_destroy_as_admin_user_and_succeed()
     {
         $fqdn = $this->fqdn;
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
-            'locked' => true,
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $url = route(sprintf(
-            '%1$s.unlock',
+            '%1$s.destroy',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -90,33 +87,72 @@ trait UnlockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+        ]);
+        $this->assertDatabaseMissing($this->packageInfo['table'], [
+            'id' => $model->id,
+            'owned_by_id' => $user->id,
+            'deleted_at' => null,
         ]);
 
-        $response->assertRedirect(route(sprintf('%1$s.show', $this->packageInfo['model_route']), [
-            $this->packageInfo['model_slug'] => $model->id,
-        ]));
+        $response->assertRedirect(route($this->packageInfo['model_route']));
     }
 
-    public function test_unlock_as_standard_user_using_json_and_succeed()
+    public function test_destroy_as_admin_user_and_succeed_with_force_delete()
     {
         $fqdn = $this->fqdn;
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
-            'locked' => true,
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $url = route(sprintf(
-            '%1$s.unlock',
+            '%1$s.destroy',
+            $this->packageInfo['model_route']
+        ), [
+            $this->packageInfo['model_slug'] => $model->id,
+            'force' => true,
+        ]);
+
+        $response = $this->actingAs($user)->delete($url);
+
+        // $response->dd();
+        // $response->dump();
+        // $response->dumpHeaders();
+        // $response->dumpSession();
+
+        $this->assertDatabaseMissing($this->packageInfo['table'], [
+            'id' => $model->id,
+        ]);
+
+        $response->assertRedirect(route($this->packageInfo['model_route']));
+    }
+
+    public function test_destroy_as_admin_user_using_json_and_succeed_with_no_content()
+    {
+        $fqdn = $this->fqdn;
+
+        $user = User::factory()->admin()->create();
+
+        $model = $fqdn::factory()->create([
+            'owned_by_id' => $user->id,
+        ]);
+
+        $this->assertDatabaseHas($this->packageInfo['table'], [
+            'id' => $model->id,
+            'owned_by_id' => $user->id,
+            'deleted_at' => null,
+        ]);
+
+        $url = route(sprintf(
+            '%1$s.destroy',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -132,35 +168,40 @@ trait UnlockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+        ]);
+        $this->assertDatabaseMissing($this->packageInfo['table'], [
+            'id' => $model->id,
+            'owned_by_id' => $user->id,
+            'deleted_at' => null,
         ]);
 
-        $response->assertStatus(200);
+        $response->assertNoContent();
     }
 
-    public function test_unlock_as_standard_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()
+    public function test_destroy_as_admin_user_and_succeed_with_redirect_to_index_with_trash()
     {
         $fqdn = $this->fqdn;
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
-            'locked' => true,
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $_return_url = route($this->packageInfo['model_route'], [
-            'sort' => '-unlocked',
+            'filter' => [
+                'trash' => 'with',
+            ],
         ]);
 
         $url = route(sprintf(
-            '%1$s.unlock',
+            '%1$s.destroy',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -183,41 +224,45 @@ trait UnlockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+        ]);
+        $this->assertDatabaseMissing($this->packageInfo['table'], [
+            'id' => $model->id,
+            'owned_by_id' => $user->id,
+            'deleted_at' => null,
         ]);
 
         $response->assertRedirect($_return_url);
     }
 
-    public function test_unlock_with_user_role_and_get_denied()
+    public function test_destroy_with_user_role_and_get_denied_and_no_force_delete_allowed()
     {
-        config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
-        ]);
+        // config([
+        //     'playground-auth.verify' => 'roles',
+        //     'playground-auth.userRole' => true,
+        //     'playground-auth.hasRole' => true,
+        //     'playground-auth.userRoles' => false,
+        // ]);
 
         $fqdn = $this->fqdn;
 
-        $user = UserWithRole::find(User::factory()->create()->id);
+        $user = User::factory()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
-            'locked' => true,
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $url = route(sprintf(
-            '%1$s.unlock',
+            '%1$s.destroy',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
+            'force' => true,
         ]);
 
         $response = $this->actingAs($user)->delete($url);
@@ -232,39 +277,35 @@ trait UnlockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
     }
 
-    public function test_unlock_with_admin_role_and_succeed()
+    public function test_destroy_with_admin_role_and_succeed()
     {
-        config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
-        ]);
+        // config([
+        //     'playground-auth.verify' => 'roles',
+        //     'playground-auth.userRole' => true,
+        //     'playground-auth.hasRole' => true,
+        //     'playground-auth.userRoles' => false,
+        // ]);
 
         $fqdn = $this->fqdn;
 
-        $user = UserWithRole::find(User::factory()->create()->id);
-
-        // The role is not saved since the column may not exist.
-        $user->role = 'admin';
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
-            'locked' => true,
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $url = route(sprintf(
-            '%1$s.unlock',
+            '%1$s.destroy',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
@@ -280,63 +321,58 @@ trait UnlockTrait
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => false,
+        ]);
+        $this->assertDatabaseMissing($this->packageInfo['table'], [
+            'id' => $model->id,
+            'owned_by_id' => $user->id,
+            'deleted_at' => null,
         ]);
 
-        $response->assertRedirect(route(sprintf('%1$s.show', $this->packageInfo['model_route']), [
-            $this->packageInfo['model_slug'] => $model->id,
-        ]));
+        $response->assertRedirect(route($this->packageInfo['model_route']));
     }
 
-    public function test_unlock_with_admin_role_and_succeed_with_json()
+    public function test_destroy_with_admin_role_and_succeed_with_force_delete()
     {
-        config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
-        ]);
+        // config([
+        //     'playground-auth.verify' => 'roles',
+        //     'playground-auth.userRole' => true,
+        //     'playground-auth.hasRole' => true,
+        //     'playground-auth.userRoles' => false,
+        // ]);
 
         $fqdn = $this->fqdn;
 
-        $user = UserWithRole::find(User::factory()->create()->id);
-
-        // The role is not saved since the column may not exist.
-        $user->role = 'admin';
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
-            'locked' => true,
         ]);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
-            'locked' => true,
+            'deleted_at' => null,
         ]);
 
         $url = route(sprintf(
-            '%1$s.unlock',
+            '%1$s.destroy',
             $this->packageInfo['model_route']
         ), [
             $this->packageInfo['model_slug'] => $model->id,
+            'force' => true,
         ]);
 
-        $response = $this->actingAs($user)->deleteJson($url);
+        $response = $this->actingAs($user)->delete($url);
 
         // $response->dd();
         // $response->dump();
         // $response->dumpHeaders();
         // $response->dumpSession();
 
-        $this->assertDatabaseHas($this->packageInfo['table'], [
+        $this->assertDatabaseMissing($this->packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
         ]);
 
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure($this->structure_data);
+        $response->assertRedirect(route($this->packageInfo['model_route']));
     }
 }

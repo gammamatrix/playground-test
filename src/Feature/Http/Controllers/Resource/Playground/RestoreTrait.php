@@ -2,28 +2,27 @@
 /**
  * Playground
  */
-namespace Playground\Test\Feature\Http\Controllers\Resource;
+namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
 use Illuminate\Support\Carbon;
-use Playground\Test\Models\User;
-use Playground\Test\Models\UserWithRole;
+use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\RestoreTrait
+ * \Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreTrait
  */
 trait RestoreTrait
 {
     public function test_guest_cannot_restore()
     {
-        config([
-            // 'playground.auth.token.name' => 'app',
-            'playground.auth.verify' => 'user',
-            'playground.auth.userRole' => false,
-            'playground.auth.hasRole' => false,
-            'playground.auth.userRoles' => false,
-            'playground.auth.hasPrivilege' => false,
-            'playground.auth.userPrivileges' => false,
-        ]);
+        // config([
+        //     // 'playground-auth.token.name' => 'app',
+        //     'playground-auth.verify' => 'user',
+        //     'playground-auth.userRole' => false,
+        //     'playground-auth.hasRole' => false,
+        //     'playground-auth.userRoles' => false,
+        //     'playground-auth.hasPrivilege' => false,
+        //     'playground-auth.userPrivileges' => false,
+        // ]);
 
         $fqdn = $this->fqdn;
 
@@ -48,7 +47,8 @@ trait RestoreTrait
 
         // $response->dump();
 
-        $response->assertRedirect(route('login'));
+        // $response->assertRedirect(route('login'));
+        $response->assertStatus(403);
 
         $this->assertDatabaseHas($this->packageInfo['table'], [
             'id' => $model->id,
@@ -57,11 +57,11 @@ trait RestoreTrait
         ]);
     }
 
-    public function test_restore_as_standard_user_and_succeed()
+    public function test_restore_as_admin_user_and_succeed()
     {
         $fqdn = $this->fqdn;
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
@@ -99,11 +99,11 @@ trait RestoreTrait
         ]));
     }
 
-    public function test_restore_as_standard_user_using_json_and_succeed()
+    public function test_restore_as_admin_user_using_json_and_succeed()
     {
         $fqdn = $this->fqdn;
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
@@ -139,11 +139,11 @@ trait RestoreTrait
         $response->assertStatus(200);
     }
 
-    public function test_restore_as_standard_user_and_succeed_with_redirect_to_index_with_only_trash()
+    public function test_restore_as_admin_user_and_succeed_with_redirect_to_index_with_only_trash()
     {
         $fqdn = $this->fqdn;
 
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
@@ -194,16 +194,16 @@ trait RestoreTrait
 
     public function test_restore_with_user_role_and_get_denied()
     {
-        config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
-        ]);
+        // config([
+        //     'playground-auth.verify' => 'roles',
+        //     'playground-auth.userRole' => true,
+        //     'playground-auth.hasRole' => true,
+        //     'playground-auth.userRoles' => false,
+        // ]);
 
         $fqdn = $this->fqdn;
 
-        $user = UserWithRole::find(User::factory()->create()->id);
+        $user = User::factory()->create(['role' => 'user']);
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,
@@ -241,19 +241,16 @@ trait RestoreTrait
 
     public function test_restore_with_admin_role_and_succeed()
     {
-        config([
-            'playground.auth.verify' => 'roles',
-            'playground.auth.userRole' => true,
-            'playground.auth.hasRole' => true,
-            'playground.auth.userRoles' => false,
-        ]);
+        // config([
+        //     'playground-auth.verify' => 'roles',
+        //     'playground-auth.userRole' => true,
+        //     'playground-auth.hasRole' => true,
+        //     'playground-auth.userRoles' => false,
+        // ]);
 
         $fqdn = $this->fqdn;
 
-        $user = UserWithRole::find(User::factory()->create()->id);
-
-        // The role is not saved since the column may not exist.
-        $user->role = 'admin';
+        $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
             'owned_by_id' => $user->id,

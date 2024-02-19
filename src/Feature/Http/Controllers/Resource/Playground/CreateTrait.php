@@ -2,12 +2,15 @@
 /**
  * Playground
  */
-namespace Playground\Test\Feature\Http\Controllers\Resource;
+namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
-use Playground\Test\Models\User;
+use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\CreateTrait
+ * \Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateTrait
+ *
+ * --filter BacklogRouteTest::test_guest_cannot_render_create_view
+ * --filter BacklogRouteTest::test_create_view_rendered_by_user_with_return_url
  */
 trait CreateTrait
 {
@@ -19,12 +22,14 @@ trait CreateTrait
         ));
 
         $response = $this->get($url);
-        $response->assertRedirect(route('login'));
+        // $response->dump();
+        $response->assertStatus(403);
+        // $response->assertRedirect(route('login'));
     }
 
-    public function test_create_view_rendered_by_user_with_return_url()
+    public function test_create_view_rendered_by_admin_with_return_url()
     {
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $index = route($this->packageInfo['model_route']);
 
@@ -47,9 +52,9 @@ trait CreateTrait
         ), false);
     }
 
-    public function test_create_info_with_user_using_json()
+    public function test_create_info_with_admin_using_json()
     {
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $url = route(sprintf(
             '%1$s.create',
@@ -68,9 +73,9 @@ trait CreateTrait
         $this->assertAuthenticated();
     }
 
-    public function test_create_view_rendered_by_user_with_invalid_parameter()
+    public function test_create_view_rendered_by_admin_with_invalid_parameter()
     {
-        $user = User::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $url = route(sprintf(
             '%1$s.create',

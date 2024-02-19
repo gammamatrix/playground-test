@@ -2,12 +2,12 @@
 /**
  * Playground
  */
-namespace Playground\Test\Feature\Http\Controllers\Resource;
+namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
-use Playground\Test\Models\UserWithSanctum;
+use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\ShowTrait
+ * \Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowTrait
  */
 trait ShowTrait
 {
@@ -25,16 +25,17 @@ trait ShowTrait
         ]);
 
         $response = $this->get($url);
-        $response->assertRedirect(route('login'));
+        $response->assertStatus(403);
+        // $response->assertRedirect(route('login'));
     }
 
-    public function test_show_view_rendered_by_user()
+    public function test_show_view_rendered_by_admin()
     {
         $fqdn = $this->fqdn;
 
         $model = $fqdn::factory()->create();
 
-        $user = UserWithSanctum::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $index = route($this->packageInfo['model_route']);
 
@@ -52,13 +53,13 @@ trait ShowTrait
         $this->assertAuthenticated();
     }
 
-    public function test_show_info_with_user_using_json()
+    public function test_show_as_admin_using_json()
     {
         $fqdn = $this->fqdn;
 
         $model = $fqdn::factory()->create();
 
-        $user = UserWithSanctum::factory()->create();
+        $user = User::factory()->admin()->create();
 
         $url = route(sprintf(
             '%1$s.show',

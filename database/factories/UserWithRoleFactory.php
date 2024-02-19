@@ -4,6 +4,7 @@
  */
 namespace Database\Factories\Playground\Test\Models;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Playground\Test\Models\UserWithRole;
 
 /**
@@ -19,9 +20,23 @@ class UserWithRoleFactory extends AbstractUserFactory
     protected $model = UserWithRole::class;
 
     /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        $definition = parent::definition();
+
+        $definition['role'] = 'user';
+
+        return $definition;
+    }
+
+    /**
      * Indicate that the user has the admin role.
      */
-    public function admin(): static
+    public function admin(): Factory
     {
         return $this->state(fn (array $attributes) => [
             'role' => 'admin',
@@ -31,7 +46,7 @@ class UserWithRoleFactory extends AbstractUserFactory
     /**
      * Indicate that the user has the manager role.
      */
-    public function manager(): static
+    public function manager(): Factory
     {
         return $this->state(fn (array $attributes) => [
             'role' => 'manager',
@@ -41,7 +56,7 @@ class UserWithRoleFactory extends AbstractUserFactory
     /**
      * Indicate that the user has the wheel role.
      */
-    public function wheel(): static
+    public function wheel(): Factory
     {
         return $this->state(fn (array $attributes) => [
             'role' => 'wheel',
@@ -51,7 +66,7 @@ class UserWithRoleFactory extends AbstractUserFactory
     /**
      * Indicate that the user has the root role.
      */
-    public function root(): static
+    public function root(): Factory
     {
         return $this->state(fn (array $attributes) => [
             'role' => 'root',

@@ -2,39 +2,47 @@
 /**
  * Playground
  */
-namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles;
+namespace Tests\Unit\Playground\Test\Models\PlaygroundUser;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use Playground\Test\Models\Traits\UserPrivileges;
-use Playground\Test\Models\UserWithRoleAndRoles;
+use Playground\Test\Models\PlaygroundUser;
 use Tests\Unit\Playground\Test\TestCase;
 
 /**
- * \Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest
+ * \Tests\Unit\Playground\Test\Models\PlaygroundUser\ModelTest
  */
-#[CoversClass(UserWithRoleAndRoles::class)]
-#[CoversClass(UserPrivileges::class)]
+#[CoversClass(PlaygroundUser::class)]
 class ModelTest extends TestCase
 {
     /**
-     * @var class-string<UserWithRoleAndRoles>
+     * @var class-string<PlaygroundUser>
      */
-    public const MODEL_CLASS = UserWithRoleAndRoles::class;
+    public const MODEL_CLASS = PlaygroundUser::class;
 
     public function test_getAttributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
         $expected = [
-            'name' => '',
-            'email' => '',
-            'role' => '',
-            'roles' => [],
+            // 'name' => '',
+            // 'email' => '',
+            // 'role' => '',
+            // 'roles' => [],
+            'abilities' => '{}',
+            'accounts' => '{}',
+            'address' => '{}',
+            'meta' => '{}',
+            'notes' => '[]',
+            'options' => '{}',
+            'registration' => '[]',
+            'roles' => '[]',
+            'permissions' => '[]',
+            'privileges' => '[]',
         ];
 
         $attributes = $instance->getAttributes();
@@ -49,7 +57,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -63,7 +71,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -79,7 +87,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -102,7 +110,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -122,7 +130,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -142,7 +150,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -162,7 +170,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -182,7 +190,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -202,7 +210,7 @@ class ModelTest extends TestCase
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = new $mc();
 
@@ -219,14 +227,21 @@ class ModelTest extends TestCase
 
     public function test_factory_with_make(): void
     {
-        // $mc = $this->modelClass;
         $mc = static::MODEL_CLASS;
 
         /**
-         * @var UserWithRoleAndRoles $instance
+         * @var PlaygroundUser $instance
          */
         $instance = $mc::factory()->make();
 
-        $this->assertInstanceOf($mc, $instance);
+        $role = 'publisher';
+
+        $instance->role = $role;
+
+        $instance->roles = [
+            'root',
+        ];
+
+        $this->assertFalse($instance->isAdmin());
     }
 }

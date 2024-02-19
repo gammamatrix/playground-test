@@ -95,4 +95,17 @@ class ModelTest extends TestCase
         $privilege = 'goose';
         $this->assertTrue($instance->hasPrivilege($privilege));
     }
+
+    public function test_factory_with_make(): void
+    {
+        // $mc = $this->modelClass;
+        $mc = static::MODEL_CLASS;
+
+        /**
+         * @var UserWithRoleAndPrivileges $instance
+         */
+        $instance = $mc::factory()->make();
+
+        $this->assertInstanceOf($mc, $instance);
+    }
 }
