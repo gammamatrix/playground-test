@@ -191,7 +191,7 @@ abstract class ModelCase extends OrchestraTestCase
 
         $modelClass = $this->getModelClass();
 
-        if (! in_array(HasFactory::class, class_uses_recursive($modelClass))
+        if (in_array(HasFactory::class, class_uses_recursive($modelClass))
             && is_callable([$modelClass, 'factory'])
         ) {
             /**
@@ -323,11 +323,13 @@ abstract class ModelCase extends OrchestraTestCase
             && is_string($this->hasOne[$accessor]['rule'])
             && ! empty($this->hasOne[$accessor]['rule'])
             ? $this->hasOne[$accessor]['rule'] : '';
-        // dd([
+        // dump([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,
         //     '__LINE__' => __LINE__,
-        //     '$this->hasOne[$accessor]' => $this->hasOne[$accessor],
+        //     '$this->hasOne' => $this->hasOne,
+        //     '$accessor' => $accessor,
+        //     '$rule' => $rule,
         // ]);
 
         /**
@@ -354,11 +356,13 @@ abstract class ModelCase extends OrchestraTestCase
             $m = $modelClass::factory()->create();
         }
 
-        // dd([
+        // dump([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,
         //     '__LINE__' => __LINE__,
-        //     '$m' => $m,
+        //     '$key' => $key,
+        //     '$modelClass' => $modelClass,
+        //     '$m' => $m?->toArray(),
         // ]);
         $this->assertInstanceOf($modelClass, $m, sprintf(
             'Expecting the created HasOne model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
@@ -370,9 +374,8 @@ abstract class ModelCase extends OrchestraTestCase
 
         $model->setAttribute($key, $m->getAttribute('id'));
 
-        if ($model->save()) {
-            $model->refresh();
-        }
+        $model->save();
+        $model->refresh();
 
         $this->assertSame(
             // strval($model->getAttributeValue($key)),
