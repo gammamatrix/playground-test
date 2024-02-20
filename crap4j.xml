@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-19 07:42:53</timestamp>
+  <timestamp>2024-02-20 19:54:19</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>116</methodCount>
+    <methodCount>118</methodCount>
     <crapMethodCount>5</crapMethodCount>
     <crapLoad>68</crapLoad>
-    <totalCrap>1360</totalCrap>
-    <crapMethodPercent>4.31</crapMethodPercent>
+    <totalCrap>1372</totalCrap>
+    <crapMethodPercent>4.24</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -1004,11 +1004,22 @@
     <method>
       <package>Playground\Test\Feature\Models</package>
       <className>Playground\Test\Feature\Models\ModelCase</className>
-      <methodName>testVerifyRelationships</methodName>
-      <methodSignature>testVerifyRelationships(): void</methodSignature>
-      <fullMethod>testVerifyRelationships(): void</fullMethod>
+      <methodName>test_verify_model_relationships</methodName>
+      <methodSignature>test_verify_model_relationships(): void</methodSignature>
+      <fullMethod>test_verify_model_relationships(): void</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>test_factory_create</methodName>
+      <methodSignature>test_factory_create(): void</methodSignature>
+      <fullMethod>test_factory_create(): void</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1273,6 +1284,17 @@
       <fullMethod>test_verify_model_relationships(): void</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>test_model_factory_make</methodName>
+      <methodSignature>test_model_factory_make(): void</methodSignature>
+      <fullMethod>test_model_factory_make(): void</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>

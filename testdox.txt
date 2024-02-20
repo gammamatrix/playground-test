@@ -1,14 +1,7 @@
 Command (Tests\Feature\Playground\Test\Console\Commands\About\Command)
  [x] Command about displays package information and succeed with code 0
 
-Model (Tests\Unit\Playground\Test\Models\AbstractUser\Model)
- [x] Get attributes
-
-Model (Tests\Unit\Playground\Test\Models\ModelCase\Model)
- [x] Model instance
- [x] Verify model relationships
-
-Model (Tests\Unit\Playground\Test\Models\PlaygroundUser\Model)
+Instance (Tests\Unit\Playground\Test\Models\PlaygroundUser\Instance)
  [x] Get attributes
  [x] HasRole is false without role
  [x] HasRole is true with matching role
@@ -20,6 +13,19 @@ Model (Tests\Unit\Playground\Test\Models\PlaygroundUser\Model)
  [x] IsAdmin is true with root role
  [x] IsAdmin is false with root secondary role
  [x] Factory with make
+
+Model (Tests\Unit\Playground\Test\Models\AbstractUser\Model)
+ [x] Get attributes
+
+Model (Tests\Unit\Playground\Test\Models\ModelCase\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Model factory make
+
+Model (Tests\Unit\Playground\Test\Models\PlaygroundUser\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Model factory make
 
 Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges\Model)
  [x] Get attributes
