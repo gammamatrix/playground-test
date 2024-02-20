@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-20 19:58:00</timestamp>
+  <timestamp>2024-02-20 23:17:11</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>118</methodCount>
     <crapMethodCount>5</crapMethodCount>
-    <crapLoad>68</crapLoad>
-    <totalCrap>1372</totalCrap>
+    <crapLoad>67</crapLoad>
+    <totalCrap>1334</totalCrap>
     <crapMethodPercent>4.24</crapMethodPercent>
   </stats>
   <methods>
@@ -985,10 +985,10 @@
       <methodName>verifyRelationshipHasOne</methodName>
       <methodSignature>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
       <fullMethod>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
-      <crap>380</crap>
-      <complexity>19</complexity>
+      <crap>342</crap>
+      <complexity>18</complexity>
       <coverage>0</coverage>
-      <crapLoad>19</crapLoad>
+      <crapLoad>18</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Feature\Models</package>
