@@ -273,4 +273,19 @@ abstract class ModelCase extends OrchestraTestCase
         //     // '$this' => $this,
         // ]);
     }
+
+    public function test_model_factory_make(): void
+    {
+        $instance = null;
+
+        $modelClass = $this->getModelClass();
+        $this->assertNotEmpty($modelClass);
+
+        if (is_callable([$modelClass, 'factory'])) {
+            $instance = $modelClass::factory()->make();
+        }
+
+        $this->assertNotNull($instance);
+        $this->assertInstanceOf($modelClass, $instance);
+    }
 }
