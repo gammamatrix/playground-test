@@ -519,7 +519,7 @@ abstract class ModelCase extends OrchestraTestCase
     /**
      * Test the model relationships.
      */
-    public function testVerifyRelationships(): void
+    public function test_verify_model_relationships(): void
     {
         $modelClass = $this->getModelClass();
 
@@ -533,5 +533,20 @@ abstract class ModelCase extends OrchestraTestCase
         //     '$results' => $results,
         //     // '$this' => $this,
         // ]);
+    }
+
+    public function test_factory_create(): void
+    {
+        $instance = null;
+
+        $modelClass = $this->getModelClass();
+        $this->assertNotEmpty($modelClass);
+
+        if (is_callable([$modelClass, 'factory'])) {
+            $instance = $modelClass::factory()->create();
+        }
+
+        $this->assertNotNull($instance);
+        $this->assertInstanceOf($modelClass, $instance);
     }
 }
