@@ -12,6 +12,11 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait RestoreJsonTrait
 {
+    /**
+     * @return array<string, mixed>
+     */
+    abstract public function getStructureData(): array;
+
     public function test_json_guest_cannot_restore()
     {
         $packageInfo = $this->getPackageInfo();
@@ -37,9 +42,6 @@ trait RestoreJsonTrait
 
         $response = $this->putJson($url);
 
-        // $response->dump();
-
-        // $response->assertRedirect(route('login'));
         $response->assertStatus(403);
 
         $this->assertDatabaseHas($packageInfo['table'], [
@@ -76,11 +78,6 @@ trait RestoreJsonTrait
         ]);
 
         $response = $this->actingAs($user)->putJson($url);
-
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
@@ -126,18 +123,7 @@ trait RestoreJsonTrait
             '_return_url' => $_return_url,
         ]);
 
-        // dump([
-        //     '__METHOD__' => __METHOD__,
-        //     '$url' => $url,
-        //     '$_return_url' => $_return_url,
-        // ]);
-
         $response = $this->actingAs($user)->putJson($url);
-
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
@@ -150,7 +136,7 @@ trait RestoreJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_with_user_role_and_get_denied()
+    public function test_json_restore_as_user_and_get_denied()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -180,11 +166,6 @@ trait RestoreJsonTrait
 
         $response->assertStatus(401);
 
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
-
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
@@ -192,7 +173,7 @@ trait RestoreJsonTrait
         ]);
     }
 
-    public function test_json_restore_with_admin_role_and_succeed()
+    public function test_json_restore_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -219,11 +200,6 @@ trait RestoreJsonTrait
         ]);
 
         $response = $this->actingAs($user)->putJson($url);
-
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,

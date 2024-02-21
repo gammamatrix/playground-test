@@ -11,6 +11,11 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait ShowJsonTrait
 {
+    /**
+     * @return array<string, string>
+     */
+    abstract public function getPackageInfo(): array;
+
     public function test_json_guest_cannot_see_info()
     {
         $packageInfo = $this->getPackageInfo();

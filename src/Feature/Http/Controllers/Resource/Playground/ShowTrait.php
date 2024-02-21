@@ -11,72 +11,54 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait ShowTrait
 {
+    /**
+     * @return array<string, string>
+     */
+    abstract public function getPackageInfo(): array;
+
     public function test_guest_cannot_render_show_view()
     {
+        $packageInfo = $this->getPackageInfo();
+
         $fqdn = $this->fqdn;
 
         $model = $fqdn::factory()->create();
 
         $url = route(sprintf(
             '%1$s.show',
-            $this->packageInfo['model_route']
+            $packageInfo['model_route']
         ), [
-            $this->packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_slug'] => $model->id,
         ]);
 
         $response = $this->get($url);
+
         $response->assertStatus(403);
-        // $response->assertRedirect(route('login'));
     }
 
     public function test_show_view_rendered_by_admin()
     {
+        $packageInfo = $this->getPackageInfo();
+
         $fqdn = $this->fqdn;
 
         $model = $fqdn::factory()->create();
 
         $user = User::factory()->admin()->create();
 
-        $index = route($this->packageInfo['model_route']);
+        $index = route($packageInfo['model_route']);
 
         $url = route(sprintf(
             '%1$s.show',
-            $this->packageInfo['model_route']
+            $packageInfo['model_route']
         ), [
-            $this->packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_slug'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->get($url);
 
         $response->assertStatus(200);
 
-        $this->assertAuthenticated();
-    }
-
-    public function test_show_as_admin_using_json()
-    {
-        $fqdn = $this->fqdn;
-
-        $model = $fqdn::factory()->create();
-
-        $user = User::factory()->admin()->create();
-
-        $url = route(sprintf(
-            '%1$s.show',
-            $this->packageInfo['model_route']
-        ), [
-            $this->packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->getJson($url);
-
-        $response->assertStatus(200);
-        // $response->dump();
-
-        $response->assertJsonStructure([
-            'data',
-            'meta',
-        ]);
         $this->assertAuthenticated();
     }
 }

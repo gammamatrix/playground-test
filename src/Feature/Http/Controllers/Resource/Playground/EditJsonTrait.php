@@ -11,7 +11,17 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait EditJsonTrait
 {
-    public function test_json_guest_cannot_render_edit_view()
+    /**
+     * @return array<string, string>
+     */
+    abstract public function getPackageInfo(): array;
+
+    /**
+     * @return array<string, mixed>
+     */
+    abstract public function getStructureEdit(): array;
+
+    public function test_json_guest_cannot_get_edit_info()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -30,44 +40,7 @@ trait EditJsonTrait
         $response->assertStatus(403);
     }
 
-    public function test_json_edit_as_admin_view_rendered_by_user_with_return_url()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $model = $fqdn::factory()->create();
-
-        $user = User::factory()->admin()->create();
-
-        $index = route($packageInfo['model_route']);
-
-        $url = route(sprintf(
-            '%1$s.edit',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-            '_return_url' => $index,
-        ]);
-        // dump([
-        //     '__METHOD__' => __METHOD__,
-        //     '$url' => $url,
-        //     '$model' => $model->toArray(),
-        //     '$user' => $user->toArray(),
-        // ]);
-        $response = $this->actingAs($user)->getJson($url);
-
-        $this->assertAuthenticated();
-        // $response->dump();
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure([
-            'data',
-            'meta',
-        ]);
-    }
-
-    public function test_json_edit_as_admin_info_with_user()
+    public function test_json_admin_can_get_edit_info()
     {
         $packageInfo = $this->getPackageInfo();
 
