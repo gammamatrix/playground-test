@@ -55,7 +55,7 @@ trait UnlockJsonTrait
         ]);
     }
 
-    public function test_json_unlock_as_admin_user_and_succeed()
+    public function test_json_unlock_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -94,7 +94,7 @@ trait UnlockJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_unlock_as_admin_user_and_succeed_with_no_redirect()
+    public function test_json_unlock_as_admin_and_succeed_with_no_redirect()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -173,44 +173,5 @@ trait UnlockJsonTrait
             'owned_by_id' => $user->id,
             'locked' => true,
         ]);
-    }
-
-    public function test_json_unlock_as_admin_and_succeed()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.unlock',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->deleteJson($url);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
-        ]);
-
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure($this->getStructureData());
     }
 }

@@ -55,7 +55,7 @@ trait UnlockTrait
         ]);
     }
 
-    public function test_unlock_as_admin_user_and_succeed()
+    public function test_unlock_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -99,7 +99,7 @@ trait UnlockTrait
         ]));
     }
 
-    public function test_unlock_as_admin_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()
+    public function test_unlock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -176,44 +176,5 @@ trait UnlockTrait
             'owned_by_id' => $user->id,
             'locked' => true,
         ]);
-    }
-
-    public function test_unlock_as_admin_and_succeed()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.unlock',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->delete($url);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
-        ]);
-
-        $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $model->id,
-        ]));
     }
 }

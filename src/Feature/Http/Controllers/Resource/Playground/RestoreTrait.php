@@ -51,7 +51,7 @@ trait RestoreTrait
         ]);
     }
 
-    public function test_restore_as_admin_user_and_succeed()
+    public function test_restore_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -174,44 +174,5 @@ trait RestoreTrait
             'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
-    }
-
-    public function test_restore_as_admin_and_succeed()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-            'deleted_at' => Carbon::now(),
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => Carbon::now(),
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.restore',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->put($url);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
-        ]);
-
-        $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $model->id,
-        ]));
     }
 }

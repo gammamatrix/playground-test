@@ -48,7 +48,7 @@ trait LockTrait
         ]);
     }
 
-    public function test_lock_as_admin_user_and_succeed()
+    public function test_lock_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -161,43 +161,5 @@ trait LockTrait
             'owned_by_id' => $user->id,
             'locked' => false,
         ]);
-    }
-
-    public function test_lock_as_admin_and_succeed()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.lock',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->put($url);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $model->id,
-        ]));
     }
 }

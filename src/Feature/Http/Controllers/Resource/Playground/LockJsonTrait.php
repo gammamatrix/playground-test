@@ -53,7 +53,7 @@ trait LockJsonTrait
         ]);
     }
 
-    public function test_json_lock_as_admin_user_and_succeed()
+    public function test_json_lock_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -89,7 +89,7 @@ trait LockJsonTrait
         $response->assertStatus(200);
     }
 
-    public function test_json_lock_as_admin_user_and_succeed_with_no_redirect()
+    public function test_json_lock_as_admin_and_succeed_with_no_redirect()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -173,81 +173,5 @@ trait LockJsonTrait
             'owned_by_id' => $user->id,
             'locked' => false,
         ]);
-    }
-
-    public function test_json_lock_as_admin_and_succeed()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.lock',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->putJson($url);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure($this->getStructureData());
-    }
-
-    public function test_json_lock_as_admin_and_succeed_with_json()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.lock',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->putJson($url);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
-        ]);
-
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure($this->getStructureData());
     }
 }

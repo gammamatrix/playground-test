@@ -51,7 +51,7 @@ trait RestoreJsonTrait
         ]);
     }
 
-    public function test_json_restore_as_admin_user_and_succeed()
+    public function test_json_restore_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -90,7 +90,7 @@ trait RestoreJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_as_admin_user_and_succeed_with_no_redirect()
+    public function test_json_restore_as_admin_and_succeed_with_no_redirect()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -171,44 +171,5 @@ trait RestoreJsonTrait
             'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
-    }
-
-    public function test_json_restore_as_admin_and_succeed()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-            'deleted_at' => Carbon::now(),
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => Carbon::now(),
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.restore',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->putJson($url);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
-        ]);
-
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure($this->getStructureData());
     }
 }
