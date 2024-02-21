@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-21 19:27:47</timestamp>
+  <timestamp>2024-02-21 19:46:57</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>121</methodCount>
+    <methodCount>114</methodCount>
     <crapMethodCount>5</crapMethodCount>
     <crapLoad>67</crapLoad>
-    <totalCrap>1304</totalCrap>
-    <crapMethodPercent>4.13</crapMethodPercent>
+    <totalCrap>1290</totalCrap>
+    <crapMethodPercent>4.39</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -487,39 +487,6 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
-      <methodName>test_json_lock_as_admin_user_and_succeed</methodName>
-      <methodSignature>test_json_lock_as_admin_user_and_succeed()</methodSignature>
-      <fullMethod>test_json_lock_as_admin_user_and_succeed()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
-      <methodName>test_json_lock_as_admin_user_and_succeed_with_no_redirect</methodName>
-      <methodSignature>test_json_lock_as_admin_user_and_succeed_with_no_redirect()</methodSignature>
-      <fullMethod>test_json_lock_as_admin_user_and_succeed_with_no_redirect()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
-      <methodName>test_json_lock_as_user_and_get_denied</methodName>
-      <methodSignature>test_json_lock_as_user_and_get_denied()</methodSignature>
-      <fullMethod>test_json_lock_as_user_and_get_denied()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
       <methodName>test_json_lock_as_admin_and_succeed</methodName>
       <methodSignature>test_json_lock_as_admin_and_succeed()</methodSignature>
       <fullMethod>test_json_lock_as_admin_and_succeed()</fullMethod>
@@ -531,9 +498,20 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
-      <methodName>test_json_lock_as_admin_and_succeed_with_json</methodName>
-      <methodSignature>test_json_lock_as_admin_and_succeed_with_json()</methodSignature>
-      <fullMethod>test_json_lock_as_admin_and_succeed_with_json()</fullMethod>
+      <methodName>test_json_lock_as_admin_and_succeed_with_no_redirect</methodName>
+      <methodSignature>test_json_lock_as_admin_and_succeed_with_no_redirect()</methodSignature>
+      <fullMethod>test_json_lock_as_admin_and_succeed_with_no_redirect()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>test_json_lock_as_user_and_get_denied</methodName>
+      <methodSignature>test_json_lock_as_user_and_get_denied()</methodSignature>
+      <fullMethod>test_json_lock_as_user_and_get_denied()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -564,9 +542,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockTrait</className>
-      <methodName>test_lock_as_admin_user_and_succeed</methodName>
-      <methodSignature>test_lock_as_admin_user_and_succeed()</methodSignature>
-      <fullMethod>test_lock_as_admin_user_and_succeed()</fullMethod>
+      <methodName>test_lock_as_admin_and_succeed</methodName>
+      <methodSignature>test_lock_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_lock_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -589,17 +567,6 @@
       <methodName>test_lock_as_user_and_get_denied</methodName>
       <methodSignature>test_lock_as_user_and_get_denied()</methodSignature>
       <fullMethod>test_lock_as_user_and_get_denied()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockTrait</className>
-      <methodName>test_lock_as_admin_and_succeed</methodName>
-      <methodSignature>test_lock_as_admin_and_succeed()</methodSignature>
-      <fullMethod>test_lock_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -630,9 +597,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
-      <methodName>test_json_restore_as_admin_user_and_succeed</methodName>
-      <methodSignature>test_json_restore_as_admin_user_and_succeed()</methodSignature>
-      <fullMethod>test_json_restore_as_admin_user_and_succeed()</fullMethod>
+      <methodName>test_json_restore_as_admin_and_succeed</methodName>
+      <methodSignature>test_json_restore_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_json_restore_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -641,9 +608,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
-      <methodName>test_json_restore_as_admin_user_and_succeed_with_no_redirect</methodName>
-      <methodSignature>test_json_restore_as_admin_user_and_succeed_with_no_redirect()</methodSignature>
-      <fullMethod>test_json_restore_as_admin_user_and_succeed_with_no_redirect()</fullMethod>
+      <methodName>test_json_restore_as_admin_and_succeed_with_no_redirect</methodName>
+      <methodSignature>test_json_restore_as_admin_and_succeed_with_no_redirect()</methodSignature>
+      <fullMethod>test_json_restore_as_admin_and_succeed_with_no_redirect()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -655,17 +622,6 @@
       <methodName>test_json_restore_as_user_and_get_denied</methodName>
       <methodSignature>test_json_restore_as_user_and_get_denied()</methodSignature>
       <fullMethod>test_json_restore_as_user_and_get_denied()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
-      <methodName>test_json_restore_as_admin_and_succeed</methodName>
-      <methodSignature>test_json_restore_as_admin_and_succeed()</methodSignature>
-      <fullMethod>test_json_restore_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -696,9 +652,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreTrait</className>
-      <methodName>test_restore_as_admin_user_and_succeed</methodName>
-      <methodSignature>test_restore_as_admin_user_and_succeed()</methodSignature>
-      <fullMethod>test_restore_as_admin_user_and_succeed()</fullMethod>
+      <methodName>test_restore_as_admin_and_succeed</methodName>
+      <methodSignature>test_restore_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_restore_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -721,17 +677,6 @@
       <methodName>test_restore_as_user_and_get_denied</methodName>
       <methodSignature>test_restore_as_user_and_get_denied()</methodSignature>
       <fullMethod>test_restore_as_user_and_get_denied()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreTrait</className>
-      <methodName>test_restore_as_admin_and_succeed</methodName>
-      <methodSignature>test_restore_as_admin_and_succeed()</methodSignature>
-      <fullMethod>test_restore_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -839,9 +784,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
-      <methodName>test_json_unlock_as_admin_user_and_succeed</methodName>
-      <methodSignature>test_json_unlock_as_admin_user_and_succeed()</methodSignature>
-      <fullMethod>test_json_unlock_as_admin_user_and_succeed()</fullMethod>
+      <methodName>test_json_unlock_as_admin_and_succeed</methodName>
+      <methodSignature>test_json_unlock_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_json_unlock_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -850,9 +795,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
-      <methodName>test_json_unlock_as_admin_user_and_succeed_with_no_redirect</methodName>
-      <methodSignature>test_json_unlock_as_admin_user_and_succeed_with_no_redirect()</methodSignature>
-      <fullMethod>test_json_unlock_as_admin_user_and_succeed_with_no_redirect()</fullMethod>
+      <methodName>test_json_unlock_as_admin_and_succeed_with_no_redirect</methodName>
+      <methodSignature>test_json_unlock_as_admin_and_succeed_with_no_redirect()</methodSignature>
+      <fullMethod>test_json_unlock_as_admin_and_succeed_with_no_redirect()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -864,17 +809,6 @@
       <methodName>test_json_unlock_as_user_and_get_denied</methodName>
       <methodSignature>test_json_unlock_as_user_and_get_denied()</methodSignature>
       <fullMethod>test_json_unlock_as_user_and_get_denied()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
-      <methodName>test_json_unlock_as_admin_and_succeed</methodName>
-      <methodSignature>test_json_unlock_as_admin_and_succeed()</methodSignature>
-      <fullMethod>test_json_unlock_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -916,9 +850,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockTrait</className>
-      <methodName>test_unlock_as_admin_user_and_succeed</methodName>
-      <methodSignature>test_unlock_as_admin_user_and_succeed()</methodSignature>
-      <fullMethod>test_unlock_as_admin_user_and_succeed()</fullMethod>
+      <methodName>test_unlock_as_admin_and_succeed</methodName>
+      <methodSignature>test_unlock_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_unlock_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -927,9 +861,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockTrait</className>
-      <methodName>test_unlock_as_admin_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc</methodName>
-      <methodSignature>test_unlock_as_admin_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()</methodSignature>
-      <fullMethod>test_unlock_as_admin_user_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()</fullMethod>
+      <methodName>test_unlock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc</methodName>
+      <methodSignature>test_unlock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()</methodSignature>
+      <fullMethod>test_unlock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -941,17 +875,6 @@
       <methodName>test_unlock_as_user_and_get_denied</methodName>
       <methodSignature>test_unlock_as_user_and_get_denied()</methodSignature>
       <fullMethod>test_unlock_as_user_and_get_denied()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
-      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockTrait</className>
-      <methodName>test_unlock_as_admin_and_succeed</methodName>
-      <methodSignature>test_unlock_as_admin_and_succeed()</methodSignature>
-      <fullMethod>test_unlock_as_admin_and_succeed()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
