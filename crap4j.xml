@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-21 19:46:57</timestamp>
+  <timestamp>2024-02-22 00:09:01</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>114</methodCount>
+    <methodCount>167</methodCount>
     <crapMethodCount>5</crapMethodCount>
     <crapLoad>67</crapLoad>
-    <totalCrap>1290</totalCrap>
-    <crapMethodPercent>4.39</crapMethodPercent>
+    <totalCrap>1318</totalCrap>
+    <crapMethodPercent>2.99</crapMethodPercent>
   </stats>
   <methods>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateJsonTrait</className>
@@ -69,6 +80,17 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\CreateTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
       <fullMethod>getPackageInfo(): array</fullMethod>
@@ -118,6 +140,17 @@
       <fullMethod>test_create_view_as_admin_with_invalid_parameter_and_fail_validation_and_redirect()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -201,6 +234,17 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\DestroyTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
       <fullMethod>getPackageInfo(): array</fullMethod>
@@ -267,6 +311,17 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
       <fullMethod>getPackageInfo(): array</fullMethod>
@@ -316,6 +371,17 @@
       <fullMethod>test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -377,6 +443,17 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
       <fullMethod>getPackageInfo(): array</fullMethod>
@@ -421,6 +498,17 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
       <fullMethod>getPackageInfo(): array</fullMethod>
@@ -448,6 +536,17 @@
       <fullMethod>test_admin_can_render_index_view()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -520,6 +619,17 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\LockTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
       <fullMethod>getPackageInfo(): array</fullMethod>
@@ -569,6 +679,17 @@
       <fullMethod>test_lock_as_user_and_get_denied()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -629,6 +750,226 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>getGetFqdnRevision</methodName>
+      <methodSignature>getGetFqdnRevision(): string</methodSignature>
+      <fullMethod>getGetFqdnRevision(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>getRevisionId</methodName>
+      <methodSignature>getRevisionId(): string</methodSignature>
+      <fullMethod>getRevisionId(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>getRevisionRouteParameter</methodName>
+      <methodSignature>getRevisionRouteParameter(): string</methodSignature>
+      <fullMethod>getRevisionRouteParameter(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>getStructureData</methodName>
+      <methodSignature>getStructureData(): array</methodSignature>
+      <fullMethod>getStructureData(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>test_json_guest_cannot_restore_revision</methodName>
+      <methodSignature>test_json_guest_cannot_restore_revision()</methodSignature>
+      <fullMethod>test_json_guest_cannot_restore_revision()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>test_json_restore_revision_as_admin_and_succeed</methodName>
+      <methodSignature>test_json_restore_revision_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_json_restore_revision_as_admin_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>test_json_restore_revision_as_admin_and_succeed_without_redirect</methodName>
+      <methodSignature>test_json_restore_revision_as_admin_and_succeed_without_redirect()</methodSignature>
+      <fullMethod>test_json_restore_revision_as_admin_and_succeed_without_redirect()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionJsonTrait</className>
+      <methodName>test_json_restore_revision_as_user_and_get_denied</methodName>
+      <methodSignature>test_json_restore_revision_as_user_and_get_denied()</methodSignature>
+      <fullMethod>test_json_restore_revision_as_user_and_get_denied()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>getGetFqdnRevision</methodName>
+      <methodSignature>getGetFqdnRevision(): string</methodSignature>
+      <fullMethod>getGetFqdnRevision(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>getRevisionId</methodName>
+      <methodSignature>getRevisionId(): string</methodSignature>
+      <fullMethod>getRevisionId(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>getRevisionRouteParameter</methodName>
+      <methodSignature>getRevisionRouteParameter(): string</methodSignature>
+      <fullMethod>getRevisionRouteParameter(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>test_guest_cannot_restore_revision</methodName>
+      <methodSignature>test_guest_cannot_restore_revision()</methodSignature>
+      <fullMethod>test_guest_cannot_restore_revision()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>test_restore_revision_as_admin_and_succeed</methodName>
+      <methodSignature>test_restore_revision_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_restore_revision_as_admin_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>test_restore_revision_as_admin_and_succeed_with_redirect_to_index_with_only_trash</methodName>
+      <methodSignature>test_restore_revision_as_admin_and_succeed_with_redirect_to_index_with_only_trash()</methodSignature>
+      <fullMethod>test_restore_revision_as_admin_and_succeed_with_redirect_to_index_with_only_trash()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreRevisionTrait</className>
+      <methodName>test_restore_revision_as_user_and_get_denied</methodName>
+      <methodSignature>test_restore_revision_as_user_and_get_denied()</methodSignature>
+      <fullMethod>test_restore_revision_as_user_and_get_denied()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
@@ -684,6 +1025,215 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
+      <methodName>getGetFqdnRevision</methodName>
+      <methodSignature>getGetFqdnRevision(): string</methodSignature>
+      <fullMethod>getGetFqdnRevision(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
+      <methodName>getRevisionId</methodName>
+      <methodSignature>getRevisionId(): string</methodSignature>
+      <fullMethod>getRevisionId(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
+      <methodName>getRevisionRouteParameter</methodName>
+      <methodSignature>getRevisionRouteParameter(): string</methodSignature>
+      <fullMethod>getRevisionRouteParameter(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
+      <methodName>test_json_guest_cannot_render_revision_view</methodName>
+      <methodSignature>test_json_guest_cannot_render_revision_view()</methodSignature>
+      <fullMethod>test_json_guest_cannot_render_revision_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
+      <methodName>test_json_revision_view_rendered_by_admin</methodName>
+      <methodSignature>test_json_revision_view_rendered_by_admin()</methodSignature>
+      <fullMethod>test_json_revision_view_rendered_by_admin()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionTrait</className>
+      <methodName>getGetFqdnRevision</methodName>
+      <methodSignature>getGetFqdnRevision(): string</methodSignature>
+      <fullMethod>getGetFqdnRevision(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionTrait</className>
+      <methodName>getRevisionId</methodName>
+      <methodSignature>getRevisionId(): string</methodSignature>
+      <fullMethod>getRevisionId(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionTrait</className>
+      <methodName>getRevisionRouteParameter</methodName>
+      <methodSignature>getRevisionRouteParameter(): string</methodSignature>
+      <fullMethod>getRevisionRouteParameter(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionTrait</className>
+      <methodName>test_guest_cannot_render_revision_view</methodName>
+      <methodSignature>test_guest_cannot_render_revision_view()</methodSignature>
+      <fullMethod>test_guest_cannot_render_revision_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionTrait</className>
+      <methodName>test_revision_view_rendered_by_admin</methodName>
+      <methodSignature>test_revision_view_rendered_by_admin()</methodSignature>
+      <fullMethod>test_revision_view_rendered_by_admin()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait</className>
+      <methodName>getGetFqdnRevision</methodName>
+      <methodSignature>getGetFqdnRevision(): string</methodSignature>
+      <fullMethod>getGetFqdnRevision(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait</className>
+      <methodName>test_guest_cannot_render_revisions_view</methodName>
+      <methodSignature>test_guest_cannot_render_revisions_view()</methodSignature>
+      <fullMethod>test_guest_cannot_render_revisions_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait</className>
+      <methodName>test_admin_can_render_revisions_view</methodName>
+      <methodSignature>test_admin_can_render_revisions_view()</methodSignature>
+      <fullMethod>test_admin_can_render_revisions_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowJsonTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
@@ -718,6 +1268,17 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\ShowTrait</className>
       <methodName>getPackageInfo</methodName>
       <methodSignature>getPackageInfo(): array</methodSignature>
       <fullMethod>getPackageInfo(): array</fullMethod>
@@ -745,6 +1306,17 @@
       <fullMethod>test_show_view_rendered_by_admin()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -811,6 +1383,17 @@
       <fullMethod>test_json_unlock_as_user_and_get_denied()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UnlockTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
