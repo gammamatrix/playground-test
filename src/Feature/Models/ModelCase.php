@@ -34,28 +34,28 @@ abstract class ModelCase extends OrchestraTestCase
      * @var array<string, array<string, mixed>> Test belongsTo relationships.
      */
     protected array $belongsTo = [
-        // 'type' => ['use' => 'type', 'rule' => '_first', 'modelClass' => \Mods\Dam\Models\DamAssetType::class],
+        // 'tag' => ['use' => 'type', 'rule' => '_first', 'modelClass' => \App\Models\Tag::class],
     ];
 
     /**
      * @var array<string, array<string, mixed>> Test belongsToMany relationships.
      */
     protected array $belongsToMany = [
-        // 'tags' => ['use' => 'factory', 'rule' => '_first', 'modelClass' => \Mods\Dam\Models\DamAssetTag::class],
+        // 'tags' => ['use' => 'factory', 'rule' => '_first', 'modelClass' => \App\Models\Tag::class],
     ];
 
     /**
      * @var array<string, array<string, mixed>> Test hasMany relationships.
      */
     protected array $hasMany = [
-        // 'lines' => ['key' => 'cart_id', 'modelClass' => \App\Models\Cartline::class],
+        // 'tags' => ['key' => 'coupon_id', 'modelClass' => \App\Models\Tag::class],
     ];
 
     /**
      * @var array<string, array<string, mixed>> Test hasOne relationships.
      */
     protected array $hasOne = [
-        // 'coupon' => ['key' => 'coupon_id', 'rule' => 'create', 'modelClass' => \App\Coupon::class],
+        // 'tag' => ['key' => 'coupon_id', 'rule' => 'create', 'modelClass' => \App\Models\Tag::class],
     ];
 
     /**

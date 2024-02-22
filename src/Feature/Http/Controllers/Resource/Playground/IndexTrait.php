@@ -4,6 +4,7 @@
  */
 namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
+use Illuminate\Database\Eloquent\Model;
 use Playground\Test\Models\PlaygroundUser as User;
 
 /**
@@ -11,61 +12,47 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait IndexTrait
 {
+    /**
+     * @return class-string<Model>
+     */
+    abstract public function getGetFqdn(): string;
+
+    /**
+     * @return array<string, string>
+     */
+    abstract public function getPackageInfo(): array;
+
     public function test_guest_cannot_render_index_view()
     {
-        $fqdn = $this->fqdn;
+        $packageInfo = $this->getPackageInfo();
+
+        $fqdn = $this->getGetFqdn();
 
         $model = $fqdn::factory()->create();
 
-        $url = route($this->packageInfo['model_route'], [
-            $this->packageInfo['model_slug'] => $model->id,
-        ]);
+        $url = route($packageInfo['model_route']);
 
         $response = $this->get($url);
+
         $response->assertStatus(403);
-        // $response->assertRedirect(route('login'));
     }
 
-    public function test_index_view_rendered_by_admin()
+    public function test_admin_can_render_index_view()
     {
-        $fqdn = $this->fqdn;
+        $packageInfo = $this->getPackageInfo();
+
+        $fqdn = $this->getGetFqdn();
 
         $model = $fqdn::factory()->create();
 
         $user = User::factory()->admin()->create();
 
-        $url = route($this->packageInfo['model_route'], [
-            $this->packageInfo['model_slug'] => $model->id,
-        ]);
+        $url = route($packageInfo['model_route']);
 
         $response = $this->actingAs($user)->get($url);
 
         $response->assertStatus(200);
 
-        $this->assertAuthenticated();
-    }
-
-    public function test_index_as_admin_using_json()
-    {
-        $fqdn = $this->fqdn;
-
-        $model = $fqdn::factory()->create();
-
-        $user = User::factory()->admin()->create();
-
-        $url = route($this->packageInfo['model_route'], [
-            $this->packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->getJson($url);
-
-        $response->assertStatus(200);
-        // $response->dump();
-
-        $response->assertJsonStructure([
-            'data',
-            'meta',
-        ]);
         $this->assertAuthenticated();
     }
 }

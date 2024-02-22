@@ -4,6 +4,7 @@
  */
 namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Playground\Test\Models\PlaygroundUser as User;
 
@@ -12,11 +13,21 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait RestoreJsonTrait
 {
+    /**
+     * @return class-string<Model>
+     */
+    abstract public function getGetFqdn(): string;
+
+    /**
+     * @return array<string, mixed>
+     */
+    abstract public function getStructureData(): array;
+
     public function test_json_guest_cannot_restore()
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $model = $fqdn::factory()->create([
             'deleted_at' => Carbon::now(),
@@ -37,9 +48,6 @@ trait RestoreJsonTrait
 
         $response = $this->putJson($url);
 
-        // $response->dump();
-
-        // $response->assertRedirect(route('login'));
         $response->assertStatus(403);
 
         $this->assertDatabaseHas($packageInfo['table'], [
@@ -49,11 +57,11 @@ trait RestoreJsonTrait
         ]);
     }
 
-    public function test_json_restore_as_admin_user_and_succeed()
+    public function test_json_restore_as_admin_and_succeed()
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $user = User::factory()->admin()->create();
 
@@ -77,11 +85,6 @@ trait RestoreJsonTrait
 
         $response = $this->actingAs($user)->putJson($url);
 
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
-
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
@@ -93,11 +96,11 @@ trait RestoreJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_as_admin_user_and_succeed_with_no_redirect()
+    public function test_json_restore_as_admin_and_succeed_with_no_redirect()
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $user = User::factory()->admin()->create();
 
@@ -126,18 +129,7 @@ trait RestoreJsonTrait
             '_return_url' => $_return_url,
         ]);
 
-        // dump([
-        //     '__METHOD__' => __METHOD__,
-        //     '$url' => $url,
-        //     '$_return_url' => $_return_url,
-        // ]);
-
         $response = $this->actingAs($user)->putJson($url);
-
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
@@ -150,11 +142,11 @@ trait RestoreJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_with_user_role_and_get_denied()
+    public function test_json_restore_as_user_and_get_denied()
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $user = User::factory()->create(['role' => 'user']);
 
@@ -180,59 +172,10 @@ trait RestoreJsonTrait
 
         $response->assertStatus(401);
 
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
-
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
             'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
-    }
-
-    public function test_json_restore_with_admin_role_and_succeed()
-    {
-        $packageInfo = $this->getPackageInfo();
-
-        $fqdn = $this->fqdn;
-
-        $user = User::factory()->admin()->create();
-
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-            'deleted_at' => Carbon::now(),
-        ]);
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => Carbon::now(),
-        ]);
-
-        $url = route(sprintf(
-            '%1$s.restore',
-            $packageInfo['model_route']
-        ), [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
-
-        $response = $this->actingAs($user)->putJson($url);
-
-        // $response->dd();
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
-
-        $this->assertDatabaseHas($packageInfo['table'], [
-            'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'deleted_at' => null,
-        ]);
-
-        $response->assertStatus(200);
-
-        $response->assertJsonStructure($this->getStructureData());
     }
 }

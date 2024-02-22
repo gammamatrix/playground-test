@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\Playground\LockJsonTrait
+ * \Tests\Feature\Playground\Cms\Resource\Http\Controllers\RestoreRevisionJsonTrait
  */
-trait LockJsonTrait
+trait RestoreRevisionJsonTrait
 {
     /**
      * @return class-string<Model>
@@ -18,34 +18,48 @@ trait LockJsonTrait
     abstract public function getGetFqdn(): string;
 
     /**
+     * @return class-string<Model>
+     */
+    abstract public function getGetFqdnRevision(): string;
+
+    /**
      * @return array<string, string>
      */
     abstract public function getPackageInfo(): array;
+
+    abstract public function getRevisionId(): string;
+
+    abstract public function getRevisionRouteParameter(): string;
 
     /**
      * @return array<string, mixed>
      */
     abstract public function getStructureData(): array;
 
-    public function test_json_guest_cannot_lock()
+    public function test_json_guest_cannot_restore_revision()
     {
         $packageInfo = $this->getPackageInfo();
 
         $fqdn = $this->getGetFqdn();
+        $fqdn_revision = $this->getGetFqdnRevision();
 
         $model = $fqdn::factory()->create();
 
+        $revision = $fqdn_revision::factory()->create([
+            $this->getRevisionId() => $model->id,
+            'revision' => 10,
+        ]);
+
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
-            'locked' => false,
+            'revision' => 0,
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.revision.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $this->getRevisionRouteParameter() => $revision->id,
         ]);
 
         $response = $this->putJson($url);
@@ -54,75 +68,82 @@ trait LockJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
-            'locked' => false,
+            'revision' => 0,
         ]);
     }
 
-    public function test_json_lock_as_admin_and_succeed()
+    public function test_json_restore_revision_as_admin_and_succeed()
     {
+        $user = User::factory()->admin()->create();
+
         $packageInfo = $this->getPackageInfo();
 
         $fqdn = $this->getGetFqdn();
+        $fqdn_revision = $this->getGetFqdnRevision();
 
-        $user = User::factory()->admin()->create();
+        $model = $fqdn::factory()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
+        $revision = $fqdn_revision::factory()->create([
+            $this->getRevisionId() => $model->id,
+            'revision' => 10,
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
+            'revision' => 0,
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.revision.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $this->getRevisionRouteParameter() => $revision->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
+            'revision' => 11,
         ]);
 
         $response->assertStatus(200);
+
+        $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_lock_as_admin_and_succeed_with_no_redirect()
+    public function test_json_restore_revision_as_admin_and_succeed_without_redirect()
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->getGetFqdn();
-
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
+        $fqdn = $this->getGetFqdn();
+        $fqdn_revision = $this->getGetFqdnRevision();
+
+        $model = $fqdn::factory()->create();
+
+        $revision = $fqdn_revision::factory()->create([
+            $this->getRevisionId() => $model->id,
+            'revision' => 10,
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
+            'revision' => 0,
         ]);
 
-        // _return_url should have no effect
         $_return_url = route($packageInfo['model_route'], [
-            'sort' => '-locked',
+            'filter' => [
+                'trash' => 'only',
+            ],
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.revision.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $this->getRevisionRouteParameter() => $revision->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -135,8 +156,7 @@ trait LockJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => true,
+            'revision' => 11,
         ]);
 
         $response->assertStatus(200);
@@ -144,30 +164,32 @@ trait LockJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_lock_as_user_and_get_denied()
+    public function test_json_restore_revision_as_user_and_get_denied()
     {
         $packageInfo = $this->getPackageInfo();
 
+        $user = User::factory()->create(['role' => 'user']);
+
         $fqdn = $this->getGetFqdn();
+        $fqdn_revision = $this->getGetFqdnRevision();
 
-        $user = User::factory()->create();
-        // $user = User::factory()->admin()->create();
+        $model = $fqdn::factory()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
+        $revision = $fqdn_revision::factory()->create([
+            $this->getRevisionId() => $model->id,
+            'revision' => 10,
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
+            'revision' => 0,
         ]);
 
         $url = route(sprintf(
-            '%1$s.lock',
+            '%1$s.revision.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $this->getRevisionRouteParameter() => $revision->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);
@@ -176,8 +198,7 @@ trait LockJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
-            'locked' => false,
+            'revision' => 0,
         ]);
     }
 }
