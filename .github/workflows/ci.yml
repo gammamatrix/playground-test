@@ -88,7 +88,7 @@ jobs:
           }
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Run php-actions/composer@v6
       uses: php-actions/composer@v6
       with:
