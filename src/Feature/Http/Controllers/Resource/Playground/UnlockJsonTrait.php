@@ -4,6 +4,7 @@
  */
 namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
+use Illuminate\Database\Eloquent\Model;
 use Playground\Test\Models\PlaygroundUser as User;
 
 /**
@@ -11,6 +12,11 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait UnlockJsonTrait
 {
+    /**
+     * @return class-string<Model>
+     */
+    abstract public function getGetFqdn(): string;
+
     /**
      * @return array<string, string>
      */
@@ -25,7 +31,7 @@ trait UnlockJsonTrait
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $model = $fqdn::factory()->create([
             'locked' => true,
@@ -59,7 +65,7 @@ trait UnlockJsonTrait
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $user = User::factory()->admin()->create();
 
@@ -98,7 +104,7 @@ trait UnlockJsonTrait
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $user = User::factory()->admin()->create();
 
@@ -142,7 +148,7 @@ trait UnlockJsonTrait
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $user = User::factory()->admin()->create(['role' => 'user']);
 

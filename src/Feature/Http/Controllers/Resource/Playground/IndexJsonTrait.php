@@ -4,6 +4,7 @@
  */
 namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
+use Illuminate\Database\Eloquent\Model;
 use Playground\Test\Models\PlaygroundUser as User;
 
 /**
@@ -11,6 +12,11 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait IndexJsonTrait
 {
+    /**
+     * @return class-string<Model>
+     */
+    abstract public function getGetFqdn(): string;
+
     /**
      * @return array<string, string>
      */
@@ -25,13 +31,11 @@ trait IndexJsonTrait
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $model = $fqdn::factory()->create();
 
-        $url = route($packageInfo['model_route'], [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
+        $url = route($packageInfo['model_route']);
 
         $response = $this->getJson($url);
         $response->assertStatus(403);
@@ -41,15 +45,13 @@ trait IndexJsonTrait
     {
         $packageInfo = $this->getPackageInfo();
 
-        $fqdn = $this->fqdn;
+        $fqdn = $this->getGetFqdn();
 
         $model = $fqdn::factory()->create();
 
         $user = User::factory()->admin()->create();
 
-        $url = route($packageInfo['model_route'], [
-            $packageInfo['model_slug'] => $model->id,
-        ]);
+        $url = route($packageInfo['model_route']);
 
         $response = $this->actingAs($user)->getJson($url);
 
