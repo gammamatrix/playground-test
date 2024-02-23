@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait
+ * \Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateJsonTrait
  */
-trait EditJsonTrait
+trait UpdateJsonTrait
 {
     /**
      * @return class-string<Model>
@@ -22,12 +22,7 @@ trait EditJsonTrait
      */
     abstract public function getPackageInfo(): array;
 
-    /**
-     * @return array<string, mixed>
-     */
-    abstract public function getStructureEdit(): array;
-
-    public function test_json_guest_cannot_get_edit_info()
+    public function test_json_guest_cannot_update()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -36,17 +31,26 @@ trait EditJsonTrait
         $model = $fqdn::factory()->create();
 
         $url = route(sprintf(
-            '%1$s.edit',
+            '%1$s.patch',
             $packageInfo['model_route']
         ), [
             $packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->getJson($url);
+        $response = $this->patchJson($url);
+
         $response->assertStatus(403);
     }
 
-    public function test_json_admin_can_get_edit_info()
+    protected array $json_update_without_payload_errors = [
+        'title',
+    ];
+
+    protected array $json_update_payload = [
+        'title' => 'change to new title',
+    ];
+
+    public function test_json_update_as_admin_without_payload_and_fail_validation()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -57,25 +61,21 @@ trait EditJsonTrait
         $user = User::factory()->admin()->create();
 
         $url = route(sprintf(
-            '%1$s.edit',
+            '%1$s.patch',
             $packageInfo['model_route']
         ), [
             $packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->actingAs($user)->getJson($url);
+        $response = $this->actingAs($user)->patchJson($url);
 
-        $response->assertStatus(200);
-        // $response->dump();
+        $response->assertInvalid($this->json_update_without_payload_errors);
+        $response->assertStatus(422);
 
-        $response->assertJsonStructure([
-            'data',
-            'meta',
-        ]);
         $this->assertAuthenticated();
     }
 
-    public function test_json_edit_as_admin_and_fail_validation_with_invalid_parameter()
+    public function test_json_admin_can_update()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -83,27 +83,37 @@ trait EditJsonTrait
 
         $model = $fqdn::factory()->create();
 
+        $this->assertDatabaseHas($packageInfo['table'], [
+            'id' => $model->id,
+            'title' => $model->title,
+        ]);
+
+        $payload = $this->json_update_payload + $model->toArray();
+
+        $this->assertDatabaseMissing($packageInfo['table'], [
+            'id' => $model->id,
+            'title' => $payload['title'],
+        ]);
+
         $user = User::factory()->admin()->create();
 
         $url = route(sprintf(
-            '%1$s.edit',
+            '%1$s.patch',
             $packageInfo['model_route']
         ), [
             $packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->actingAs($user)->getJson($url.'?owned_by_id=[duck]');
+        $response = $this->actingAs($user)->patchJson($url, $payload);
 
-        // $response->dump();
-        // $response->dumpHeaders();
-        // $response->dumpSession();
-        $response->assertStatus(422);
-
-        $response->assertJsonStructure([
-            'errors',
-        ]);
-        $response->assertJsonValidationErrorFor('owned_by_id');
+        $response->assertStatus(200);
+        $response->assertJsonStructure($this->getStructureData());
 
         $this->assertAuthenticated();
+
+        $this->assertDatabaseHas($packageInfo['table'], [
+            'id' => $model->id,
+            'title' => $payload['title'],
+        ]);
     }
 }

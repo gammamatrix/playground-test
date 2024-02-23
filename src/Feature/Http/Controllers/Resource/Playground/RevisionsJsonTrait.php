@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 use Playground\Test\Models\PlaygroundUser as User;
 
 /**
- * \Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait
+ * \Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait
  */
-trait RevisionsTrait
+trait RevisionsJsonTrait
 {
     /**
      * @return class-string<Model>
@@ -27,7 +27,7 @@ trait RevisionsTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_render_revisions_view()
+    public function test_json_guest_cannot_get_revisions()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -51,12 +51,12 @@ trait RevisionsTrait
             $packageInfo['model_route']
         ), $model);
 
-        $response = $this->get($url);
+        $response = $this->getJson($url);
 
         $response->assertStatus(403);
     }
 
-    public function test_admin_can_render_revisions_view()
+    public function test_json_admin_can_get_revisions()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -77,27 +77,27 @@ trait RevisionsTrait
             $packageInfo['model_route']
         ), $model);
 
-        $response = $this->actingAs($user)->get($url);
+        $response = $this->actingAs($user)->getJson($url);
 
         $response->assertStatus(200);
 
         $this->assertAuthenticated();
     }
 
-    protected array $revisions_with_filters = [
+    protected array $revisions_json_with_filters = [
         'active' => true,
         'created_at' => [
             'operator' => '>=',
-            'value' => '-6 days midnight',
+            'value' => '-2 weeks midnight',
         ],
         'modified_by_id' => [
             'operator' => 'NULL',
         ],
         'title' => 'revisions with filters',
-        'label' => 'revisions_with_filters',
+        'label' => 'revisions_json_with_filters',
     ];
 
-    public function test_admin_can_render_revisions_view_with_filters()
+    public function test_json_admin_can_get_revisions_with_filters()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -105,15 +105,15 @@ trait RevisionsTrait
         $fqdn_revision = $this->getGetFqdnRevision();
 
         $model = $fqdn::factory()->create([
-            'title' => $this->revisions_with_filters['title'],
-            'label' => $this->revisions_with_filters['label'],
+            'title' => $this->revisions_json_with_filters['title'],
+            'label' => $this->revisions_json_with_filters['label'],
         ]);
 
         $revision = $fqdn_revision::factory()->create([
             $this->getRevisionId() => $model->id,
             'revision' => 10,
-            'title' => $this->revisions_with_filters['title'],
-            'label' => $this->revisions_with_filters['label'],
+            'title' => $this->revisions_json_with_filters['title'],
+            'label' => $this->revisions_json_with_filters['label'],
         ]);
 
         $user = User::factory()->admin()->create();
@@ -123,16 +123,18 @@ trait RevisionsTrait
             $packageInfo['model_route']
         ), [
             $packageInfo['model_slug'] => $model->id,
-            'filter' => $this->revisions_with_filters,
+            'filter' => $this->revisions_json_with_filters,
         ]);
 
-        $response = $this->actingAs($user)->get($url);
+        $response = $this->actingAs($user)->getJson($url);
 
         $response->assertStatus(200);
         // $response->dump();
 
         $this->assertAuthenticated();
 
-        $response->assertSee($revision->id);
+        $response->assertJsonStructure($this->getStructureIndex());
+
+        $response->assertJsonPath('data.0.id', $revision->id);
     }
 }

@@ -62,4 +62,66 @@ trait IndexJsonTrait
 
         $this->assertAuthenticated();
     }
+
+    protected array $index_json_with_filters = [
+        'id' => true,
+        'active' => true,
+        'created_at' => [
+            'operator' => '>=',
+            'value' => 'last week midnight',
+        ],
+        'modified_by_id' => [
+            'operator' => 'NULL',
+        ],
+        'title' => 'index json with filters',
+        'label' => 'index_json_with_filters',
+    ];
+
+    public function test_json_admin_can_get_index_with_filters()
+    {
+        $packageInfo = $this->getPackageInfo();
+
+        $fqdn = $this->getGetFqdn();
+
+        $model = $fqdn::factory()->create([
+            'title' => $this->index_json_with_filters['title'],
+            'label' => $this->index_json_with_filters['label'],
+        ]);
+
+        $user = User::factory()->admin()->create();
+
+        if (array_key_exists('id', $this->index_json_with_filters)) {
+            if (is_bool($this->index_json_with_filters['id'])) {
+
+                if ($this->index_json_with_filters['id']) {
+                    $this->index_json_with_filters['id'] = $model->id;
+                } else {
+                    unset($this->index_json_with_filters['id']);
+                }
+            }
+        }
+
+        $url = route($packageInfo['model_route'], [
+            'filter' => $this->index_json_with_filters,
+        ]);
+
+        // dump([
+        //     '__METHOD__' => __METHOD__,
+        //     '$url' => $url,
+        //     '$this->index_json_with_filters' => $this->index_json_with_filters,
+        // ]);
+
+        $response = $this->actingAs($user)->getJson($url);
+
+        // $response->dump();
+
+        $response->assertStatus(200);
+
+        $this->assertAuthenticated();
+
+        // The filters should find the model by ID.
+        if (! empty($this->index_json_with_filters['id'])) {
+            $response->assertJsonPath('data.0.id', $this->index_json_with_filters['id']);
+        }
+    }
 }
