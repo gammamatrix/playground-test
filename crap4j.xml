@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-23 19:44:23</timestamp>
+  <timestamp>2024-02-23 21:54:20</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>189</methodCount>
+    <methodCount>200</methodCount>
     <crapMethodCount>5</crapMethodCount>
     <crapLoad>67</crapLoad>
-    <totalCrap>1400</totalCrap>
-    <crapMethodPercent>2.65</crapMethodPercent>
+    <totalCrap>1414</totalCrap>
+    <crapMethodPercent>2.5</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -1706,6 +1706,127 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateJsonTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateJsonTrait</className>
+      <methodName>test_json_guest_cannot_update</methodName>
+      <methodSignature>test_json_guest_cannot_update()</methodSignature>
+      <fullMethod>test_json_guest_cannot_update()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateJsonTrait</className>
+      <methodName>test_json_update_as_admin_without_payload_and_fail_validation</methodName>
+      <methodSignature>test_json_update_as_admin_without_payload_and_fail_validation()</methodSignature>
+      <fullMethod>test_json_update_as_admin_without_payload_and_fail_validation()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateJsonTrait</className>
+      <methodName>test_json_admin_can_update</methodName>
+      <methodSignature>test_json_admin_can_update()</methodSignature>
+      <fullMethod>test_json_admin_can_update()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateTrait</className>
+      <methodName>test_guest_cannot_update</methodName>
+      <methodSignature>test_guest_cannot_update()</methodSignature>
+      <fullMethod>test_guest_cannot_update()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateTrait</className>
+      <methodName>test_update_as_admin_without_payload_and_fail_validation</methodName>
+      <methodSignature>test_update_as_admin_without_payload_and_fail_validation()</methodSignature>
+      <fullMethod>test_update_as_admin_without_payload_and_fail_validation()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateTrait</className>
+      <methodName>test_admin_can_update</methodName>
+      <methodSignature>test_admin_can_update()</methodSignature>
+      <fullMethod>test_admin_can_update()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateTrait</className>
+      <methodName>test_admin_can_update_view_with_return_url</methodName>
+      <methodSignature>test_admin_can_update_view_with_return_url()</methodSignature>
+      <fullMethod>test_admin_can_update_view_with_return_url()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
       <package>Playground\Test\Feature\Models</package>
       <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>getModel</methodName>
@@ -1808,8 +1929,8 @@
       <package>Playground\Test</package>
       <className>Playground\Test\MockingTrait</className>
       <methodName>mockRequest</methodName>
-      <methodSignature>mockRequest(string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</methodSignature>
-      <fullMethod>mockRequest(string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</fullMethod>
+      <methodSignature>mockRequest(string $requestClass, string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</methodSignature>
+      <fullMethod>mockRequest(string $requestClass, string $uri, string $method, array $parameters, array $cookies, array $files, array $server, $content)</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
