@@ -4,6 +4,7 @@
  */
 namespace Playground\Test;
 
+use Illuminate\Http\Request;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -25,13 +26,14 @@ trait MockingTrait
      * @param  array  $files  The request files ($_FILES)
      * @param  array  $server  The server parameters ($_SERVER)
      * @param  string|resource|null  $content  The raw body data
-     * @return static
+     * @return Request
      *
      * @see vendor/illuminate/http/Request.php
      * @see vendor/laravel/lumen-framework/src/Http/Request.php
      * @see vendor/symfony/http-foundation/Request.php
      */
     public static function mockRequest(
+        string $requestClass = Request::class,
         string $uri = '',
         string $method = 'GET',
         array $parameters = [],
@@ -40,7 +42,7 @@ trait MockingTrait
         array $server = [],
         $content = null
     ) {
-        return \Illuminate\Http\Request::createFromBase(
+        return $requestClass::createFromBase(
             \Symfony\Component\HttpFoundation\Request::create(
                 $uri,
                 $method,

@@ -71,7 +71,6 @@ trait StoreJsonTrait
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
 
         $response = $this->actingAs($user)->postJson($url);
-        $response->dump();
 
         $response->assertInvalid($this->store_without_payload_errors);
         $response->assertStatus(422);
@@ -98,8 +97,6 @@ trait StoreJsonTrait
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
 
         $response = $this->actingAs($user)->postJson($url, $model->toArray());
-
-        $response->dump();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'title' => $model->title,
