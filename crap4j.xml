@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-23 00:14:26</timestamp>
+  <timestamp>2024-02-23 19:44:23</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>167</methodCount>
+    <methodCount>189</methodCount>
     <crapMethodCount>5</crapMethodCount>
     <crapLoad>67</crapLoad>
-    <totalCrap>1318</totalCrap>
-    <crapMethodPercent>2.99</crapMethodPercent>
+    <totalCrap>1400</totalCrap>
+    <crapMethodPercent>2.65</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -366,9 +366,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\EditJsonTrait</className>
-      <methodName>test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter</methodName>
-      <methodSignature>test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter()</methodSignature>
-      <fullMethod>test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter()</fullMethod>
+      <methodName>test_json_edit_as_admin_and_fail_validation_with_invalid_parameter</methodName>
+      <methodSignature>test_json_edit_as_admin_and_fail_validation_with_invalid_parameter()</methodSignature>
+      <fullMethod>test_json_edit_as_admin_and_fail_validation_with_invalid_parameter()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -497,6 +497,17 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait</className>
+      <methodName>test_json_admin_can_get_index_with_filters</methodName>
+      <methodSignature>test_json_admin_can_get_index_with_filters()</methodSignature>
+      <fullMethod>test_json_admin_can_get_index_with_filters()</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexTrait</className>
       <methodName>getGetFqdn</methodName>
       <methodSignature>getGetFqdn(): string</methodSignature>
@@ -536,6 +547,17 @@
       <fullMethod>test_admin_can_render_index_view()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexTrait</className>
+      <methodName>test_admin_can_render_index_view_with_filters</methodName>
+      <methodSignature>test_admin_can_render_index_view_with_filters()</methodSignature>
+      <fullMethod>test_admin_can_render_index_view_with_filters()</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1092,9 +1114,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionJsonTrait</className>
-      <methodName>test_json_revision_view_rendered_by_admin</methodName>
-      <methodSignature>test_json_revision_view_rendered_by_admin()</methodSignature>
-      <fullMethod>test_json_revision_view_rendered_by_admin()</fullMethod>
+      <methodName>test_json_admin_can_get_revision_info</methodName>
+      <methodSignature>test_json_admin_can_get_revision_info()</methodSignature>
+      <fullMethod>test_json_admin_can_get_revision_info()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -1179,6 +1201,83 @@
     </method>
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait</className>
+      <methodName>getGetFqdnRevision</methodName>
+      <methodSignature>getGetFqdnRevision(): string</methodSignature>
+      <fullMethod>getGetFqdnRevision(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait</className>
+      <methodName>test_json_guest_cannot_get_revisions</methodName>
+      <methodSignature>test_json_guest_cannot_get_revisions()</methodSignature>
+      <fullMethod>test_json_guest_cannot_get_revisions()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait</className>
+      <methodName>test_json_admin_can_get_revisions</methodName>
+      <methodSignature>test_json_admin_can_get_revisions()</methodSignature>
+      <fullMethod>test_json_admin_can_get_revisions()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait</className>
+      <methodName>test_json_admin_can_get_revisions_with_filters</methodName>
+      <methodSignature>test_json_admin_can_get_revisions_with_filters()</methodSignature>
+      <fullMethod>test_json_admin_can_get_revisions_with_filters()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait</className>
       <methodName>getGetFqdnRevision</methodName>
       <methodSignature>getGetFqdnRevision(): string</methodSignature>
@@ -1216,6 +1315,17 @@
       <methodName>test_admin_can_render_revisions_view</methodName>
       <methodSignature>test_admin_can_render_revisions_view()</methodSignature>
       <fullMethod>test_admin_can_render_revisions_view()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait</className>
+      <methodName>test_admin_can_render_revisions_view_with_filters</methodName>
+      <methodSignature>test_admin_can_render_revisions_view_with_filters()</methodSignature>
+      <fullMethod>test_admin_can_render_revisions_view_with_filters()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -1304,6 +1414,138 @@
       <methodName>test_show_view_rendered_by_admin</methodName>
       <methodSignature>test_show_view_rendered_by_admin()</methodSignature>
       <fullMethod>test_show_view_rendered_by_admin()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreJsonTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreJsonTrait</className>
+      <methodName>getStructureData</methodName>
+      <methodSignature>getStructureData(): array</methodSignature>
+      <fullMethod>getStructureData(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreJsonTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreJsonTrait</className>
+      <methodName>test_json_guest_cannot_store</methodName>
+      <methodSignature>test_json_guest_cannot_store()</methodSignature>
+      <fullMethod>test_json_guest_cannot_store()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreJsonTrait</className>
+      <methodName>test_json_store_as_admin_without_payload_and_fail_validation</methodName>
+      <methodSignature>test_json_store_as_admin_without_payload_and_fail_validation()</methodSignature>
+      <fullMethod>test_json_store_as_admin_without_payload_and_fail_validation()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreJsonTrait</className>
+      <methodName>test_json_store_as_admin_and_succeed</methodName>
+      <methodSignature>test_json_store_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_json_store_as_admin_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreTrait</className>
+      <methodName>getGetFqdn</methodName>
+      <methodSignature>getGetFqdn(): string</methodSignature>
+      <fullMethod>getGetFqdn(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreTrait</className>
+      <methodName>getPackageInfo</methodName>
+      <methodSignature>getPackageInfo(): array</methodSignature>
+      <fullMethod>getPackageInfo(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreTrait</className>
+      <methodName>test_guest_cannot_store</methodName>
+      <methodSignature>test_guest_cannot_store()</methodSignature>
+      <fullMethod>test_guest_cannot_store()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreTrait</className>
+      <methodName>test_store_as_admin_without_payload_and_fail_validation</methodName>
+      <methodSignature>test_store_as_admin_without_payload_and_fail_validation()</methodSignature>
+      <fullMethod>test_store_as_admin_without_payload_and_fail_validation()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreTrait</className>
+      <methodName>test_store_as_admin_and_succeed</methodName>
+      <methodSignature>test_store_as_admin_and_succeed()</methodSignature>
+      <fullMethod>test_store_as_admin_and_succeed()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
+      <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreTrait</className>
+      <methodName>test_store_as_admin_and_succeed_with_return_url</methodName>
+      <methodSignature>test_store_as_admin_and_succeed_with_return_url()</methodSignature>
+      <fullMethod>test_store_as_admin_and_succeed_with_return_url()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>

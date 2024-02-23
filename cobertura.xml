@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.019535374868004" branch-rate="0" lines-covered="37" lines-valid="1894" branches-covered="0" branches-valid="0" complexity="198" version="0.4" timestamp="1708647266">
+<coverage line-rate="0.017330210772834" branch-rate="0" lines-covered="37" lines-valid="2135" branches-covered="0" branches-valid="0" complexity="219" version="0.4" timestamp="1708717463">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -962,7 +962,7 @@
                 <line number="75" hits="0"/>
               </lines>
             </method>
-            <method name="test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="test_json_edit_as_admin_and_fail_validation_with_invalid_parameter" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
                 <line number="80" hits="0"/>
                 <line number="82" hits="0"/>
@@ -1193,9 +1193,9 @@
         </class>
       </classes>
     </package>
-    <package name="Feature/Http/Controllers/Resource/Playground/IndexJsonTrait.php" line-rate="0" branch-rate="0" complexity="2">
+    <package name="Feature/Http/Controllers/Resource/Playground/IndexJsonTrait.php" line-rate="0" branch-rate="0" complexity="7">
       <classes>
-        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait" filename="Feature/Http/Controllers/Resource/Playground/IndexJsonTrait.php" line-rate="0" branch-rate="0" complexity="2">
+        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexJsonTrait" filename="Feature/Http/Controllers/Resource/Playground/IndexJsonTrait.php" line-rate="0" branch-rate="0" complexity="7">
           <methods>
             <method name="getGetFqdn" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
@@ -1235,6 +1235,30 @@
                 <line number="63" hits="0"/>
               </lines>
             </method>
+            <method name="test_json_admin_can_get_index_with_filters" signature="" line-rate="0" branch-rate="0" complexity="5">
+              <lines>
+                <line number="82" hits="0"/>
+                <line number="84" hits="0"/>
+                <line number="86" hits="0"/>
+                <line number="87" hits="0"/>
+                <line number="88" hits="0"/>
+                <line number="89" hits="0"/>
+                <line number="91" hits="0"/>
+                <line number="93" hits="0"/>
+                <line number="94" hits="0"/>
+                <line number="96" hits="0"/>
+                <line number="97" hits="0"/>
+                <line number="99" hits="0"/>
+                <line number="104" hits="0"/>
+                <line number="105" hits="0"/>
+                <line number="106" hits="0"/>
+                <line number="114" hits="0"/>
+                <line number="118" hits="0"/>
+                <line number="120" hits="0"/>
+                <line number="123" hits="0"/>
+                <line number="124" hits="0"/>
+              </lines>
+            </method>
           </methods>
           <lines>
             <line number="18" hits="0"/>
@@ -1255,13 +1279,33 @@
             <line number="58" hits="0"/>
             <line number="61" hits="0"/>
             <line number="63" hits="0"/>
+            <line number="82" hits="0"/>
+            <line number="84" hits="0"/>
+            <line number="86" hits="0"/>
+            <line number="87" hits="0"/>
+            <line number="88" hits="0"/>
+            <line number="89" hits="0"/>
+            <line number="91" hits="0"/>
+            <line number="93" hits="0"/>
+            <line number="94" hits="0"/>
+            <line number="96" hits="0"/>
+            <line number="97" hits="0"/>
+            <line number="99" hits="0"/>
+            <line number="104" hits="0"/>
+            <line number="105" hits="0"/>
+            <line number="106" hits="0"/>
+            <line number="114" hits="0"/>
+            <line number="118" hits="0"/>
+            <line number="120" hits="0"/>
+            <line number="123" hits="0"/>
+            <line number="124" hits="0"/>
           </lines>
         </class>
       </classes>
     </package>
-    <package name="Feature/Http/Controllers/Resource/Playground/IndexTrait.php" line-rate="0" branch-rate="0" complexity="2">
+    <package name="Feature/Http/Controllers/Resource/Playground/IndexTrait.php" line-rate="0" branch-rate="0" complexity="7">
       <classes>
-        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexTrait" filename="Feature/Http/Controllers/Resource/Playground/IndexTrait.php" line-rate="0" branch-rate="0" complexity="2">
+        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\IndexTrait" filename="Feature/Http/Controllers/Resource/Playground/IndexTrait.php" line-rate="0" branch-rate="0" complexity="7">
           <methods>
             <method name="getGetFqdn" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
@@ -1295,6 +1339,30 @@
                 <line number="56" hits="0"/>
               </lines>
             </method>
+            <method name="test_admin_can_render_index_view_with_filters" signature="" line-rate="0" branch-rate="0" complexity="5">
+              <lines>
+                <line number="75" hits="0"/>
+                <line number="77" hits="0"/>
+                <line number="79" hits="0"/>
+                <line number="80" hits="0"/>
+                <line number="81" hits="0"/>
+                <line number="82" hits="0"/>
+                <line number="84" hits="0"/>
+                <line number="86" hits="0"/>
+                <line number="87" hits="0"/>
+                <line number="89" hits="0"/>
+                <line number="90" hits="0"/>
+                <line number="92" hits="0"/>
+                <line number="97" hits="0"/>
+                <line number="98" hits="0"/>
+                <line number="99" hits="0"/>
+                <line number="101" hits="0"/>
+                <line number="103" hits="0"/>
+                <line number="106" hits="0"/>
+                <line number="109" hits="0"/>
+                <line number="110" hits="0"/>
+              </lines>
+            </method>
           </methods>
           <lines>
             <line number="18" hits="0"/>
@@ -1313,6 +1381,26 @@
             <line number="52" hits="0"/>
             <line number="54" hits="0"/>
             <line number="56" hits="0"/>
+            <line number="75" hits="0"/>
+            <line number="77" hits="0"/>
+            <line number="79" hits="0"/>
+            <line number="80" hits="0"/>
+            <line number="81" hits="0"/>
+            <line number="82" hits="0"/>
+            <line number="84" hits="0"/>
+            <line number="86" hits="0"/>
+            <line number="87" hits="0"/>
+            <line number="89" hits="0"/>
+            <line number="90" hits="0"/>
+            <line number="92" hits="0"/>
+            <line number="97" hits="0"/>
+            <line number="98" hits="0"/>
+            <line number="99" hits="0"/>
+            <line number="101" hits="0"/>
+            <line number="103" hits="0"/>
+            <line number="106" hits="0"/>
+            <line number="109" hits="0"/>
+            <line number="110" hits="0"/>
           </lines>
         </class>
       </classes>
@@ -2892,7 +2980,7 @@
                 <line number="62" hits="0"/>
               </lines>
             </method>
-            <method name="test_json_revision_view_rendered_by_admin" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="test_json_admin_can_get_revision_info" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
                 <line number="67" hits="0"/>
                 <line number="69" hits="0"/>
@@ -3093,29 +3181,30 @@
         </class>
       </classes>
     </package>
-    <package name="Feature/Http/Controllers/Resource/Playground/RevisionsTrait.php" line-rate="0" branch-rate="0" complexity="2">
+    <package name="Feature/Http/Controllers/Resource/Playground/RevisionsJsonTrait.php" line-rate="0" branch-rate="0" complexity="3">
       <classes>
-        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait" filename="Feature/Http/Controllers/Resource/Playground/RevisionsTrait.php" line-rate="0" branch-rate="0" complexity="2">
+        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsJsonTrait" filename="Feature/Http/Controllers/Resource/Playground/RevisionsJsonTrait.php" line-rate="0" branch-rate="0" complexity="3">
           <methods>
-            <method name="getGetFqdnRevision" signature="" line-rate="0" branch-rate="0" complexity="0">
+            <method name="getGetFqdn" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
                 <line number="18" hits="0"/>
               </lines>
             </method>
-            <method name="getPackageInfo" signature="" line-rate="0" branch-rate="0" complexity="0">
+            <method name="getGetFqdnRevision" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
                 <line number="23" hits="0"/>
               </lines>
             </method>
-            <method name="test_guest_cannot_render_revisions_view" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="getPackageInfo" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
-                <line number="27" hits="0"/>
-                <line number="29" hits="0"/>
-                <line number="30" hits="0"/>
+                <line number="28" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_json_guest_cannot_get_revisions" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
                 <line number="32" hits="0"/>
                 <line number="34" hits="0"/>
                 <line number="35" hits="0"/>
-                <line number="36" hits="0"/>
                 <line number="37" hits="0"/>
                 <line number="39" hits="0"/>
                 <line number="40" hits="0"/>
@@ -3126,40 +3215,71 @@
                 <line number="46" hits="0"/>
                 <line number="47" hits="0"/>
                 <line number="49" hits="0"/>
+                <line number="50" hits="0"/>
                 <line number="51" hits="0"/>
+                <line number="52" hits="0"/>
+                <line number="54" hits="0"/>
+                <line number="56" hits="0"/>
               </lines>
             </method>
-            <method name="test_admin_can_render_revisions_view" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="test_json_admin_can_get_revisions" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="56" hits="0"/>
-                <line number="58" hits="0"/>
-                <line number="59" hits="0"/>
                 <line number="61" hits="0"/>
                 <line number="63" hits="0"/>
                 <line number="64" hits="0"/>
-                <line number="65" hits="0"/>
                 <line number="66" hits="0"/>
                 <line number="68" hits="0"/>
+                <line number="69" hits="0"/>
                 <line number="70" hits="0"/>
                 <line number="71" hits="0"/>
-                <line number="72" hits="0"/>
                 <line number="73" hits="0"/>
                 <line number="75" hits="0"/>
+                <line number="76" hits="0"/>
                 <line number="77" hits="0"/>
-                <line number="79" hits="0"/>
+                <line number="78" hits="0"/>
+                <line number="80" hits="0"/>
+                <line number="82" hits="0"/>
+                <line number="84" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_json_admin_can_get_revisions_with_filters" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="102" hits="0"/>
+                <line number="104" hits="0"/>
+                <line number="105" hits="0"/>
+                <line number="107" hits="0"/>
+                <line number="108" hits="0"/>
+                <line number="109" hits="0"/>
+                <line number="110" hits="0"/>
+                <line number="112" hits="0"/>
+                <line number="113" hits="0"/>
+                <line number="114" hits="0"/>
+                <line number="115" hits="0"/>
+                <line number="116" hits="0"/>
+                <line number="117" hits="0"/>
+                <line number="119" hits="0"/>
+                <line number="121" hits="0"/>
+                <line number="122" hits="0"/>
+                <line number="123" hits="0"/>
+                <line number="124" hits="0"/>
+                <line number="125" hits="0"/>
+                <line number="126" hits="0"/>
+                <line number="127" hits="0"/>
+                <line number="129" hits="0"/>
+                <line number="131" hits="0"/>
+                <line number="134" hits="0"/>
+                <line number="136" hits="0"/>
+                <line number="138" hits="0"/>
               </lines>
             </method>
           </methods>
           <lines>
             <line number="18" hits="0"/>
             <line number="23" hits="0"/>
-            <line number="27" hits="0"/>
-            <line number="29" hits="0"/>
-            <line number="30" hits="0"/>
+            <line number="28" hits="0"/>
             <line number="32" hits="0"/>
             <line number="34" hits="0"/>
             <line number="35" hits="0"/>
-            <line number="36" hits="0"/>
             <line number="37" hits="0"/>
             <line number="39" hits="0"/>
             <line number="40" hits="0"/>
@@ -3170,23 +3290,211 @@
             <line number="46" hits="0"/>
             <line number="47" hits="0"/>
             <line number="49" hits="0"/>
+            <line number="50" hits="0"/>
             <line number="51" hits="0"/>
+            <line number="52" hits="0"/>
+            <line number="54" hits="0"/>
             <line number="56" hits="0"/>
-            <line number="58" hits="0"/>
-            <line number="59" hits="0"/>
             <line number="61" hits="0"/>
             <line number="63" hits="0"/>
             <line number="64" hits="0"/>
-            <line number="65" hits="0"/>
             <line number="66" hits="0"/>
             <line number="68" hits="0"/>
+            <line number="69" hits="0"/>
             <line number="70" hits="0"/>
             <line number="71" hits="0"/>
-            <line number="72" hits="0"/>
             <line number="73" hits="0"/>
             <line number="75" hits="0"/>
+            <line number="76" hits="0"/>
             <line number="77" hits="0"/>
-            <line number="79" hits="0"/>
+            <line number="78" hits="0"/>
+            <line number="80" hits="0"/>
+            <line number="82" hits="0"/>
+            <line number="84" hits="0"/>
+            <line number="102" hits="0"/>
+            <line number="104" hits="0"/>
+            <line number="105" hits="0"/>
+            <line number="107" hits="0"/>
+            <line number="108" hits="0"/>
+            <line number="109" hits="0"/>
+            <line number="110" hits="0"/>
+            <line number="112" hits="0"/>
+            <line number="113" hits="0"/>
+            <line number="114" hits="0"/>
+            <line number="115" hits="0"/>
+            <line number="116" hits="0"/>
+            <line number="117" hits="0"/>
+            <line number="119" hits="0"/>
+            <line number="121" hits="0"/>
+            <line number="122" hits="0"/>
+            <line number="123" hits="0"/>
+            <line number="124" hits="0"/>
+            <line number="125" hits="0"/>
+            <line number="126" hits="0"/>
+            <line number="127" hits="0"/>
+            <line number="129" hits="0"/>
+            <line number="131" hits="0"/>
+            <line number="134" hits="0"/>
+            <line number="136" hits="0"/>
+            <line number="138" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Feature/Http/Controllers/Resource/Playground/RevisionsTrait.php" line-rate="0" branch-rate="0" complexity="3">
+      <classes>
+        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\RevisionsTrait" filename="Feature/Http/Controllers/Resource/Playground/RevisionsTrait.php" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="getGetFqdn" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+            <method name="getGetFqdnRevision" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="23" hits="0"/>
+              </lines>
+            </method>
+            <method name="getPackageInfo" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="28" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_guest_cannot_render_revisions_view" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="32" hits="0"/>
+                <line number="34" hits="0"/>
+                <line number="35" hits="0"/>
+                <line number="37" hits="0"/>
+                <line number="39" hits="0"/>
+                <line number="40" hits="0"/>
+                <line number="41" hits="0"/>
+                <line number="42" hits="0"/>
+                <line number="44" hits="0"/>
+                <line number="45" hits="0"/>
+                <line number="46" hits="0"/>
+                <line number="47" hits="0"/>
+                <line number="49" hits="0"/>
+                <line number="50" hits="0"/>
+                <line number="51" hits="0"/>
+                <line number="52" hits="0"/>
+                <line number="54" hits="0"/>
+                <line number="56" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_admin_can_render_revisions_view" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="61" hits="0"/>
+                <line number="63" hits="0"/>
+                <line number="64" hits="0"/>
+                <line number="66" hits="0"/>
+                <line number="68" hits="0"/>
+                <line number="69" hits="0"/>
+                <line number="70" hits="0"/>
+                <line number="71" hits="0"/>
+                <line number="73" hits="0"/>
+                <line number="75" hits="0"/>
+                <line number="76" hits="0"/>
+                <line number="77" hits="0"/>
+                <line number="78" hits="0"/>
+                <line number="80" hits="0"/>
+                <line number="82" hits="0"/>
+                <line number="84" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_admin_can_render_revisions_view_with_filters" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="102" hits="0"/>
+                <line number="104" hits="0"/>
+                <line number="105" hits="0"/>
+                <line number="107" hits="0"/>
+                <line number="108" hits="0"/>
+                <line number="109" hits="0"/>
+                <line number="110" hits="0"/>
+                <line number="112" hits="0"/>
+                <line number="113" hits="0"/>
+                <line number="114" hits="0"/>
+                <line number="115" hits="0"/>
+                <line number="116" hits="0"/>
+                <line number="117" hits="0"/>
+                <line number="119" hits="0"/>
+                <line number="121" hits="0"/>
+                <line number="122" hits="0"/>
+                <line number="123" hits="0"/>
+                <line number="124" hits="0"/>
+                <line number="125" hits="0"/>
+                <line number="126" hits="0"/>
+                <line number="127" hits="0"/>
+                <line number="129" hits="0"/>
+                <line number="131" hits="0"/>
+                <line number="134" hits="0"/>
+                <line number="136" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="28" hits="0"/>
+            <line number="32" hits="0"/>
+            <line number="34" hits="0"/>
+            <line number="35" hits="0"/>
+            <line number="37" hits="0"/>
+            <line number="39" hits="0"/>
+            <line number="40" hits="0"/>
+            <line number="41" hits="0"/>
+            <line number="42" hits="0"/>
+            <line number="44" hits="0"/>
+            <line number="45" hits="0"/>
+            <line number="46" hits="0"/>
+            <line number="47" hits="0"/>
+            <line number="49" hits="0"/>
+            <line number="50" hits="0"/>
+            <line number="51" hits="0"/>
+            <line number="52" hits="0"/>
+            <line number="54" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="61" hits="0"/>
+            <line number="63" hits="0"/>
+            <line number="64" hits="0"/>
+            <line number="66" hits="0"/>
+            <line number="68" hits="0"/>
+            <line number="69" hits="0"/>
+            <line number="70" hits="0"/>
+            <line number="71" hits="0"/>
+            <line number="73" hits="0"/>
+            <line number="75" hits="0"/>
+            <line number="76" hits="0"/>
+            <line number="77" hits="0"/>
+            <line number="78" hits="0"/>
+            <line number="80" hits="0"/>
+            <line number="82" hits="0"/>
+            <line number="84" hits="0"/>
+            <line number="102" hits="0"/>
+            <line number="104" hits="0"/>
+            <line number="105" hits="0"/>
+            <line number="107" hits="0"/>
+            <line number="108" hits="0"/>
+            <line number="109" hits="0"/>
+            <line number="110" hits="0"/>
+            <line number="112" hits="0"/>
+            <line number="113" hits="0"/>
+            <line number="114" hits="0"/>
+            <line number="115" hits="0"/>
+            <line number="116" hits="0"/>
+            <line number="117" hits="0"/>
+            <line number="119" hits="0"/>
+            <line number="121" hits="0"/>
+            <line number="122" hits="0"/>
+            <line number="123" hits="0"/>
+            <line number="124" hits="0"/>
+            <line number="125" hits="0"/>
+            <line number="126" hits="0"/>
+            <line number="127" hits="0"/>
+            <line number="129" hits="0"/>
+            <line number="131" hits="0"/>
+            <line number="134" hits="0"/>
+            <line number="136" hits="0"/>
           </lines>
         </class>
       </classes>
@@ -3349,6 +3657,298 @@
             <line number="64" hits="0"/>
             <line number="66" hits="0"/>
             <line number="68" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Feature/Http/Controllers/Resource/Playground/StoreJsonTrait.php" line-rate="0" branch-rate="0" complexity="3">
+      <classes>
+        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreJsonTrait" filename="Feature/Http/Controllers/Resource/Playground/StoreJsonTrait.php" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="getGetFqdn" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+            <method name="getStructureData" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="23" hits="0"/>
+              </lines>
+            </method>
+            <method name="getPackageInfo" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="28" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_json_guest_cannot_store" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="32" hits="0"/>
+                <line number="34" hits="0"/>
+                <line number="36" hits="0"/>
+                <line number="38" hits="0"/>
+                <line number="39" hits="0"/>
+                <line number="40" hits="0"/>
+                <line number="42" hits="0"/>
+                <line number="44" hits="0"/>
+                <line number="46" hits="0"/>
+                <line number="48" hits="0"/>
+                <line number="49" hits="0"/>
+                <line number="50" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_json_store_as_admin_without_payload_and_fail_validation" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="59" hits="0"/>
+                <line number="61" hits="0"/>
+                <line number="63" hits="0"/>
+                <line number="65" hits="0"/>
+                <line number="67" hits="0"/>
+                <line number="68" hits="0"/>
+                <line number="69" hits="0"/>
+                <line number="71" hits="0"/>
+                <line number="73" hits="0"/>
+                <line number="74" hits="0"/>
+                <line number="76" hits="0"/>
+                <line number="77" hits="0"/>
+                <line number="79" hits="0"/>
+                <line number="80" hits="0"/>
+                <line number="81" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_json_store_as_admin_and_succeed" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="86" hits="0"/>
+                <line number="88" hits="0"/>
+                <line number="90" hits="0"/>
+                <line number="92" hits="0"/>
+                <line number="94" hits="0"/>
+                <line number="95" hits="0"/>
+                <line number="96" hits="0"/>
+                <line number="98" hits="0"/>
+                <line number="100" hits="0"/>
+                <line number="102" hits="0"/>
+                <line number="104" hits="0"/>
+                <line number="105" hits="0"/>
+                <line number="106" hits="0"/>
+                <line number="108" hits="0"/>
+                <line number="110" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="28" hits="0"/>
+            <line number="32" hits="0"/>
+            <line number="34" hits="0"/>
+            <line number="36" hits="0"/>
+            <line number="38" hits="0"/>
+            <line number="39" hits="0"/>
+            <line number="40" hits="0"/>
+            <line number="42" hits="0"/>
+            <line number="44" hits="0"/>
+            <line number="46" hits="0"/>
+            <line number="48" hits="0"/>
+            <line number="49" hits="0"/>
+            <line number="50" hits="0"/>
+            <line number="59" hits="0"/>
+            <line number="61" hits="0"/>
+            <line number="63" hits="0"/>
+            <line number="65" hits="0"/>
+            <line number="67" hits="0"/>
+            <line number="68" hits="0"/>
+            <line number="69" hits="0"/>
+            <line number="71" hits="0"/>
+            <line number="73" hits="0"/>
+            <line number="74" hits="0"/>
+            <line number="76" hits="0"/>
+            <line number="77" hits="0"/>
+            <line number="79" hits="0"/>
+            <line number="80" hits="0"/>
+            <line number="81" hits="0"/>
+            <line number="86" hits="0"/>
+            <line number="88" hits="0"/>
+            <line number="90" hits="0"/>
+            <line number="92" hits="0"/>
+            <line number="94" hits="0"/>
+            <line number="95" hits="0"/>
+            <line number="96" hits="0"/>
+            <line number="98" hits="0"/>
+            <line number="100" hits="0"/>
+            <line number="102" hits="0"/>
+            <line number="104" hits="0"/>
+            <line number="105" hits="0"/>
+            <line number="106" hits="0"/>
+            <line number="108" hits="0"/>
+            <line number="110" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Feature/Http/Controllers/Resource/Playground/StoreTrait.php" line-rate="0" branch-rate="0" complexity="4">
+      <classes>
+        <class name="Playground\Test\Feature\Http\Controllers\Resource\Playground\StoreTrait" filename="Feature/Http/Controllers/Resource/Playground/StoreTrait.php" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="getGetFqdn" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="18" hits="0"/>
+              </lines>
+            </method>
+            <method name="getPackageInfo" signature="" line-rate="0" branch-rate="0" complexity="0">
+              <lines>
+                <line number="23" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_guest_cannot_store" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="27" hits="0"/>
+                <line number="29" hits="0"/>
+                <line number="31" hits="0"/>
+                <line number="33" hits="0"/>
+                <line number="34" hits="0"/>
+                <line number="35" hits="0"/>
+                <line number="37" hits="0"/>
+                <line number="39" hits="0"/>
+                <line number="41" hits="0"/>
+                <line number="43" hits="0"/>
+                <line number="44" hits="0"/>
+                <line number="45" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_store_as_admin_without_payload_and_fail_validation" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="54" hits="0"/>
+                <line number="56" hits="0"/>
+                <line number="58" hits="0"/>
+                <line number="60" hits="0"/>
+                <line number="62" hits="0"/>
+                <line number="63" hits="0"/>
+                <line number="64" hits="0"/>
+                <line number="66" hits="0"/>
+                <line number="68" hits="0"/>
+                <line number="72" hits="0"/>
+                <line number="73" hits="0"/>
+                <line number="75" hits="0"/>
+                <line number="76" hits="0"/>
+                <line number="77" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_store_as_admin_and_succeed" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="83" hits="0"/>
+                <line number="85" hits="0"/>
+                <line number="87" hits="0"/>
+                <line number="89" hits="0"/>
+                <line number="91" hits="0"/>
+                <line number="92" hits="0"/>
+                <line number="93" hits="0"/>
+                <line number="95" hits="0"/>
+                <line number="97" hits="0"/>
+                <line number="102" hits="0"/>
+                <line number="103" hits="0"/>
+                <line number="104" hits="0"/>
+                <line number="106" hits="0"/>
+                <line number="108" hits="0"/>
+                <line number="109" hits="0"/>
+                <line number="110" hits="0"/>
+              </lines>
+            </method>
+            <method name="test_store_as_admin_and_succeed_with_return_url" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="115" hits="0"/>
+                <line number="117" hits="0"/>
+                <line number="119" hits="0"/>
+                <line number="121" hits="0"/>
+                <line number="123" hits="0"/>
+                <line number="124" hits="0"/>
+                <line number="125" hits="0"/>
+                <line number="127" hits="0"/>
+                <line number="128" hits="0"/>
+                <line number="129" hits="0"/>
+                <line number="131" hits="0"/>
+                <line number="132" hits="0"/>
+                <line number="133" hits="0"/>
+                <line number="134" hits="0"/>
+                <line number="135" hits="0"/>
+                <line number="136" hits="0"/>
+                <line number="137" hits="0"/>
+                <line number="139" hits="0"/>
+                <line number="144" hits="0"/>
+                <line number="145" hits="0"/>
+                <line number="146" hits="0"/>
+                <line number="148" hits="0"/>
+                <line number="150" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0"/>
+            <line number="23" hits="0"/>
+            <line number="27" hits="0"/>
+            <line number="29" hits="0"/>
+            <line number="31" hits="0"/>
+            <line number="33" hits="0"/>
+            <line number="34" hits="0"/>
+            <line number="35" hits="0"/>
+            <line number="37" hits="0"/>
+            <line number="39" hits="0"/>
+            <line number="41" hits="0"/>
+            <line number="43" hits="0"/>
+            <line number="44" hits="0"/>
+            <line number="45" hits="0"/>
+            <line number="54" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="58" hits="0"/>
+            <line number="60" hits="0"/>
+            <line number="62" hits="0"/>
+            <line number="63" hits="0"/>
+            <line number="64" hits="0"/>
+            <line number="66" hits="0"/>
+            <line number="68" hits="0"/>
+            <line number="72" hits="0"/>
+            <line number="73" hits="0"/>
+            <line number="75" hits="0"/>
+            <line number="76" hits="0"/>
+            <line number="77" hits="0"/>
+            <line number="83" hits="0"/>
+            <line number="85" hits="0"/>
+            <line number="87" hits="0"/>
+            <line number="89" hits="0"/>
+            <line number="91" hits="0"/>
+            <line number="92" hits="0"/>
+            <line number="93" hits="0"/>
+            <line number="95" hits="0"/>
+            <line number="97" hits="0"/>
+            <line number="102" hits="0"/>
+            <line number="103" hits="0"/>
+            <line number="104" hits="0"/>
+            <line number="106" hits="0"/>
+            <line number="108" hits="0"/>
+            <line number="109" hits="0"/>
+            <line number="110" hits="0"/>
+            <line number="115" hits="0"/>
+            <line number="117" hits="0"/>
+            <line number="119" hits="0"/>
+            <line number="121" hits="0"/>
+            <line number="123" hits="0"/>
+            <line number="124" hits="0"/>
+            <line number="125" hits="0"/>
+            <line number="127" hits="0"/>
+            <line number="128" hits="0"/>
+            <line number="129" hits="0"/>
+            <line number="131" hits="0"/>
+            <line number="132" hits="0"/>
+            <line number="133" hits="0"/>
+            <line number="134" hits="0"/>
+            <line number="135" hits="0"/>
+            <line number="136" hits="0"/>
+            <line number="137" hits="0"/>
+            <line number="139" hits="0"/>
+            <line number="144" hits="0"/>
+            <line number="145" hits="0"/>
+            <line number="146" hits="0"/>
+            <line number="148" hits="0"/>
+            <line number="150" hits="0"/>
           </lines>
         </class>
       </classes>
