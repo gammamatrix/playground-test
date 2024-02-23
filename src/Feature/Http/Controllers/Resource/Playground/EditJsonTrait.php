@@ -75,7 +75,7 @@ trait EditJsonTrait
         $this->assertAuthenticated();
     }
 
-    public function test_json_edit_as_admin_view_rendered_by_user_with_invalid_parameter()
+    public function test_json_edit_as_admin_and_fail_validation_with_invalid_parameter()
     {
         $packageInfo = $this->getPackageInfo();
 

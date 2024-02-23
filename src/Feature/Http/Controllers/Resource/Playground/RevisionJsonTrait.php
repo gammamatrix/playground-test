@@ -62,7 +62,7 @@ trait RevisionJsonTrait
         $response->assertStatus(403);
     }
 
-    public function test_json_revision_view_rendered_by_admin()
+    public function test_json_admin_can_get_revision_info()
     {
         $packageInfo = $this->getPackageInfo();
 
