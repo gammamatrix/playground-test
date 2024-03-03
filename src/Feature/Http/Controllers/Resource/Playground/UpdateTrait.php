@@ -12,6 +12,18 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait UpdateTrait
 {
+    protected int $status_code_guest_update = 403;
+
+    protected string $update_parameter = 'title';
+
+    protected array $update_without_payload_errors = [
+        'title',
+    ];
+
+    protected array $update_payload = [
+        'title' => 'change to new title',
+    ];
+
     /**
      * @return class-string<Model>
      */
@@ -39,16 +51,8 @@ trait UpdateTrait
 
         $response = $this->patch($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_update);
     }
-
-    protected array $update_without_payload_errors = [
-        'title',
-    ];
-
-    protected array $update_payload = [
-        'title' => 'change to new title',
-    ];
 
     public function test_update_as_admin_without_payload_and_fail_validation()
     {
@@ -85,14 +89,14 @@ trait UpdateTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $model->title,
+            $this->update_parameter => $model->getAttributeValue($this->update_parameter),
         ]);
 
         $payload = $this->update_payload + $model->toArray();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $payload['title'],
+            $this->update_parameter => $payload[$this->update_parameter],
         ]);
 
         $user = User::factory()->admin()->create();
@@ -114,7 +118,7 @@ trait UpdateTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $payload['title'],
+            $this->update_parameter => $payload[$this->update_parameter],
         ]);
     }
 
@@ -128,14 +132,14 @@ trait UpdateTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $model->title,
+            $this->update_parameter => $model->getAttributeValue($this->update_parameter),
         ]);
 
         $payload = $this->update_payload + $model->toArray();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $payload['title'],
+            $this->update_parameter => $payload[$this->update_parameter],
         ]);
 
         $user = User::factory()->admin()->create();
@@ -158,7 +162,7 @@ trait UpdateTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $payload['title'],
+            $this->update_parameter => $payload[$this->update_parameter],
         ]);
     }
 }

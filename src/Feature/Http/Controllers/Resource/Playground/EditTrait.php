@@ -12,6 +12,12 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait EditTrait
 {
+    protected int $status_code_guest_edit = 403;
+
+    protected string $edit_form_parameter = 'owned_by_id';
+
+    protected string $edit_form_invalid_value = '[duck]';
+
     /**
      * @return class-string<Model>
      */
@@ -39,7 +45,7 @@ trait EditTrait
 
         $response = $this->get($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_edit);
     }
 
     public function test_admin_can_render_edit_view()
@@ -115,13 +121,18 @@ trait EditTrait
             $packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->actingAs($user)->get($url.'?owned_by_id=[duck]');
+        $response = $this->actingAs($user)->from($url)->get(sprintf(
+            '%1$s?%2$s=%3$s',
+            $url,
+            $this->edit_form_parameter,
+            $this->edit_form_invalid_value
+        ));
 
         $response->assertStatus(302);
 
         // // The owned by id field must be a valid UUID.
         $response->assertSessionHasErrors([
-            'owned_by_id',
+            $this->edit_form_parameter,
         ]);
 
         $this->assertAuthenticated();

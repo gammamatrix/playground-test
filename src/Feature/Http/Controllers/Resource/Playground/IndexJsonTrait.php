@@ -12,6 +12,8 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait IndexJsonTrait
 {
+    protected int $status_code_json_guest_index = 403;
+
     /**
      * @return class-string<Model>
      */
@@ -38,7 +40,8 @@ trait IndexJsonTrait
         $url = route($packageInfo['model_route']);
 
         $response = $this->getJson($url);
-        $response->assertStatus(403);
+
+        $response->assertStatus($this->status_code_json_guest_index);
     }
 
     public function test_json_admin_can_get_index()

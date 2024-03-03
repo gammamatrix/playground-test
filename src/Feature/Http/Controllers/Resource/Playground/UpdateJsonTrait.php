@@ -12,6 +12,18 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait UpdateJsonTrait
 {
+    protected int $status_code_guest_json_update = 403;
+
+    protected string $update_json_parameter = 'title';
+
+    protected array $json_update_without_payload_errors = [
+        'title',
+    ];
+
+    protected array $json_update_payload = [
+        'title' => 'change to new title',
+    ];
+
     /**
      * @return class-string<Model>
      */
@@ -39,16 +51,8 @@ trait UpdateJsonTrait
 
         $response = $this->patchJson($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_json_update);
     }
-
-    protected array $json_update_without_payload_errors = [
-        'title',
-    ];
-
-    protected array $json_update_payload = [
-        'title' => 'change to new title',
-    ];
 
     public function test_json_update_as_admin_without_payload_and_fail_validation()
     {
@@ -85,14 +89,14 @@ trait UpdateJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $model->title,
+            $this->update_json_parameter => $model->getAttributeValue($this->update_json_parameter),
         ]);
 
         $payload = $this->json_update_payload + $model->toArray();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $payload['title'],
+            $this->update_json_parameter => $payload[$this->update_json_parameter],
         ]);
 
         $user = User::factory()->admin()->create();
@@ -105,6 +109,7 @@ trait UpdateJsonTrait
         ]);
 
         $response = $this->actingAs($user)->patchJson($url, $payload);
+        // $response->dump();
 
         $response->assertStatus(200);
         $response->assertJsonStructure($this->getStructureData());
@@ -113,7 +118,7 @@ trait UpdateJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'title' => $payload['title'],
+            $this->update_json_parameter => $payload[$this->update_json_parameter],
         ]);
     }
 }

@@ -12,6 +12,8 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait ShowTrait
 {
+    protected int $status_code_guest_show = 403;
+
     /**
      * @return class-string<Model>
      */
@@ -39,7 +41,7 @@ trait ShowTrait
 
         $response = $this->get($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_show);
     }
 
     public function test_show_view_rendered_by_admin()

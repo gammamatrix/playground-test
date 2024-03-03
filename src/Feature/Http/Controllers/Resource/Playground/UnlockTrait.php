@@ -12,6 +12,10 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait UnlockTrait
 {
+    protected int $status_code_guest_unlock = 403;
+
+    protected int $status_code_user_unlock = 401;
+
     /**
      * @return class-string<Model>
      */
@@ -39,7 +43,6 @@ trait UnlockTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'locked' => true,
         ]);
 
@@ -52,11 +55,10 @@ trait UnlockTrait
 
         $response = $this->delete($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_unlock);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'locked' => true,
         ]);
     }
@@ -70,13 +72,11 @@ trait UnlockTrait
         $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
@@ -96,7 +96,6 @@ trait UnlockTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => false,
         ]);
 
@@ -114,13 +113,11 @@ trait UnlockTrait
         $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
@@ -140,7 +137,6 @@ trait UnlockTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => false,
         ]);
 
@@ -156,13 +152,11 @@ trait UnlockTrait
         $user = User::factory()->admin()->create(['role' => 'user']);
 
         $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
@@ -175,11 +169,10 @@ trait UnlockTrait
 
         $response = $this->actingAs($user)->delete($url);
 
-        $response->assertStatus(401);
+        $response->assertStatus($this->status_code_user_unlock);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
     }

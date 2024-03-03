@@ -12,6 +12,8 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait IndexTrait
 {
+    protected int $status_code_guest_index = 403;
+
     /**
      * @return class-string<Model>
      */
@@ -34,7 +36,7 @@ trait IndexTrait
 
         $response = $this->get($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_index);
     }
 
     public function test_admin_can_render_index_view()

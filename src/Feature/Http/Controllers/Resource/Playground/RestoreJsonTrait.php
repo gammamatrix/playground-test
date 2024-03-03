@@ -13,6 +13,10 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait RestoreJsonTrait
 {
+    protected int $status_code_json_guest_restore = 403;
+
+    protected int $status_code_json_user_restore = 401;
+
     /**
      * @return class-string<Model>
      */
@@ -35,7 +39,6 @@ trait RestoreJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'deleted_at' => Carbon::now(),
         ]);
 
@@ -48,11 +51,10 @@ trait RestoreJsonTrait
 
         $response = $this->putJson($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_json_guest_restore);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'deleted_at' => Carbon::now(),
         ]);
     }
@@ -66,13 +68,11 @@ trait RestoreJsonTrait
         $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
 
@@ -87,7 +87,6 @@ trait RestoreJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -105,13 +104,11 @@ trait RestoreJsonTrait
         $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
 
@@ -133,7 +130,6 @@ trait RestoreJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -151,13 +147,11 @@ trait RestoreJsonTrait
         $user = User::factory()->create(['role' => 'user']);
 
         $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
 
@@ -170,11 +164,10 @@ trait RestoreJsonTrait
 
         $response = $this->actingAs($user)->putJson($url);
 
-        $response->assertStatus(401);
+        $response->assertStatus($this->status_code_json_user_restore);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => Carbon::now(),
         ]);
     }

@@ -12,6 +12,14 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait StoreTrait
 {
+    protected int $status_code_guest_store = 403;
+
+    protected string $store_parameter = 'title';
+
+    protected array $store_without_payload_errors = [
+        'title',
+    ];
+
     /**
      * @return class-string<Model>
      */
@@ -31,23 +39,19 @@ trait StoreTrait
         $model = $fqdn::factory()->make();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
 
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
 
         $response = $this->post($url, $model->toArray());
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_store);
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
     }
-
-    protected array $store_without_payload_errors = [
-        'title',
-    ];
 
     public function test_store_as_admin_without_payload_and_fail_validation()
     {
@@ -60,7 +64,7 @@ trait StoreTrait
         $model = $fqdn::factory()->make();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
 
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
@@ -73,7 +77,7 @@ trait StoreTrait
         $response->assertStatus(302);
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
         // $response->assertStatus(422);
     }
@@ -87,12 +91,22 @@ trait StoreTrait
         $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->make();
+        // dump([
+        //     '__METHOD__' => __METHOD__,
+        //     '$model->toArray()' => $model->toArray(),
+        //     '$this->store_json_parameter' => $this->store_parameter,
+        //     '$model->getAttributeValue($this->store_json_parameter)' => $model->getAttributeValue($this->store_parameter),
+        // ]);
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
 
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
+        // dump([
+        //     '__METHOD__' => __METHOD__,
+        //     '$url' => $url,
+        // ]);
 
         $response = $this->actingAs($user)->post($url, $model->toArray());
 
@@ -100,10 +114,13 @@ trait StoreTrait
         // $response->dumpSession();
 
         $this->assertDatabaseHas($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
 
-        $created = $fqdn::where('title', $model->title)->firstOrFail();
+        $created = $fqdn::where(
+            $this->store_parameter,
+            $model->getAttributeValue($this->store_parameter)
+        )->firstOrFail();
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
             $packageInfo['model_slug'] => $created->id,
@@ -121,7 +138,7 @@ trait StoreTrait
         $model = $fqdn::factory()->make();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
 
         $_return_url = route($packageInfo['model_route'], [
@@ -142,10 +159,13 @@ trait StoreTrait
         // $response->dumpSession();
 
         $this->assertDatabaseHas($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_parameter => $model->getAttributeValue($this->store_parameter),
         ]);
 
-        $created = $fqdn::where('title', $model->title)->firstOrFail();
+        $created = $fqdn::where(
+            $this->store_parameter,
+            $model->getAttributeValue($this->store_parameter)
+        )->firstOrFail();
 
         $response->assertRedirect($_return_url);
     }

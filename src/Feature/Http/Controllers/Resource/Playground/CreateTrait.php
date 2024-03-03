@@ -12,6 +12,12 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait CreateTrait
 {
+    protected int $status_code_guest_create = 403;
+
+    protected string $create_form_parameter = 'owned_by_id';
+
+    protected string $create_form_invalid_value = '[duck]';
+
     /**
      * @return class-string<Model>
      */
@@ -32,7 +38,8 @@ trait CreateTrait
         ));
 
         $response = $this->get($url);
-        $response->assertStatus(403);
+
+        $response->assertStatus($this->status_code_guest_create);
     }
 
     public function test_admin_can_render_create_view()
@@ -91,9 +98,12 @@ trait CreateTrait
             $packageInfo['model_route']
         ));
 
-        $response = $this->actingAs($user)
-            ->from($url)
-            ->get($url.'?owned_by_id=[duck]');
+        $response = $this->actingAs($user)->from($url)->get(sprintf(
+            '%1$s?%2$s=%3$s',
+            $url,
+            $this->create_form_parameter,
+            $this->create_form_invalid_value
+        ));
 
         // $response->dump();
         // $response->dumpHeaders();
@@ -102,7 +112,7 @@ trait CreateTrait
 
         // // The owned by id field must be a valid UUID.
         $response->assertSessionHasErrors([
-            'owned_by_id',
+            $this->create_form_parameter,
         ]);
 
         $this->assertAuthenticated();

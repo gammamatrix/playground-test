@@ -12,6 +12,8 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait RevisionJsonTrait
 {
+    protected int $status_code_guest_json_revision = 403;
+
     /**
      * @return class-string<Model>
      */
@@ -59,7 +61,7 @@ trait RevisionJsonTrait
 
         $response = $this->getJson($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_json_revision);
     }
 
     public function test_json_admin_can_get_revision_info()

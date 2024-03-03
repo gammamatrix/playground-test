@@ -12,6 +12,12 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait CreateJsonTrait
 {
+    protected int $status_code_guest_create = 403;
+
+    protected string $create_info_parameter = 'owned_by_id';
+
+    protected string $create_info_invalid_value = '[duck]';
+
     /**
      * @return class-string<Model>
      */
@@ -39,7 +45,7 @@ trait CreateJsonTrait
         $response = $this->getJson($url);
         // $response->dump();
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_json_guest_create);
     }
 
     public function test_json_admin_can_get_create_info()
@@ -73,9 +79,12 @@ trait CreateJsonTrait
             $packageInfo['model_route']
         ));
 
-        $response = $this->actingAs($user)
-            ->from($url)
-            ->getJson($url.'?owned_by_id=[duck]');
+        $response = $this->actingAs($user)->from($url)->getJson(sprintf(
+            '%1$s?%2$s=%3$s',
+            $url,
+            $this->create_info_parameter,
+            $this->create_info_invalid_value
+        ));
 
         $this->assertAuthenticated();
 
@@ -85,6 +94,6 @@ trait CreateJsonTrait
             'errors',
         ]);
 
-        $response->assertJsonValidationErrorFor('owned_by_id');
+        $response->assertJsonValidationErrorFor($this->create_info_parameter);
     }
 }
