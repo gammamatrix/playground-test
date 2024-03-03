@@ -12,6 +12,8 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait RestoreRevisionJsonTrait
 {
+    protected int $status_code_json_guest_restore_revision = 403;
+
     /**
      * @return class-string<Model>
      */
@@ -64,7 +66,7 @@ trait RestoreRevisionJsonTrait
 
         $response = $this->putJson($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_json_guest_restore_revision);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,

@@ -12,6 +12,17 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait StoreJsonTrait
 {
+    protected int $status_code_guest_json_store = 403;
+
+    protected string $store_json_parameter = 'title';
+
+    /**
+     * @var array<int, string>
+     */
+    protected array $store_json_without_payload_errors = [
+        'title',
+    ];
+
     /**
      * @return class-string<Model>
      */
@@ -36,23 +47,19 @@ trait StoreJsonTrait
         $model = $fqdn::factory()->make();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_json_parameter => $model->getAttributeValue($this->store_json_parameter),
         ]);
 
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
 
         $response = $this->postJson($url, $model->toArray());
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_json_store);
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_json_parameter => $model->getAttributeValue($this->store_json_parameter),
         ]);
     }
-
-    protected array $store_without_payload_errors = [
-        'title',
-    ];
 
     public function test_json_store_as_admin_without_payload_and_fail_validation()
     {
@@ -65,18 +72,18 @@ trait StoreJsonTrait
         $model = $fqdn::factory()->make();
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_json_parameter => $model->getAttributeValue($this->store_json_parameter),
         ]);
 
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
 
         $response = $this->actingAs($user)->postJson($url);
 
-        $response->assertInvalid($this->store_without_payload_errors);
+        $response->assertInvalid($this->store_json_without_payload_errors);
         $response->assertStatus(422);
 
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_json_parameter => $model->getAttributeValue($this->store_json_parameter),
         ]);
     }
 
@@ -89,20 +96,33 @@ trait StoreJsonTrait
         $user = User::factory()->admin()->create();
 
         $model = $fqdn::factory()->make();
-
+        // dump([
+        //     '__METHOD__' => __METHOD__,
+        //     '$model->toArray()' => $model->toArray(),
+        //     '$this->store_json_parameter' => $this->store_json_parameter,
+        //     '$model->getAttributeValue($this->store_json_parameter)' => $model->getAttributeValue($this->store_json_parameter),
+        // ]);
         $this->assertDatabaseMissing($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_json_parameter => $model->getAttributeValue($this->store_json_parameter),
         ]);
 
         $url = route(sprintf('%1$s.post', $packageInfo['model_route']));
+        // dump([
+        //     '__METHOD__' => __METHOD__,
+        //     '$url' => $url,
+        // ]);
 
         $response = $this->actingAs($user)->postJson($url, $model->toArray());
+        // $response->dump();
 
         $this->assertDatabaseHas($packageInfo['table'], [
-            'title' => $model->title,
+            $this->store_json_parameter => $model->getAttributeValue($this->store_json_parameter),
         ]);
 
-        $created = $fqdn::where('title', $model->title)->firstOrFail();
+        $created = $fqdn::where(
+            $this->store_json_parameter,
+            $model->getAttributeValue($this->store_json_parameter)
+        )->firstOrFail();
 
         $response->assertStatus(201);
     }

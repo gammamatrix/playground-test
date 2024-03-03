@@ -12,6 +12,8 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait RevisionTrait
 {
+    protected int $status_code_guest_revision = 403;
+
     /**
      * @return class-string<Model>
      */
@@ -59,7 +61,7 @@ trait RevisionTrait
 
         $response = $this->get($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_revision);
     }
 
     public function test_revision_view_rendered_by_admin()

@@ -12,6 +12,8 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait RestoreRevisionTrait
 {
+    protected int $status_code_guest_restore_revision = 403;
+
     /**
      * @return class-string<Model>
      */
@@ -59,7 +61,7 @@ trait RestoreRevisionTrait
 
         $response = $this->put($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_restore_revision);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,

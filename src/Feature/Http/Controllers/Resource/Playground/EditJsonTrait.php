@@ -12,6 +12,12 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait EditJsonTrait
 {
+    protected int $status_code_json_guest_edit = 403;
+
+    protected string $edit_info_parameter = 'owned_by_id';
+
+    protected string $edit_info_invalid_value = '[duck]';
+
     /**
      * @return class-string<Model>
      */
@@ -43,7 +49,8 @@ trait EditJsonTrait
         ]);
 
         $response = $this->getJson($url);
-        $response->assertStatus(403);
+
+        $response->assertStatus($this->status_code_json_guest_edit);
     }
 
     public function test_json_admin_can_get_edit_info()
@@ -92,7 +99,12 @@ trait EditJsonTrait
             $packageInfo['model_slug'] => $model->id,
         ]);
 
-        $response = $this->actingAs($user)->getJson($url.'?owned_by_id=[duck]');
+        $response = $this->actingAs($user)->from($url)->getJson(sprintf(
+            '%1$s?%2$s=%3$s',
+            $url,
+            $this->edit_info_parameter,
+            $this->edit_info_invalid_value
+        ));
 
         // $response->dump();
         // $response->dumpHeaders();
@@ -102,7 +114,7 @@ trait EditJsonTrait
         $response->assertJsonStructure([
             'errors',
         ]);
-        $response->assertJsonValidationErrorFor('owned_by_id');
+        $response->assertJsonValidationErrorFor($this->edit_info_parameter);
 
         $this->assertAuthenticated();
     }

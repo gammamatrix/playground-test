@@ -12,6 +12,10 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait DestroyJsonTrait
 {
+    protected int $status_code_json_guest_destroy = 403;
+
+    protected int $status_code_json_user_destroy = 401;
+
     /**
      * @return class-string<Model>
      */
@@ -32,7 +36,6 @@ trait DestroyJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'deleted_at' => null,
         ]);
 
@@ -45,11 +48,10 @@ trait DestroyJsonTrait
 
         $response = $this->deleteJson($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_json_guest_destroy);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'deleted_at' => null,
         ]);
     }
@@ -62,13 +64,10 @@ trait DestroyJsonTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -88,11 +87,9 @@ trait DestroyJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
         ]);
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
         $response->assertNoContent();
@@ -106,13 +103,10 @@ trait DestroyJsonTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -141,13 +135,10 @@ trait DestroyJsonTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -162,11 +153,9 @@ trait DestroyJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
         ]);
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -181,13 +170,10 @@ trait DestroyJsonTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -209,11 +195,9 @@ trait DestroyJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
         ]);
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -228,13 +212,10 @@ trait DestroyJsonTrait
 
         $user = User::factory()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -248,11 +229,10 @@ trait DestroyJsonTrait
 
         $response = $this->actingAs($user)->deleteJson($url);
 
-        $response->assertStatus(401);
+        $response->assertStatus($this->status_code_json_user_destroy);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
     }

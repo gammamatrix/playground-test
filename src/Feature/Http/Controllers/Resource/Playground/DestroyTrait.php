@@ -12,6 +12,10 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait DestroyTrait
 {
+    protected int $status_code_guest_destroy = 403;
+
+    protected int $status_code_user_destroy = 401;
+
     /**
      * @return class-string<Model>
      */
@@ -32,7 +36,6 @@ trait DestroyTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'deleted_at' => null,
         ]);
 
@@ -45,11 +48,10 @@ trait DestroyTrait
 
         $response = $this->delete($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_guest_destroy);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'deleted_at' => null,
         ]);
     }
@@ -62,13 +64,10 @@ trait DestroyTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -83,12 +82,10 @@ trait DestroyTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
         ]);
 
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -103,13 +100,10 @@ trait DestroyTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -138,13 +132,10 @@ trait DestroyTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -166,11 +157,9 @@ trait DestroyTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
         ]);
         $this->assertDatabaseMissing($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -185,13 +174,10 @@ trait DestroyTrait
 
         $user = User::factory()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
 
@@ -205,11 +191,10 @@ trait DestroyTrait
 
         $response = $this->actingAs($user)->delete($url);
 
-        $response->assertStatus(401);
+        $response->assertStatus($this->status_code_user_destroy);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'deleted_at' => null,
         ]);
     }

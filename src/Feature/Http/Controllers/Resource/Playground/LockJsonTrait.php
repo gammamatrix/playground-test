@@ -12,6 +12,10 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait LockJsonTrait
 {
+    protected int $status_code_json_guest_lock = 403;
+
+    protected int $status_code_json_user_lock = 401;
+
     /**
      * @return class-string<Model>
      */
@@ -37,7 +41,6 @@ trait LockJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'locked' => false,
         ]);
 
@@ -50,11 +53,10 @@ trait LockJsonTrait
 
         $response = $this->putJson($url);
 
-        $response->assertStatus(403);
+        $response->assertStatus($this->status_code_json_guest_lock);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => null,
             'locked' => false,
         ]);
     }
@@ -67,13 +69,10 @@ trait LockJsonTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => false,
         ]);
 
@@ -88,7 +87,6 @@ trait LockJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
@@ -103,13 +101,10 @@ trait LockJsonTrait
 
         $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => false,
         ]);
 
@@ -135,7 +130,6 @@ trait LockJsonTrait
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => true,
         ]);
 
@@ -153,13 +147,10 @@ trait LockJsonTrait
         $user = User::factory()->create();
         // $user = User::factory()->admin()->create();
 
-        $model = $fqdn::factory()->create([
-            'owned_by_id' => $user->id,
-        ]);
+        $model = $fqdn::factory()->create();
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => false,
         ]);
 
@@ -172,11 +163,10 @@ trait LockJsonTrait
 
         $response = $this->actingAs($user)->putJson($url);
 
-        $response->assertStatus(401);
+        $response->assertStatus($this->status_code_json_user_lock);
 
         $this->assertDatabaseHas($packageInfo['table'], [
             'id' => $model->id,
-            'owned_by_id' => $user->id,
             'locked' => false,
         ]);
     }
