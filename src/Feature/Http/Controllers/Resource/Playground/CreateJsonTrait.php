@@ -12,7 +12,7 @@ use Playground\Test\Models\PlaygroundUser as User;
  */
 trait CreateJsonTrait
 {
-    protected int $status_code_guest_create = 403;
+    protected int $status_code_json_guest_create = 403;
 
     protected string $create_info_parameter = 'owned_by_id';
 
