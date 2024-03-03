@@ -16,6 +16,9 @@ trait StoreTrait
 
     protected string $store_parameter = 'title';
 
+    /**
+     * @var array<int, string>
+     */
     protected array $store_without_payload_errors = [
         'title',
     ];

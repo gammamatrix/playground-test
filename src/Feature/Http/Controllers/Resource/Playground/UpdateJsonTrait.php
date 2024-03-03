@@ -16,10 +16,16 @@ trait UpdateJsonTrait
 
     protected string $update_json_parameter = 'title';
 
+    /**
+     * @var array<int, string>
+     */
     protected array $json_update_without_payload_errors = [
         'title',
     ];
 
+    /**
+     * @var array<string, mixed>
+     */
     protected array $json_update_payload = [
         'title' => 'change to new title',
     ];

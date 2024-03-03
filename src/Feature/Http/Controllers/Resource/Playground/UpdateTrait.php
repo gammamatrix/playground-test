@@ -16,10 +16,16 @@ trait UpdateTrait
 
     protected string $update_parameter = 'title';
 
+    /**
+     * @var array<int, string>
+     */
     protected array $update_without_payload_errors = [
         'title',
     ];
 
+    /**
+     * @var array<string, mixed>
+     */
     protected array $update_payload = [
         'title' => 'change to new title',
     ];

@@ -16,6 +16,9 @@ trait StoreJsonTrait
 
     protected string $store_json_parameter = 'title';
 
+    /**
+     * @var array<int, string>
+     */
     protected array $store_json_without_payload_errors = [
         'title',
     ];
