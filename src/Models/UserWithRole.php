@@ -6,6 +6,14 @@ namespace Playground\Test\Models;
 
 /**
  * \Playground\Test\Models\UserWithRole
+ *
+ * @property int $id
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
+ * @property ?Carbon $email_verified_at
+ * @property string $name
+ * @property string $email
+ * @property string $role
  */
 class UserWithRole extends User
 {
@@ -16,6 +24,18 @@ class UserWithRole extends User
         'name' => '',
         'email' => '',
         'role' => '',
+    ];
+
+    /**
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'email_verified_at',
+        'remember_token',
+        'role',
     ];
 
     /**

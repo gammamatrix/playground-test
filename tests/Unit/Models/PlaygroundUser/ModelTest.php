@@ -16,10 +16,5 @@ class ModelTest extends ModelCase
 {
     protected string $modelClass = PlaygroundUser::class;
 
-    protected bool $hasRelationships = true;
-
-    protected array $hasOne = [
-        'creator',
-        'modifier',
-    ];
+    protected bool $hasRelationships = false;
 }

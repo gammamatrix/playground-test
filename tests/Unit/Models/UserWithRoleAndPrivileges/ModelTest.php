@@ -33,7 +33,7 @@ class ModelTest extends TestCase
             'email' => '',
             'role' => '',
             'roles' => [],
-            'privilieges' => [],
+            'privileges' => [],
         ];
 
         $attributes = $instance->getAttributes();
