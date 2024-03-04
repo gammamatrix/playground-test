@@ -4,7 +4,6 @@
  */
 namespace Playground\Test\Models;
 
-use Laravel\Sanctum\Contracts\HasApiTokens as HasApiTokensContract;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
@@ -17,9 +16,12 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $name
  * @property string $email
  *
- * @see \Illuminate\Foundation\Auth\User
+ * NOTE: The model should implement the contract. This class is used to test
+ *       when users do not have Contracts\HasApiTokens implemented.
+ *
+ * @see \Laravel\Sanctum\Contracts\HasApiTokens
  */
-class UserWithSanctum extends User implements HasApiTokensContract
+class UserWithWithoutSanctumContract extends User
 {
     use HasApiTokens;
 }

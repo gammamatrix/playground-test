@@ -25,26 +25,24 @@ abstract class AbstractUser extends Model implements AuthenticatableContract, Au
     use Notifiable;
 
     /**
+     * @var array<string, mixed>
+     */
+    protected $attributes = [
+        'name' => '',
+        'email' => '',
+    ];
+
+    /**
      * @var array<int, string>
      */
     protected $fillable = [
         'name',
         'email',
         'password',
-        // 'email_verified_at',
         'remember_token',
     ];
 
     public $timestamps = false;
 
     protected $table = 'users';
-
-    /**
-     * @var array<string, mixed>
-     */
-    protected $attributes = [
-        'name' => '',
-        'email' => '',
-        // 'role' => '',
-    ];
 }
