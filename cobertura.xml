@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.01697247706422" branch-rate="0" lines-covered="37" lines-valid="2180" branches-covered="0" branches-valid="0" complexity="226" version="0.4" timestamp="1709516545">
+<coverage line-rate="0.01697247706422" branch-rate="0" lines-covered="37" lines-valid="2180" branches-covered="0" branches-valid="0" complexity="226" version="0.4" timestamp="1709586485">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -5111,6 +5111,14 @@
         </class>
       </classes>
     </package>
+    <package name="Models/AppPlaygroundUser.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="Playground\Test\Models\AppPlaygroundUser" filename="Models/AppPlaygroundUser.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
     <package name="Models/PlaygroundUser.php" line-rate="0" branch-rate="0" complexity="0">
       <classes>
         <class name="Playground\Test\Models\PlaygroundUser" filename="Models/PlaygroundUser.php" line-rate="0" branch-rate="0" complexity="0">
@@ -5122,6 +5130,14 @@
     <package name="Models/PlaygroundUserWithSanctum.php" line-rate="0" branch-rate="0" complexity="0">
       <classes>
         <class name="Playground\Test\Models\PlaygroundUserWithSanctum" filename="Models/PlaygroundUserWithSanctum.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Models/PlaygroundUserWithoutSanctumContract.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="Playground\Test\Models\PlaygroundUserWithoutSanctumContract" filename="Models/PlaygroundUserWithoutSanctumContract.php" line-rate="0" branch-rate="0" complexity="0">
           <methods/>
           <lines/>
         </class>
@@ -5189,30 +5205,30 @@
           <methods>
             <method name="hasRole" signature="mixed $role" line-rate="0" branch-rate="0" complexity="4">
               <lines>
-                <line number="28" hits="0"/>
-                <line number="29" hits="0"/>
-                <line number="32" hits="0"/>
-                <line number="33" hits="0"/>
-                <line number="36" hits="0"/>
+                <line number="48" hits="0"/>
+                <line number="49" hits="0"/>
+                <line number="52" hits="0"/>
+                <line number="53" hits="0"/>
+                <line number="56" hits="0"/>
               </lines>
             </method>
             <method name="isAdmin" signature="" line-rate="0" branch-rate="0" complexity="3">
               <lines>
-                <line number="44" hits="0"/>
-                <line number="45" hits="0"/>
-                <line number="46" hits="0"/>
+                <line number="64" hits="0"/>
+                <line number="65" hits="0"/>
+                <line number="66" hits="0"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="28" hits="0"/>
-            <line number="29" hits="0"/>
-            <line number="32" hits="0"/>
-            <line number="33" hits="0"/>
-            <line number="36" hits="0"/>
-            <line number="44" hits="0"/>
-            <line number="45" hits="0"/>
-            <line number="46" hits="0"/>
+            <line number="48" hits="0"/>
+            <line number="49" hits="0"/>
+            <line number="52" hits="0"/>
+            <line number="53" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="64" hits="0"/>
+            <line number="65" hits="0"/>
+            <line number="66" hits="0"/>
           </lines>
         </class>
       </classes>
@@ -5244,6 +5260,14 @@
     <package name="Models/UserWithSanctum.php" line-rate="0" branch-rate="0" complexity="0">
       <classes>
         <class name="Playground\Test\Models\UserWithSanctum" filename="Models/UserWithSanctum.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Models/UserWithWithoutSanctumContract.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="Playground\Test\Models\UserWithWithoutSanctumContract" filename="Models/UserWithWithoutSanctumContract.php" line-rate="0" branch-rate="0" complexity="0">
           <methods/>
           <lines/>
         </class>

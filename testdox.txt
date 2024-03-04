@@ -1,6 +1,19 @@
 Command (Tests\Feature\Playground\Test\Console\Commands\About\Command)
  [x] Command about displays package information and succeed with code 0
 
+Instance (Tests\Unit\Playground\Test\Models\AppPlaygroundUser\Instance)
+ [x] Get attributes
+ [x] HasRole is false without role
+ [x] HasRole is true with matching role
+ [x] HasRole is true with matching secondary role
+ [x] IsAdmin is true with admin role
+ [x] IsAdmin is true with admin secondary role
+ [x] IsAdmin is true with wheel role
+ [x] IsAdmin is true with wheel secondary role
+ [x] IsAdmin is true with root role
+ [x] IsAdmin is false with root secondary role
+ [x] Factory with make
+
 Instance (Tests\Unit\Playground\Test\Models\PlaygroundUser\Instance)
  [x] Get attributes
  [x] HasRole is false without role
@@ -16,6 +29,11 @@ Instance (Tests\Unit\Playground\Test\Models\PlaygroundUser\Instance)
 
 Model (Tests\Unit\Playground\Test\Models\AbstractUser\Model)
  [x] Get attributes
+
+Model (Tests\Unit\Playground\Test\Models\AppPlaygroundUser\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Model factory make
 
 Model (Tests\Unit\Playground\Test\Models\ModelCase\Model)
  [x] Model instance
