@@ -9,7 +9,7 @@
 
 ##teamcity[testStarted name='test_getAttributes' locationHint='php_qn:///app/tests/Unit/Models/AbstractUser/ModelTest.php::\Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest::test_getAttributes' flowId='1']
 
-##teamcity[testFinished name='test_getAttributes' duration='170' flowId='1']
+##teamcity[testFinished name='test_getAttributes' duration='171' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\AbstractUser\ModelTest' flowId='1']
 
@@ -45,7 +45,7 @@
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_wheel_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/AppPlaygroundUser/InstanceTest.php::\Tests\Unit\Playground\Test\Models\AppPlaygroundUser\InstanceTest::test_isAdmin_is_true_with_wheel_secondary_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_secondary_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_wheel_secondary_role' duration='6' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_root_role' locationHint='php_qn:///app/tests/Unit/Models/AppPlaygroundUser/InstanceTest.php::\Tests\Unit\Playground\Test\Models\AppPlaygroundUser\InstanceTest::test_isAdmin_is_true_with_root_role' flowId='1']
 
@@ -53,7 +53,7 @@
 
 ##teamcity[testStarted name='test_isAdmin_is_false_with_root_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/AppPlaygroundUser/InstanceTest.php::\Tests\Unit\Playground\Test\Models\AppPlaygroundUser\InstanceTest::test_isAdmin_is_false_with_root_secondary_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_false_with_root_secondary_role' duration='6' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_false_with_root_secondary_role' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_factory_with_make' locationHint='php_qn:///app/tests/Unit/Models/AppPlaygroundUser/InstanceTest.php::\Tests\Unit\Playground\Test\Models\AppPlaygroundUser\InstanceTest::test_factory_with_make' flowId='1']
 
@@ -65,11 +65,11 @@
 
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Test\Models\AppPlaygroundUser\ModelTest::test_model_instance' flowId='1']
 
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
+##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
 
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Test\Models\AppPlaygroundUser\ModelTest::test_verify_model_relationships' flowId='1']
 
-##teamcity[testFinished name='test_verify_model_relationships' duration='17' flowId='1']
+##teamcity[testFinished name='test_verify_model_relationships' duration='19' flowId='1']
 
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Test\Models\AppPlaygroundUser\ModelTest::test_model_factory_make' flowId='1']
 
@@ -113,7 +113,7 @@
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_admin_role' locationHint='php_qn:///app/tests/Unit/Models/PlaygroundUser/InstanceTest.php::\Tests\Unit\Playground\Test\Models\PlaygroundUser\InstanceTest::test_isAdmin_is_true_with_admin_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_admin_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_admin_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_admin_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/PlaygroundUser/InstanceTest.php::\Tests\Unit\Playground\Test\Models\PlaygroundUser\InstanceTest::test_isAdmin_is_true_with_admin_secondary_role' flowId='1']
 
@@ -153,7 +153,7 @@
 
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Test\Models\PlaygroundUser\ModelTest::test_model_factory_make' flowId='1']
 
-##teamcity[testFinished name='test_model_factory_make' duration='8' flowId='1']
+##teamcity[testFinished name='test_model_factory_make' duration='7' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Test\Models\PlaygroundUser\ModelTest' flowId='1']
 
@@ -213,7 +213,7 @@
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_admin_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_admin_role' flowId='1']
 
-##teamcity[testFinished name='test_isAdmin_is_true_with_admin_role' duration='5' flowId='1']
+##teamcity[testFinished name='test_isAdmin_is_true_with_admin_role' duration='4' flowId='1']
 
 ##teamcity[testStarted name='test_isAdmin_is_true_with_admin_secondary_role' locationHint='php_qn:///app/tests/Unit/Models/UserWithRoleAndRoles/ModelTest.php::\Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest::test_isAdmin_is_true_with_admin_secondary_role' flowId='1']
 
@@ -273,7 +273,7 @@
 
 ##teamcity[testStarted name='test_command_about_displays_package_information_and_succeed_with_code_0' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Test\Console\Commands\About\CommandTest::test_command_about_displays_package_information_and_succeed_with_code_0' flowId='1']
 
-##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='105' flowId='1']
+##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='108' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Test\Console\Commands\About\CommandTest' flowId='1']
 
