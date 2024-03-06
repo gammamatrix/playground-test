@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'password' => env('PLAYGROUND_TEST_PASSWORD', 'password'),
     'password_encrypted' => (bool) env('PLAYGROUND_TEST_PASSWORD_ENCRYPTED', false),

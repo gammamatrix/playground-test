@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Playground
  */
@@ -46,6 +48,26 @@ class UserFactory extends AbstractUserFactory
     {
         return $this->state(fn (array $attributes) => [
             'email' => 'manager@example.dev',
+        ]);
+    }
+
+    /**
+     * Indicate that the user has the root role.
+     */
+    public function root(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'email' => 'root@example.dev',
+        ]);
+    }
+
+    /**
+     * Indicate that the user has the wheel role.
+     */
+    public function wheel(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'email' => 'wheel@example.dev',
         ]);
     }
 }

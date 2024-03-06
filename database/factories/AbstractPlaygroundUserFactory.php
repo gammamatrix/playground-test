@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Playground
  */
@@ -73,6 +75,16 @@ abstract class AbstractPlaygroundUserFactory extends Factory
     }
 
     /**
+     * Indicate that the user has the guest role.
+     */
+    public function guest(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'guest',
+        ]);
+    }
+
+    /**
      * Indicate that the user has the manager role.
      */
     public function manager(): Factory
@@ -83,22 +95,22 @@ abstract class AbstractPlaygroundUserFactory extends Factory
     }
 
     /**
-     * Indicate that the user has the wheel role.
-     */
-    public function wheel(): Factory
-    {
-        return $this->state(fn (array $attributes) => [
-            'role' => 'wheel',
-        ]);
-    }
-
-    /**
      * Indicate that the user has the root role.
      */
     public function root(): Factory
     {
         return $this->state(fn (array $attributes) => [
             'role' => 'root',
+        ]);
+    }
+
+    /**
+     * Indicate that the user has the wheel role.
+     */
+    public function wheel(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'wheel',
         ]);
     }
 }
