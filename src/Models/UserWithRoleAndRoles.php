@@ -18,9 +18,9 @@ namespace Playground\Test\Models;
  * @property string $role
  * @property array $roles
  */
-class UserWithRoleAndRoles extends User
+class UserWithRoleAndRoles extends AbstractUser
 {
-    use Traits\UserPrivileges;
+    use Concerns\UserPrivileges;
 
     /**
      * @var array<string, mixed>

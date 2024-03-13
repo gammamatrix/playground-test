@@ -31,8 +31,32 @@ class ModelTest extends TestCase
         $instance = new $mc();
 
         $expected = [
-            'name' => '',
-            'email' => '',
+            // 'name' => '',
+            // 'email' => '',
+        ];
+
+        $attributes = $instance->getAttributes();
+
+        $this->assertIsArray($attributes);
+
+        $this->assertSame($expected, $attributes);
+    }
+
+    public function test_getAttributes_filled(): void
+    {
+        $mc = static::MODEL_CLASS;
+
+        /**
+         * @var User $instance
+         */
+        $instance = new $mc([
+            'name' => 'bob',
+            'email' => 'bob@example.com',
+        ]);
+
+        $expected = [
+            'name' => 'bob',
+            'email' => 'bob@example.com',
         ];
 
         $attributes = $instance->getAttributes();

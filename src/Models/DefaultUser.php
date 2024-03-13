@@ -1,48 +1,35 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+declare(strict_types=1);
 namespace Playground\Test\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as BaseUser;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 /**
- * \Playground\Test\Models\AbstractUser
+ * \Playground\Test\Models\DefaultUser
  *
- * @see Illuminate\Foundation\Auth\User
+ * NOTE: The default user should match what is installed by Laravel.
  *
- * @property int $id
- * @property ?Carbon $created_at
- * @property ?Carbon $updated_at
- * @property ?Carbon $email_verified_at
- * @property string $name
- * @property string $email
+ * @see Authenticatable
  */
-abstract class AbstractUser extends BaseUser
+class DefaultUser extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     /**
-     * @var array<string, mixed>
-     */
-    protected $attributes = [
-        'name' => '',
-        'email' => '',
-        'password' => '',
-    ];
-
-    /**
+     * The attributes that are mass assignable.
+     *
      * @var array<int, string>
      */
     protected $fillable = [
         'name',
         'email',
-        'email_verified_at',
         'password',
-        'remember_token',
     ];
 
     /**
