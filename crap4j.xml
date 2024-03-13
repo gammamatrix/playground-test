@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-06 21:30:25</timestamp>
+  <timestamp>2024-03-13 18:43:41</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>200</methodCount>
-    <crapMethodCount>5</crapMethodCount>
-    <crapLoad>67</crapLoad>
-    <totalCrap>1414</totalCrap>
-    <crapMethodPercent>2.5</crapMethodPercent>
+    <methodCount>202</methodCount>
+    <crapMethodCount>6</crapMethodCount>
+    <crapLoad>75</crapLoad>
+    <totalCrap>1489.12</totalCrap>
+    <crapMethodPercent>2.97</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -1959,8 +1959,19 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Test\Models\Traits</package>
-      <className>Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\AbstractUser</className>
+      <methodName>casts</methodName>
+      <methodSignature>casts(): array</methodSignature>
+      <fullMethod>casts(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Models\Concerns</package>
+      <className>Playground\Test\Models\Concerns\UserPrivileges</className>
       <methodName>getAttribute</methodName>
       <methodSignature>getAttribute($key)</methodSignature>
       <fullMethod>getAttribute($key)</fullMethod>
@@ -1970,30 +1981,30 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Test\Models\Traits</package>
-      <className>Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models\Concerns</package>
+      <className>Playground\Test\Models\Concerns\UserPrivileges</className>
       <methodName>hasPrivilege</methodName>
-      <methodSignature>hasPrivilege(mixed $privilege): bool</methodSignature>
-      <fullMethod>hasPrivilege(mixed $privilege): bool</fullMethod>
+      <methodSignature>hasPrivilege(mixed $privilege, bool $inclusive): bool</methodSignature>
+      <fullMethod>hasPrivilege(mixed $privilege, bool $inclusive): bool</fullMethod>
       <crap>4</crap>
       <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Test\Models\Traits</package>
-      <className>Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models\Concerns</package>
+      <className>Playground\Test\Models\Concerns\UserPrivileges</className>
       <methodName>hasRole</methodName>
-      <methodSignature>hasRole(mixed $role): bool</methodSignature>
-      <fullMethod>hasRole(mixed $role): bool</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
-      <coverage>100</coverage>
+      <methodSignature>hasRole(mixed $roles, bool $inclusive): bool</methodSignature>
+      <fullMethod>hasRole(mixed $roles, bool $inclusive): bool</fullMethod>
+      <crap>34.12</crap>
+      <complexity>13</complexity>
+      <coverage>50</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Test\Models\Traits</package>
-      <className>Playground\Test\Models\Traits\UserPrivileges</className>
+      <package>Playground\Test\Models\Concerns</package>
+      <className>Playground\Test\Models\Concerns\UserPrivileges</className>
       <methodName>isAdmin</methodName>
       <methodSignature>isAdmin(): bool</methodSignature>
       <fullMethod>isAdmin(): bool</fullMethod>
@@ -2004,14 +2015,25 @@
     </method>
     <method>
       <package>Playground\Test\Models</package>
-      <className>Playground\Test\Models\UserWithRole</className>
-      <methodName>hasRole</methodName>
-      <methodSignature>hasRole(mixed $role): bool</methodSignature>
-      <fullMethod>hasRole(mixed $role): bool</fullMethod>
-      <crap>20</crap>
-      <complexity>4</complexity>
+      <className>Playground\Test\Models\DefaultUser</className>
+      <methodName>casts</methodName>
+      <methodSignature>casts(): array</methodSignature>
+      <fullMethod>casts(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\UserWithRole</className>
+      <methodName>hasRole</methodName>
+      <methodSignature>hasRole(mixed $roles): bool</methodSignature>
+      <fullMethod>hasRole(mixed $roles): bool</fullMethod>
+      <crap>72</crap>
+      <complexity>8</complexity>
+      <coverage>0</coverage>
+      <crapLoad>8</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Models</package>
@@ -2019,8 +2041,8 @@
       <methodName>isAdmin</methodName>
       <methodSignature>isAdmin(): bool</methodSignature>
       <fullMethod>isAdmin(): bool</fullMethod>
-      <crap>12</crap>
-      <complexity>3</complexity>
+      <crap>2</crap>
+      <complexity>1</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>

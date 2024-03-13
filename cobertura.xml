@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.01697247706422" branch-rate="0" lines-covered="37" lines-valid="2180" branches-covered="0" branches-valid="0" complexity="226" version="0.4" timestamp="1709760625">
+<coverage line-rate="0.018107741059303" branch-rate="0" lines-covered="40" lines-valid="2209" branches-covered="0" branches-valid="0" complexity="238" version="0.4" timestamp="1710355421">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -5103,11 +5103,25 @@
         </class>
       </classes>
     </package>
-    <package name="Models/AbstractUser.php" line-rate="0" branch-rate="0" complexity="0">
+    <package name="Models/AbstractUser.php" line-rate="0" branch-rate="0" complexity="1">
       <classes>
-        <class name="Playground\Test\Models\AbstractUser" filename="Models/AbstractUser.php" line-rate="0" branch-rate="0" complexity="0">
-          <methods/>
-          <lines/>
+        <class name="Playground\Test\Models\AbstractUser" filename="Models/AbstractUser.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="casts" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="67" hits="0"/>
+                <line number="68" hits="0"/>
+                <line number="69" hits="0"/>
+                <line number="70" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="67" hits="0"/>
+            <line number="68" hits="0"/>
+            <line number="69" hits="0"/>
+            <line number="70" hits="0"/>
+          </lines>
         </class>
       </classes>
     </package>
@@ -5116,6 +5130,100 @@
         <class name="Playground\Test\Models\AppPlaygroundUser" filename="Models/AppPlaygroundUser.php" line-rate="0" branch-rate="0" complexity="0">
           <methods/>
           <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Models/Concerns/UserPrivileges.php" line-rate="0.64" branch-rate="0" complexity="20">
+      <classes>
+        <class name="Playground\Test\Models\Concerns\UserPrivileges" filename="Models/Concerns/UserPrivileges.php" line-rate="0.64" branch-rate="0" complexity="20">
+          <methods>
+            <method name="hasPrivilege" signature="mixed $privilege, bool $inclusive" line-rate="1" branch-rate="0" complexity="4">
+              <lines>
+                <line number="28" hits="3"/>
+                <line number="29" hits="1"/>
+                <line number="33" hits="2"/>
+                <line number="35" hits="2"/>
+              </lines>
+            </method>
+            <method name="hasRole" signature="mixed $roles, bool $inclusive" line-rate="0.5" branch-rate="0" complexity="13">
+              <lines>
+                <line number="45" hits="9"/>
+                <line number="46" hits="1"/>
+                <line number="49" hits="8"/>
+                <line number="50" hits="8"/>
+                <line number="52" hits="8"/>
+                <line number="53" hits="0"/>
+                <line number="54" hits="0"/>
+                <line number="55" hits="0"/>
+                <line number="56" hits="0"/>
+                <line number="57" hits="0"/>
+                <line number="58" hits="0"/>
+                <line number="60" hits="0"/>
+                <line number="64" hits="0"/>
+                <line number="67" hits="8"/>
+                <line number="68" hits="0"/>
+                <line number="71" hits="8"/>
+                <line number="72" hits="4"/>
+                <line number="75" hits="6"/>
+              </lines>
+            </method>
+            <method name="isAdmin" signature="" line-rate="1" branch-rate="0" complexity="3">
+              <lines>
+                <line number="83" hits="7"/>
+                <line number="84" hits="7"/>
+                <line number="85" hits="7"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="28" hits="3"/>
+            <line number="29" hits="1"/>
+            <line number="33" hits="2"/>
+            <line number="35" hits="2"/>
+            <line number="45" hits="9"/>
+            <line number="46" hits="1"/>
+            <line number="49" hits="8"/>
+            <line number="50" hits="8"/>
+            <line number="52" hits="8"/>
+            <line number="53" hits="0"/>
+            <line number="54" hits="0"/>
+            <line number="55" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="57" hits="0"/>
+            <line number="58" hits="0"/>
+            <line number="60" hits="0"/>
+            <line number="64" hits="0"/>
+            <line number="67" hits="8"/>
+            <line number="68" hits="0"/>
+            <line number="71" hits="8"/>
+            <line number="72" hits="4"/>
+            <line number="75" hits="6"/>
+            <line number="83" hits="7"/>
+            <line number="84" hits="7"/>
+            <line number="85" hits="7"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Models/DefaultUser.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="Playground\Test\Models\DefaultUser" filename="Models/DefaultUser.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="casts" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="54" hits="0"/>
+                <line number="55" hits="0"/>
+                <line number="56" hits="0"/>
+                <line number="57" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="54" hits="0"/>
+            <line number="55" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="57" hits="0"/>
+          </lines>
         </class>
       </classes>
     </package>
@@ -5143,54 +5251,6 @@
         </class>
       </classes>
     </package>
-    <package name="Models/Traits/UserPrivileges.php" line-rate="1" branch-rate="0" complexity="12">
-      <classes>
-        <class name="Playground\Test\Models\Traits\UserPrivileges" filename="Models/Traits/UserPrivileges.php" line-rate="1" branch-rate="0" complexity="12">
-          <methods>
-            <method name="hasPrivilege" signature="mixed $privilege" line-rate="1" branch-rate="0" complexity="4">
-              <lines>
-                <line number="28" hits="3"/>
-                <line number="29" hits="1"/>
-                <line number="32" hits="2"/>
-                <line number="34" hits="2"/>
-              </lines>
-            </method>
-            <method name="hasRole" signature="mixed $role" line-rate="1" branch-rate="0" complexity="5">
-              <lines>
-                <line number="44" hits="9"/>
-                <line number="45" hits="1"/>
-                <line number="48" hits="8"/>
-                <line number="49" hits="4"/>
-                <line number="52" hits="6"/>
-                <line number="54" hits="6"/>
-              </lines>
-            </method>
-            <method name="isAdmin" signature="" line-rate="1" branch-rate="0" complexity="3">
-              <lines>
-                <line number="62" hits="7"/>
-                <line number="63" hits="7"/>
-                <line number="64" hits="7"/>
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="28" hits="3"/>
-            <line number="29" hits="1"/>
-            <line number="32" hits="2"/>
-            <line number="34" hits="2"/>
-            <line number="44" hits="9"/>
-            <line number="45" hits="1"/>
-            <line number="48" hits="8"/>
-            <line number="49" hits="4"/>
-            <line number="52" hits="6"/>
-            <line number="54" hits="6"/>
-            <line number="62" hits="7"/>
-            <line number="63" hits="7"/>
-            <line number="64" hits="7"/>
-          </lines>
-        </class>
-      </classes>
-    </package>
     <package name="Models/User.php" line-rate="0" branch-rate="0" complexity="0">
       <classes>
         <class name="Playground\Test\Models\User" filename="Models/User.php" line-rate="0" branch-rate="0" complexity="0">
@@ -5199,36 +5259,54 @@
         </class>
       </classes>
     </package>
-    <package name="Models/UserWithRole.php" line-rate="0" branch-rate="0" complexity="7">
+    <package name="Models/UserWithRole.php" line-rate="0" branch-rate="0" complexity="9">
       <classes>
-        <class name="Playground\Test\Models\UserWithRole" filename="Models/UserWithRole.php" line-rate="0" branch-rate="0" complexity="7">
+        <class name="Playground\Test\Models\UserWithRole" filename="Models/UserWithRole.php" line-rate="0" branch-rate="0" complexity="9">
           <methods>
-            <method name="hasRole" signature="mixed $role" line-rate="0" branch-rate="0" complexity="4">
+            <method name="hasRole" signature="mixed $roles" line-rate="0" branch-rate="0" complexity="8">
               <lines>
-                <line number="50" hits="0"/>
                 <line number="51" hits="0"/>
-                <line number="54" hits="0"/>
+                <line number="52" hits="0"/>
                 <line number="55" hits="0"/>
+                <line number="56" hits="0"/>
+                <line number="57" hits="0"/>
                 <line number="58" hits="0"/>
-              </lines>
-            </method>
-            <method name="isAdmin" signature="" line-rate="0" branch-rate="0" complexity="3">
-              <lines>
-                <line number="66" hits="0"/>
+                <line number="60" hits="0"/>
+                <line number="64" hits="0"/>
                 <line number="67" hits="0"/>
                 <line number="68" hits="0"/>
+                <line number="70" hits="0"/>
+                <line number="73" hits="0"/>
+              </lines>
+            </method>
+            <method name="isAdmin" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="81" hits="0"/>
+                <line number="82" hits="0"/>
+                <line number="83" hits="0"/>
+                <line number="84" hits="0"/>
+                <line number="85" hits="0"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="50" hits="0"/>
             <line number="51" hits="0"/>
-            <line number="54" hits="0"/>
+            <line number="52" hits="0"/>
             <line number="55" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="57" hits="0"/>
             <line number="58" hits="0"/>
-            <line number="66" hits="0"/>
+            <line number="60" hits="0"/>
+            <line number="64" hits="0"/>
             <line number="67" hits="0"/>
             <line number="68" hits="0"/>
+            <line number="70" hits="0"/>
+            <line number="73" hits="0"/>
+            <line number="81" hits="0"/>
+            <line number="82" hits="0"/>
+            <line number="83" hits="0"/>
+            <line number="84" hits="0"/>
+            <line number="85" hits="0"/>
           </lines>
         </class>
       </classes>

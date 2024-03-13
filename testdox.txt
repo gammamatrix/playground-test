@@ -27,9 +27,6 @@ Instance (Tests\Unit\Playground\Test\Models\PlaygroundUser\Instance)
  [x] IsAdmin is false with root secondary role
  [x] Factory with make
 
-Model (Tests\Unit\Playground\Test\Models\AbstractUser\Model)
- [x] Get attributes
-
 Model (Tests\Unit\Playground\Test\Models\AppPlaygroundUser\Model)
  [x] Model instance
  [x] Verify model relationships
@@ -75,5 +72,6 @@ Model (Tests\Unit\Playground\Test\Models\UserWithSanctum\Model)
 
 Model (Tests\Unit\Playground\Test\Models\User\Model)
  [x] Get attributes
+ [x] GetAttributes filled
  [x] Factory with make
 
