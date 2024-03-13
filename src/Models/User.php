@@ -6,10 +6,6 @@ declare(strict_types=1);
  */
 namespace Playground\Test\Models;
 
-use Illuminate\Auth\MustVerifyEmail;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 use Illuminate\Support\Carbon;
 
 /**
@@ -21,14 +17,13 @@ use Illuminate\Support\Carbon;
  * @property ?Carbon $email_verified_at
  * @property string $name
  * @property string $email
+ * @property string $password
+ * @property ?string $remember_token
  *
  * @see \Illuminate\Foundation\Auth\User
  */
-class User extends AbstractUser implements CanResetPasswordContract, MustVerifyEmailContract
+class User extends DefaultUser
 {
-    use CanResetPassword;
-    use MustVerifyEmail;
-
     /**
      * @var array<int, string>
      */

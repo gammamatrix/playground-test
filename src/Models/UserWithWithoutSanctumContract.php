@@ -23,7 +23,7 @@ use Laravel\Sanctum\HasApiTokens;
  *
  * @see \Laravel\Sanctum\Contracts\HasApiTokens
  */
-class UserWithWithoutSanctumContract extends User
+class UserWithWithoutSanctumContract extends AbstractUser
 {
     use HasApiTokens;
 }

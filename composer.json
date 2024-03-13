@@ -7,7 +7,7 @@
         "playground",
         "test"
     ],
-    "homepage": "https://github.com/gammamatrix/playground-test/wiki",
+    "homepage": "https://gammamatrix-playground.readthedocs.io/",
     "license": "MIT",
     "authors": [
         {
@@ -17,18 +17,17 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "fakerphp/faker": "^1.9.1",
+        "php": "^8.2",
+        "fakerphp/faker": "^1.23",
         "friendsofphp/php-cs-fixer": "^3.41",
         "larastan/larastan": "^2.0",
-        "orchestra/testbench": "8.*",
+        "orchestra/testbench": "9.*",
         "phpstan/phpstan-phpunit": "^1.3",
-        "phpunit/phpunit": "10.5.*",
-        "timacdonald/log-fake": "^2.0.1",
-        "laravel/sanctum": "^3.3"
+        "phpunit/phpunit": "^11.0",
+        "laravel/sanctum": "^4.0"
     },
     "require-dev": {
-        "gammamatrix/playground": "dev-develop|dev-master|dev-feature/*|^73.0"
+        "gammamatrix/playground": "dev-feature/GH-25"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

@@ -33,6 +33,7 @@ class ModelTest extends TestCase
         $expected = [
             'name' => '',
             'email' => '',
+            'password' => '',
         ];
 
         $attributes = $instance->getAttributes();

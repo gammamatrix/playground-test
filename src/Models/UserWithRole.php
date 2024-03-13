@@ -17,7 +17,7 @@ namespace Playground\Test\Models;
  * @property string $email
  * @property string $role
  */
-class UserWithRole extends User
+class UserWithRole extends AbstractUser
 {
     /**
      * @var array<string, mixed>
@@ -25,6 +25,7 @@ class UserWithRole extends User
     protected $attributes = [
         'name' => '',
         'email' => '',
+        'password' => '',
         'role' => '',
     ];
 
@@ -34,8 +35,8 @@ class UserWithRole extends User
     protected $fillable = [
         'name',
         'email',
-        'password',
         'email_verified_at',
+        'password',
         'remember_token',
         'role',
     ];
@@ -43,15 +44,29 @@ class UserWithRole extends User
     /**
      * Checks to see if the user has the role.
      *
-     * @param ?string $role The role to check.
+     * @param mixed $roles The role or roles to check.
      */
-    public function hasRole(mixed $role): bool
+    public function hasRole(mixed $roles): bool
     {
-        if (empty($role) || ! is_string($role)) {
+        if (empty($roles)) {
             return false;
         }
 
-        if ($role === $this->getAttribute('role')) {
+        if (is_array($roles)) {
+            foreach ($roles as $role) {
+                if (! empty($role)
+                    && $role === $this->getAttribute('role')
+                ) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        if (is_string($roles)
+            && $roles === $this->getAttribute('role')
+        ) {
             return true;
         }
 
@@ -63,8 +78,10 @@ class UserWithRole extends User
      */
     public function isAdmin(): bool
     {
-        return $this->hasRole('admin')
-            || $this->hasRole('wheel')
-            || $this->hasRole('root');
+        return $this->hasRole([
+            'wheel',
+            'admin',
+            'root',
+        ]);
     }
 }
