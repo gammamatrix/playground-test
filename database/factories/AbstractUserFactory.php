@@ -49,7 +49,9 @@ abstract class AbstractUserFactory extends Factory
                 $password = Hash::make($password);
             }
 
-            static::$password = $password;
+            if (! empty($password)) {
+                static::$password = $password;
+            }
         }
 
         return [

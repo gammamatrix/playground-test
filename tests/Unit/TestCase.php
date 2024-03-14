@@ -32,6 +32,7 @@ class TestCase extends OrchestraTestCase
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
-        // $app['config']->set('playground-test.password', 'password');
+        $app['config']->set('auth.testing.password', 'password');
+        $app['config']->set('auth.testing.hashed', false);
     }
 }

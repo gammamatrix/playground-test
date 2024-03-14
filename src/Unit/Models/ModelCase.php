@@ -80,6 +80,18 @@ abstract class ModelCase extends OrchestraTestCase
         'morphToMany' => [],
     ];
 
+    /**
+     * Set up the environment.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     */
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['config']->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
+        $app['config']->set('auth.testing.password', 'password');
+        $app['config']->set('auth.testing.hashed', false);
+    }
+
     protected function getModel(): Model
     {
         $modelClass = $this->getModelClass();

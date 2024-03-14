@@ -25,6 +25,11 @@ class DefaultUserFactory extends Factory
     protected $model = DefaultUser::class;
 
     /**
+     * The current password being used by the factory.
+     */
+    protected static ?string $password = null;
+
+    /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
@@ -44,7 +49,9 @@ class DefaultUserFactory extends Factory
                 $password = Hash::make($password);
             }
 
-            static::$password = $password;
+            if (! empty($password)) {
+                static::$password = $password;
+            }
         }
 
         return [
@@ -55,11 +62,6 @@ class DefaultUserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
-
-    /**
-     * The current password being used by the factory.
-     */
-    protected static ?string $password = null;
 
     /**
      * Indicate that the model's email address should be unverified.
