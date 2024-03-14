@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-13 18:50:33</timestamp>
+  <timestamp>2024-03-14 05:10:20</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>202</methodCount>
+    <methodCount>203</methodCount>
     <crapMethodCount>6</crapMethodCount>
     <crapLoad>75</crapLoad>
-    <totalCrap>1489.12</totalCrap>
-    <crapMethodPercent>2.97</crapMethodPercent>
+    <totalCrap>1491.12</totalCrap>
+    <crapMethodPercent>2.96</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -2140,6 +2140,17 @@
       <methodName>test_request_instance</methodName>
       <methodSignature>test_request_instance(): void</methodSignature>
       <fullMethod>test_request_instance(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>getEnvironmentSetUp</methodName>
+      <methodSignature>getEnvironmentSetUp($app)</methodSignature>
+      <fullMethod>getEnvironmentSetUp($app)</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
