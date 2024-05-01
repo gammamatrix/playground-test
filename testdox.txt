@@ -32,6 +32,11 @@ Model (Tests\Unit\Playground\Test\Models\AppPlaygroundUser\Model)
  [x] Verify model relationships
  [x] Model factory make
 
+Model (Tests\Unit\Playground\Test\Models\Demo\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Model factory make
+
 Model (Tests\Unit\Playground\Test\Models\ModelCase\Model)
  [x] Model instance
  [x] Verify model relationships
@@ -65,6 +70,13 @@ Model (Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\Model)
  [x] IsAdmin is true with root role
  [x] IsAdmin is false with root secondary role
  [x] Factory with make
+
+Model (Tests\Unit\Playground\Test\Models\UserWithRole\Model)
+ [x] Get attributes
+ [x] HasRole is false without role
+ [x] HasRole is true with matching role
+ [x] HasRole is true with array of roles
+ [x] IsAdmin is true with admin role
 
 Model (Tests\Unit\Playground\Test\Models\UserWithSanctum\Model)
  [x] Get attributes

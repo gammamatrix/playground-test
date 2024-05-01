@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-22 21:48:02</timestamp>
+  <timestamp>2024-05-01 19:12:09</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>203</methodCount>
-    <crapMethodCount>6</crapMethodCount>
-    <crapLoad>75</crapLoad>
-    <totalCrap>1491.12</totalCrap>
-    <crapMethodPercent>2.96</crapMethodPercent>
+    <methodCount>205</methodCount>
+    <crapMethodCount>3</crapMethodCount>
+    <crapLoad>50</crapLoad>
+    <totalCrap>1280.98</totalCrap>
+    <crapMethodPercent>1.46</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -2026,14 +2026,25 @@
     </method>
     <method>
       <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\Demo</className>
+      <methodName>widgets</methodName>
+      <methodSignature>widgets(): Illuminate\Database\Eloquent\Relations\HasMany</methodSignature>
+      <fullMethod>widgets(): Illuminate\Database\Eloquent\Relations\HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Models</package>
       <className>Playground\Test\Models\UserWithRole</className>
       <methodName>hasRole</methodName>
       <methodSignature>hasRole(mixed $roles): bool</methodSignature>
       <fullMethod>hasRole(mixed $roles): bool</fullMethod>
-      <crap>72</crap>
+      <crap>8</crap>
       <complexity>8</complexity>
-      <coverage>0</coverage>
-      <crapLoad>8</crapLoad>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Models</package>
@@ -2041,6 +2052,17 @@
       <methodName>isAdmin</methodName>
       <methodSignature>isAdmin(): bool</methodSignature>
       <fullMethod>isAdmin(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Models</package>
+      <className>Playground\Test\Models\Widget</className>
+      <methodName>demo</methodName>
+      <methodSignature>demo(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>demo(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -2151,9 +2173,9 @@
       <methodName>getEnvironmentSetUp</methodName>
       <methodSignature>getEnvironmentSetUp($app)</methodSignature>
       <fullMethod>getEnvironmentSetUp($app)</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2162,9 +2184,9 @@
       <methodName>getModel</methodName>
       <methodSignature>getModel(): Illuminate\Database\Eloquent\Model</methodSignature>
       <fullMethod>getModel(): Illuminate\Database\Eloquent\Model</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2173,9 +2195,9 @@
       <methodName>getModelClass</methodName>
       <methodSignature>getModelClass(): string</methodSignature>
       <fullMethod>getModelClass(): string</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2184,9 +2206,9 @@
       <methodName>test_model_instance</methodName>
       <methodSignature>test_model_instance(): void</methodSignature>
       <fullMethod>test_model_instance(): void</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2195,10 +2217,10 @@
       <methodName>verifyRelationship</methodName>
       <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
       <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
-      <crap>110</crap>
+      <crap>17.57</crap>
       <complexity>10</complexity>
-      <coverage>0</coverage>
-      <crapLoad>10</crapLoad>
+      <coverage>57.69</coverage>
+      <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Unit\Models</package>
@@ -2206,10 +2228,10 @@
       <methodName>verifyRelationships</methodName>
       <methodSignature>verifyRelationships(): array</methodSignature>
       <fullMethod>verifyRelationships(): array</fullMethod>
-      <crap>56</crap>
+      <crap>9.29</crap>
       <complexity>7</complexity>
-      <coverage>0</coverage>
-      <crapLoad>7</crapLoad>
+      <coverage>64</coverage>
+      <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Unit\Models</package>
@@ -2217,9 +2239,9 @@
       <methodName>test_verify_model_relationships</methodName>
       <methodSignature>test_verify_model_relationships(): void</methodSignature>
       <fullMethod>test_verify_model_relationships(): void</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2228,9 +2250,9 @@
       <methodName>test_model_factory_make</methodName>
       <methodSignature>test_model_factory_make(): void</methodSignature>
       <fullMethod>test_model_factory_make(): void</fullMethod>
-      <crap>6</crap>
+      <crap>2</crap>
       <complexity>2</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
