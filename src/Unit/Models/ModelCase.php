@@ -87,7 +87,7 @@ abstract class ModelCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
+        $app['config']->set('auth.providers.users.model', 'Playground\\Models\\User');
         $app['config']->set('auth.testing.password', 'password');
         $app['config']->set('auth.testing.hashed', false);
     }

@@ -25,7 +25,6 @@ class UserWithRole extends AbstractUser
     protected $attributes = [
         'name' => '',
         'email' => '',
-        'password' => '',
         'role' => '',
     ];
 
