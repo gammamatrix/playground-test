@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-05-01 19:14:55</timestamp>
+  <timestamp>2024-05-02 06:23:41</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>205</methodCount>
+    <methodCount>206</methodCount>
     <crapMethodCount>3</crapMethodCount>
     <crapLoad>50</crapLoad>
-    <totalCrap>1280.98</totalCrap>
+    <totalCrap>1326.69</totalCrap>
     <crapMethodPercent>1.46</crapMethodPercent>
   </stats>
   <methods>
@@ -2070,6 +2070,28 @@
     </method>
     <method>
       <package>Playground\Test</package>
+      <className>Playground\Test\OrchestraTestCase</className>
+      <methodName>setUp</methodName>
+      <methodSignature>setUp(): void</methodSignature>
+      <fullMethod>setUp(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test</package>
+      <className>Playground\Test\OrchestraTestCase</className>
+      <methodName>defineEnvironment</methodName>
+      <methodSignature>defineEnvironment($app)</methodSignature>
+      <fullMethod>defineEnvironment($app)</fullMethod>
+      <crap>44.71</crap>
+      <complexity>12</complexity>
+      <coverage>38.98</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test</package>
       <className>Playground\Test\ServiceProvider</className>
       <methodName>boot</methodName>
       <methodSignature>boot()</methodSignature>
@@ -2165,17 +2187,6 @@
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Unit\Models</package>
-      <className>Playground\Test\Unit\Models\ModelCase</className>
-      <methodName>getEnvironmentSetUp</methodName>
-      <methodSignature>getEnvironmentSetUp($app)</methodSignature>
-      <fullMethod>getEnvironmentSetUp($app)</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
