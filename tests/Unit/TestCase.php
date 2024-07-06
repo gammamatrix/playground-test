@@ -7,6 +7,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Playground\Test;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Playground\ServiceProvider as PlaygroundServiceProvider;
 use Playground\Test\OrchestraTestCase;
 use Playground\Test\ServiceProvider;
 
@@ -20,19 +21,8 @@ class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
+            PlaygroundServiceProvider::class,
             ServiceProvider::class,
         ];
-    }
-
-    /**
-     * Set up the environment.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     */
-    protected function getEnvironmentSetUp($app)
-    {
-        $app['config']->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
-        $app['config']->set('auth.testing.password', 'password');
-        $app['config']->set('auth.testing.hashed', false);
     }
 }
