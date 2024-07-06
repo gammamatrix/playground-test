@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-05-02 06:23:41</timestamp>
+  <timestamp>2024-07-06 18:32:38</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>206</methodCount>
     <crapMethodCount>3</crapMethodCount>
     <crapLoad>50</crapLoad>
-    <totalCrap>1326.69</totalCrap>
+    <totalCrap>1340.69</totalCrap>
     <crapMethodPercent>1.46</crapMethodPercent>
   </stats>
   <methods>
@@ -1920,8 +1920,8 @@
       <methodName>test_factory_create</methodName>
       <methodSignature>test_factory_create(): void</methodSignature>
       <fullMethod>test_factory_create(): void</fullMethod>
-      <crap>6</crap>
-      <complexity>2</complexity>
+      <crap>20</crap>
+      <complexity>4</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
