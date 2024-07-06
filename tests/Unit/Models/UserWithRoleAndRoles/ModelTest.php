@@ -7,6 +7,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles;
 
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use Playground\Test\Models\Concerns\UserPrivileges;
 use Playground\Test\Models\UserWithRoleAndRoles;
 use Tests\Unit\Playground\Test\TestCase;
@@ -15,7 +16,7 @@ use Tests\Unit\Playground\Test\TestCase;
  * \Tests\Unit\Playground\Test\Models\UserWithRoleAndRoles\ModelTest
  */
 #[CoversClass(UserWithRoleAndRoles::class)]
-#[CoversClass(UserPrivileges::class)]
+#[CoversTrait(UserPrivileges::class)]
 class ModelTest extends TestCase
 {
     /**

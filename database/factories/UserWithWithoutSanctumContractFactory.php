@@ -23,6 +23,8 @@ class UserWithWithoutSanctumContractFactory extends AbstractUserFactory
 
     /**
      * Set the user up as an admin user.
+     *
+     * @return Factory<UserWithWithoutSanctumContract>
      */
     public function admin(): Factory
     {
@@ -33,6 +35,8 @@ class UserWithWithoutSanctumContractFactory extends AbstractUserFactory
 
     /**
      * Set the user up as a guest user.
+     *
+     * @return Factory<UserWithWithoutSanctumContract>
      */
     public function guest(): Factory
     {
@@ -43,6 +47,8 @@ class UserWithWithoutSanctumContractFactory extends AbstractUserFactory
 
     /**
      * Set the user up as a manager user.
+     *
+     * @return Factory<UserWithWithoutSanctumContract>
      */
     public function manager(): Factory
     {
@@ -53,6 +59,8 @@ class UserWithWithoutSanctumContractFactory extends AbstractUserFactory
 
     /**
      * Indicate that the user has the root role.
+     *
+     * @return Factory<UserWithWithoutSanctumContract>
      */
     public function root(): Factory
     {
@@ -63,6 +71,8 @@ class UserWithWithoutSanctumContractFactory extends AbstractUserFactory
 
     /**
      * Indicate that the user has the wheel role.
+     *
+     * @return Factory<UserWithWithoutSanctumContract>
      */
     public function wheel(): Factory
     {

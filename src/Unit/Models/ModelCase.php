@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Log;
 use Playground\Test\OrchestraTestCase;
 
@@ -87,7 +88,7 @@ abstract class ModelCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
+        $app['config']->set('auth.providers.users.model', 'Playground\\Models\\User');
         $app['config']->set('auth.testing.password', 'password');
         $app['config']->set('auth.testing.hashed', false);
     }
@@ -169,7 +170,7 @@ abstract class ModelCase extends OrchestraTestCase
         }
 
         /**
-         * @var class-string<BelongsTo|BelongsToMany|HasMany|HasOne|MorphToMany>
+         * @var class-string<Relation<Model>>
          */
         $relationshipTypeClass = null;
         if ($relationshipType === 'belongsTo') {

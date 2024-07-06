@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Log;
 use Playground\Test\OrchestraTestCase;
@@ -175,7 +176,7 @@ abstract class ModelCase extends OrchestraTestCase
         }
 
         /**
-         * @var class-string<BelongsTo|BelongsToMany|HasMany|HasOne>
+         * @var class-string<Relation<Model>>
          */
         $relationshipTypeClass = null;
         if ($relationshipType === 'belongsTo') {
@@ -540,6 +541,11 @@ abstract class ModelCase extends OrchestraTestCase
         // ]);
     }
 
+    /**
+     * Set test_factory_create_state to the method name on a factory state of the model.
+     */
+    protected ?string $test_factory_create_state = null;
+
     public function test_factory_create(): void
     {
         $instance = null;
@@ -548,7 +554,15 @@ abstract class ModelCase extends OrchestraTestCase
         $this->assertNotEmpty($modelClass);
 
         if (is_callable([$modelClass, 'factory'])) {
-            $instance = $modelClass::factory()->create();
+            $factory = $modelClass::factory();
+            if ($this->test_factory_create_state && is_callable([
+                $factory,
+                $this->test_factory_create_state,
+            ])) {
+                $instance = $factory->{$this->test_factory_create_state}()->create();
+            } else {
+                $instance = $factory->create();
+            }
         }
 
         $this->assertNotNull($instance);

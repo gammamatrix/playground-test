@@ -11,7 +11,7 @@ use Playground\Models\User as BaseUser;
 /**
  * \Playground\Test\Models\PlaygroundUser
  *
- * This model has the minimum Playground features.
+ * NOTE: This model should be the same as a \App\Models\User extends \Playground\Models\User.
  */
 class PlaygroundUser extends BaseUser
 {

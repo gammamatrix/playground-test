@@ -14,6 +14,8 @@ use Playground\Test\Models\DefaultUser;
 
 /**
  * \Database\Factories\Playground\Test\Models\DefaultUserFactory
+ *
+ * @extends Factory<DefaultUser>
  */
 class DefaultUserFactory extends Factory
 {
@@ -65,8 +67,10 @@ class DefaultUserFactory extends Factory
 
     /**
      * Indicate that the model's email address should be unverified.
+     *
+     * @return Factory<DefaultUser>
      */
-    public function unverified(): static
+    public function unverified(): Factory
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
@@ -75,6 +79,8 @@ class DefaultUserFactory extends Factory
 
     /**
      * Set the user up as an admin user.
+     *
+     * @return Factory<DefaultUser>
      */
     public function admin(): Factory
     {
@@ -85,6 +91,8 @@ class DefaultUserFactory extends Factory
 
     /**
      * Set the user up as a guest user.
+     *
+     * @return Factory<DefaultUser>
      */
     public function guest(): Factory
     {
@@ -95,6 +103,8 @@ class DefaultUserFactory extends Factory
 
     /**
      * Set the user up as a manager user.
+     *
+     * @return Factory<DefaultUser>
      */
     public function manager(): Factory
     {
@@ -105,6 +115,8 @@ class DefaultUserFactory extends Factory
 
     /**
      * Indicate that the user has the root role.
+     *
+     * @return Factory<DefaultUser>
      */
     public function root(): Factory
     {
@@ -115,6 +127,8 @@ class DefaultUserFactory extends Factory
 
     /**
      * Indicate that the user has the wheel role.
+     *
+     * @return Factory<DefaultUser>
      */
     public function wheel(): Factory
     {

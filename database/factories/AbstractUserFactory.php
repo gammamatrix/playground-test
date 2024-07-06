@@ -14,6 +14,8 @@ use Playground\Test\Models\AbstractUser;
 
 /**
  * \Database\Factories\Playground\Test\Models\AbstractUserFactory
+ *
+ * @extends Factory<AbstractUser>
  */
 abstract class AbstractUserFactory extends Factory
 {
@@ -65,8 +67,10 @@ abstract class AbstractUserFactory extends Factory
 
     /**
      * Indicate that the model's email address should be unverified.
+     *
+     * @return Factory<AbstractUser>
      */
-    public function unverified(): static
+    public function unverified(): Factory
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,

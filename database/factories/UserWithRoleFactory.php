@@ -37,6 +37,8 @@ class UserWithRoleFactory extends AbstractUserFactory
 
     /**
      * Indicate that the user has the admin role.
+     *
+     * @return Factory<UserWithRole>
      */
     public function admin(): Factory
     {
@@ -47,6 +49,8 @@ class UserWithRoleFactory extends AbstractUserFactory
 
     /**
      * Indicate that the user has the guest role.
+     *
+     * @return Factory<UserWithRole>
      */
     public function guest(): Factory
     {
@@ -57,6 +61,8 @@ class UserWithRoleFactory extends AbstractUserFactory
 
     /**
      * Indicate that the user has the manager role.
+     *
+     * @return Factory<UserWithRole>
      */
     public function manager(): Factory
     {
@@ -67,6 +73,8 @@ class UserWithRoleFactory extends AbstractUserFactory
 
     /**
      * Indicate that the user has the root role.
+     *
+     * @return Factory<UserWithRole>
      */
     public function root(): Factory
     {
@@ -77,6 +85,8 @@ class UserWithRoleFactory extends AbstractUserFactory
 
     /**
      * Indicate that the user has the wheel role.
+     *
+     * @return Factory<UserWithRole>
      */
     public function wheel(): Factory
     {

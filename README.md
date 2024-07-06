@@ -29,6 +29,33 @@ See the contents of the published config file: [config/playground-test.php](conf
 
 Information on [environment variables is available on the wiki for this package](https://github.com/gammamatrix/playground-test/wiki/Environment-Variables)
 
+## Cloc
+
+```sh
+composer cloc
+```
+
+```
+➜  playground-test git:(develop) ✗ composer cloc
+> cloc --exclude-dir=output,vendor .
+     137 text files.
+      79 unique files.
+      59 files ignored.
+
+github.com/AlDanial/cloc v 1.98  T=0.10 s (778.8 files/s, 87486.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+PHP                             70           1556           1754           4816
+XML                              4              0             15            294
+YAML                             1              5              0            249
+Markdown                         3             35              0             88
+JSON                             1              0              0             63
+-------------------------------------------------------------------------------
+SUM:                            79           1596           1769           5510
+-------------------------------------------------------------------------------
+```
+
 ## PHPStan
 
 Tests at level 9 on:
