@@ -14,15 +14,28 @@ use ValueError;
  */
 trait Migrations
 {
+    /**
+     * @var array<string, array<int, string>>
+     */
+    protected array $load_migrations = [
+        // Grouped by organizations and keyed by packages.
+        // 'gammamatrix' => [
+        //     'playground-cms' => [],
+        //     'playground-leads' => [],
+        //     'playground-matrix' => [],
+        //     'playground-test' => [
+        //         'migrations-testing',
+        //     ],
+        // ],
+    ];
+
     protected bool $load_migrations_laravel = false;
 
-    protected string $load_migrations_playground_test;
-
-    protected string $load_migrations_package = '';
-
-    protected string $load_migrations_package_migration = '';
+    protected bool $load_migrations_package = false;
 
     protected bool $load_migrations_playground = false;
+
+    protected string $load_migrations_playground_test;
 
     /**
      * Define database migrations.
@@ -44,88 +57,174 @@ trait Migrations
                 $this->loadMigrationsFrom($folderForVendor.'/gammamatrix/playground-test/database/migrations-playground');
             }
             if ($this->load_migrations_package) {
-                $this->loadPackageMigration($folderForVendor, $this->load_migrations_package);
+                $this->loadPackageMigrations();
+            }
+            if ($this->load_migrations) {
+                $this->loadMigrationsFromPackages($folderForVendor);
             }
         }
     }
 
-    protected function loadPackageMigration(
-        string $folderForVendor,
+    protected function loadPackageMigrations(): void
+    {
+        if (empty($this->package_providers_dir)
+            || ! Str::endsWith($this->package_providers_dir, '/tests/Unit')
+        ) {
+            throw new ValueError(
+                'Expecting package_providers_dir to be set in PackageProviders'
+            );
+        }
+
+        $folderForPackage = Str::of($this->package_providers_dir)->before('/tests/Unit')->toString();
+
+        $folderForPackageMigrations = sprintf('%1$s/database/migrations', $folderForPackage);
+
+        if (! is_dir($folderForPackageMigrations)) {
+            throw new ValueError(sprintf(
+                'Expecting the package to have database migrations: [%1$s]',
+                $folderForPackageMigrations
+            ));
+        }
+
+        $this->loadMigrationsFrom($folderForPackageMigrations);
+    }
+
+    /**
+     * @param array<int, string> $packages
+     */
+    private function loadMigrationsFromPackages_org(
+        string $folderForOrganization,
+        string $organization,
+        array $packages
+    ): void {
+        foreach ($packages as $package => $migrations) {
+
+            if (empty($package) || ! is_string($package)) {
+                throw new ValueError(sprintf(
+                    'Expecting the package to be provided from the Packagist Organization [%1$s]: [%2$s] ',
+                    $organization,
+                    $folderForOrganization
+                ));
+            }
+
+            if (empty($migrations) || ! is_array($migrations)) {
+                $migrations = [
+                    'migrations',
+                ];
+            }
+
+            $folderForOrganizationPackage = sprintf('%1$s/%2$s', $folderForOrganization, $package);
+            // dump([
+            //     '__METHOD__' => __METHOD__,
+            //     '$package' => $package,
+            //     '$migrations' => $migrations,
+            //     '$organization' => $organization,
+            //     '$folderForOrganization' => $folderForOrganization,
+            //     '$folderForOrganizationPackage' => $folderForOrganizationPackage,
+            // ]);
+            if (! is_dir($folderForOrganizationPackage)) {
+                throw new ValueError(sprintf(
+                    'Expecting the package to be found under Composer vendor folder for [%1$s]: [%2$s]',
+                    $package,
+                    $folderForOrganizationPackage
+                ));
+            }
+
+            $folderForOrganizationPackageDatabase = $folderForOrganizationPackage.'/database';
+
+            if (! is_dir($folderForOrganizationPackageDatabase)) {
+                throw new ValueError(sprintf(
+                    'Expecting the organization [%1$s] to have a database folder under: [%2$s]',
+                    $organization,
+                    $folderForOrganizationPackageDatabase
+                ));
+            }
+
+            // if (empty($migrations)) {
+            //     throw new ValueError(sprintf(
+            //         'Expecting a folder, for the set of migrations, to be provided: [%1$s]',
+            //         $folderForOrganizationPackageDatabase
+            //     ));
+            // }
+
+            $this->loadMigrationsFromPackages_migrations(
+                $folderForOrganizationPackageDatabase,
+                $organization,
+                $package,
+                $migrations,
+            );
+        }
+    }
+
+    /**
+     * @param array<int, string> $migrations
+     */
+    private function loadMigrationsFromPackages_migrations(
+        string $folderForOrganizationPackageDatabase,
+        string $organization,
         string $package,
-        string $migrations = null
+        array $migrations
     ): void {
 
-        $organization = Str::of($package)->before('/')->toString();
-        $organization_package = Str::of($package)->after('/')->toString();
+        foreach ($migrations as $migration) {
+            $folderForMigrations = $folderForOrganizationPackageDatabase.'/'.$migration;
 
-        if (empty($organization)) {
-            throw new ValueError('Expecting the Packagist Organization to be provided.');
-        }
-
-        if (empty($organization_package)) {
-            throw new ValueError(sprintf(
-                'Expecting the Packagist Organization [%1$s] Package to be provided in the $package [%2$s]',
-                $organization,
-                $package
-            ));
-        }
-
-        $folderForOrganization = sprintf('%1$s/%2$s', $folderForVendor, $organization);
-
-        if (! is_dir($folderForOrganization)) {
-            throw new ValueError(sprintf(
-                'Expecting the Composer vendor folder for [%1$s] to exist: [%2$s]',
-                $organization,
-                $folderForOrganization
-            ));
-        }
-
-        $folderForOrganizationPackage = sprintf('%1$s/%2$s', $folderForOrganization, $organization_package);
-
-        if (! is_dir($folderForOrganizationPackage)) {
-            throw new ValueError(sprintf(
-                'Expecting the package to be found under Composer vendor folder for [%1$s]: [%2$s]',
-                $package,
-                $folderForOrganizationPackage
-            ));
-        }
-
-        $folderForOrganizationPackageDatabase = $folderForOrganizationPackage.'/database';
-
-        if (! is_dir($folderForOrganizationPackageDatabase)) {
-            throw new ValueError(sprintf(
-                'Expecting the organization [%1$s] to have a database folder under: [%2$s]',
-                $organization,
-                $folderForOrganizationPackageDatabase
-            ));
-        }
-
-        if (is_null($migrations)) {
-            if ($this->load_migrations_package_migration) {
-                $migrations = trim($this->load_migrations_package_migration, '/\\');
-            } else {
-                $migrations = 'migrations';
+            if (! is_dir($folderForMigrations)) {
+                throw new ValueError(sprintf(
+                    'Expecting the organization [%1$s] to have a set of database migrations: [%2$s]',
+                    $organization,
+                    $folderForMigrations
+                ));
             }
+
+            if (! is_dir($folderForOrganizationPackageDatabase)) {
+                throw new ValueError(sprintf(
+                    'Expecting the organization [%1$s] to have a database folder under: [%2$s]',
+                    $organization,
+                    $folderForOrganizationPackageDatabase
+                ));
+            }
+
+            // dd([
+            //     '__METHOD__' => __METHOD__,
+            //     '$folderForOrganizationPackageDatabase' => $folderForOrganizationPackageDatabase,
+            //     '$folderForMigrations' => $folderForMigrations,
+            //     '$migration' => $migration,
+            //     // '$migrations' => $migrations,
+            //     '$organization' => $organization,
+            //     '$package' => $package,
+            //     // '$packages' => $packages,
+            //     // '$this->load_migrations' => $this->load_migrations,
+            // ]);
+
+            $this->loadMigrationsFrom($folderForMigrations);
         }
+    }
 
-        if (empty($migrations)) {
-            throw new ValueError(sprintf(
-                'Expecting a folder, for the set of migrations, to be provided: [%1$s]',
-                $folderForOrganizationPackageDatabase
-            ));
-        }
+    protected function loadMigrationsFromPackages(string $folderForVendor): void
+    {
+        foreach ($this->load_migrations as $organization => $packages) {
 
-        $folderForMigrations = $folderForOrganizationPackageDatabase.'/'.$migrations;
+            if (empty($organization)) {
+                throw new ValueError('Expecting the Packagist Organization to be provided.');
+            }
 
-        if (! is_dir($folderForMigrations)) {
-            throw new ValueError(sprintf(
-                'Expecting the organization [%1$s] to have a set of database migrations: [%2$s]',
+            $folderForOrganization = sprintf('%1$s/%2$s', $folderForVendor, $organization);
+
+            if (! is_dir($folderForOrganization)) {
+                throw new ValueError(sprintf(
+                    'Expecting the Composer vendor folder for [%1$s] to exist: [%2$s]',
+                    $organization,
+                    $folderForOrganization
+                ));
+            }
+
+            $this->loadMigrationsFromPackages_org(
+                $folderForOrganization,
                 $organization,
-                $folderForMigrations
-            ));
+                $packages,
+            );
         }
-
-        $this->loadMigrationsFrom($folderForMigrations);
     }
 
     /**
@@ -199,6 +298,9 @@ trait Migrations
         return $folderForVendor;
     }
 
+    /**
+     * @deprecated
+     */
     protected function loadPlaygroundMigration(string $folder): void
     {
         $playground_database = sprintf('%1$s/playground/database', dirname(dirname(dirname(__DIR__))));

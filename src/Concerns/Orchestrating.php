@@ -9,6 +9,7 @@ namespace Playground\Test\Concerns;
 use Illuminate\Support\Carbon;
 use Playground\Models\User;
 use Playground\Test\Models\DefaultUser;
+use Playground\Test\Models\UserWithSanctum;
 
 /**
  * \Playground\Test\Concerns\Orchestrating
