@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Laravel
  */
+
+declare(strict_types=1);
 namespace Playground\Test;
 
 use Faker\Factory;
