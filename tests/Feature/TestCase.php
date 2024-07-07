@@ -15,6 +15,16 @@ class TestCase extends \Tests\Unit\Playground\Test\TestCase
 
     protected bool $load_migrations_testing = false;
 
-    // protected string $load_migrations_package = 'gammamatrix/playground-test';
-    // protected string $load_migrations_package_migration = 'migrations-testing';
+    /**
+     * Define database migrations.
+     *
+     * @api
+     *
+     * @return void
+     */
+    protected function defineDatabaseMigrations()
+    {
+        if (! empty(env('TEST_DB_MIGRATIONS'))) {
+        }
+    }
 }

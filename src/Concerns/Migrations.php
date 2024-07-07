@@ -297,17 +297,4 @@ trait Migrations
 
         return $folderForVendor;
     }
-
-    /**
-     * @deprecated
-     */
-    protected function loadPlaygroundMigration(string $folder): void
-    {
-        $playground_database = sprintf('%1$s/playground/database', dirname(dirname(dirname(__DIR__))));
-        $migrations = sprintf('%1$s/%2$s', $playground_database, $folder);
-
-        if ($folder && is_dir($playground_database) && is_dir($migrations)) {
-            $this->loadMigrationsFrom($playground_database.'/'.$folder);
-        }
-    }
 }
