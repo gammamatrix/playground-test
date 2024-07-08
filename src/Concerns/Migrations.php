@@ -14,6 +14,8 @@ use ValueError;
  */
 trait Migrations
 {
+    protected bool $hasMigrations = false;
+
     /**
      * @var array<string, array<int, string>>
      */
@@ -46,7 +48,7 @@ trait Migrations
      */
     protected function defineDatabaseMigrations()
     {
-        if (! empty(env('TEST_DB_MIGRATIONS'))) {
+        if (! empty($this->hasMigrations) && ! empty(env('TEST_DB_MIGRATIONS'))) {
 
             $folderForVendor = $this->verifyPlaygroundTestExists();
 
