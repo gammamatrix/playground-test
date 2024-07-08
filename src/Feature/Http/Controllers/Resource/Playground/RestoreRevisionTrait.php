@@ -7,7 +7,7 @@ declare(strict_types=1);
 namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
 use Illuminate\Database\Eloquent\Model;
-use Playground\Test\Models\PlaygroundUser as User;
+use Playground\Models\User;
 
 /**
  * \Tests\Feature\Playground\Cms\Resource\Http\Controllers\RestoreRevisionTrait

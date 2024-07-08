@@ -8,7 +8,7 @@ namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Playground\Test\Models\PlaygroundUser as User;
+use Playground\Models\User;
 
 /**
  * \Playground\Test\Feature\Http\Controllers\Resource\Playground\RestoreTrait

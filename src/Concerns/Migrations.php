@@ -17,7 +17,7 @@ trait Migrations
     protected bool $hasMigrations = false;
 
     /**
-     * @var array<string, array<int, string>>
+     * @var array<string, array<string, array<int, string>>>
      */
     protected array $load_migrations = [
         // Grouped by organizations and keyed by packages.
@@ -92,7 +92,7 @@ trait Migrations
     }
 
     /**
-     * @param array<int, string> $packages
+     * @param array<string, array<int, string>> $packages
      */
     private function loadMigrationsFromPackages_org(
         string $folderForOrganization,

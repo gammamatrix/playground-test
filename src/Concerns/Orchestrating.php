@@ -130,6 +130,21 @@ trait Orchestrating
             $sanctum = false;
         }
 
+        // dump([
+        //     '__METHOD__' => __METHOD__,
+        //     '$verify' => $verify,
+        //     '$userModel' => $userModel,
+        //     '$sanctum' => $sanctum,
+        //     '$hasPrivilege' => $hasPrivilege,
+        //     '$userPrivileges' => $userPrivileges,
+        //     '$hasRole' => $hasRole,
+        //     '$userRole' => $userRole,
+        //     '$userRoles' => $userRoles,
+        //     '$password' => $password,
+        //     '$hashed' => $hashed,
+        //     '$this->setUpUserForPlayground' => $this->setUpUserForPlayground,
+        // ]);
+
         if ($userModel) {
             $app['config']->set('auth.providers.users.model', $userModel);
         }
