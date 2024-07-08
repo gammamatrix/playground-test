@@ -23,7 +23,7 @@
         "friendsofphp/php-cs-fixer": "^3.41",
         "larastan/larastan": "^2.0",
         "laravel/sanctum": "^4.0",
-        "gammamatrix/playground": "dev-develop|dev-master|dev-feature/*|^73.0@dev|^73.0",
+        "gammamatrix/playground": "*",
         "nunomaduro/collision": "^8.0",
         "orchestra/testbench": "9.*",
         "phpstan/phpstan-phpunit": "^1.3",
