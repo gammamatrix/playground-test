@@ -1,10 +1,13 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Test\Models;
+
+use Database\Factories\Playground\Test\Models\UserWithRoleAndRolesAndPrivilegesFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * \Playground\Test\Models\UserWithRoleAndRolesAndPrivileges
@@ -22,6 +25,9 @@ namespace Playground\Test\Models;
 class UserWithRoleAndRolesAndPrivileges extends AbstractUser
 {
     use Concerns\UserPrivileges;
+
+    /** @use HasFactory<UserWithRoleAndRolesAndPrivilegesFactory> */
+    use HasFactory;
 
     /**
      * @var array<string, mixed>

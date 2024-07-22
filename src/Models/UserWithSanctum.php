@@ -6,6 +6,8 @@ declare(strict_types=1);
  */
 namespace Playground\Test\Models;
 
+use Database\Factories\Playground\Test\Models\UserWithSanctumFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\Contracts\HasApiTokens as HasApiTokensContract;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -24,4 +26,7 @@ use Laravel\Sanctum\HasApiTokens;
 class UserWithSanctum extends AbstractUser implements HasApiTokensContract
 {
     use HasApiTokens;
+
+    /** @use HasFactory<UserWithSanctumFactory> */
+    use HasFactory;
 }

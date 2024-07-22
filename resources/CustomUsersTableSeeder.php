@@ -1,15 +1,16 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Playground\Test\Models\UserWithRoleAndPrivileges as User;
+use Playground\Models\User;
 
 /**
  * \CustomUsersTableSeeder
@@ -18,6 +19,23 @@ use Playground\Test\Models\UserWithRoleAndPrivileges as User;
  */
 class CustomUsersTableSeeder extends Seeder
 {
+    protected bool $withPrivileges = true;
+
+    protected bool $withActive = true;
+
+    protected bool $withDescription = true;
+
+    protected bool $withRole = true;
+
+    protected bool $withRoles = true;
+
+    protected bool $withStatus = true;
+
+    /**
+     * @var class-string<Authenticatable>
+     */
+    protected string $userClass = User::class;
+
     /**
      * Run the database seeds.
      *
@@ -31,6 +49,42 @@ class CustomUsersTableSeeder extends Seeder
             error_log('No users defined in playground-test.');
 
             return;
+        }
+
+        /**
+         * @var class-string<Authenticatable>
+         */
+        $userClass = $this->userClass;
+
+        if (! empty(config('auth.providers.users.model'))
+            && is_string(config('auth.providers.users.model'))
+            && class_exists(config('auth.providers.users.model'))
+        ) {
+            $userClass = config('auth.providers.users.model');
+        }
+
+        if (empty($config['with_active'])) {
+            $this->withActive = false;
+        }
+
+        if (empty($config['with_description'])) {
+            $this->withDescription = false;
+        }
+
+        if (empty($config['with_privileges'])) {
+            $this->withPrivileges = false;
+        }
+
+        if (empty($config['with_role'])) {
+            $this->withRole = false;
+        }
+
+        if (empty($config['with_roles'])) {
+            $this->withRoles = false;
+        }
+
+        if (empty($config['with_status'])) {
+            $this->withStatus = false;
         }
 
         $password = empty($config['password']) || ! is_string($config['password']) ? '' : $config['password'];
@@ -48,30 +102,37 @@ class CustomUsersTableSeeder extends Seeder
         foreach ($config['users'] as $slug => $meta) {
             $email = sprintf('%1$s@example.com', Str::slug($slug));
 
-            $model = User::where('email', $email)->first();
+            $model = $userClass::where('email', $email)->first();
 
-            if (empty($model)) {
-                $model = new User([
-                    'name' => empty($meta['name']) || ! is_string($meta['name']) ? 'Some Name' : $meta['name'],
-                    'description' => empty($meta['description']) || ! is_string($meta['description']) ? '' : $meta['description'],
-                    'active' => true,
-                    'email' => $email,
-                    'role' => empty($meta['role']) || ! is_string($meta['role']) ? '' : $meta['role'],
-                    'status' => empty($meta['status']) || ! is_numeric($meta['status']) ? 0 : $meta['status'],
-                ]);
-            } else {
-                $model->update([
-                    'name' => empty($meta['name']) || ! is_string($meta['name']) ? 'Some Name' : $meta['name'],
-                    'description' => empty($meta['description']) || ! is_string($meta['description']) ? '' : $meta['description'],
-                    'active' => true,
-                    'role' => empty($meta['role']) || ! is_string($meta['role']) ? '' : $meta['role'],
-                    'status' => empty($meta['status']) || ! is_numeric($meta['status']) ? 0 : $meta['status'],
-                ]);
+            $data = [
+                'name' => empty($meta['name']) || ! is_string($meta['name']) ? 'Some Name' : $meta['name'],
+            ];
+
+            if ($this->withActive) {
+                $data['active'] = true;
             }
 
-            $roles = [];
+            if ($this->withRole) {
+                $data['description'] = empty($meta['description']) || ! is_string($meta['description']) ? '' : $meta['description'];
+            }
 
-            if (is_array($meta['roles'])) {
+            if ($this->withRole) {
+                $data['role'] = empty($meta['role']) || ! is_string($meta['role']) ? '' : $meta['role'];
+            }
+
+            if ($this->withRole) {
+                $data['status'] = empty($meta['status']) || ! is_numeric($meta['status']) ? 0 : $meta['status'];
+            }
+
+            if (empty($model)) {
+                $data['email'] = $email;
+                $model = $userClass::create($data);
+            } else {
+                $model->update($data);
+            }
+
+            if ($this->withRoles && is_array($meta['roles'])) {
+                $roles = [];
                 foreach ($meta['roles'] as $role) {
                     if (! empty($role)
                         && is_string($role)
@@ -81,9 +142,35 @@ class CustomUsersTableSeeder extends Seeder
                         $roles[] = $role;
                     }
                 }
+                $model->roles = $roles;
             }
 
-            $model->roles = $roles;
+            if ($this->withPrivileges && is_array($meta['privileges'])) {
+                $privileges = [];
+                foreach ($meta['privileges'] as $privilege) {
+                    if (! empty($privilege)
+                        && is_string($privilege)
+                        && ! in_array($privilege, $privileges)
+                    ) {
+                        $privileges[] = $privilege;
+                    }
+                }
+                $model->privileges = $privileges;
+            }
+
+            // dd([
+            //     '__METHOD__' => __METHOD__,
+            //     '$password' => $password,
+            //     '$password_encrypted' => $password_encrypted,
+            //     '$email' => $email,
+            //     '$slug' => $slug,
+            //     '$meta' => $meta,
+            //     '$roles' => $roles,
+            //     '$privileges' => $privileges,
+            //     // '$config' => $config,
+            //     // '$model' => $model->toArray(),
+            //     '$model' => $model,
+            // ]);
 
             // Reset the password
             $model->password = $password;

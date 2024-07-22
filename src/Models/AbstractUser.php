@@ -6,7 +6,6 @@ declare(strict_types=1);
  */
 namespace Playground\Test\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as BaseUser;
 
 /**
@@ -23,8 +22,6 @@ use Illuminate\Foundation\Auth\User as BaseUser;
  */
 abstract class AbstractUser extends BaseUser
 {
-    use HasFactory;
-
     /**
      * @var array<string, mixed>
      */
