@@ -6,6 +6,7 @@ declare(strict_types=1);
 namespace Playground\Test\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Database\Factories\Playground\Test\Models\DefaultUserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,7 +20,10 @@ use Illuminate\Notifications\Notifiable;
  */
 class DefaultUser extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    /** @use HasFactory<DefaultUserFactory> */
+    use HasFactory;
+
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.

@@ -6,6 +6,9 @@ declare(strict_types=1);
  */
 namespace Playground\Test\Models;
 
+use Database\Factories\Playground\Test\Models\UserWithRoleFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 /**
  * \Playground\Test\Models\UserWithRoleAndRoles
  *
@@ -21,6 +24,9 @@ namespace Playground\Test\Models;
 class UserWithRoleAndRoles extends AbstractUser
 {
     use Concerns\UserPrivileges;
+
+    /** @use HasFactory<UserWithRoleFactory> */
+    use HasFactory;
 
     /**
      * @var array<string, mixed>

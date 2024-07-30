@@ -19,11 +19,6 @@ use Playground\Test\Models\DefaultUser;
  */
 class DefaultUserFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var class-string<DefaultUser>
-     */
     protected $model = DefaultUser::class;
 
     /**

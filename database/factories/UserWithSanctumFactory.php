@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Database\Factories\Playground\Test\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
