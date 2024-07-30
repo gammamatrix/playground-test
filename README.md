@@ -36,13 +36,13 @@ composer cloc
 ```
 
 ```
-➜  playground-test git:(develop) ✗ composer cloc
+➜  playground-test git:(feature/GH-34) composer cloc
 > cloc --exclude-dir=output,vendor .
-     159 text files.
+     158 text files.
       93 unique files.
-      67 files ignored.
+      66 files ignored.
 
-github.com/AlDanial/cloc v 1.98  T=0.12 s (760.8 files/s, 82920.9 lines/s)
+github.com/AlDanial/cloc v 1.98  T=0.15 s (615.0 files/s, 67029.5 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
