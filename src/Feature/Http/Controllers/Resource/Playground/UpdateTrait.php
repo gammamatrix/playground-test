@@ -19,7 +19,7 @@ trait UpdateTrait
     protected string $update_parameter = 'title';
 
     /**
-     * @var array<int, string>
+     * @var array<int, string> @deprecated to support patching
      */
     protected array $update_without_payload_errors = [
         'title',
@@ -62,7 +62,7 @@ trait UpdateTrait
         $response->assertStatus($this->status_code_guest_update);
     }
 
-    public function test_update_as_admin_without_payload_and_fail_validation()
+    public function test_update_as_admin_without_payload_and_passes_validation()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -81,11 +81,37 @@ trait UpdateTrait
 
         $response = $this->actingAs($user)->patch($url);
 
-        $response->assertInvalid($this->update_without_payload_errors);
         $response->assertStatus(302);
+
+        $response->assertSessionHasNoErrors();
 
         $this->assertAuthenticated();
     }
+
+    // public function test_update_as_admin_without_payload_and_fail_validation()
+    // {
+    //     $packageInfo = $this->getPackageInfo();
+
+    //     $fqdn = $this->getGetFqdn();
+
+    //     $model = $fqdn::factory()->create();
+
+    //     $user = User::factory()->admin()->create();
+
+    //     $url = route(sprintf(
+    //         '%1$s.patch',
+    //         $packageInfo['model_route']
+    //     ), [
+    //         $packageInfo['model_slug'] => $model->id,
+    //     ]);
+
+    //     $response = $this->actingAs($user)->patch($url);
+
+    //     $response->assertInvalid($this->update_without_payload_errors);
+    //     $response->assertStatus(302);
+
+    //     $this->assertAuthenticated();
+    // }
 
     public function test_admin_can_update()
     {

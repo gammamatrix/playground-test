@@ -19,7 +19,7 @@ trait UpdateJsonTrait
     protected string $update_json_parameter = 'title';
 
     /**
-     * @var array<int, string>
+     * @var array<int, string> @deprecated to support patching
      */
     protected array $json_update_without_payload_errors = [
         'title',
@@ -62,7 +62,7 @@ trait UpdateJsonTrait
         $response->assertStatus($this->status_code_guest_json_update);
     }
 
-    public function test_json_update_as_admin_without_payload_and_fail_validation()
+    public function test_json_update_as_admin_without_payload_and_passes_validation()
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -81,11 +81,34 @@ trait UpdateJsonTrait
 
         $response = $this->actingAs($user)->patchJson($url);
 
-        $response->assertInvalid($this->json_update_without_payload_errors);
-        $response->assertStatus(422);
+        $response->assertStatus(200);
 
         $this->assertAuthenticated();
     }
+
+    // public function test_json_update_as_admin_without_payload_and_fail_validation()
+    // {
+    //     $packageInfo = $this->getPackageInfo();
+
+    //     $fqdn = $this->getGetFqdn();
+
+    //     $model = $fqdn::factory()->create();
+
+    //     $user = User::factory()->admin()->create();
+
+    //     $url = route(sprintf(
+    //         '%1$s.patch',
+    //         $packageInfo['model_route']
+    //     ), [
+    //         $packageInfo['model_slug'] => $model->id,
+    //     ]);
+
+    //     $response = $this->actingAs($user)->patchJson($url);
+    //     // $response->assertInvalid($this->json_update_without_payload_errors);
+    //     // $response->assertStatus(422);
+
+    //     $this->assertAuthenticated();
+    // }
 
     public function test_json_admin_can_update()
     {

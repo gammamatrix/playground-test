@@ -6,6 +6,7 @@ declare(strict_types=1);
  */
 namespace Playground\Test\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
 
@@ -37,13 +38,13 @@ use Playground\Models\Model;
  * @property ?int $x
  * @property ?int $y
  * @property ?int $z
- * @property ?double $r
- * @property ?double $theta
- * @property ?double $rho
- * @property ?double $phi
- * @property ?double $elevation
- * @property ?double $latitude
- * @property ?double $longitude
+ * @property ?float $r
+ * @property ?float $theta
+ * @property ?float $rho
+ * @property ?float $phi
+ * @property ?float $elevation
+ * @property ?float $latitude
+ * @property ?float $longitude
  * @property bool $active
  * @property bool $flagged
  * @property bool $internal
@@ -70,12 +71,15 @@ use Playground\Models\Model;
  */
 class Widget extends Model
 {
+    /** @use HasFactory<\Database\Factories\Playground\Test\Models\WidgetFactory> */
+    use HasFactory;
+
     protected $table = 'testing_widgets';
 
     /**
      * The demo of the widget.
      *
-     * @return HasOne<Demo>
+     * @return HasOne<Demo, $this>
      */
     public function demo(): HasOne
     {
