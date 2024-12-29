@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-07-30 17:39:05</timestamp>
+  <timestamp>2024-12-29 01:26:24</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>213</methodCount>
@@ -1829,9 +1829,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateJsonTrait</className>
-      <methodName>test_json_update_as_admin_without_payload_and_fail_validation</methodName>
-      <methodSignature>test_json_update_as_admin_without_payload_and_fail_validation()</methodSignature>
-      <fullMethod>test_json_update_as_admin_without_payload_and_fail_validation()</fullMethod>
+      <methodName>test_json_update_as_admin_without_payload_and_passes_validation</methodName>
+      <methodSignature>test_json_update_as_admin_without_payload_and_passes_validation()</methodSignature>
+      <fullMethod>test_json_update_as_admin_without_payload_and_passes_validation()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -1884,9 +1884,9 @@
     <method>
       <package>Playground\Test\Feature\Http\Controllers\Resource\Playground</package>
       <className>Playground\Test\Feature\Http\Controllers\Resource\Playground\UpdateTrait</className>
-      <methodName>test_update_as_admin_without_payload_and_fail_validation</methodName>
-      <methodSignature>test_update_as_admin_without_payload_and_fail_validation()</methodSignature>
-      <fullMethod>test_update_as_admin_without_payload_and_fail_validation()</fullMethod>
+      <methodName>test_update_as_admin_without_payload_and_passes_validation</methodName>
+      <methodSignature>test_update_as_admin_without_payload_and_passes_validation()</methodSignature>
+      <fullMethod>test_update_as_admin_without_payload_and_passes_validation()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
