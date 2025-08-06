@@ -18,8 +18,8 @@ parameters:
 
     treatPhpDocTypesAsCertain: false
 
-    #editorUrl: 'vscode://file/%%file%%:%%line%%'
-    editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
+    # editorUrl: 'vscode://file/%%file%%:%%line%%'
+    # editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
 
     ignoreErrors:
         -
@@ -29,4 +29,3 @@ parameters:
         # TODO hiding these errors until we can add tests for them
         -
             identifier: trait.unused
-
