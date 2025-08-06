@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2025-08-03 22:57:29</timestamp>
+  <timestamp>2025-08-06 01:34:58</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>213</methodCount>
+    <methodCount>215</methodCount>
     <crapMethodCount>6</crapMethodCount>
-    <crapLoad>73</crapLoad>
-    <totalCrap>1601.69</totalCrap>
-    <crapMethodPercent>2.82</crapMethodPercent>
+    <crapLoad>72</crapLoad>
+    <totalCrap>1632.54</totalCrap>
+    <crapMethodPercent>2.79</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -28,8 +28,8 @@
       <methodName>loadPackageMigrations</methodName>
       <methodSignature>loadPackageMigrations(): void</methodSignature>
       <fullMethod>loadPackageMigrations(): void</fullMethod>
-      <crap>20</crap>
-      <complexity>4</complexity>
+      <crap>30</crap>
+      <complexity>5</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1928,6 +1928,17 @@
     <method>
       <package>Playground\Test\Feature\Models</package>
       <className>Playground\Test\Feature\Models\ModelCase</className>
+      <methodName>getFactory</methodName>
+      <methodSignature>getFactory(array $meta): Illuminate\Database\Eloquent\Factories\Factory</methodSignature>
+      <fullMethod>getFactory(array $meta): Illuminate\Database\Eloquent\Factories\Factory</fullMethod>
+      <crap>42</crap>
+      <complexity>6</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Models</package>
+      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>getModelClass</methodName>
       <methodSignature>getModelClass(): string</methodSignature>
       <fullMethod>getModelClass(): string</fullMethod>
@@ -1951,12 +1962,12 @@
       <package>Playground\Test\Feature\Models</package>
       <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>verifyRelationship</methodName>
-      <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
-      <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
-      <crap>272</crap>
-      <complexity>16</complexity>
+      <methodSignature>verifyRelationship(string $relationshipType, string $accessor, array $meta): bool</methodSignature>
+      <fullMethod>verifyRelationship(string $relationshipType, string $accessor, array $meta): bool</fullMethod>
+      <crap>240</crap>
+      <complexity>15</complexity>
       <coverage>0</coverage>
-      <crapLoad>16</crapLoad>
+      <crapLoad>15</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Feature\Models</package>
@@ -2008,8 +2019,8 @@
       <methodName>test_factory_create</methodName>
       <methodSignature>test_factory_create(): void</methodSignature>
       <fullMethod>test_factory_create(): void</fullMethod>
-      <crap>20</crap>
-      <complexity>4</complexity>
+      <crap>6</crap>
+      <complexity>2</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -2184,8 +2195,8 @@
       <methodName>boot</methodName>
       <methodSignature>boot()</methodSignature>
       <fullMethod>boot()</fullMethod>
-      <crap>3</crap>
-      <complexity>3</complexity>
+      <crap>6</crap>
+      <complexity>6</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -2291,6 +2302,17 @@
     <method>
       <package>Playground\Test\Unit\Models</package>
       <className>Playground\Test\Unit\Models\ModelCase</className>
+      <methodName>getFactoryModel</methodName>
+      <methodSignature>getFactoryModel(array $meta): Illuminate\Database\Eloquent\Model</methodSignature>
+      <fullMethod>getFactoryModel(array $meta): Illuminate\Database\Eloquent\Model</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Unit\Models</package>
+      <className>Playground\Test\Unit\Models\ModelCase</className>
       <methodName>test_model_instance</methodName>
       <methodSignature>test_model_instance(): void</methodSignature>
       <fullMethod>test_model_instance(): void</fullMethod>
@@ -2305,9 +2327,9 @@
       <methodName>verifyRelationship</methodName>
       <methodSignature>verifyRelationship(string $relationshipType, string $accessor): bool</methodSignature>
       <fullMethod>verifyRelationship(string $relationshipType, string $accessor): bool</fullMethod>
-      <crap>17.57</crap>
-      <complexity>10</complexity>
-      <coverage>57.69</coverage>
+      <crap>37.42</crap>
+      <complexity>12</complexity>
+      <coverage>43.9</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2347,8 +2369,8 @@
       <package>Playground\Test</package>
       <className>Playground\Test\WithFaker</className>
       <methodName>faker</methodName>
-      <methodSignature>faker(string $locale): Faker\Generator</methodSignature>
-      <fullMethod>faker(string $locale): Faker\Generator</fullMethod>
+      <methodSignature>faker(?string $locale): Faker\Generator</methodSignature>
+      <fullMethod>faker(?string $locale): Faker\Generator</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
