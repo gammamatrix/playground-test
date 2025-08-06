@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndRolesAndPrivileges;
 
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -24,14 +25,14 @@ class ModelTest extends TestCase
      */
     public const MODEL_CLASS = UserWithRoleAndRolesAndPrivileges::class;
 
-    public function test_getAttributes(): void
+    public function test_get_attributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRoleAndRolesAndPrivileges $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $expected = [
             'name' => '',

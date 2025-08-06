@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Test\Models\UserWithSanctum;
 
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -21,14 +22,14 @@ class ModelTest extends TestCase
      */
     public const MODEL_CLASS = UserWithSanctum::class;
 
-    public function test_getAttributes(): void
+    public function test_get_attributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithSanctum $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $expected = [
             'name' => '',

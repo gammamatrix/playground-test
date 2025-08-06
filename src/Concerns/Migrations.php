@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test\Concerns;
 
 use Illuminate\Support\Str;
@@ -12,6 +13,8 @@ use ValueError;
 
 /**
  * \Playground\Test\Concerns\Migrations
+ *
+ * @property string $package_providers_dir
  */
 trait Migrations
 {
@@ -49,7 +52,7 @@ trait Migrations
      */
     protected function defineDatabaseMigrations()
     {
-        if (! empty($this->hasMigrations) && ! empty(env('TEST_DB_MIGRATIONS'))) {
+        if (! empty($this->hasMigrations) && ! empty(config('playground-test.db.migrations'))) {
 
             $folderForVendor = $this->verifyPlaygroundTestExists();
 
@@ -71,6 +74,7 @@ trait Migrations
     protected function loadPackageMigrations(): void
     {
         if (empty($this->package_providers_dir)
+            || ! is_string($this->package_providers_dir)
             || ! Str::endsWith($this->package_providers_dir, '/tests/Unit')
         ) {
             throw new ValueError(
@@ -93,7 +97,7 @@ trait Migrations
     }
 
     /**
-     * @param array<string, array<int, string>> $packages
+     * @param  array<string, array<int, string>>  $packages
      */
     private function loadMigrationsFromPackages_org(
         string $folderForOrganization,
@@ -160,7 +164,7 @@ trait Migrations
     }
 
     /**
-     * @param array<int, string> $migrations
+     * @param  array<int, string>  $migrations
      */
     private function loadMigrationsFromPackages_migrations(
         string $folderForOrganizationPackageDatabase,

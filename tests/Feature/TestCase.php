@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Feature\Playground\Test;
 
 /**
@@ -24,7 +25,7 @@ class TestCase extends \Tests\Unit\Playground\Test\TestCase
      */
     protected function defineDatabaseMigrations()
     {
-        if (! empty(env('TEST_DB_MIGRATIONS'))) {
+        if (! empty(config('playground-test.db.migrations'))) {
         }
     }
 }

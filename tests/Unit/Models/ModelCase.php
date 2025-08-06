@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Unit\Playground\Test\Models;
 
 use Playground\ServiceProvider as PlaygroundServiceProvider;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Feature\Http\Controllers\Resource\Playground;
 
 use Illuminate\Database\Eloquent\Model;

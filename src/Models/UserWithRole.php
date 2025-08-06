@@ -4,10 +4,12 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Models;
 
 use Database\Factories\Playground\Test\Models\UserWithRoleFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 
 /**
  * \Playground\Test\Models\UserWithRole
@@ -25,18 +27,12 @@ class UserWithRole extends AbstractUser
     /** @use HasFactory<UserWithRoleFactory> */
     use HasFactory;
 
-    /**
-     * @var array<string, mixed>
-     */
     protected $attributes = [
         'name' => '',
         'email' => '',
         'role' => '',
     ];
 
-    /**
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',
@@ -49,7 +45,7 @@ class UserWithRole extends AbstractUser
     /**
      * Checks to see if the user has the role.
      *
-     * @param mixed $roles The role or roles to check.
+     * @param  mixed  $roles  The role or roles to check.
      */
     public function hasRole(mixed $roles): bool
     {

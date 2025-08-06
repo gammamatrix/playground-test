@@ -5,9 +5,11 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test\Models;
 
 use Illuminate\Foundation\Auth\User as BaseUser;
+use Illuminate\Support\Carbon;
 
 /**
  * \Playground\Test\Models\AbstractUser
@@ -23,18 +25,12 @@ use Illuminate\Foundation\Auth\User as BaseUser;
  */
 abstract class AbstractUser extends BaseUser
 {
-    /**
-     * @var array<string, mixed>
-     */
     protected $attributes = [
         'name' => '',
         'email' => '',
         'password' => '',
     ];
 
-    /**
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',
@@ -43,11 +39,6 @@ abstract class AbstractUser extends BaseUser
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',

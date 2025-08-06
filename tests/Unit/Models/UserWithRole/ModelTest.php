@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Test\Models\UserWithRole;
 
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -24,14 +25,14 @@ class ModelTest extends TestCase
      */
     public const MODEL_CLASS = UserWithRole::class;
 
-    public function test_getAttributes(): void
+    public function test_get_attributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRole $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $expected = [
             'name' => '',
@@ -46,28 +47,28 @@ class ModelTest extends TestCase
         $this->assertSame($expected, $attributes);
     }
 
-    public function test_hasRole_is_false_without_role(): void
+    public function test_has_role_is_false_without_role(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRole $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $role = null;
 
         $this->assertFalse($instance->hasRole($role));
     }
 
-    public function test_hasRole_is_true_with_matching_role(): void
+    public function test_has_role_is_true_with_matching_role(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRole $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $role = 'user';
 
@@ -76,14 +77,14 @@ class ModelTest extends TestCase
         $this->assertTrue($instance->hasRole($role));
     }
 
-    public function test_hasRole_is_true_with_array_of_roles(): void
+    public function test_has_role_is_true_with_array_of_roles(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRole $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $role = 'user';
 
@@ -95,14 +96,14 @@ class ModelTest extends TestCase
         $this->assertFalse($instance->isAdmin());
     }
 
-    public function test_isAdmin_is_true_with_admin_role(): void
+    public function test_is_admin_is_true_with_admin_role(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRole $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $role = 'admin';
 

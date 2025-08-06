@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Test\Models\UserWithRoleAndPrivileges;
 
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -21,14 +22,14 @@ class ModelTest extends TestCase
      */
     public const MODEL_CLASS = UserWithRoleAndPrivileges::class;
 
-    public function test_getAttributes(): void
+    public function test_get_attributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRoleAndPrivileges $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $expected = [
             'name' => '',
@@ -45,28 +46,28 @@ class ModelTest extends TestCase
         $this->assertSame($expected, $attributes);
     }
 
-    public function test_hasPrivilege_is_false_without_privilege(): void
+    public function test_has_privilege_is_false_without_privilege(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRoleAndPrivileges $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $privilege = null;
 
         $this->assertFalse($instance->hasPrivilege($privilege));
     }
 
-    public function test_hasPrivilege_is_false_with_wrong_privilege(): void
+    public function test_has_privilege_is_false_with_wrong_privilege(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRoleAndPrivileges $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $privilege = 'duck';
 
@@ -77,14 +78,14 @@ class ModelTest extends TestCase
         $this->assertFalse($instance->hasPrivilege($privilege));
     }
 
-    public function test_hasPrivilege_is_true_with_correct_privilege(): void
+    public function test_has_privilege_is_true_with_correct_privilege(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var UserWithRoleAndPrivileges $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $privilege = 'duck';
 

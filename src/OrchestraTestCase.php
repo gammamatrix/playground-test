@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test;
 
 use Orchestra\Testbench\TestCase as Orchestra;

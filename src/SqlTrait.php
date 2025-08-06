@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test;
 
 /**
@@ -19,7 +20,7 @@ trait SqlTrait
      */
     protected function setUp(): void
     {
-        if (in_array(env('DB_CONNECTION'), [
+        if (in_array(config('database.default'), [
             'sqlite',
         ])) {
             $this->replace_quotes = true;

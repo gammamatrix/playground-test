@@ -4,10 +4,12 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Models;
 
 use Database\Factories\Playground\Test\Models\UserWithSanctumFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 use Laravel\Sanctum\Contracts\HasApiTokens as HasApiTokensContract;
 use Laravel\Sanctum\HasApiTokens;
 

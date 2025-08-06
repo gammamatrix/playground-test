@@ -4,10 +4,12 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Models;
 
 use Database\Factories\Playground\Test\Models\UserWithRoleFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 
 /**
  * \Playground\Test\Models\UserWithRoleAndRoles
@@ -19,7 +21,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $name
  * @property string $email
  * @property string $role
- * @property array $roles
+ * @property array<int, string> $roles
  */
 class UserWithRoleAndRoles extends AbstractUser
 {
@@ -28,9 +30,6 @@ class UserWithRoleAndRoles extends AbstractUser
     /** @use HasFactory<UserWithRoleFactory> */
     use HasFactory;
 
-    /**
-     * @var array<string, mixed>
-     */
     protected $attributes = [
         'name' => '',
         'email' => '',
@@ -38,9 +37,6 @@ class UserWithRoleAndRoles extends AbstractUser
         'roles' => [],
     ];
 
-    /**
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',

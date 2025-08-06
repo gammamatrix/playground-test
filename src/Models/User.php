@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Models;
 
 use Illuminate\Support\Carbon;
@@ -24,9 +25,6 @@ use Illuminate\Support\Carbon;
  */
 class User extends DefaultUser
 {
-    /**
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',

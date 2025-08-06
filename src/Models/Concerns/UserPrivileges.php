@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Models\Concerns;
 
 /**
@@ -21,7 +22,7 @@ trait UserPrivileges
     /**
      * Checks to see if the user has the privilege.
      *
-     * @param ?string $privilege The privilege to check.
+     * @param  ?string  $privilege  The privilege to check.
      */
     public function hasPrivilege(mixed $privilege, bool $inclusive = false): bool
     {
@@ -38,7 +39,7 @@ trait UserPrivileges
     /**
      * Checks to see if the user has the role.
      *
-     * @param mixed $roles The role to check.
+     * @param  mixed  $roles  The role to check.
      */
     public function hasRole(mixed $roles, bool $inclusive = false): bool
     {

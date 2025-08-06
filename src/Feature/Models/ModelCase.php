@@ -4,17 +4,19 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Feature\Models;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Log;
+use PHPUnit\Framework\Assert;
 use Playground\Test\OrchestraTestCase;
 
 /**
@@ -87,8 +89,92 @@ abstract class ModelCase extends OrchestraTestCase
     {
         $modelClass = $this->getModelClass();
 
-        return new $modelClass();
+        return new $modelClass;
     }
+
+    /**
+     * @param  array<string, mixed>  $meta
+     * @return Factory<Model>
+     */
+    protected function getFactory(array $meta = []): Factory
+    {
+        $state = array_key_exists('state', $meta) && is_string($meta['state']) ? $meta['state'] : '';
+        $options = array_key_exists('options', $meta) && is_array($meta['options']) ? $meta['options'] : [];
+
+        $modelClass = $this->getModelClass();
+
+        Assert::assertTrue(
+            is_callable([$modelClass, 'factory']),
+            __('playground-test:model.factory.404', [
+                'state' => $state,
+                'model' => $modelClass,
+            ])
+        );
+
+        $factory = $modelClass::factory();
+
+        if ($state === '') {
+            return $factory;
+        }
+
+        Assert::assertTrue(
+            method_exists($factory, $state),
+            __('playground-test:model.factory.state.invalid', [
+                'state' => $state,
+                'model' => $modelClass,
+            ])
+        );
+
+        $factoryState = $factory->{$state}(...$options);
+
+        Assert::assertInstanceOf($factory, $factoryState);
+        Assert::assertInstanceOf(Factory::class, $factoryState);
+
+        return $factoryState;
+    }
+
+    //    /**
+    //     * @param array<string, mixed> $meta
+    //     */
+    //    protected function getFactoryModel(array $meta = []): Model
+    //    {
+    //        $state = array_key_exists('state', $meta) && is_string($meta['state']) ? $meta['state'] : '';
+    //        $options = array_key_exists('options', $meta) && is_array($meta['options']) ? $meta['options'] : [];
+    //
+    //        $modelClass = $this->getModelClass();
+    //
+    //        Assert::assertTrue(
+    //            is_callable([$modelClass, 'factory']),
+    //            __('playground-test:model.factory.404', [
+    //                'state' => $state,
+    //                'model' => $modelClass,
+    //            ])
+    //        );
+    //
+    //        $factory = $modelClass::factory();
+    //        if ($state !== '' && is_object($factory)) {
+    //
+    //            Assert::assertTrue(
+    //                method_exists($factory, $state),
+    //                __('playground-test:model.factory.state.invalid', [
+    //                    'state' => $state,
+    //                    'model' => $modelClass,
+    //                ])
+    //            );
+    //
+    //            $factoryState = $factory->{$state}(...$options);
+    //
+    //            Assert::assertInstanceOf($factory, $factoryState);
+    //            Assert::assertInstanceOf(Factory::class, $factoryState);
+    //            $model = $factoryState->make();
+    //        } else {
+    //            $model = $factory->make();
+    //        }
+    //
+    //        Assert::assertInstanceOf(Model::class, $model);
+    //
+    //        return $model;
+    //    }
 
     /**
      * Get the model class.
@@ -100,11 +186,11 @@ abstract class ModelCase extends OrchestraTestCase
         return $this->modelClass;
     }
 
-    //###########################################################################
+    // ###########################################################################
     //
     // Verify: instance
     //
-    //###########################################################################
+    // ###########################################################################
 
     public function test_model_instance(): void
     {
@@ -123,21 +209,29 @@ abstract class ModelCase extends OrchestraTestCase
         $this->assertInstanceOf($modelClass, $instance);
     }
 
-    //###########################################################################
+    // ###########################################################################
     //
     // Verify: relationships
     //
-    //###########################################################################
+    // ###########################################################################
 
     /**
      * Verify a model relationship.
+     *
+     * @param  array<string, mixed>  $meta
      */
-    public function verifyRelationship(string $relationshipType, string $accessor): bool
-    {
-        $hasRelationshipType = is_string($relationshipType)
+    public function verifyRelationship(
+        string $relationshipType,
+        string $accessor,
+        array $meta = []
+    ): bool {
+        $hasRelationshipType = ! empty($relationshipType)
             && isset($this->relationshipTypes[$relationshipType])
             && ! empty($this->{$relationshipType})
+            && is_array($this->{$relationshipType})
             && isset($this->{$relationshipType}[$accessor]);
+
+        $modelClass = $this->getModelClass();
         // dump([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,
@@ -165,7 +259,7 @@ abstract class ModelCase extends OrchestraTestCase
 
         if (! $hasRelationshipType) {
             $error = sprintf('Invalid relationship: %1$s', json_encode([
-                '$modelClass' => $this->getModelClass(),
+                '$modelClass' => $modelClass,
                 '$relationshipType' => $relationshipType,
                 '$accessor' => $accessor,
             ]));
@@ -175,10 +269,6 @@ abstract class ModelCase extends OrchestraTestCase
             return false;
         }
 
-        /**
-         * @var class-string<Relation<Model>>
-         */
-        $relationshipTypeClass = null;
         if ($relationshipType === 'belongsTo') {
             $relationshipTypeClass = BelongsTo::class;
         } elseif ($relationshipType === 'belongsToMany') {
@@ -187,27 +277,44 @@ abstract class ModelCase extends OrchestraTestCase
             $relationshipTypeClass = HasMany::class;
         } elseif ($relationshipType === 'hasOne') {
             $relationshipTypeClass = HasOne::class;
-        }
-
-        $relationship = $this->getModel()->{$accessor}();
-        $this->assertInstanceOf($relationshipTypeClass, $relationship);
-
-        $modelClass = $this->getModelClass();
-
-        if (in_array(HasFactory::class, class_uses_recursive($modelClass))
-            && is_callable([$modelClass, 'factory'])
-        ) {
-            /**
-             * @var Model $model
-             */
-            $model = $modelClass::factory()->create();
         } else {
-            Log::error('Expecting the model to implement HasFactory', [
+            $error = sprintf('Unexpected relationship: %1$s', json_encode([
                 '$modelClass' => $modelClass,
-            ]);
+                '$relationshipType' => $relationshipType,
+                '$accessor' => $accessor,
+            ]));
+            Log::error($error);
 
+            // Unable to continue testing.
             return false;
         }
+
+        $callback = [$this->getModel(), $accessor];
+        Assert::assertIsCallable($callback, __('playground-test:model.accessor.404', [
+            'model' => $modelClass,
+            'accessor' => $accessor,
+        ]));
+
+        $relationship = call_user_func_array($callback, []);
+        // $relationship = $this->getModel()->{$accessor}();
+        $this->assertInstanceOf($relationshipTypeClass, $relationship);
+
+        $model = $this->getFactory($meta)->create();
+        Assert::assertInstanceOf(Model::class, $model);
+        //        if (in_array(HasFactory::class, class_uses_recursive($modelClass))
+        //            && is_callable([$modelClass, 'factory'])
+        //        ) {
+        //            /**
+        //             * @var Model $model
+        //             */
+        //            $model = $modelClass::factory()->create();
+        //        } else {
+        //            Log::error('Expecting the model to implement HasFactory', [
+        //                '$modelClass' => $modelClass,
+        //            ]);
+        //
+        //            return false;
+        //        }
 
         if (! $this->verifyRelationshipModel) {
             // All done.
@@ -279,19 +386,35 @@ abstract class ModelCase extends OrchestraTestCase
         }
 
         foreach ($this->belongsTo as $accessor => $meta) {
-            $results['belongsTo'][$accessor] = $this->verifyRelationship('belongsTo', $accessor);
+            $results['belongsTo'][$accessor] = $this->verifyRelationship(
+                'belongsTo',
+                $accessor,
+                $meta
+            );
         }
 
         foreach ($this->belongsToMany as $accessor => $meta) {
-            $results['belongsToMany'][$accessor] = $this->verifyRelationship('belongsToMany', $accessor);
+            $results['belongsToMany'][$accessor] = $this->verifyRelationship(
+                'belongsToMany',
+                $accessor,
+                $meta
+            );
         }
 
         foreach ($this->hasMany as $accessor => $meta) {
-            $results['hasMany'][$accessor] = $this->verifyRelationship('hasMany', $accessor);
+            $results['hasMany'][$accessor] = $this->verifyRelationship(
+                'hasMany',
+                $accessor,
+                $meta
+            );
         }
 
         foreach ($this->hasOne as $accessor => $meta) {
-            $results['hasOne'][$accessor] = $this->verifyRelationship('hasOne', $accessor);
+            $results['hasOne'][$accessor] = $this->verifyRelationship(
+                'hasOne',
+                $accessor,
+                $meta
+            );
         }
 
         return $results;
@@ -395,7 +518,15 @@ abstract class ModelCase extends OrchestraTestCase
             )
         );
 
-        $o = $model->{$accessor}()->first();
+        $callback = [$this->getModel(), $accessor];
+        Assert::assertIsCallable($callback, __('playground-test:model.accessor.404', [
+            'model' => $modelClass,
+            'accessor' => $accessor,
+        ]));
+
+        $relationship = call_user_func_array($callback, []);
+        $this->assertInstanceOf(HasOne::class, $relationship);
+        $o = $relationship->first();
 
         $this->assertInstanceOf($modelClass, $o, sprintf(
             'Expecting the created HasOne model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
@@ -473,7 +604,16 @@ abstract class ModelCase extends OrchestraTestCase
             ]);
         }
 
-        foreach ($model->{$accessor}()->get() as $m) {
+        $callback = [$model, $accessor];
+        Assert::assertIsCallable($callback, __('playground-test:model.accessor.404', [
+            'model' => $modelClass,
+            'accessor' => $accessor,
+        ]));
+
+        $relationship = call_user_func_array($callback, []);
+        $this->assertInstanceOf(HasMany::class, $relationship);
+
+        foreach ($relationship->get() as $m) {
             $this->assertInstanceOf($modelClass, $m, sprintf(
                 'Expecting the created HasMany model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
                 $accessor,
@@ -516,11 +656,11 @@ abstract class ModelCase extends OrchestraTestCase
         // ]);
     }
 
-    //###########################################################################
+    // ###########################################################################
     //
     // Test: relationships
     //
-    //###########################################################################
+    // ###########################################################################
 
     /**
      * Test the model relationships.
@@ -548,24 +688,16 @@ abstract class ModelCase extends OrchestraTestCase
 
     public function test_factory_create(): void
     {
-        $instance = null;
-
         $modelClass = $this->getModelClass();
         $this->assertNotEmpty($modelClass);
 
-        if (is_callable([$modelClass, 'factory'])) {
-            $factory = $modelClass::factory();
-            if ($this->test_factory_create_state && is_callable([
-                $factory,
-                $this->test_factory_create_state,
-            ])) {
-                $instance = $factory->{$this->test_factory_create_state}()->create();
-            } else {
-                $instance = $factory->create();
-            }
+        $meta = [];
+        if ($this->test_factory_create_state !== null) {
+            $meta['state'] = $this->test_factory_create_state;
         }
 
-        $this->assertNotNull($instance);
-        $this->assertInstanceOf($modelClass, $instance);
+        $model = $this->getFactory($meta)->create();
+
+        $this->assertInstanceOf($modelClass, $model);
     }
 }

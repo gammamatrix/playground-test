@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Log;
 use Playground\Test\OrchestraTestCase;
 
@@ -85,7 +85,7 @@ abstract class ModelCase extends OrchestraTestCase
     {
         $modelClass = $this->getModelClass();
 
-        return new $modelClass();
+        return new $modelClass;
     }
 
     /**
@@ -96,6 +96,16 @@ abstract class ModelCase extends OrchestraTestCase
     protected function getModelClass(): string
     {
         return $this->modelClass;
+    }
+
+    /**
+     * @param  array<string, mixed>  $meta
+     */
+    protected function getFactoryModel(array $meta = []): Model
+    {
+        $modelClass = $this->getModelClass();
+
+        return new $modelClass;
     }
 
     // Verify: instance
@@ -116,10 +126,14 @@ abstract class ModelCase extends OrchestraTestCase
      */
     protected function verifyRelationship(string $relationshipType, string $accessor): bool
     {
-        $hasRelationshipType = is_string($relationshipType)
+        $hasRelationshipType = ! empty($relationshipType)
             && isset($this->relationshipTypes[$relationshipType])
             && ! empty($this->{$relationshipType})
+            && is_array($this->{$relationshipType})
             && in_array($accessor, $this->{$relationshipType});
+
+        $modelClass = $this->getModelClass();
+
         // dump([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,
@@ -147,7 +161,7 @@ abstract class ModelCase extends OrchestraTestCase
 
         if (! $hasRelationshipType) {
             $error = sprintf('Invalid relationship: %1$s', json_encode([
-                '$modelClass' => $this->getModelClass(),
+                '$modelClass' => $modelClass,
                 '$relationshipType' => $relationshipType,
                 '$accessor' => $accessor,
             ]));
@@ -157,10 +171,6 @@ abstract class ModelCase extends OrchestraTestCase
             return false;
         }
 
-        /**
-         * @var class-string<Relation<Model>>
-         */
-        $relationshipTypeClass = null;
         if ($relationshipType === 'belongsTo') {
             $relationshipTypeClass = BelongsTo::class;
         } elseif ($relationshipType === 'belongsToMany') {
@@ -171,9 +181,29 @@ abstract class ModelCase extends OrchestraTestCase
             $relationshipTypeClass = HasOne::class;
         } elseif ($relationshipType === 'morphToMany') {
             $relationshipTypeClass = MorphToMany::class;
+        } else {
+            $error = sprintf('Unexpected relationship: %1$s', json_encode([
+                '$modelClass' => $modelClass,
+                '$relationshipType' => $relationshipType,
+                '$accessor' => $accessor,
+            ]));
+            Log::error($error);
+
+            // Unable to continue testing.
+            return false;
         }
 
-        $relationship = $this->getModel()->{$accessor}();
+        $callback = [$this->getModel(), $accessor];
+        if (! is_callable($callback)) {
+            Log::error('Expecting the model to have the accessor', [
+                '$modelClass' => $modelClass,
+                '$accessor' => $accessor,
+            ]);
+
+            return false;
+        }
+        $relationship = call_user_func_array($callback, []);
+        // $relationship = $this->getModel()->{$accessor}();
         $this->assertInstanceOf($relationshipTypeClass, $relationship);
 
         // dump([

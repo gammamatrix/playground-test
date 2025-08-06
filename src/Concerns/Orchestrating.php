@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test\Concerns;
 
 use Illuminate\Support\Carbon;
@@ -69,8 +70,10 @@ trait Orchestrating
         $userRole = false;
         $userRoles = false;
 
-        $password = env('AUTH_TESTING_PASSWORD', 'password');
-        $hashed = boolval(env('AUTH_TESTING_HASHED', false));
+        $password = $app['config']->get('playground-test.password');
+        // $password = env('AUTH_TESTING_PASSWORD', 'password');
+        $hashed = $app['config']->get('playground-test.password_encrypted');
+        // $hashed = boolval(env('AUTH_TESTING_HASHED', false));
 
         if ($this->setUpUserForPlayground) {
 

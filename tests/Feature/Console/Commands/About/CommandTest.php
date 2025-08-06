@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Feature\Playground\Test\Console\Commands\About;
 
 use PHPUnit\Framework\Attributes\CoversClass;

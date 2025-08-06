@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Test\Models\User;
 
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -21,14 +22,14 @@ class ModelTest extends TestCase
      */
     public const MODEL_CLASS = User::class;
 
-    public function test_getAttributes(): void
+    public function test_get_attributes(): void
     {
         $mc = static::MODEL_CLASS;
 
         /**
          * @var User $instance
          */
-        $instance = new $mc();
+        $instance = new $mc;
 
         $expected = [
             // 'name' => '',
@@ -42,7 +43,7 @@ class ModelTest extends TestCase
         $this->assertSame($expected, $attributes);
     }
 
-    public function test_getAttributes_filled(): void
+    public function test_get_attributes_filled(): void
     {
         $mc = static::MODEL_CLASS;
 

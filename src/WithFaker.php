@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test;
 
 use Faker\Factory;
@@ -17,7 +18,7 @@ trait WithFaker
 {
     protected ?Generator $faker = null;
 
-    protected function faker(string $locale = null): Generator
+    protected function faker(?string $locale = null): Generator
     {
         if (! $this->faker) {
             $this->faker = Factory::create($locale ?? Factory::DEFAULT_LOCALE);

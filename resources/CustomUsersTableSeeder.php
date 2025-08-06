@@ -5,10 +5,11 @@
  */
 
 declare(strict_types=1);
+
 namespace Database\Seeders;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Seeder;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Playground\Models\User;
@@ -33,7 +34,7 @@ class CustomUsersTableSeeder extends Seeder
     protected bool $withStatus = true;
 
     /**
-     * @var class-string<Authenticatable>
+     * @var class-string<User>
      */
     protected string $userClass = User::class;
 
@@ -53,7 +54,7 @@ class CustomUsersTableSeeder extends Seeder
         }
 
         /**
-         * @var class-string<Authenticatable>
+         * @var class-string<User> $userClass
          */
         $userClass = $this->userClass;
 
@@ -92,7 +93,7 @@ class CustomUsersTableSeeder extends Seeder
         // $password = 'testing';
         $password_encrypted = ! empty($config['password_encrypted']);
 
-        if (empty($password) || ! is_string($password)) {
+        if (empty($password)) {
             // Set a random password.
             $password = md5(date('c'));
             $password = Hash::make($password);
@@ -101,9 +102,27 @@ class CustomUsersTableSeeder extends Seeder
         }
 
         foreach ($config['users'] as $slug => $meta) {
-            $email = sprintf('%1$s@example.com', Str::slug($slug));
 
-            $model = $userClass::where('email', $email)->first();
+            if (! is_string($slug) || ! is_array($meta)) {
+                \Log::warning(sprintf('Invalid test user[%s]', $slug));
+
+                continue;
+            }
+            if (! empty($meta['email']) && is_string($meta['email'])) {
+                $email = $meta['email'];
+            } else {
+                $email = sprintf('%1$s@example.com', Str::slug($slug));
+            }
+
+            /**
+             * @var Builder<User> $query
+             */
+            $query = $userClass::where('email', $email);
+
+            /**
+             * @var User $model|null
+             */
+            $model = $query->first();
 
             $data = [
                 'name' => empty($meta['name']) || ! is_string($meta['name']) ? 'Some Name' : $meta['name'],
@@ -127,6 +146,9 @@ class CustomUsersTableSeeder extends Seeder
 
             if (empty($model)) {
                 $data['email'] = $email;
+                /**
+                 * @var User $model
+                 */
                 $model = $userClass::create($data);
             } else {
                 $model->update($data);
@@ -174,7 +196,7 @@ class CustomUsersTableSeeder extends Seeder
             // ]);
 
             // Reset the password
-            $model->password = $password;
+            $model->setAttribute('password', $password);
             $model->save();
         }
     }

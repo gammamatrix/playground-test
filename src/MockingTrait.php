@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test;
 
 use Illuminate\Http\Request;
@@ -61,9 +62,9 @@ trait MockingTrait
     /**
      * Invoke a protected method for testing.
      *
-     * @param object $out    The Object Under Test.
-     * @param string $method The protected method.
-     * @param array  $params The protected method parameters.
+     * @param  object  $out  The Object Under Test.
+     * @param  string  $method  The protected method.
+     * @param  array  $params  The protected method parameters.
      */
     public function invokeProtected(
         &$out,
@@ -79,9 +80,9 @@ trait MockingTrait
     /**
      * Makes any properties (private/protected etc) accessible on a given object via reflection.
      *
-     * @param object $out      The Object Under Test.
-     * @param string $property The protected property.
-     * @param mixed  $value    The protected property value.
+     * @param  object  $out  The Object Under Test.
+     * @param  string  $property  The protected property.
+     * @param  mixed  $value  The protected property value.
      *
      * @throws \ReflectionException
      */

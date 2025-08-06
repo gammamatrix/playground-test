@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Test;
 
 use Illuminate\Foundation\Console\AboutCommand;
@@ -29,7 +30,16 @@ class ServiceProvider extends BaseServiceProvider
     {
         $config = config('playground-test');
 
-        if (! empty($config) && $this->app->runningInConsole()) {
+        if (is_array($config) && ! empty($config['load']) && is_array($config['load'])) {
+            if (! empty($config['load']['translations'])) {
+                $this->loadTranslationsFrom(
+                    dirname(__DIR__).'/lang',
+                    $this->package
+                );
+            }
+        }
+
+        if ($this->app->runningInConsole()) {
             // Publish configuration
             $this->publishes([
                 dirname(__DIR__).'/config/playground-test.php' => config_path('playground-test.php'),

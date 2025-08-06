@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Test\Unit\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -25,7 +26,7 @@ abstract class RequestCase extends OrchestraTestCase
     {
         $requestClass = $this->getRequestClass();
 
-        return new $requestClass();
+        return new $requestClass;
     }
 
     /**

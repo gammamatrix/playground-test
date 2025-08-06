@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Database\Factories\Playground\Test\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
