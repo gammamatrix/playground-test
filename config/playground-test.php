@@ -2,6 +2,21 @@
 
 declare(strict_types=1);
 
+/**
+ * @return array{
+ *     password: string,
+ *     password_encrypted: bool,
+ *     load: array{translations: bool},
+ *     db: array{migrations: bool},
+ *     with_active: bool,
+ *     with_description: bool,
+ *     with_privileges: bool,
+ *     with_role: bool,
+ *     with_roles: bool,
+ *     with_status: bool,
+ *     users: array<string, array<string, mixed>>
+ * }
+ */
 return [
 
     /*
@@ -28,7 +43,7 @@ return [
     |
     | PLAYGROUND_TEST_LOAD_TRANSLATIONS loads translations in /lang
     |
-*/
+    */
 
     'load' => [
         'translations' => (bool) env('PLAYGROUND_TEST_LOAD_TRANSLATIONS', true),
@@ -82,7 +97,7 @@ return [
 
     'users' => [
         'admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_ADMIN'),
             'name' => 'Admin Nimda',
             'privileges' => [],
             'role' => 'admin',
@@ -95,7 +110,7 @@ return [
             'status' => 1,
         ],
         'client' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_CLIENT'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_CLIENT'),
             'name' => 'Client Tneilc',
             'privileges' => [],
             'role' => 'client',
@@ -104,7 +119,7 @@ return [
             'status' => 1,
         ],
         'client-admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_CLIENT_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_CLIENT_ADMIN'),
             'name' => 'Client Admin Nimda Tneilc',
             'privileges' => [],
             'role' => 'client',
@@ -115,7 +130,7 @@ return [
             'status' => 1,
         ],
         'partner' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_PARTNER'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_PARTNER'),
             'name' => 'Partner Rentrap',
             'privileges' => [],
             'role' => 'partner',
@@ -124,7 +139,7 @@ return [
             'status' => 1,
         ],
         'partner-admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_PARTNER_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_PARTNER_ADMIN'),
             'name' => 'Partner Admin Nimd Rentrap',
             'privileges' => [],
             'role' => 'partner',
@@ -135,7 +150,7 @@ return [
             'status' => 1,
         ],
         'sales' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_SALES'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_SALES'),
             'name' => 'Sales Selas',
             'privileges' => [],
             'role' => 'sales',
@@ -146,7 +161,7 @@ return [
             'status' => 1,
         ],
         'sales-admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_SALES_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_SALES_ADMIN'),
             'role' => 'sales',
             'name' => 'Sales Admin Nimda Troppus',
             'privileges' => [],
@@ -158,7 +173,7 @@ return [
             'status' => 1,
         ],
         'support' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_SUPPORT'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_SUPPORT'),
             'name' => 'Support Troppus',
             'privileges' => [],
             'role' => 'support',
@@ -169,7 +184,7 @@ return [
             'status' => 1,
         ],
         'support-admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_SUPPORT_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_SUPPORT_ADMIN'),
             'name' => 'Support Admin Nimda Troppus',
             'privileges' => [],
             'role' => 'support',
@@ -181,7 +196,7 @@ return [
             'status' => 1,
         ],
         'vendor' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_VENDOR'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_VENDOR'),
             'name' => 'Vendor Rodnev',
             'privileges' => [],
             'role' => 'vendor',
@@ -192,7 +207,7 @@ return [
             'status' => 1,
         ],
         'vendor-admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_VENDOR_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_VENDOR_ADMIN'),
             'name' => 'Vendor Admin Nimda Rodnev',
             'privileges' => [],
             'role' => 'vendor',
@@ -204,7 +219,7 @@ return [
             'status' => 1,
         ],
         'manager' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_MANAGER'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_MANAGER'),
             'name' => 'Manager Reganam',
             'privileges' => [],
             'role' => 'manager',
@@ -217,7 +232,7 @@ return [
             'status' => 1,
         ],
         'manager-admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_MANAGER_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_MANAGER_ADMIN'),
             'name' => 'Manager Admin Nimda Reganam',
             'privileges' => [],
             'role' => 'manager',
@@ -231,7 +246,7 @@ return [
             'status' => 1,
         ],
         'wheel' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_WHEEL'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_WHEEL'),
             'name' => 'Wheel Leehw',
             'privileges' => [],
             'role' => 'admin',
@@ -242,7 +257,7 @@ return [
             'status' => 1,
         ],
         'root' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_ROOT'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_ROOT'),
             'name' => 'Root Toor',
             'privileges' => [
                 '*',
@@ -253,7 +268,7 @@ return [
             'status' => 1,
         ],
         'user' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_USER'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_USER'),
             'name' => 'User Resu',
             'privileges' => [],
             'role' => 'user',
@@ -262,7 +277,7 @@ return [
             'status' => 1,
         ],
         'user-admin' => [
-            'email' => env('PLAYGROUD_TEST_EMAIL_USER_ADMIN'),
+            'email' => env('PLAYGROUND_TEST_EMAIL_USER_ADMIN'),
             'name' => 'User Admin Nimda Resu',
             'privileges' => [],
             'role' => 'user',

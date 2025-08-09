@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Playground\Test;
 
 use Illuminate\Foundation\Console\AboutCommand;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
@@ -16,7 +17,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
  */
 class ServiceProvider extends BaseServiceProvider
 {
-    public const VERSION = '73.0.0';
+    public const string VERSION = '74.0.0';
 
     public string $package = 'playground-test';
 
@@ -39,7 +40,7 @@ class ServiceProvider extends BaseServiceProvider
             }
         }
 
-        if ($this->app->runningInConsole()) {
+        if (App::runningInConsole()) {
             // Publish configuration
             $this->publishes([
                 dirname(__DIR__).'/config/playground-test.php' => config_path('playground-test.php'),
