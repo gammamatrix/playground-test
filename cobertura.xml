@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.057383627608347" branch-rate="0" lines-covered="143" lines-valid="2492" branches-covered="0" branches-valid="0" complexity="302" version="0.4" timestamp="1754774971">
+<coverage line-rate="0.057452792286059" branch-rate="0" lines-covered="143" lines-valid="2489" branches-covered="0" branches-valid="0" complexity="301" version="0.4" timestamp="1754786624">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -6023,30 +6023,24 @@
         </class>
       </classes>
     </package>
-    <package name="SqlTrait.php" line-rate="0" branch-rate="0" complexity="4">
+    <package name="SqlTrait.php" line-rate="0" branch-rate="0" complexity="3">
       <classes>
-        <class name="Playground\Test\SqlTrait" filename="SqlTrait.php" line-rate="0" branch-rate="0" complexity="4">
+        <class name="Playground\Test\SqlTrait" filename="SqlTrait.php" line-rate="0" branch-rate="0" complexity="3">
           <methods>
-            <method name="setUp" signature="" line-rate="0" branch-rate="0" complexity="2">
+            <method name="setUp" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="23" hits="0"/>
-                <line number="24" hits="0"/>
-                <line number="25" hits="0"/>
-                <line number="26" hits="0"/>
+                <line number="29" hits="0"/>
               </lines>
             </method>
             <method name="replace_quotes" signature="string $sql" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="35" hits="0"/>
+                <line number="36" hits="0"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="23" hits="0"/>
-            <line number="24" hits="0"/>
-            <line number="25" hits="0"/>
-            <line number="26" hits="0"/>
-            <line number="35" hits="0"/>
+            <line number="29" hits="0"/>
+            <line number="36" hits="0"/>
           </lines>
         </class>
       </classes>
