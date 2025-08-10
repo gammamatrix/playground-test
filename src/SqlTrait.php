@@ -13,18 +13,19 @@ namespace Playground\Test;
  */
 trait SqlTrait
 {
-    protected bool $replace_quotes = false;
+    protected bool $replace_quotes = true;
 
     /**
      * Replace the escape backtick.
      */
     protected function setUp(): void
     {
-        if (in_array(config('database.default'), [
-            'sqlite',
-        ])) {
-            $this->replace_quotes = true;
-        }
+        // TODO unable to load the config this way
+//        if (in_array(config('database.default'), [
+//            'sqlite',
+//        ])) {
+//            $this->replace_quotes = true;
+//        }
     }
 
     /**
