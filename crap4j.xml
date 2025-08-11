@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2025-08-10 00:43:44</timestamp>
+  <timestamp>2025-08-11 19:57:47</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>215</methodCount>
-    <crapMethodCount>6</crapMethodCount>
-    <crapLoad>72</crapLoad>
-    <totalCrap>1628.54</totalCrap>
-    <crapMethodPercent>2.79</crapMethodPercent>
+    <methodCount>214</methodCount>
+    <crapMethodCount>5</crapMethodCount>
+    <crapLoad>61</crapLoad>
+    <totalCrap>1510.54</totalCrap>
+    <crapMethodPercent>2.34</crapMethodPercent>
   </stats>
   <methods>
+    <method>
+      <package>Playground\Test\Concerns</package>
+      <className>Playground\Test\Concerns\Factories</className>
+      <methodName>getFactory</methodName>
+      <methodSignature>getFactory(string $modelClass, array $meta): Illuminate\Database\Eloquent\Factories\Factory</methodSignature>
+      <fullMethod>getFactory(string $modelClass, array $meta): Illuminate\Database\Eloquent\Factories\Factory</fullMethod>
+      <crap>42</crap>
+      <complexity>6</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
     <method>
       <package>Playground\Test\Concerns</package>
       <className>Playground\Test\Concerns\Migrations</className>
@@ -1915,6 +1926,28 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
+      <package>Playground\Test\Feature\Models\Concerns</package>
+      <className>Playground\Test\Feature\Models\Concerns\HasMany</className>
+      <methodName>verifyRelationshipHasMany</methodName>
+      <methodSignature>verifyRelationshipHasMany(string $accessor, array $meta): void</methodSignature>
+      <fullMethod>verifyRelationshipHasMany(string $accessor, array $meta): void</fullMethod>
+      <crap>420</crap>
+      <complexity>20</complexity>
+      <coverage>0</coverage>
+      <crapLoad>20</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Test\Feature\Models\Concerns</package>
+      <className>Playground\Test\Feature\Models\Concerns\HasOne</className>
+      <methodName>verifyRelationshipHasOne</methodName>
+      <methodSignature>verifyRelationshipHasOne(string $accessor, array $meta): void</methodSignature>
+      <fullMethod>verifyRelationshipHasOne(string $accessor, array $meta): void</fullMethod>
+      <crap>306</crap>
+      <complexity>17</complexity>
+      <coverage>0</coverage>
+      <crapLoad>17</crapLoad>
+    </method>
+    <method>
       <package>Playground\Test\Feature\Models</package>
       <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>getModel</methodName>
@@ -1922,17 +1955,6 @@
       <fullMethod>getModel(): Illuminate\Database\Eloquent\Model</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Models</package>
-      <className>Playground\Test\Feature\Models\ModelCase</className>
-      <methodName>getFactory</methodName>
-      <methodSignature>getFactory(array $meta): Illuminate\Database\Eloquent\Factories\Factory</methodSignature>
-      <fullMethod>getFactory(array $meta): Illuminate\Database\Eloquent\Factories\Factory</fullMethod>
-      <crap>42</crap>
-      <complexity>6</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1961,46 +1983,13 @@
     <method>
       <package>Playground\Test\Feature\Models</package>
       <className>Playground\Test\Feature\Models\ModelCase</className>
-      <methodName>verifyRelationship</methodName>
-      <methodSignature>verifyRelationship(string $relationshipType, string $accessor, array $meta): bool</methodSignature>
-      <fullMethod>verifyRelationship(string $relationshipType, string $accessor, array $meta): bool</fullMethod>
-      <crap>240</crap>
-      <complexity>15</complexity>
-      <coverage>0</coverage>
-      <crapLoad>15</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Models</package>
-      <className>Playground\Test\Feature\Models\ModelCase</className>
       <methodName>verifyRelationships</methodName>
-      <methodSignature>verifyRelationships(): array</methodSignature>
-      <fullMethod>verifyRelationships(): array</fullMethod>
-      <crap>42</crap>
-      <complexity>6</complexity>
+      <methodSignature>verifyRelationships(): void</methodSignature>
+      <fullMethod>verifyRelationships(): void</fullMethod>
+      <crap>20</crap>
+      <complexity>4</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Models</package>
-      <className>Playground\Test\Feature\Models\ModelCase</className>
-      <methodName>verifyRelationshipHasOne</methodName>
-      <methodSignature>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
-      <fullMethod>verifyRelationshipHasOne(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
-      <crap>342</crap>
-      <complexity>18</complexity>
-      <coverage>0</coverage>
-      <crapLoad>18</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Test\Feature\Models</package>
-      <className>Playground\Test\Feature\Models\ModelCase</className>
-      <methodName>verifyRelationshipHasMany</methodName>
-      <methodSignature>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor): void</methodSignature>
-      <fullMethod>verifyRelationshipHasMany(Illuminate\Database\Eloquent\Model $model, string $accessor): void</fullMethod>
-      <crap>240</crap>
-      <complexity>15</complexity>
-      <coverage>0</coverage>
-      <crapLoad>15</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Feature\Models</package>
