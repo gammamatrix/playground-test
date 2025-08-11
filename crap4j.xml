@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2025-08-11 20:07:31</timestamp>
+  <timestamp>2025-08-11 23:01:27</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>214</methodCount>
     <crapMethodCount>5</crapMethodCount>
-    <crapLoad>61</crapLoad>
-    <totalCrap>1510.54</totalCrap>
+    <crapLoad>63</crapLoad>
+    <totalCrap>1596.54</totalCrap>
     <crapMethodPercent>2.34</crapMethodPercent>
   </stats>
   <methods>
@@ -1931,10 +1931,10 @@
       <methodName>verifyRelationshipHasMany</methodName>
       <methodSignature>verifyRelationshipHasMany(string $accessor, array $meta): void</methodSignature>
       <fullMethod>verifyRelationshipHasMany(string $accessor, array $meta): void</fullMethod>
-      <crap>420</crap>
-      <complexity>20</complexity>
+      <crap>506</crap>
+      <complexity>22</complexity>
       <coverage>0</coverage>
-      <crapLoad>20</crapLoad>
+      <crapLoad>22</crapLoad>
     </method>
     <method>
       <package>Playground\Test\Feature\Models\Concerns</package>
