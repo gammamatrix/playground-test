@@ -8,15 +8,12 @@ declare(strict_types=1);
 namespace Playground\Test\Feature\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Support\Facades\Log;
-use PHPUnit\Framework\Assert;
 use Playground\Test\Concerns\Factories;
 use Playground\Test\OrchestraTestCase;
 
@@ -150,7 +147,6 @@ abstract class ModelCase extends OrchestraTestCase
      * Verify a model relationship.
      *
      * Returns an array of boolean results for the relationship types.
-     *
      */
     public function verifyRelationships(): void
     {
@@ -207,7 +203,7 @@ abstract class ModelCase extends OrchestraTestCase
     {
         $modelClass = $this->getModelClass();
 
-        $results = $this->verifyRelationships();
+        $this->verifyRelationships();
         // dump([
         //     '__METHOD__' => __METHOD__,
         //     '__FILE__' => __FILE__,

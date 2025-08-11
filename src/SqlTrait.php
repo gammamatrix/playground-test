@@ -21,11 +21,11 @@ trait SqlTrait
     protected function setUp(): void
     {
         // TODO unable to load the config this way
-//        if (in_array(config('database.default'), [
-//            'sqlite',
-//        ])) {
-//            $this->replace_quotes = true;
-//        }
+        //        if (in_array(config('database.default'), [
+        //            'sqlite',
+        //        ])) {
+        //            $this->replace_quotes = true;
+        //        }
     }
 
     /**
