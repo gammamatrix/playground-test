@@ -39,6 +39,8 @@ trait HasMany
         ]
     ): void {
 
+        $outModelClass = $this->getModelClass();
+
         $key = array_key_exists('key', $meta) && is_string($meta['key']) ? $meta['key'] : '';
         $modelClass = array_key_exists('modelClass', $meta) && is_string($meta['modelClass']) ? $meta['modelClass'] : '';
         $rule = array_key_exists('rule', $meta) && is_string($meta['rule']) ? $meta['rule'] : '';
@@ -47,6 +49,10 @@ trait HasMany
         $stateHasMany = array_key_exists('stateHasMany', $meta) && is_string($meta['stateHasMany']) ? $meta['stateHasMany'] : '';
         $options = array_key_exists('options', $meta) && is_array($meta['options']) ? $meta['options'] : [];
         $optionsHasMany = array_key_exists('options', $meta) && is_array($meta['options']) ? $meta['options'] : [];
+
+        if ($this->debugModels) {
+            dump(__('playground-test::model.debug.feature.has.many', ['accessor' => $accessor, 'model' => $outModelClass]));
+        }
 
         Assert::assertNotEmpty($accessor, sprintf(
             'Expecting the HasMany accessor [%1$s] to be provided in %2$s::$hasMany[%1$s]',
@@ -70,7 +76,7 @@ trait HasMany
             /**
              * @var Model $model
              */
-            $model = $this->getFactory($this->getModelClass(), [
+            $model = $this->getFactory($outModelClass, [
                 'state' => $state,
                 'options' => $options,
             ])->create();
@@ -78,7 +84,7 @@ trait HasMany
             /**
              * @var Model $model
              */
-            $model = $this->getFactory($this->getModelClass(), [
+            $model = $this->getFactory($outModelClass, [
                 'state' => $state,
                 'options' => $options,
             ])->has(
@@ -127,23 +133,10 @@ trait HasMany
                     get_called_class()
                 )
             );
-            //             dd([
-            //                 '__METHOD__' => __METHOD__,
-            //                 '__FILE__' => __FILE__,
-            //                 '__LINE__' => __LINE__,
-            //                 '$m' => $m->toArray(),
-            //             ]);
         }
-        // dd([
-        //     '__METHOD__' => __METHOD__,
-        //     '__FILE__' => __FILE__,
-        //     '__LINE__' => __LINE__,
-        //     '$modelClass' => $this->getModelClass(),
-        //     '$model class' => get_class($model),
-        //     '$model' => $model->toArray(),
-        //     // '$hasAccessor' => $hasAccessor,
-        //     // '$hasModelClass' => $hasModelClass,
-        //     'hasMany' => $this->hasMany,
-        // ]);
+
+        if ($this->debugModels) {
+            dump(__('playground-test::model.debug.feature.has.many.success', ['accessor' => $accessor, 'model' => $outModelClass]));
+        }
     }
 }

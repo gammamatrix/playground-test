@@ -17,6 +17,9 @@ return [
 
     'accessor.404' => 'Expecting the model to have the accessor: :model->:accessor()',
 
+    'debug.feature.has.many' => 'Testing HasMany :model:::accessor()',
+    'debug.feature.has.many.success' => 'Testing HasMany :model:::accessor() was successful',
+
     'debug.feature.has.one' => 'Testing HasOne :model:::accessor()',
     'debug.feature.has.one.success' => 'Testing HasOne :model:::accessor() was successful',
 ];

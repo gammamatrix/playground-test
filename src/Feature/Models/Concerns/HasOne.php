@@ -66,7 +66,7 @@ trait HasOne
             get_called_class()
         ));
 
-        $model = $this->getFactory($this->getModelClass(), $meta)->create();
+        $model = $this->getFactory($outModelClass, $meta)->create();
 
         Assert::assertInstanceOf(
             Model::class,
@@ -103,16 +103,6 @@ trait HasOne
 
         $model->save();
         $model->refresh();
-        //        dump([
-        //            '__METHOD__' => __METHOD__,
-        //            '__FILE__' => __FILE__,
-        //            '__LINE__' => __LINE__,
-        //            '$key' => $key,
-        //            '$this->getModelClass()' => $this->getModelClass(),
-        //            '$modelClass' => $modelClass,
-        //            '$m' => $m?->toArray(),
-        //            '$model' => $model?->toArray(),
-        //        ]);
 
         Assert::assertSame(
             $model->getAttributeValue($key),
@@ -136,13 +126,6 @@ trait HasOne
         $relationship = call_user_func_array($callback, []);
         Assert::assertInstanceOf(\Illuminate\Database\Eloquent\Relations\HasOne::class, $relationship);
         $o = $relationship->first();
-        //         dump([
-        //             '__METHOD__' => __METHOD__,
-        //             '__FILE__' => __FILE__,
-        //             '__LINE__' => __LINE__,
-        //             '$o' => $o?->toArray(),
-        //             '$m' => $m->toArray(),
-        //         ]);
 
         Assert::assertInstanceOf($modelClass, $o, sprintf(
             'Expecting the created HasOne model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
