@@ -1,0 +1,171 @@
+<?php
+
+/**
+ * Playground
+ */
+
+declare(strict_types=1);
+
+namespace Playground\Test\Feature\Models\Concerns;
+
+use Illuminate\Database\Eloquent\Model;
+use PHPUnit\Framework\Assert;
+use Playground\Test\Feature\Models\ModelCase;
+
+/**
+ * @mixin ModelCase
+ */
+trait HasOne
+{
+    /**
+     * Verify a HasOne model relationship.
+     *
+     * @param array{
+     *      key: string,
+     *      modelClass: class-string<Model>,
+     *      options?: array<string, mixed>,
+     *      rule?: "create"|"first",
+     *      state?: string
+     * } $meta
+     */
+    public function verifyRelationshipHasOne(
+        string $accessor,
+        array $meta = [
+            'key' => '',
+            'modelClass' => Model::class,
+        ]
+    ): void {
+
+        $outModelClass = $this->getModelClass();
+
+        $key = array_key_exists('key', $meta) && is_string($meta['key']) ? $meta['key'] : '';
+        $modelClass = array_key_exists('modelClass', $meta) && is_string($meta['modelClass']) ? $meta['modelClass'] : '';
+        $rule = array_key_exists('rule', $meta) && is_string($meta['rule']) ? $meta['rule'] : '';
+        $state = array_key_exists('state', $meta) && is_string($meta['state']) ? $meta['state'] : '';
+        $options = array_key_exists('options', $meta) && is_array($meta['options']) ? $meta['options'] : [];
+
+        if ($this->debugModels) {
+            dump(__('playground-test::model.debug.feature.has.one', ['accessor' => $accessor, 'model' => $outModelClass]));
+        }
+
+        Assert::assertNotEmpty($accessor, sprintf(
+            'Expecting the HasOne accessor [%1$s] to be provided in %2$s::$hasOne[%1$s]',
+            $accessor,
+            get_called_class()
+        ));
+
+        Assert::assertNotEmpty($key, sprintf(
+            'Expecting the HasOne accessor [%1$s] to have a key in %2$s::$hasOne[%1$s][key]',
+            $accessor,
+            get_called_class()
+        ));
+
+        Assert::assertTrue(class_exists($modelClass), sprintf(
+            'Expecting the HasOne accessor [%1$s] to have a modelClass in %2$s::$hasOne[%1$s][modelClass]',
+            $accessor,
+            get_called_class()
+        ));
+
+        $model = $this->getFactory($this->getModelClass(), $meta)->create();
+
+        Assert::assertInstanceOf(
+            Model::class,
+            $model
+        );
+
+        $m = null;
+
+        if ($rule === 'first') {
+            /**
+             * @var Model $m
+             */
+            $m = $modelClass::first();
+        } elseif (is_callable([$modelClass, 'factory'])) {
+
+            /**
+             * @var Model $m
+             */
+            $m = $this->getFactory($modelClass, [
+                'options' => $options,
+                'state' => $state,
+            ])->create();
+        }
+
+        Assert::assertInstanceOf($modelClass, $m, sprintf(
+            'Expecting the created HasOne model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
+            $accessor,
+            $modelClass,
+            is_object($m) ? get_class($m) : gettype($m),
+            get_called_class()
+        ));
+
+        $model->setAttribute($key, $m->getAttribute('id'));
+
+        $model->save();
+        $model->refresh();
+        //        dump([
+        //            '__METHOD__' => __METHOD__,
+        //            '__FILE__' => __FILE__,
+        //            '__LINE__' => __LINE__,
+        //            '$key' => $key,
+        //            '$this->getModelClass()' => $this->getModelClass(),
+        //            '$modelClass' => $modelClass,
+        //            '$m' => $m?->toArray(),
+        //            '$model' => $model?->toArray(),
+        //        ]);
+
+        Assert::assertSame(
+            $model->getAttributeValue($key),
+            $m->getAttributeValue('id'),
+            sprintf(
+                'Expecting the created HasOne model for the accessor [%1$s] to have m->id === model->%2$s - modelClass: %3$s - %4$s - %5$s',
+                $accessor,
+                $key,
+                $modelClass,
+                get_class($m),
+                get_called_class()
+            )
+        );
+
+        $callback = [$model, $accessor];
+        Assert::assertIsCallable($callback, __('playground-test:model.accessor.404', [
+            'model' => $modelClass,
+            'accessor' => $accessor,
+        ]));
+
+        $relationship = call_user_func_array($callback, []);
+        Assert::assertInstanceOf(\Illuminate\Database\Eloquent\Relations\HasOne::class, $relationship);
+        $o = $relationship->first();
+        //         dump([
+        //             '__METHOD__' => __METHOD__,
+        //             '__FILE__' => __FILE__,
+        //             '__LINE__' => __LINE__,
+        //             '$o' => $o?->toArray(),
+        //             '$m' => $m->toArray(),
+        //         ]);
+
+        Assert::assertInstanceOf($modelClass, $o, sprintf(
+            'Expecting the created HasOne model for the accessor [%1$s] to be an instance of %2$s - found: %3$s - %4$s',
+            $accessor,
+            $modelClass,
+            $o ? get_class($o) : gettype($o),
+            get_called_class()
+        ));
+        Assert::assertSame(
+            $o->getAttributeValue('id'),
+            $m->getAttributeValue('id'),
+            sprintf(
+                'Expecting the created HasOne model for the accessor [%1$s] to have m->id === o->id - modelClass: %3$s - %4$s - %5$s',
+                $accessor,
+                $key,
+                $modelClass,
+                get_class($o),
+                get_called_class()
+            )
+        );
+
+        if ($this->debugModels) {
+            dump(__('playground-test::model.debug.feature.has.one.success', ['accessor' => $accessor, 'model' => $outModelClass]));
+        }
+    }
+}
