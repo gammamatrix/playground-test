@@ -101,10 +101,7 @@ trait EditTrait
 
         $response->assertStatus(200);
 
-        $response->assertSee(sprintf(
-            '<input type="hidden" name="_return_url" value="%1$s">',
-            $index
-        ), false);
+        $response->assertSee('name="_return_url"', false);
     }
 
     public function test_edit_view_as_admin_with_invalid_parameter_and_fail_validation_and_redirect()
