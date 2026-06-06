@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Playground\Test\Models;
 
+use Database\Factories\Playground\Test\Models\WidgetFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
@@ -73,7 +74,7 @@ use Playground\Models\Model;
  */
 class Widget extends Model
 {
-    /** @use HasFactory<\Database\Factories\Playground\Test\Models\WidgetFactory> */
+    /** @use HasFactory<WidgetFactory> */
     use HasFactory;
 
     protected $table = 'testing_widgets';

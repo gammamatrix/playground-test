@@ -9,6 +9,7 @@ namespace Playground\Test\Models;
 
 use Database\Factories\Playground\Test\Models\UserWithSanctumFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Carbon;
 use Laravel\Sanctum\Contracts\HasApiTokens as HasApiTokensContract;
 use Laravel\Sanctum\HasApiTokens;
@@ -23,7 +24,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $name
  * @property string $email
  *
- * @see \Illuminate\Foundation\Auth\User
+ * @see User
  */
 class UserWithSanctum extends AbstractUser implements HasApiTokensContract
 {

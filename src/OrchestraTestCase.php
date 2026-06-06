@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Playground\Test;
 
+use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 /**
@@ -32,7 +33,7 @@ abstract class OrchestraTestCase extends Orchestra
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      * @return void
      */
     protected function defineEnvironment($app)

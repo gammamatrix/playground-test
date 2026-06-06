@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Playground\Test\Models\Demo;
 
+use Playground\Test\Models\Demo;
 use Tests\Unit\Playground\Test\Models\ModelCase;
 
 /**
@@ -15,7 +16,7 @@ use Tests\Unit\Playground\Test\Models\ModelCase;
  */
 class ModelTest extends ModelCase
 {
-    protected string $modelClass = \Playground\Test\Models\Demo::class;
+    protected string $modelClass = Demo::class;
 
     protected bool $hasRelationships = true;
 

@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Playground\Test\Models;
 
+use Database\Factories\Playground\Test\Models\DemoFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
@@ -73,7 +74,7 @@ use Playground\Models\Model;
  */
 class Demo extends Model
 {
-    /** @use HasFactory<\Database\Factories\Playground\Test\Models\DemoFactory> */
+    /** @use HasFactory<DemoFactory> */
     use HasFactory;
 
     protected $table = 'testing_demo';

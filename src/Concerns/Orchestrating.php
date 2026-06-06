@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Playground\Test\Concerns;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Carbon;
 use Playground\Models\User;
 use Playground\Test\Models\DefaultUser;
@@ -56,7 +57,7 @@ trait Orchestrating
      * - sanctum: $user->currentAccessToken()->can()
      * - user: ! empty($user)
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      */
     protected function orchestrateUsers($app): void
     {
