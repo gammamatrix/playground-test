@@ -59,7 +59,6 @@ trait Factories
         $factoryState = $factory->{$state}(...$options);
 
         Assert::assertInstanceOf($factory, $factoryState);
-        Assert::assertInstanceOf(Factory::class, $factoryState);
 
         return $factoryState;
     }
