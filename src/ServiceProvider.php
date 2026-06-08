@@ -17,7 +17,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
  */
 class ServiceProvider extends BaseServiceProvider
 {
-    public const string VERSION = '74.0.0';
+    public const string VERSION = '75.0.0';
 
     public string $package = 'playground-test';
 
