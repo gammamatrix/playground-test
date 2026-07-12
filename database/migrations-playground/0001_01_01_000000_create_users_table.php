@@ -77,6 +77,7 @@ return new class extends Migration
             $table->boolean('internal')->default(0)->index();
             $table->boolean('locked')->default(0)->index();
             $table->boolean('problem')->default(0)->index();
+            $table->boolean('retired')->default(0)->index();
             $table->boolean('suspended')->default(0)->index();
             $table->boolean('unknown')->default(0)->index();
 
@@ -116,35 +117,19 @@ return new class extends Migration
             $table->string('avatar')->default('');
             $table->json('ui')->nullable()->default(new Expression('(JSON_OBJECT())'));
 
-            $table->json('abilities')
-                ->default(new Expression('(JSON_ARRAY())'))
-                ->comment('Array of ability strings');
-            $table->longText('accounts')
-                ->comment('Encrypted user account objects');
-            $table->longText('address')
-                ->comment('Encrypted user address object');
-            $table->longText('contact')
-                ->comment('Encrypted contact object');
-            $table->longText('meta')
-                ->comment('Encrypted meta object');
-            $table->longText('notes')
-                ->comment('Encrypted array of note objects');
-            $table->longText('options')
-                ->comment('Encrypted options object');
-            $table->longText('registration')
-                ->comment('Encrypted registration information object');
-            $table->json('roles')
-                ->default(new Expression('(JSON_ARRAY())'))
-                ->comment('Array of role strings');
-            $table->json('permissions')
-                ->default(new Expression('(JSON_ARRAY())'))
-                ->comment('Array of permission strings');
-            $table->json('privileges')
-                ->default(new Expression('(JSON_ARRAY())'))
-                ->comment('Array of privilege strings');
-            $table->longText('sources')
-                ->comment('Encrypted array of sources');
-
+            $table->json('abilities')->nullable()->default(new Expression('(JSON_ARRAY())'))->comment('Array of ability strings');
+            $table->json('accounts')->nullable()->default(new Expression('(JSON_OBJECT())'));
+            $table->json('address')->nullable()->default(new Expression('(JSON_OBJECT())'));
+            $table->json('assets')->nullable()->default(new Expression('(JSON_OBJECT())'));
+            $table->json('contact')->nullable()->default(new Expression('(JSON_OBJECT())'));
+            $table->json('meta')->nullable()->default(new Expression('(JSON_OBJECT())'));
+            $table->json('notes')->nullable()->default(new Expression('(JSON_ARRAY())'))->comment('Array of note objects');
+            $table->json('options')->nullable()->default(new Expression('(JSON_OBJECT())'));
+            $table->json('permissions')->nullable()->default(new Expression('(JSON_ARRAY())'))->comment('Array of permission strings');
+            $table->json('privileges')->nullable()->default(new Expression('(JSON_ARRAY())'))->comment('Array of privilege strings');
+            $table->json('registration')->nullable()->default(new Expression('(JSON_OBJECT())'));
+            $table->json('roles')->nullable()->default(new Expression('(JSON_ARRAY())'))->comment('Array of role strings');
+            $table->json('sources')->nullable()->default(new Expression('(JSON_OBJECT())'));
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
