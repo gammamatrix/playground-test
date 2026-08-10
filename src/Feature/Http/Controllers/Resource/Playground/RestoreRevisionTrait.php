@@ -108,7 +108,7 @@ trait RestoreRevisionTrait
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]));
     }
 

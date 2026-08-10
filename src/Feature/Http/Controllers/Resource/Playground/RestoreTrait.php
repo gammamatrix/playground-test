@@ -49,7 +49,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->put($url);
@@ -83,7 +83,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->put($url);
@@ -94,7 +94,7 @@ trait RestoreTrait
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]));
     }
 
@@ -125,7 +125,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -165,7 +165,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->put($url);

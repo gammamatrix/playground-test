@@ -55,7 +55,7 @@ trait UpdateJsonTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->patchJson($url);
@@ -77,7 +77,7 @@ trait UpdateJsonTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patchJson($url);
@@ -101,7 +101,7 @@ trait UpdateJsonTrait
     //         '%1$s.patch',
     //         $packageInfo['model_route']
     //     ), [
-    //         $packageInfo['model_slug'] => $model->id,
+    //         $packageInfo['model_variable'] => $model->id,
     //     ]);
 
     //     $response = $this->actingAs($user)->patchJson($url);
@@ -137,7 +137,7 @@ trait UpdateJsonTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patchJson($url, $payload);

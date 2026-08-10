@@ -46,7 +46,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->delete($url);
@@ -78,7 +78,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->delete($url);
@@ -114,7 +114,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             'force' => true,
         ]);
 
@@ -152,7 +152,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -188,7 +188,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             'force' => true,
         ]);
 

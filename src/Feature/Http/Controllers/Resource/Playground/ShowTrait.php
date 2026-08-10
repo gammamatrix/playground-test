@@ -39,7 +39,7 @@ trait ShowTrait
             '%1$s.show',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->get($url);
@@ -63,7 +63,7 @@ trait ShowTrait
             '%1$s.show',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->get($url);

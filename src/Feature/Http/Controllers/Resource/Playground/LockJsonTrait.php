@@ -51,7 +51,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->putJson($url);
@@ -83,7 +83,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);
@@ -120,7 +120,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -161,7 +161,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);

@@ -129,7 +129,7 @@ trait StoreTrait
         )->firstOrFail();
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $created->id,
+            $packageInfo['model_variable'] => $created->id,
         ]));
     }
 
@@ -155,7 +155,7 @@ trait StoreTrait
             '%1$s.post',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 

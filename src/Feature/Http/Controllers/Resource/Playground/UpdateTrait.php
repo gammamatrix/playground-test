@@ -55,7 +55,7 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->patch($url);
@@ -77,7 +77,7 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patch($url);
@@ -103,7 +103,7 @@ trait UpdateTrait
     //         '%1$s.patch',
     //         $packageInfo['model_route']
     //     ), [
-    //         $packageInfo['model_slug'] => $model->id,
+    //         $packageInfo['model_variable'] => $model->id,
     //     ]);
 
     //     $response = $this->actingAs($user)->patch($url);
@@ -140,13 +140,13 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patch($url, $payload);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]));
 
         $this->assertAuthenticated();
@@ -185,7 +185,7 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $index,
         ]);
 

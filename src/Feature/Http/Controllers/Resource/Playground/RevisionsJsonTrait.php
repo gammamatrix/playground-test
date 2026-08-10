@@ -127,7 +127,7 @@ trait RevisionsJsonTrait
             '%1$s.revisions',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             'filter' => $this->revisions_json_with_filters,
         ]);
 

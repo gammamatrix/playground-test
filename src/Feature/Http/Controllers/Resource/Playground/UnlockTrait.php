@@ -53,7 +53,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->delete($url);
@@ -87,7 +87,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->delete($url);
@@ -103,7 +103,7 @@ trait UnlockTrait
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]));
     }
 
@@ -132,7 +132,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -167,7 +167,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->delete($url);

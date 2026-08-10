@@ -43,7 +43,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->get($url);
@@ -65,7 +65,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->get($url);
@@ -91,7 +91,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $index,
         ]);
 
@@ -118,7 +118,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->from($url)->get(sprintf(

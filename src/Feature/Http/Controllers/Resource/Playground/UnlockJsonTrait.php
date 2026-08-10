@@ -53,7 +53,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->deleteJson($url);
@@ -87,7 +87,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->deleteJson($url);
@@ -127,7 +127,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -164,7 +164,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_slug'] => $model->id,
+            $packageInfo['model_variable'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->deleteJson($url);
