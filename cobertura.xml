@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.058415032679739" branch-rate="0" lines-covered="143" lines-valid="2448" branches-covered="0" branches-valid="0" complexity="290" version="0.4" timestamp="1786340562">
+<coverage line-rate="0.061683006535948" branch-rate="0" lines-covered="151" lines-valid="2448" branches-covered="0" branches-valid="0" complexity="290" version="0.4" timestamp="1789064471">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -5601,24 +5601,24 @@
         </class>
       </classes>
     </package>
-    <package name="Models/AbstractUser.php" line-rate="0" branch-rate="0" complexity="1">
+    <package name="Models/AbstractUser.php" line-rate="1" branch-rate="0" complexity="1">
       <classes>
-        <class name="Playground\Test\Models\AbstractUser" filename="Models/AbstractUser.php" line-rate="0" branch-rate="0" complexity="1">
+        <class name="Playground\Test\Models\AbstractUser" filename="Models/AbstractUser.php" line-rate="1" branch-rate="0" complexity="1">
           <methods>
-            <method name="casts" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="casts" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="56" hits="0"/>
-                <line number="57" hits="0"/>
-                <line number="58" hits="0"/>
-                <line number="59" hits="0"/>
+                <line number="56" hits="25"/>
+                <line number="57" hits="25"/>
+                <line number="58" hits="25"/>
+                <line number="59" hits="25"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="56" hits="0"/>
-            <line number="57" hits="0"/>
-            <line number="58" hits="0"/>
-            <line number="59" hits="0"/>
+            <line number="56" hits="25"/>
+            <line number="57" hits="25"/>
+            <line number="58" hits="25"/>
+            <line number="59" hits="25"/>
           </lines>
         </class>
       </classes>
@@ -5695,24 +5695,24 @@
         </class>
       </classes>
     </package>
-    <package name="Models/DefaultUser.php" line-rate="0" branch-rate="0" complexity="1">
+    <package name="Models/DefaultUser.php" line-rate="1" branch-rate="0" complexity="1">
       <classes>
-        <class name="Playground\Test\Models\DefaultUser" filename="Models/DefaultUser.php" line-rate="0" branch-rate="0" complexity="1">
+        <class name="Playground\Test\Models\DefaultUser" filename="Models/DefaultUser.php" line-rate="1" branch-rate="0" complexity="1">
           <methods>
-            <method name="casts" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="casts" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="50" hits="0"/>
-                <line number="51" hits="0"/>
-                <line number="52" hits="0"/>
-                <line number="53" hits="0"/>
+                <line number="50" hits="5"/>
+                <line number="51" hits="5"/>
+                <line number="52" hits="5"/>
+                <line number="53" hits="5"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="50" hits="0"/>
-            <line number="51" hits="0"/>
-            <line number="52" hits="0"/>
-            <line number="53" hits="0"/>
+            <line number="50" hits="5"/>
+            <line number="51" hits="5"/>
+            <line number="52" hits="5"/>
+            <line number="53" hits="5"/>
           </lines>
         </class>
       </classes>
