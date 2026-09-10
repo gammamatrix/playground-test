@@ -8,7 +8,6 @@
     backupGlobals="false"
     beStrictAboutTestsThatDoNotTestAnything="true"
     beStrictAboutOutputDuringTests="true"
-    cacheResult="false"
     failOnRisky="true"
     failOnWarning="true"
     processIsolation="false"
