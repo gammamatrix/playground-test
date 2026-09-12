@@ -177,16 +177,16 @@ jobs:
                     text: "*Status:* FAILED"
                   - type: "mrkdwn"
                     text: ":timer_clock: ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
-            - type: "actions"
-              elements:
-                - type: "button"
-                  text:
-                    type: "plain_text"
-                    text: "Merge/Pull Request"
-                  url: "${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                - type: "button"
-                  text:
-                    type: "plain_text"
-                    text: "Build: ${{ github.run_id }}"
-                  style: "danger"
-                  url: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              - type: "actions"
+                elements:
+                  - type: "button"
+                    text:
+                      type: "plain_text"
+                      text: "Merge/Pull Request"
+                    url: "${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  - type: "button"
+                    text:
+                      type: "plain_text"
+                      text: "Build: ${{ github.run_id }}"
+                    style: "danger"
+                    url: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
