@@ -31,7 +31,7 @@ trait CreateTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_render_create_view()
+    public function test_guest_cannot_render_create_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -45,7 +45,7 @@ trait CreateTrait
         $response->assertStatus($this->status_code_guest_create);
     }
 
-    public function test_admin_can_render_create_view()
+    public function test_admin_can_render_create_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -63,7 +63,7 @@ trait CreateTrait
         $this->assertAuthenticated();
     }
 
-    public function test_admin_can_render_create_view_with_return_url()
+    public function test_admin_can_render_create_view_with_return_url(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -87,7 +87,7 @@ trait CreateTrait
         $response->assertSee('name="_return_url"', false);
     }
 
-    public function test_create_view_as_admin_with_invalid_parameter_and_fail_validation_and_redirect()
+    public function test_create_view_as_admin_with_invalid_parameter_and_fail_validation_and_redirect(): void
     {
         $packageInfo = $this->getPackageInfo();
 

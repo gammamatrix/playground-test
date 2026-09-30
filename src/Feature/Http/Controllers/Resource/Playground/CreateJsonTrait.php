@@ -36,7 +36,7 @@ trait CreateJsonTrait
      */
     abstract public function getStructureCreate(): array;
 
-    public function test_json_guest_cannot_get_create_info()
+    public function test_json_guest_cannot_get_create_info(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -51,7 +51,7 @@ trait CreateJsonTrait
         $response->assertStatus($this->status_code_json_guest_create);
     }
 
-    public function test_json_admin_can_get_create_info()
+    public function test_json_admin_can_get_create_info(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -71,7 +71,7 @@ trait CreateJsonTrait
         $response->assertJsonStructure($this->getStructureCreate());
     }
 
-    public function test_json_get_create_info_as_admin_with_invalid_parameter_and_fail_validation()
+    public function test_json_get_create_info_as_admin_with_invalid_parameter_and_fail_validation(): void
     {
         $packageInfo = $this->getPackageInfo();
 

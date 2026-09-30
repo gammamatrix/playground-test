@@ -36,29 +36,28 @@ composer cloc
 ```
 
 ```
-➜  playground-test git:(feature/GH-34) composer cloc
-> cloc --exclude-dir=output,vendor .
-     158 text files.
-      93 unique files.
-      66 files ignored.
+➜  playground-test git:(develop) ✗ composer cloc
+     102 text files.
+      96 unique files.                              
+       7 files ignored.
 
-github.com/AlDanial/cloc v 1.98  T=0.15 s (615.0 files/s, 67029.5 lines/s)
+github.com/AlDanial/cloc v 2.08  T=0.03 s (2777.4 files/s, 289426.0 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-PHP                             84           1767           2117           5473
-XML                              4              0             15            294
-YAML                             1              5              0            275
+PHP                             87           1914           2114           5352
+XML                              3              0              7            218
+YAML                             1              4              0            188
 Markdown                         3             35              0             88
-JSON                             1              0              0             67
+JSON                             2              0              0             84
 -------------------------------------------------------------------------------
-SUM:                            93           1807           2132           6197
+SUM:                            96           1953           2121           5930
 -------------------------------------------------------------------------------
 ```
 
 ## PHPStan
 
-Tests at level 9 on:
+Tests at level 10 on:
 - `config/`
 - `database/`
 - `resources/`

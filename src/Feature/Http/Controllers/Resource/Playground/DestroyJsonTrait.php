@@ -29,7 +29,7 @@ trait DestroyJsonTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_json_guest_cannot_destroy()
+    public function test_json_guest_cannot_destroy(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -46,7 +46,7 @@ trait DestroyJsonTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->deleteJson($url);
@@ -59,7 +59,7 @@ trait DestroyJsonTrait
         ]);
     }
 
-    public function test_json_destroy_as_admin_and_succeed()
+    public function test_json_destroy_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -78,7 +78,7 @@ trait DestroyJsonTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->deleteJson($url);
@@ -98,7 +98,7 @@ trait DestroyJsonTrait
         $response->assertNoContent();
     }
 
-    public function test_json_destroy_as_admin_and_succeed_with_force_delete()
+    public function test_json_destroy_as_admin_and_succeed_with_force_delete(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -117,7 +117,7 @@ trait DestroyJsonTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             'force' => true,
         ]);
 
@@ -130,7 +130,7 @@ trait DestroyJsonTrait
         $response->assertNoContent();
     }
 
-    public function test_json_destroy_as_admin_and_succeed_with_no_content()
+    public function test_json_destroy_as_admin_and_succeed_with_no_content(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -149,7 +149,7 @@ trait DestroyJsonTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->deleteJson($url);
@@ -165,7 +165,7 @@ trait DestroyJsonTrait
         $response->assertNoContent();
     }
 
-    public function test_json_destroy_as_admin_and_succeed_and_ignore_redirect()
+    public function test_json_destroy_as_admin_and_succeed_and_ignore_redirect(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -190,7 +190,7 @@ trait DestroyJsonTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -207,7 +207,7 @@ trait DestroyJsonTrait
         $response->assertNoContent();
     }
 
-    public function test_json_destroy_as_user_and_get_denied_and_no_force_delete_allowed()
+    public function test_json_destroy_as_user_and_get_denied_and_no_force_delete_allowed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -226,7 +226,7 @@ trait DestroyJsonTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             'force' => true,
         ]);
 

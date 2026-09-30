@@ -32,7 +32,7 @@ trait RevisionsTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_render_revisions_view()
+    public function test_guest_cannot_render_revisions_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -61,7 +61,7 @@ trait RevisionsTrait
         $response->assertStatus($this->status_code_guest_revisions);
     }
 
-    public function test_admin_can_render_revisions_view()
+    public function test_admin_can_render_revisions_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -102,7 +102,7 @@ trait RevisionsTrait
         'label' => 'revisions_with_filters',
     ];
 
-    public function test_admin_can_render_revisions_view_with_filters()
+    public function test_admin_can_render_revisions_view_with_filters(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -127,7 +127,7 @@ trait RevisionsTrait
             '%1$s.revisions',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             'filter' => $this->revisions_with_filters,
         ]);
 

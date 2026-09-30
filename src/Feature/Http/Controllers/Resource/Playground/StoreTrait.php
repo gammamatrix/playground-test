@@ -36,7 +36,7 @@ trait StoreTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_store()
+    public function test_guest_cannot_store(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -59,7 +59,7 @@ trait StoreTrait
         ]);
     }
 
-    public function test_store_as_admin_without_payload_and_fail_validation()
+    public function test_store_as_admin_without_payload_and_fail_validation(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -88,7 +88,7 @@ trait StoreTrait
         // $response->assertStatus(422);
     }
 
-    public function test_store_as_admin_and_succeed()
+    public function test_store_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -129,11 +129,11 @@ trait StoreTrait
         )->firstOrFail();
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_variable'] => $created->id,
+            $packageInfo['model_route_param'] => $created->id,
         ]));
     }
 
-    public function test_store_as_admin_and_succeed_with_return_url()
+    public function test_store_as_admin_and_succeed_with_return_url(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -155,7 +155,7 @@ trait StoreTrait
             '%1$s.post',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 

@@ -36,7 +36,7 @@ trait RestoreRevisionTrait
 
     abstract public function getRevisionRouteParameter(): string;
 
-    public function test_guest_cannot_restore_revision()
+    public function test_guest_cannot_restore_revision(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -72,7 +72,7 @@ trait RestoreRevisionTrait
         ]);
     }
 
-    public function test_restore_revision_as_admin_and_succeed()
+    public function test_restore_revision_as_admin_and_succeed(): void
     {
         $user = User::factory()->admin()->create();
 
@@ -108,11 +108,11 @@ trait RestoreRevisionTrait
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]));
     }
 
-    public function test_restore_revision_as_admin_and_succeed_with_redirect_to_index_with_only_trash()
+    public function test_restore_revision_as_admin_and_succeed_with_redirect_to_index_with_only_trash(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -162,7 +162,7 @@ trait RestoreRevisionTrait
         $response->assertRedirect($_return_url);
     }
 
-    public function test_restore_revision_as_user_and_get_denied()
+    public function test_restore_revision_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 

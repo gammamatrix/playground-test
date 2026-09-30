@@ -41,7 +41,7 @@ trait RestoreRevisionJsonTrait
      */
     abstract public function getStructureData(): array;
 
-    public function test_json_guest_cannot_restore_revision()
+    public function test_json_guest_cannot_restore_revision(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -77,7 +77,7 @@ trait RestoreRevisionJsonTrait
         ]);
     }
 
-    public function test_json_restore_revision_as_admin_and_succeed()
+    public function test_json_restore_revision_as_admin_and_succeed(): void
     {
         $user = User::factory()->admin()->create();
 
@@ -117,7 +117,7 @@ trait RestoreRevisionJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_revision_as_admin_and_succeed_without_redirect()
+    public function test_json_restore_revision_as_admin_and_succeed_without_redirect(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -169,7 +169,7 @@ trait RestoreRevisionJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_revision_as_user_and_get_denied()
+    public function test_json_restore_revision_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 

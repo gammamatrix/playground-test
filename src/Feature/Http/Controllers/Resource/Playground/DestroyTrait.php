@@ -29,7 +29,7 @@ trait DestroyTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_destroy()
+    public function test_guest_cannot_destroy(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -46,7 +46,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->delete($url);
@@ -59,7 +59,7 @@ trait DestroyTrait
         ]);
     }
 
-    public function test_destroy_as_admin_and_succeed()
+    public function test_destroy_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -78,7 +78,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->delete($url);
@@ -95,7 +95,7 @@ trait DestroyTrait
         $response->assertRedirect(route($packageInfo['model_route']));
     }
 
-    public function test_destroy_as_admin_and_succeed_with_force_delete()
+    public function test_destroy_as_admin_and_succeed_with_force_delete(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -114,7 +114,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             'force' => true,
         ]);
 
@@ -127,7 +127,7 @@ trait DestroyTrait
         $response->assertRedirect(route($packageInfo['model_route']));
     }
 
-    public function test_destroy_as_admin_and_succeed_with_redirect_to_index_with_trash()
+    public function test_destroy_as_admin_and_succeed_with_redirect_to_index_with_trash(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -152,7 +152,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -169,7 +169,7 @@ trait DestroyTrait
         $response->assertRedirect($_return_url);
     }
 
-    public function test_destroy_as_user_and_get_denied_and_no_force_delete_allowed()
+    public function test_destroy_as_user_and_get_denied_and_no_force_delete_allowed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -188,7 +188,7 @@ trait DestroyTrait
             '%1$s.destroy',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             'force' => true,
         ]);
 

@@ -63,7 +63,7 @@
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max",
-        "cloc": "cloc --exclude-dir=output,vendor .",
+        "cloc": "cloc --exclude-ext=lock --exclude-dir=.git,.idea,.phpunit.cache,node_modules,output,vendor .",
         "format": "vendor/bin/pint",
         "test": "vendor/bin/testbench package:test",
         "test-dev": [

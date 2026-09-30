@@ -27,7 +27,7 @@ trait IndexTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_render_index_view()
+    public function test_guest_cannot_render_index_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -42,7 +42,7 @@ trait IndexTrait
         $response->assertStatus($this->status_code_guest_index);
     }
 
-    public function test_admin_can_render_index_view()
+    public function test_admin_can_render_index_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -75,7 +75,7 @@ trait IndexTrait
         'label' => 'index_with_filters',
     ];
 
-    public function test_admin_can_render_index_view_with_filters()
+    public function test_admin_can_render_index_view_with_filters(): void
     {
         $packageInfo = $this->getPackageInfo();
 

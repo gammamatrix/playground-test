@@ -32,7 +32,7 @@ trait RevisionsJsonTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_json_guest_cannot_get_revisions()
+    public function test_json_guest_cannot_get_revisions(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -61,7 +61,7 @@ trait RevisionsJsonTrait
         $response->assertStatus($this->status_code_guest_json_revisions);
     }
 
-    public function test_json_admin_can_get_revisions()
+    public function test_json_admin_can_get_revisions(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -102,7 +102,7 @@ trait RevisionsJsonTrait
         'label' => 'revisions_json_with_filters',
     ];
 
-    public function test_json_admin_can_get_revisions_with_filters()
+    public function test_json_admin_can_get_revisions_with_filters(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -127,7 +127,7 @@ trait RevisionsJsonTrait
             '%1$s.revisions',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             'filter' => $this->revisions_json_with_filters,
         ]);
 

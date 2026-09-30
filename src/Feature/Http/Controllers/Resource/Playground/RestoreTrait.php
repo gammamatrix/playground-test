@@ -30,7 +30,7 @@ trait RestoreTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_restore()
+    public function test_guest_cannot_restore(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -49,7 +49,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->put($url);
@@ -62,7 +62,7 @@ trait RestoreTrait
         ]);
     }
 
-    public function test_restore_as_admin_and_succeed()
+    public function test_restore_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -83,7 +83,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->put($url);
@@ -94,11 +94,11 @@ trait RestoreTrait
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]));
     }
 
-    public function test_restore_as_admin_and_succeed_with_redirect_to_index_with_only_trash()
+    public function test_restore_as_admin_and_succeed_with_redirect_to_index_with_only_trash(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -125,7 +125,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -144,7 +144,7 @@ trait RestoreTrait
         $response->assertRedirect($_return_url);
     }
 
-    public function test_restore_as_user_and_get_denied()
+    public function test_restore_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -165,7 +165,7 @@ trait RestoreTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->put($url);

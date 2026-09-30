@@ -43,7 +43,7 @@ trait UpdateTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_update()
+    public function test_guest_cannot_update(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -55,7 +55,7 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->patch($url);
@@ -63,7 +63,7 @@ trait UpdateTrait
         $response->assertStatus($this->status_code_guest_update);
     }
 
-    public function test_update_as_admin_without_payload_and_passes_validation()
+    public function test_update_as_admin_without_payload_and_passes_validation(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -77,7 +77,7 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patch($url);
@@ -89,7 +89,7 @@ trait UpdateTrait
         $this->assertAuthenticated();
     }
 
-    // public function test_update_as_admin_without_payload_and_fail_validation()
+    // public function test_update_as_admin_without_payload_and_fail_validation(): void
     // {
     //     $packageInfo = $this->getPackageInfo();
 
@@ -103,7 +103,7 @@ trait UpdateTrait
     //         '%1$s.patch',
     //         $packageInfo['model_route']
     //     ), [
-    //         $packageInfo['model_variable'] => $model->id,
+    //         $packageInfo['model_route_param'] => $model->id,
     //     ]);
 
     //     $response = $this->actingAs($user)->patch($url);
@@ -114,7 +114,7 @@ trait UpdateTrait
     //     $this->assertAuthenticated();
     // }
 
-    public function test_admin_can_update()
+    public function test_admin_can_update(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -140,13 +140,13 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patch($url, $payload);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]));
 
         $this->assertAuthenticated();
@@ -157,7 +157,7 @@ trait UpdateTrait
         ]);
     }
 
-    public function test_admin_can_update_view_with_return_url()
+    public function test_admin_can_update_view_with_return_url(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -185,7 +185,7 @@ trait UpdateTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $index,
         ]);
 

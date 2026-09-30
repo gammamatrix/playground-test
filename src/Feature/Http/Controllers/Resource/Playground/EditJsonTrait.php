@@ -36,7 +36,7 @@ trait EditJsonTrait
      */
     abstract public function getStructureEdit(): array;
 
-    public function test_json_guest_cannot_get_edit_info()
+    public function test_json_guest_cannot_get_edit_info(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -48,7 +48,7 @@ trait EditJsonTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->getJson($url);
@@ -56,7 +56,7 @@ trait EditJsonTrait
         $response->assertStatus($this->status_code_json_guest_edit);
     }
 
-    public function test_json_admin_can_get_edit_info()
+    public function test_json_admin_can_get_edit_info(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -70,7 +70,7 @@ trait EditJsonTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->getJson($url);
@@ -85,7 +85,7 @@ trait EditJsonTrait
         $this->assertAuthenticated();
     }
 
-    public function test_json_edit_as_admin_and_fail_validation_with_invalid_parameter()
+    public function test_json_edit_as_admin_and_fail_validation_with_invalid_parameter(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -99,7 +99,7 @@ trait EditJsonTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->from($url)->getJson(sprintf(

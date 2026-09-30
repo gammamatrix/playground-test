@@ -27,7 +27,7 @@ trait ShowTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_render_show_view()
+    public function test_guest_cannot_render_show_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -39,7 +39,7 @@ trait ShowTrait
             '%1$s.show',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->get($url);
@@ -47,7 +47,7 @@ trait ShowTrait
         $response->assertStatus($this->status_code_guest_show);
     }
 
-    public function test_show_view_rendered_by_admin()
+    public function test_show_view_rendered_by_admin(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -63,7 +63,7 @@ trait ShowTrait
             '%1$s.show',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->get($url);

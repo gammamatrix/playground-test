@@ -41,7 +41,7 @@ trait StoreJsonTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_json_guest_cannot_store()
+    public function test_json_guest_cannot_store(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -64,7 +64,7 @@ trait StoreJsonTrait
         ]);
     }
 
-    public function test_json_store_as_admin_without_payload_and_fail_validation()
+    public function test_json_store_as_admin_without_payload_and_fail_validation(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -90,7 +90,7 @@ trait StoreJsonTrait
         ]);
     }
 
-    public function test_json_store_as_admin_and_succeed()
+    public function test_json_store_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 

@@ -34,7 +34,7 @@ trait UnlockTrait
      */
     abstract public function getStructureData(): array;
 
-    public function test_guest_cannot_unlock()
+    public function test_guest_cannot_unlock(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -53,7 +53,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->delete($url);
@@ -66,7 +66,7 @@ trait UnlockTrait
         ]);
     }
 
-    public function test_unlock_as_admin_and_succeed()
+    public function test_unlock_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -87,7 +87,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->delete($url);
@@ -103,11 +103,11 @@ trait UnlockTrait
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]));
     }
 
-    public function test_unlock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc()
+    public function test_unlock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_unlocked_desc(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -132,7 +132,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -146,7 +146,7 @@ trait UnlockTrait
         $response->assertRedirect($_return_url);
     }
 
-    public function test_unlock_as_user_and_get_denied()
+    public function test_unlock_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -167,7 +167,7 @@ trait UnlockTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->delete($url);

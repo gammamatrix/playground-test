@@ -34,7 +34,7 @@ trait LockJsonTrait
      */
     abstract public function getStructureData(): array;
 
-    public function test_json_guest_cannot_lock()
+    public function test_json_guest_cannot_lock(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -51,7 +51,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->putJson($url);
@@ -64,7 +64,7 @@ trait LockJsonTrait
         ]);
     }
 
-    public function test_json_lock_as_admin_and_succeed()
+    public function test_json_lock_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -83,7 +83,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);
@@ -96,7 +96,7 @@ trait LockJsonTrait
         $response->assertStatus(200);
     }
 
-    public function test_json_lock_as_admin_and_succeed_with_no_redirect()
+    public function test_json_lock_as_admin_and_succeed_with_no_redirect(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -120,7 +120,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -141,7 +141,7 @@ trait LockJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_lock_as_user_and_get_denied()
+    public function test_json_lock_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -161,7 +161,7 @@ trait LockJsonTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);

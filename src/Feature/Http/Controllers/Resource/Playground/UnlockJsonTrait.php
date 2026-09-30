@@ -34,7 +34,7 @@ trait UnlockJsonTrait
      */
     abstract public function getStructureData(): array;
 
-    public function test_json_guest_cannot_unlock()
+    public function test_json_guest_cannot_unlock(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -53,7 +53,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->deleteJson($url);
@@ -66,7 +66,7 @@ trait UnlockJsonTrait
         ]);
     }
 
-    public function test_json_unlock_as_admin_and_succeed()
+    public function test_json_unlock_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -87,7 +87,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->deleteJson($url);
@@ -102,7 +102,7 @@ trait UnlockJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_unlock_as_admin_and_succeed_with_no_redirect()
+    public function test_json_unlock_as_admin_and_succeed_with_no_redirect(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -127,7 +127,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -143,7 +143,7 @@ trait UnlockJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_unlock_as_user_and_get_denied()
+    public function test_json_unlock_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -164,7 +164,7 @@ trait UnlockJsonTrait
             '%1$s.unlock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->deleteJson($url);

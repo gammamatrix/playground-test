@@ -27,7 +27,7 @@ trait ShowJsonTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_json_guest_cannot_see_info()
+    public function test_json_guest_cannot_see_info(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -39,7 +39,7 @@ trait ShowJsonTrait
             '%1$s.show',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->getJson($url);
@@ -47,7 +47,7 @@ trait ShowJsonTrait
         $response->assertStatus($this->status_code_json_guest_show);
     }
 
-    public function test_json_show_info_for_admin()
+    public function test_json_show_info_for_admin(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -63,7 +63,7 @@ trait ShowJsonTrait
             '%1$s.show',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->getJson($url);

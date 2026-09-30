@@ -29,7 +29,7 @@ trait LockTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_lock()
+    public function test_guest_cannot_lock(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -46,7 +46,7 @@ trait LockTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->put($url);
@@ -59,7 +59,7 @@ trait LockTrait
         ]);
     }
 
-    public function test_lock_as_admin_and_succeed()
+    public function test_lock_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -78,7 +78,7 @@ trait LockTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->put($url);
@@ -89,11 +89,11 @@ trait LockTrait
         ]);
 
         $response->assertRedirect(route(sprintf('%1$s.show', $packageInfo['model_route']), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]));
     }
 
-    public function test_lock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc()
+    public function test_lock_as_admin_and_succeed_with_redirect_to_index_with_sorted_by_locked_desc(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -116,7 +116,7 @@ trait LockTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -130,7 +130,7 @@ trait LockTrait
         $response->assertRedirect($_return_url);
     }
 
-    public function test_lock_as_user_and_get_denied()
+    public function test_lock_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -149,7 +149,7 @@ trait LockTrait
             '%1$s.lock',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->put($url);

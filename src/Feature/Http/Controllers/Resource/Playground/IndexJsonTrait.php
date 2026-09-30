@@ -32,7 +32,7 @@ trait IndexJsonTrait
      */
     abstract public function getStructureIndex(): array;
 
-    public function test_json_guest_cannot_get_index()
+    public function test_json_guest_cannot_get_index(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -47,7 +47,7 @@ trait IndexJsonTrait
         $response->assertStatus($this->status_code_json_guest_index);
     }
 
-    public function test_json_admin_can_get_index()
+    public function test_json_admin_can_get_index(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -83,7 +83,7 @@ trait IndexJsonTrait
         'label' => 'index_json_with_filters',
     ];
 
-    public function test_json_admin_can_get_index_with_filters()
+    public function test_json_admin_can_get_index_with_filters(): void
     {
         $packageInfo = $this->getPackageInfo();
 

@@ -43,7 +43,7 @@ trait UpdateJsonTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_json_guest_cannot_update()
+    public function test_json_guest_cannot_update(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -55,7 +55,7 @@ trait UpdateJsonTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->patchJson($url);
@@ -63,7 +63,7 @@ trait UpdateJsonTrait
         $response->assertStatus($this->status_code_guest_json_update);
     }
 
-    public function test_json_update_as_admin_without_payload_and_passes_validation()
+    public function test_json_update_as_admin_without_payload_and_passes_validation(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -77,7 +77,7 @@ trait UpdateJsonTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patchJson($url);
@@ -87,7 +87,7 @@ trait UpdateJsonTrait
         $this->assertAuthenticated();
     }
 
-    // public function test_json_update_as_admin_without_payload_and_fail_validation()
+    // public function test_json_update_as_admin_without_payload_and_fail_validation(): void
     // {
     //     $packageInfo = $this->getPackageInfo();
 
@@ -101,7 +101,7 @@ trait UpdateJsonTrait
     //         '%1$s.patch',
     //         $packageInfo['model_route']
     //     ), [
-    //         $packageInfo['model_variable'] => $model->id,
+    //         $packageInfo['model_route_param'] => $model->id,
     //     ]);
 
     //     $response = $this->actingAs($user)->patchJson($url);
@@ -111,7 +111,7 @@ trait UpdateJsonTrait
     //     $this->assertAuthenticated();
     // }
 
-    public function test_json_admin_can_update()
+    public function test_json_admin_can_update(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -137,7 +137,7 @@ trait UpdateJsonTrait
             '%1$s.patch',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->patchJson($url, $payload);

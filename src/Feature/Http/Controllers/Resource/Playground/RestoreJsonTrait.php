@@ -30,7 +30,7 @@ trait RestoreJsonTrait
      */
     abstract public function getStructureData(): array;
 
-    public function test_json_guest_cannot_restore()
+    public function test_json_guest_cannot_restore(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -49,7 +49,7 @@ trait RestoreJsonTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->putJson($url);
@@ -62,7 +62,7 @@ trait RestoreJsonTrait
         ]);
     }
 
-    public function test_json_restore_as_admin_and_succeed()
+    public function test_json_restore_as_admin_and_succeed(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -83,7 +83,7 @@ trait RestoreJsonTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);
@@ -98,7 +98,7 @@ trait RestoreJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_as_admin_and_succeed_with_no_redirect()
+    public function test_json_restore_as_admin_and_succeed_with_no_redirect(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -125,7 +125,7 @@ trait RestoreJsonTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $_return_url,
         ]);
 
@@ -141,7 +141,7 @@ trait RestoreJsonTrait
         $response->assertJsonStructure($this->getStructureData());
     }
 
-    public function test_json_restore_as_user_and_get_denied()
+    public function test_json_restore_as_user_and_get_denied(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -162,7 +162,7 @@ trait RestoreJsonTrait
             '%1$s.restore',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->putJson($url);

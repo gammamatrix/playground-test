@@ -36,7 +36,7 @@ trait RevisionJsonTrait
 
     abstract public function getRevisionRouteParameter(): string;
 
-    public function test_json_guest_cannot_render_revision_view()
+    public function test_json_guest_cannot_render_revision_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -67,7 +67,7 @@ trait RevisionJsonTrait
         $response->assertStatus($this->status_code_guest_json_revision);
     }
 
-    public function test_json_admin_can_get_revision_info()
+    public function test_json_admin_can_get_revision_info(): void
     {
         $packageInfo = $this->getPackageInfo();
 

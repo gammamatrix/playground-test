@@ -31,7 +31,7 @@ trait EditTrait
      */
     abstract public function getPackageInfo(): array;
 
-    public function test_guest_cannot_render_edit_view()
+    public function test_guest_cannot_render_edit_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -43,7 +43,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->get($url);
@@ -51,7 +51,7 @@ trait EditTrait
         $response->assertStatus($this->status_code_guest_edit);
     }
 
-    public function test_admin_can_render_edit_view()
+    public function test_admin_can_render_edit_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -65,7 +65,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->get($url);
@@ -75,7 +75,7 @@ trait EditTrait
         $this->assertAuthenticated();
     }
 
-    public function test_admin_can_render_edit_view_with_return_url()
+    public function test_admin_can_render_edit_view_with_return_url(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -91,7 +91,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
             '_return_url' => $index,
         ]);
 
@@ -104,7 +104,7 @@ trait EditTrait
         $response->assertSee('name="_return_url"', false);
     }
 
-    public function test_edit_view_as_admin_with_invalid_parameter_and_fail_validation_and_redirect()
+    public function test_edit_view_as_admin_with_invalid_parameter_and_fail_validation_and_redirect(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -118,7 +118,7 @@ trait EditTrait
             '%1$s.edit',
             $packageInfo['model_route']
         ), [
-            $packageInfo['model_variable'] => $model->id,
+            $packageInfo['model_route_param'] => $model->id,
         ]);
 
         $response = $this->actingAs($user)->from($url)->get(sprintf(

@@ -36,7 +36,7 @@ trait RevisionTrait
 
     abstract public function getRevisionRouteParameter(): string;
 
-    public function test_guest_cannot_render_revision_view()
+    public function test_guest_cannot_render_revision_view(): void
     {
         $packageInfo = $this->getPackageInfo();
 
@@ -67,7 +67,7 @@ trait RevisionTrait
         $response->assertStatus($this->status_code_guest_revision);
     }
 
-    public function test_revision_view_rendered_by_admin()
+    public function test_revision_view_rendered_by_admin(): void
     {
         $packageInfo = $this->getPackageInfo();
 
